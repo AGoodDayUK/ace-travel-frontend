@@ -63,39 +63,41 @@ export default function Home() {
 
   return (
     <div className="animate-fade-in">
-      {/* Hero Section with Bold Typography */}
-      <section className="container py-12 md:py-20 relative">
-        {/* Floating badges */}
-        <div className="absolute top-20 right-10 sticker-badge bg-accent text-accent-foreground px-6 py-3 font-bold text-sm hidden lg:block animate-wiggle z-10">
-          18-35 ONLY
-        </div>
-        <div className="absolute bottom-40 left-10 sticker-badge bg-primary text-primary-foreground px-6 py-3 font-bold text-sm hidden lg:block animate-bounce-subtle z-10">
-          £60 DEPOSITS
+      {/* Full-Width Video Hero Banner */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <video 
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="https://cdn.pixabay.com/video/2024/02/21/201271-915031695_large.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-foreground/40" />
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-          <div className="md:col-span-7 space-y-8 animate-slide-in-left">
-            <div className="space-y-6">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none text-foreground">
-                YOUR FIRST EPIC ADVENTURE
-              </h1>
-              <div className="flex gap-3">
-                <div className="h-2 w-20 bg-primary" />
-                <div className="h-2 w-12 bg-accent" />
-                <div className="h-2 w-8 bg-primary" />
-              </div>
+        <div className="container relative z-10 text-center text-background">
+          <div className="space-y-8 max-w-5xl mx-auto">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none drop-shadow-2xl">
+              YOUR FIRST EPIC ADVENTURE
+            </h1>
+            <div className="flex gap-4 justify-center">
+              <div className="h-3 w-24 bg-primary" />
+              <div className="h-3 w-16 bg-accent" />
+              <div className="h-3 w-12 bg-primary" />
             </div>
             
-            <p className="text-xl md:text-2xl text-foreground max-w-2xl leading-relaxed font-medium">
-              Group travel experiences in <span className="text-primary font-bold">Thailand</span>, <span className="text-accent font-bold">Bali</span>, and the <span className="text-primary font-bold">Philippines</span> for 18-35 year olds. 
-              Come solo, leave with your future best friends.
+            <p className="text-2xl md:text-3xl font-bold max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+              Group travel experiences in <span className="text-primary">Thailand</span>, <span className="text-accent">Bali</span>, and the <span className="text-primary">Philippines</span> for 18-35 year olds.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <Button 
                 asChild
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-tight text-lg h-16 px-10 border-4 border-foreground transition-all duration-200 hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_rgba(238,47,109,0.4)]"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-black tracking-tight text-xl h-20 px-12 border-4 border-background transition-all duration-200 hover:translate-y-[-4px] hover:shadow-[12px_12px_0px_rgba(255,255,255,0.3)]"
               >
                 <Link href="/tours">
                   EXPLORE TOURS <ArrowRight className="w-6 h-6 ml-2" />
@@ -106,50 +108,38 @@ export default function Home() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="font-bold tracking-tight text-lg h-16 px-10 border-4 border-foreground bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-200 hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_rgba(68,197,195,0.4)]"
+                className="bg-background hover:bg-background/90 text-foreground font-black tracking-tight text-xl h-20 px-12 border-4 border-background transition-all duration-200 hover:translate-y-[-4px] hover:shadow-[12px_12px_0px_rgba(255,255,255,0.3)]"
               >
                 <Link href="/how-it-works">HOW IT WORKS</Link>
               </Button>
             </div>
 
-            <div className="flex items-center gap-8 pt-8 text-sm">
+            <div className="flex items-center gap-12 justify-center pt-12 text-background">
               <div className="text-center">
-                <div className="text-4xl font-black text-primary">£60</div>
-                <div className="text-foreground font-bold mt-1">DEPOSITS</div>
+                <div className="text-5xl md:text-6xl font-black drop-shadow-lg">£60</div>
+                <div className="font-black mt-2 text-lg drop-shadow-lg">DEPOSITS</div>
               </div>
-              <div className="h-16 w-1 bg-foreground" />
+              <div className="h-20 w-1 bg-background/50" />
               <div className="text-center">
-                <div className="text-4xl font-black text-accent">18-35</div>
-                <div className="text-foreground font-bold mt-1">AGE RANGE</div>
+                <div className="text-5xl md:text-6xl font-black text-accent drop-shadow-lg">18-35</div>
+                <div className="font-black mt-2 text-lg drop-shadow-lg">AGE RANGE</div>
               </div>
-              <div className="h-16 w-1 bg-foreground" />
+              <div className="h-20 w-1 bg-background/50" />
               <div className="text-center">
-                <div className="text-4xl font-black text-primary">3</div>
-                <div className="text-foreground font-bold mt-1">DESTINATIONS</div>
+                <div className="text-5xl md:text-6xl font-black drop-shadow-lg">3</div>
+                <div className="font-black mt-2 text-lg drop-shadow-lg">DESTINATIONS</div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="md:col-span-5 animate-slide-in-right">
-            <div className="relative aspect-[3/4] overflow-hidden border-6 border-foreground transition-all duration-200 hover:translate-y-[-8px] hover:shadow-[12px_12px_0px_rgba(68,197,195,0.4)]">
-              <video 
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source src="https://cdn.pixabay.com/video/2024/02/21/201271-915031695_large.mp4" type="video/mp4" />
-              </video>
-              {/* Dark overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
-              {/* Sticker overlay */}
-              <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-4 py-2 font-black text-xs sticker-badge flex items-center gap-2 z-10">
-                <Sparkles className="w-4 h-4" />
-                EPIC VIBES
-              </div>
-            </div>
-          </div>
+        {/* Floating badges */}
+        <div className="absolute top-8 right-8 sticker-badge bg-accent text-accent-foreground px-8 py-4 font-black text-base hidden lg:flex items-center gap-2 z-20 animate-wiggle">
+          <Sparkles className="w-5 h-5" />
+          18-35 ONLY
+        </div>
+        <div className="absolute bottom-8 left-8 sticker-badge bg-primary text-primary-foreground px-8 py-4 font-black text-base hidden lg:block z-20 animate-bounce-subtle">
+          £60 DEPOSITS
         </div>
       </section>
 

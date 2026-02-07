@@ -48,3 +48,9 @@
 - [x] Add video hero to Bali destination page
 - [x] Add video hero to Philippines destination page
 - [x] Test video loading and autoplay on all destination pages
+
+## Full-Width Video Hero Banners
+- [x] Convert homepage hero to full-width video banner
+- [x] Convert Destinations page hero to full-width video banner (already done)
+- [x] Ensure SEO optimization (proper heading hierarchy, alt text, transcripts)
+- [x] Test responsive behavior on mobile devices
