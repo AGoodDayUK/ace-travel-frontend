@@ -237,7 +237,7 @@ export default function Tours() {
                     asChild
                     className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
                   >
-                    <Link href="/tours">
+                    <Link href={`/tour/${tour.id}`}>
                       <a className="flex items-center gap-2">
                         View Tour
                         <ArrowRight className="w-4 h-4" />

@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import TourDetail from "./pages/TourDetail";
 import Destinations from "./pages/Destinations";
 import Tours from "./pages/Tours";
 import HowItWorks from "./pages/HowItWorks";
@@ -17,6 +18,7 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/tour/:id"} component={TourDetail} />
       <Route path={"/destinations"} component={Destinations} />
       <Route path={"/tours"} component={Tours} />
       <Route path={"/how-it-works"} component={HowItWorks} />
