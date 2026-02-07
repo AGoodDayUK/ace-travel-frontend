@@ -37,10 +37,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
           {/* Brand column */}
           <div className="md:col-span-4">
-            <Link href="/">
-              <a className="text-3xl font-bold tracking-tight mb-4 inline-block">
-                ACE
-              </a>
+            <Link href="/" className="text-3xl font-bold tracking-tight mb-4 inline-block">
+              ACE
             </Link>
             <p className="text-background/80 text-sm leading-relaxed max-w-xs">
               Epic group travel experiences in Thailand, Bali, and the Philippines for 18-35 year olds. Your first adventure with your future best friends.
@@ -67,10 +65,8 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.destinations.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href}>
-                    <a className="text-background/80 hover:text-accent text-sm transition-kinetic kinetic-underline">
-                      {link.label}
-                    </a>
+                  <Link href={link.href} className="text-background/80 hover:text-accent text-sm transition-kinetic kinetic-underline">
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -83,10 +79,8 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href}>
-                    <a className="text-background/80 hover:text-accent text-sm transition-kinetic kinetic-underline">
-                      {link.label}
-                    </a>
+                  <Link href={link.href} className="text-background/80 hover:text-accent text-sm transition-kinetic kinetic-underline">
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -99,10 +93,8 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href}>
-                    <a className="text-background/80 hover:text-accent text-sm transition-kinetic kinetic-underline">
-                      {link.label}
-                    </a>
+                  <Link href={link.href} className="text-background/80 hover:text-accent text-sm transition-kinetic kinetic-underline">
+                    {link.label}
                   </Link>
                 </li>
               ))}

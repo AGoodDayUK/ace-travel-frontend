@@ -18,3 +18,13 @@
 - [ ] Connect frontend to dynamic data from database
 - [ ] Test admin functionality
 - [ ] Save final checkpoint
+
+## Gen Z Visual Redesign
+- [x] Update typography to bold, playful style with text outlines/shadows
+- [x] Add sticker-style graphics and badges throughout site
+- [x] Implement vibrant color overlays and gradients
+- [x] Add playful micro-animations (hover effects, scroll reveals)
+- [x] Increase visual density with more images and graphics
+- [x] Add fun UI elements (badges, stamps, hand-drawn accents)
+- [x] Update hero sections with bold, outlined typography
+- [x] Add animated elements without compromising performance
