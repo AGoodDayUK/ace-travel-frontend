@@ -1,9 +1,12 @@
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
 import { ArrowRight, Users, Calendar, Heart, Shield } from "lucide-react";
 
 export default function Home() {
+  const { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const destinations = [
     {
       name: "Thailand",
@@ -56,10 +59,8 @@ export default function Home() {
 
   return (
     <div className="animate-fade-in">
-      {/* Hero Section - Asymmetric Layout */}
       <section className="container py-12 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-          {/* Content - 7 columns */}
           <div className="md:col-span-7 space-y-8 animate-slide-in-left">
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-none">
@@ -79,12 +80,7 @@ export default function Home() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight text-lg h-14 px-8"
               >
-                <Link href="/tours">
-                  <a className="flex items-center gap-2">
-                    Explore Tours
-                    <ArrowRight className="w-5 h-5" />
-                  </a>
-                </Link>
+                <Link href="/tours">Explore Tours <ArrowRight className="w-5 h-5" /></Link>
               </Button>
               
               <Button 
@@ -93,9 +89,7 @@ export default function Home() {
                 variant="outline"
                 className="font-medium tracking-tight text-lg h-14 px-8 border-2"
               >
-                <Link href="/how-it-works">
-                  <a>How It Works</a>
-                </Link>
+                <Link href="/how-it-works">How It Works</Link>
               </Button>
             </div>
 
@@ -117,7 +111,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Image - 5 columns */}
           <div className="md:col-span-5 animate-slide-in-right">
             <div className="relative aspect-[3/4] overflow-hidden">
               <img 
@@ -131,7 +124,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Destinations Section */}
       <section className="container py-16 md:py-24">
         <div className="space-y-12">
           <div className="space-y-4">
@@ -144,7 +136,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {destinations.map((dest, index) => (
               <Link key={dest.name} href={dest.href}>
-                <Card className={`group cursor-pointer overflow-hidden border-2 hover:border-primary transition-kinetic animate-fade-in stagger-${index + 1}`}>
+                <Card className="group cursor-pointer overflow-hidden border-2 hover:border-primary transition-kinetic">
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img 
                       src={dest.image}
@@ -170,7 +162,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="bg-muted py-16 md:py-24">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
@@ -185,11 +176,8 @@ export default function Home() {
             </div>
 
             <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {features.map((feature, index) => (
-                <div 
-                  key={feature.title}
-                  className={`space-y-4 animate-fade-in stagger-${index + 1}`}
-                >
+              {features.map((feature) => (
+                <div key={feature.title} className="space-y-4">
                   <div className="w-12 h-12 flex items-center justify-center bg-primary text-primary-foreground">
                     <feature.icon className="w-6 h-6" />
                   </div>
@@ -202,7 +190,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="container py-16 md:py-24">
         <div className="bg-foreground text-background p-12 md:p-16">
           <div className="max-w-3xl mx-auto text-center space-y-8">
@@ -218,12 +205,7 @@ export default function Home() {
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium tracking-tight text-lg h-14 px-8"
             >
-              <Link href="/tours">
-                <a className="flex items-center gap-2">
-                  View All Tours
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-              </Link>
+              <Link href="/tours">View All Tours <ArrowRight className="w-5 h-5" /></Link>
             </Button>
           </div>
         </div>

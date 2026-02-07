@@ -1,0 +1,40 @@
+CREATE TABLE `deals` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`title` varchar(255) NOT NULL,
+	`description` text NOT NULL,
+	`discount` varchar(100) NOT NULL,
+	`validUntil` varchar(100) NOT NULL,
+	`image` text NOT NULL,
+	`tourId` int,
+	`active` boolean NOT NULL DEFAULT true,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `deals_id` PRIMARY KEY(`id`)
+);
+--> statement-breakpoint
+CREATE TABLE `tours` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`slug` varchar(255) NOT NULL,
+	`name` varchar(255) NOT NULL,
+	`destination` varchar(100) NOT NULL,
+	`duration` varchar(50) NOT NULL,
+	`price` varchar(50) NOT NULL,
+	`deposit` varchar(50) NOT NULL,
+	`groupSize` varchar(50) NOT NULL,
+	`ageRange` varchar(50) NOT NULL,
+	`rating` varchar(10) NOT NULL,
+	`reviews` int NOT NULL,
+	`nextDeparture` varchar(100) NOT NULL,
+	`heroImage` text NOT NULL,
+	`gallery` json NOT NULL,
+	`description` text NOT NULL,
+	`highlights` json NOT NULL,
+	`itinerary` json NOT NULL,
+	`included` json NOT NULL,
+	`notIncluded` json NOT NULL,
+	`published` boolean NOT NULL DEFAULT true,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `tours_id` PRIMARY KEY(`id`),
+	CONSTRAINT `tours_slug_unique` UNIQUE(`slug`)
+);

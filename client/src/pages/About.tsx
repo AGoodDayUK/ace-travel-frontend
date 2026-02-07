@@ -108,9 +108,7 @@ export default function About() {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight text-lg h-14 px-8"
           >
-            <Link href="/tours">
-              <a>View All Tours</a>
-            </Link>
+            <Link href="/tours">View All Tours</Link>
           </Button>
         </div>
       </section>

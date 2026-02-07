@@ -292,9 +292,7 @@ export default function Tours() {
             size="lg"
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium tracking-tight text-lg h-14 px-8"
           >
-            <Link href="/contact">
-              <a>Contact Us</a>
-            </Link>
+            <Link href="/contact">Contact Us</Link>
           </Button>
         </div>
       </section>

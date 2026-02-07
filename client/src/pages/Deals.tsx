@@ -94,11 +94,9 @@ export default function Deals() {
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
                 >
                   <Link href="/tours">
-                    <a className="flex items-center justify-center gap-2">
                       Browse Tours
                       <ArrowRight className="w-4 h-4" />
-                    </a>
-                  </Link>
+                    </Link>
                 </Button>
               </div>
             </Card>

@@ -204,9 +204,7 @@ export default function Destinations() {
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight"
             >
-              <Link href="/tours">
-                <a>View All Tours</a>
-              </Link>
+              <Link href="/tours">View All Tours</Link>
             </Button>
             <Button 
               asChild
@@ -214,9 +212,7 @@ export default function Destinations() {
               variant="outline"
               className="font-medium tracking-tight border-2"
             >
-              <Link href="/contact">
-                <a>Contact Us</a>
-              </Link>
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>

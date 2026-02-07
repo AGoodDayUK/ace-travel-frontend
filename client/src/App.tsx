@@ -8,13 +8,16 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import TourDetail from "./pages/TourDetail";
+import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
+import Reviews from "./pages/Reviews";
 import Destinations from "./pages/Destinations";
 import Tours from "./pages/Tours";
 import HowItWorks from "./pages/HowItWorks";
 import Deals from "./pages/Deals";
 import About from "./pages/About";
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
@@ -24,6 +27,9 @@ function Router() {
       <Route path={"/how-it-works"} component={HowItWorks} />
       <Route path={"/deals"} component={Deals} />
       <Route path={"/about"} component={About} />
+      <Route path={"/contact"} component={Contact} />
+      <Route path={"/faq"} component={FAQ} />
+      <Route path={"/reviews"} component={Reviews} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

@@ -158,9 +158,7 @@ export default function HowItWorks() {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight text-lg h-14 px-8"
           >
-            <Link href="/tours">
-              <a>Browse Tours</a>
-            </Link>
+            <Link href="/tours">Browse Tours</Link>
           </Button>
         </div>
       </section>

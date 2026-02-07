@@ -457,9 +457,7 @@ export default function TourDetail() {
                 variant="outline"
                 className="w-full"
               >
-                <Link href="/contact">
-                  <a>Have Questions? Contact Us</a>
-                </Link>
+                <Link href="/contact">Have Questions? Contact Us</Link>
               </Button>
             </Card>
           </div>
@@ -487,9 +485,7 @@ export default function TourDetail() {
               variant="outline"
               className="font-medium tracking-tight text-lg h-14 px-8"
             >
-              <Link href="/tours">
-                <a>View All Tours</a>
-              </Link>
+              <Link href="/tours">View All Tours</Link>
             </Button>
           </div>
         </div>
