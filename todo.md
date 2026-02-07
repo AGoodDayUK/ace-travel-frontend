@@ -35,3 +35,10 @@
 - [x] Ensure all interactive elements have hover effects
 - [x] Polish visual hierarchy and spacing
 - [x] Test all animations for smoothness
+
+## Video Heroes and Design Cleanup
+- [x] Remove heavy text shadows and borders for cleaner look
+- [x] Add video hero to homepage
+- [ ] Add video heroes to destination pages
+- [ ] Add video section to individual tour pages
+- [x] Optimize video loading for performance

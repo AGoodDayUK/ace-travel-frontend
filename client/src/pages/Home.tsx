@@ -76,7 +76,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
           <div className="md:col-span-7 space-y-8 animate-slide-in-left">
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none text-outlined-white text-foreground">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none text-foreground">
                 YOUR FIRST EPIC ADVENTURE
               </h1>
               <div className="flex gap-3">
@@ -114,17 +114,17 @@ export default function Home() {
 
             <div className="flex items-center gap-8 pt-8 text-sm">
               <div className="text-center">
-                <div className="text-4xl font-black text-primary text-pop">£60</div>
+                <div className="text-4xl font-black text-primary">£60</div>
                 <div className="text-foreground font-bold mt-1">DEPOSITS</div>
               </div>
               <div className="h-16 w-1 bg-foreground" />
               <div className="text-center">
-                <div className="text-4xl font-black text-accent text-pop">18-35</div>
+                <div className="text-4xl font-black text-accent">18-35</div>
                 <div className="text-foreground font-bold mt-1">AGE RANGE</div>
               </div>
               <div className="h-16 w-1 bg-foreground" />
               <div className="text-center">
-                <div className="text-4xl font-black text-primary text-pop">3</div>
+                <div className="text-4xl font-black text-primary">3</div>
                 <div className="text-foreground font-bold mt-1">DESTINATIONS</div>
               </div>
             </div>
@@ -132,13 +132,19 @@ export default function Home() {
 
           <div className="md:col-span-5 animate-slide-in-right">
             <div className="relative aspect-[3/4] overflow-hidden border-6 border-foreground transition-all duration-200 hover:translate-y-[-8px] hover:shadow-[12px_12px_0px_rgba(68,197,195,0.4)]">
-              <img 
-                src="https://private-us-east-1.manuscdn.com/sessionFile/pXVHXcSbPXyc4MWdg9U3VE/sandbox/vQIa9gQhvpiaeVZHjvhxJC-img-4_1770480744000_na1fn_Z3JvdXAtdHJhdmVsLWhlcm8.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcFhWSFhjU2JQWHljNE1XZGc5VTNWRS9zYW5kYm94L3ZRSWE5Z1FodnBpYWVWWkhqdmh4SkMtaW1nLTRfMTc3MDQ4MDc0NDAwMF9uYTFmbl9aM0p2ZFhBdGRISmhkbVZzTFdobGNtOC5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=pWclah8wEL29jJrqhhVyZbo-dPKLMCPSioZB-AgrlpHNAfnbOMjUn1HxFPeSzIhjUUvhHrzggwIn0QwRxf3p-424KgxZsLuoar8xbeosJM89lAB494cUcKLWFS8KX45jyHzZMkBNjoC8R~HO2s3-804tOYdzxfwMmmFBTGg7zUeWiKaGsBTOdK0Ci8etH5~bmp8qkJYvsM37lwu7ZLKMPNvMYJ3lWMD8GxEfJGQ97DfzPomCt2ZT7qzQzfJRgV77oIMglIB9zRoWgGBXNhvbt5TS7ynFzDi01Y~u3LRzUBssLfuWckLsoqEzkOgggBHqUJKoa2Hjwvnzsbwqn4dZPg__"
-                alt="Group of young travelers on the beach"
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-              />
+              <video 
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="https://cdn.pixabay.com/video/2024/02/21/201271-915031695_large.mp4" type="video/mp4" />
+              </video>
+              {/* Dark overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
               {/* Sticker overlay */}
-              <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-4 py-2 font-black text-xs sticker-badge flex items-center gap-2">
+              <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-4 py-2 font-black text-xs sticker-badge flex items-center gap-2 z-10">
                 <Sparkles className="w-4 h-4" />
                 EPIC VIBES
               </div>
@@ -151,7 +157,7 @@ export default function Home() {
       <section className="container py-16 md:py-24">
         <div className="space-y-12">
           <div className="text-center space-y-4">
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-outlined-white text-foreground">
+            <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-foreground">
               WHERE WILL YOU GO?
             </h2>
             <div className="flex gap-3 justify-center">
@@ -174,7 +180,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/60 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-background">
                       <div className="space-y-3">
-                        <h3 className="text-4xl font-black tracking-tight text-outlined">{dest.name.toUpperCase()}</h3>
+                        <h3 className="text-4xl font-black tracking-tight ">{dest.name.toUpperCase()}</h3>
                         <p className="text-background/90 font-bold text-lg">{dest.tagline}</p>
                         <div className="flex items-center justify-between pt-4">
                           <span className="text-sm font-bold bg-accent text-accent-foreground px-3 py-1">{dest.tours}</span>
@@ -199,7 +205,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="md:col-span-5 space-y-6">
-              <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-outlined-white text-foreground">
+              <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-foreground">
                 WHY CHOOSE ACE?
               </h2>
               <div className="flex gap-3">
@@ -237,7 +243,7 @@ export default function Home() {
           <div className="absolute bottom-8 left-8 w-24 h-24 border-4 border-accent opacity-20 -rotate-12" />
           
           <div className="max-w-3xl mx-auto text-center space-y-8 relative z-10">
-            <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-outlined">
+            <h2 className="text-5xl md:text-6xl font-black tracking-tighter ">
               READY FOR YOUR FIRST ADVENTURE?
             </h2>
             <p className="text-2xl text-background/90 leading-relaxed font-bold">
