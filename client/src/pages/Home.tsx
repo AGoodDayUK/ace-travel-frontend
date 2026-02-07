@@ -66,10 +66,10 @@ export default function Home() {
       {/* Hero Section with Bold Typography */}
       <section className="container py-12 md:py-20 relative">
         {/* Floating badges */}
-        <div className="absolute top-20 right-10 sticker-badge bg-accent text-accent-foreground px-6 py-3 font-bold text-sm hidden lg:block animate-wiggle">
+        <div className="absolute top-20 right-10 sticker-badge bg-accent text-accent-foreground px-6 py-3 font-bold text-sm hidden lg:block animate-wiggle z-10">
           18-35 ONLY
         </div>
-        <div className="absolute bottom-40 left-10 sticker-badge bg-primary text-primary-foreground px-6 py-3 font-bold text-sm hidden lg:block animate-bounce-subtle">
+        <div className="absolute bottom-40 left-10 sticker-badge bg-primary text-primary-foreground px-6 py-3 font-bold text-sm hidden lg:block animate-bounce-subtle z-10">
           £60 DEPOSITS
         </div>
         
@@ -95,7 +95,7 @@ export default function Home() {
               <Button 
                 asChild
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-tight text-lg h-16 px-10 fun-shadow hover-lift border-4 border-foreground"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-tight text-lg h-16 px-10 border-4 border-foreground transition-all duration-200 hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_rgba(238,47,109,0.4)]"
               >
                 <Link href="/tours">
                   EXPLORE TOURS <ArrowRight className="w-6 h-6 ml-2" />
@@ -106,7 +106,7 @@ export default function Home() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="font-bold tracking-tight text-lg h-16 px-10 border-4 border-foreground hover:bg-accent hover:text-accent-foreground transition-kinetic"
+                className="font-bold tracking-tight text-lg h-16 px-10 border-4 border-foreground bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-200 hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_rgba(68,197,195,0.4)]"
               >
                 <Link href="/how-it-works">HOW IT WORKS</Link>
               </Button>
@@ -131,11 +131,11 @@ export default function Home() {
           </div>
 
           <div className="md:col-span-5 animate-slide-in-right">
-            <div className="relative aspect-[3/4] overflow-hidden border-8 border-foreground fun-shadow-teal hover-lift">
+            <div className="relative aspect-[3/4] overflow-hidden border-6 border-foreground transition-all duration-200 hover:translate-y-[-8px] hover:shadow-[12px_12px_0px_rgba(68,197,195,0.4)]">
               <img 
                 src="https://private-us-east-1.manuscdn.com/sessionFile/pXVHXcSbPXyc4MWdg9U3VE/sandbox/vQIa9gQhvpiaeVZHjvhxJC-img-4_1770480744000_na1fn_Z3JvdXAtdHJhdmVsLWhlcm8.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcFhWSFhjU2JQWHljNE1XZGc5VTNWRS9zYW5kYm94L3ZRSWE5Z1FodnBpYWVWWkhqdmh4SkMtaW1nLTRfMTc3MDQ4MDc0NDAwMF9uYTFmbl9aM0p2ZFhBdGRISmhkbVZzTFdobGNtOC5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=pWclah8wEL29jJrqhhVyZbo-dPKLMCPSioZB-AgrlpHNAfnbOMjUn1HxFPeSzIhjUUvhHrzggwIn0QwRxf3p-424KgxZsLuoar8xbeosJM89lAB494cUcKLWFS8KX45jyHzZMkBNjoC8R~HO2s3-804tOYdzxfwMmmFBTGg7zUeWiKaGsBTOdK0Ci8etH5~bmp8qkJYvsM37lwu7ZLKMPNvMYJ3lWMD8GxEfJGQ97DfzPomCt2ZT7qzQzfJRgV77oIMglIB9zRoWgGBXNhvbt5TS7ynFzDi01Y~u3LRzUBssLfuWckLsoqEzkOgggBHqUJKoa2Hjwvnzsbwqn4dZPg__"
                 alt="Group of young travelers on the beach"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
               />
               {/* Sticker overlay */}
               <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-4 py-2 font-black text-xs sticker-badge flex items-center gap-2">
@@ -164,7 +164,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {destinations.map((dest, index) => (
               <Link key={dest.name} href={dest.href}>
-                <Card className="group cursor-pointer overflow-hidden border-6 border-foreground hover:border-primary transition-kinetic hover-lift fun-shadow">
+                <Card className="group cursor-pointer overflow-hidden border-4 border-foreground transition-all duration-200 hover:translate-y-[-8px] hover:shadow-[10px_10px_0px_rgba(238,47,109,0.4)]">
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img 
                       src={dest.image}
@@ -195,7 +195,7 @@ export default function Home() {
       </section>
 
       {/* Features Section with Icons */}
-      <section className="bg-secondary py-16 md:py-24 border-y-8 border-foreground">
+      <section className="bg-secondary py-16 md:py-24 border-y-4 border-foreground">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="md:col-span-5 space-y-6">
@@ -215,7 +215,7 @@ export default function Home() {
               {features.map((feature, index) => (
                 <div 
                   key={feature.title}
-                  className="space-y-4 bg-background p-6 border-4 border-foreground fun-shadow hover-lift"
+                  className="space-y-4 bg-background p-6 border-4 border-foreground transition-all duration-200 hover:translate-y-[-6px] hover:shadow-[8px_8px_0px_rgba(0,0,0,0.15)]"
                 >
                   <div className={`w-16 h-16 flex items-center justify-center border-4 border-foreground ${feature.color} bg-background`}>
                     <feature.icon className="w-8 h-8" strokeWidth={3} />
@@ -231,10 +231,10 @@ export default function Home() {
 
       {/* CTA Section with Bold Design */}
       <section className="container py-16 md:py-24">
-        <div className="bg-foreground text-background p-12 md:p-20 border-8 border-foreground fun-shadow-teal relative overflow-hidden">
+        <div className="bg-foreground text-background p-12 md:p-20 border-6 border-foreground relative overflow-hidden transition-all duration-200 hover:shadow-[12px_12px_0px_rgba(68,197,195,0.4)]">
           {/* Decorative elements */}
-          <div className="absolute top-8 right-8 w-32 h-32 border-8 border-primary opacity-20 rotate-12" />
-          <div className="absolute bottom-8 left-8 w-24 h-24 border-8 border-accent opacity-20 -rotate-12" />
+          <div className="absolute top-8 right-8 w-32 h-32 border-4 border-primary opacity-20 rotate-12" />
+          <div className="absolute bottom-8 left-8 w-24 h-24 border-4 border-accent opacity-20 -rotate-12" />
           
           <div className="max-w-3xl mx-auto text-center space-y-8 relative z-10">
             <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-outlined">
@@ -247,7 +247,7 @@ export default function Home() {
             <Button 
               asChild
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-black tracking-tight text-xl h-20 px-12 border-4 border-background fun-shadow-yellow hover-lift"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-black tracking-tight text-xl h-20 px-12 border-4 border-background transition-all duration-200 hover:translate-y-[-6px] hover:shadow-[10px_10px_0px_rgba(244,162,97,0.5)]"
             >
               <Link href="/tours">
                 VIEW ALL TOURS <Zap className="w-6 h-6 ml-2" />
