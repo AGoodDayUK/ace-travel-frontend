@@ -42,3 +42,9 @@
 - [ ] Add video heroes to destination pages
 - [ ] Add video section to individual tour pages
 - [x] Optimize video loading for performance
+
+## Destination Video Heroes
+- [x] Add video hero to Thailand destination page
+- [x] Add video hero to Bali destination page
+- [x] Add video hero to Philippines destination page
+- [x] Test video loading and autoplay on all destination pages
