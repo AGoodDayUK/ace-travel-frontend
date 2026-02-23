@@ -128,7 +128,7 @@ export default function TourDetail() {
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/PXlQnTbTVcJJJjpj.JPG",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/UtZydstnoHgAJiUA.JPG"
       ],
-      description: "The ultimate Bali adventure. Explore Canggu's surf scene and nightlife, immerse yourself in Ubud's cultural heart with rice terraces and temples, discover the pristine beaches of Nusa Lembongan, and finish in Uluwatu's surfer paradise. This 14-day journey takes you through the best of Bali's beaches, culture, and adventure.",
+      description: "Explore Canggu's surf and nightlife, Ubud's rice terraces and temples, Nusa Lembongan's pristine beaches, and Uluwatu's surfer paradise. 14 days of Bali's best beaches, culture, and adventure.",
       highlights: [
         {
           title: "Surf lessons",
@@ -551,7 +551,7 @@ export default function TourDetail() {
               <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
                 {tour.name}
               </h1>
-              <p className="text-xl md:text-2xl mb-6">
+              <p className="text-sm md:text-base mb-6 leading-relaxed">
                 {tour.description}
               </p>
               <div className="flex flex-wrap gap-4 text-sm">

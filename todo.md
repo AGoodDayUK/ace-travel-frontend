@@ -166,3 +166,11 @@
 - [x] Update hero headline from "YOUR FIRST EPIC ADVENTURE" to "EPIC TRIPS. LIFELONG FRIENDS."
 - [x] Fix white gaps at top and bottom of destination card images (added p-0 to Card, absolute positioning to img)
 - [x] Ensure images fill the entire card properly with object-covers fill the entire card properly with object-cover
+
+## Tour Hero Text Size Fix
+- [x] Reduce tour description text size in hero section for better mobile readability (changed from text-xl/2xl to text-base/lg)
+- [x] Ensure text is legible but not overwhelming on small screens
+
+## Further Reduce Tour Description
+- [x] Make tour description text even smaller for mobile (text-sm md:text-base)
+- [x] Shorten Bali Explorer description content from 3 sentences to 2 for better mobile fit
