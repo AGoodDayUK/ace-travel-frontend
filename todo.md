@@ -67,3 +67,7 @@
 - [x] Add stronger text shadows or outlines for better contrast
 - [x] Ensure all hero text is clearly readable on both light and dark video frames
 - [x] Test readability across different video playback moments
+
+## Tours Page Nested Anchor Fix
+- [x] Fix nested anchor tags on Tours page causing React errors
+- [x] Ensure all tour cards and links render correctly without nested anchors
