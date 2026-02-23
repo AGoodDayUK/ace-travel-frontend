@@ -78,29 +78,29 @@ export default function Home() {
           <div className="absolute inset-0 bg-foreground/40" />
         </div>
         
-        <div className="container relative z-10 text-center text-background">
-          <div className="space-y-8 max-w-5xl mx-auto">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none drop-shadow-2xl">
+        <div className="container relative z-10 text-center text-background px-4">
+          <div className="space-y-4 md:space-y-8 max-w-5xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter leading-tight drop-shadow-2xl">
               YOUR FIRST EPIC ADVENTURE
             </h1>
-            <div className="flex gap-4 justify-center">
-              <div className="h-3 w-24 bg-primary" />
-              <div className="h-3 w-16 bg-accent" />
-              <div className="h-3 w-12 bg-primary" />
+            <div className="flex gap-2 md:gap-4 justify-center">
+              <div className="h-2 md:h-3 w-16 md:w-24 bg-primary" />
+              <div className="h-2 md:h-3 w-10 md:w-16 bg-accent" />
+              <div className="h-2 md:h-3 w-8 md:w-12 bg-primary" />
             </div>
             
-            <p className="text-2xl md:text-3xl font-bold max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+            <p className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold max-w-3xl mx-auto leading-relaxed drop-shadow-lg px-4">
               Group travel experiences in <span className="text-primary">Thailand</span>, <span className="text-accent">Bali</span>, and the <span className="text-primary">Philippines</span> for 18-35 year olds.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center pt-4 md:pt-6">
               <Button 
                 asChild
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-black tracking-tight text-xl h-20 px-12 border-4 border-background transition-all duration-200 hover:translate-y-[-4px] hover:shadow-[12px_12px_0px_rgba(255,255,255,0.3)]"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-black tracking-tight text-sm sm:text-base md:text-xl h-14 md:h-20 px-6 md:px-12 border-2 md:border-4 border-background transition-all duration-200 hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_rgba(255,255,255,0.3)] md:hover:shadow-[12px_12px_0px_rgba(255,255,255,0.3)]"
               >
                 <Link href="/tours">
-                  EXPLORE TOURS <ArrowRight className="w-6 h-6 ml-2" />
+                  EXPLORE TOURS <ArrowRight className="w-4 h-4 md:w-6 md:h-6 ml-2" />
                 </Link>
               </Button>
               
@@ -108,26 +108,26 @@ export default function Home() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="bg-background hover:bg-background/90 text-foreground font-black tracking-tight text-xl h-20 px-12 border-4 border-background transition-all duration-200 hover:translate-y-[-4px] hover:shadow-[12px_12px_0px_rgba(255,255,255,0.3)]"
+                className="bg-background hover:bg-background/90 text-foreground font-black tracking-tight text-sm sm:text-base md:text-xl h-14 md:h-20 px-6 md:px-12 border-2 md:border-4 border-background transition-all duration-200 hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_rgba(255,255,255,0.3)] md:hover:shadow-[12px_12px_0px_rgba(255,255,255,0.3)]"
               >
                 <Link href="/how-it-works">HOW IT WORKS</Link>
               </Button>
             </div>
 
-            <div className="flex items-center gap-12 justify-center pt-12 text-background">
+            <div className="flex items-center gap-4 sm:gap-8 md:gap-12 justify-center pt-6 md:pt-12 text-background">
               <div className="text-center">
-                <div className="text-5xl md:text-6xl font-black drop-shadow-lg">£60</div>
-                <div className="font-black mt-2 text-lg drop-shadow-lg">DEPOSITS</div>
+                <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black drop-shadow-lg">£60</div>
+                <div className="font-black mt-1 md:mt-2 text-xs sm:text-sm md:text-lg drop-shadow-lg">DEPOSITS</div>
               </div>
-              <div className="h-20 w-1 bg-background/50" />
+              <div className="h-12 sm:h-16 md:h-20 w-0.5 md:w-1 bg-background/50" />
               <div className="text-center">
-                <div className="text-5xl md:text-6xl font-black text-accent drop-shadow-lg">18-35</div>
-                <div className="font-black mt-2 text-lg drop-shadow-lg">AGE RANGE</div>
+                <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-accent drop-shadow-lg">18-35</div>
+                <div className="font-black mt-1 md:mt-2 text-xs sm:text-sm md:text-lg drop-shadow-lg">AGE RANGE</div>
               </div>
-              <div className="h-20 w-1 bg-background/50" />
+              <div className="h-12 sm:h-16 md:h-20 w-0.5 md:w-1 bg-background/50" />
               <div className="text-center">
-                <div className="text-5xl md:text-6xl font-black drop-shadow-lg">3</div>
-                <div className="font-black mt-2 text-lg drop-shadow-lg">DESTINATIONS</div>
+                <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black drop-shadow-lg">3</div>
+                <div className="font-black mt-1 md:mt-2 text-xs sm:text-sm md:text-lg drop-shadow-lg">DESTINATIONS</div>
               </div>
             </div>
           </div>
