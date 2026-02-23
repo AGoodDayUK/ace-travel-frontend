@@ -71,3 +71,14 @@
 ## Tours Page Nested Anchor Fix
 - [x] Fix nested anchor tags on Tours page causing React errors
 - [x] Ensure all tour cards and links render correctly without nested anchors
+
+## Bali Photos (Island Hopper + Explorer)
+- [x] Upload all 17 Bali photos to CDN (10 Island Hopper + 7 Explorer)
+- [x] Update Bali tour page gallery with 17 real photos
+- [ ] Replace stock Bali images across the site with authentic photos
+- [ ] Update Bali destination card on homepage with real image
+
+## Thailand North Wellness Photos
+- [x] Upload 6 Thailand North photos to CDN
+- [ ] Create Thailand North wellness/yoga retreat tour page
+- [ ] Add Thailand North photos to gallery
