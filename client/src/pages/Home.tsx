@@ -80,7 +80,7 @@ export default function Home() {
         
         <div className="container relative z-10 text-center text-background px-4">
           <div className="space-y-4 md:space-y-8 max-w-5xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter leading-tight drop-shadow-2xl">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter leading-tight" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.9)' }}>
               YOUR FIRST EPIC ADVENTURE
             </h1>
             <div className="flex gap-2 md:gap-4 justify-center">
@@ -89,8 +89,8 @@ export default function Home() {
               <div className="h-2 md:h-3 w-8 md:w-12 bg-primary" />
             </div>
             
-            <p className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold max-w-3xl mx-auto leading-relaxed drop-shadow-lg px-4">
-              Group travel experiences in <span className="text-primary">Thailand</span>, <span className="text-accent">Bali</span>, and the <span className="text-primary">Philippines</span> for 18-35 year olds.
+            <p className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold max-w-3xl mx-auto leading-relaxed px-4" style={{ textShadow: '0 3px 8px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9)' }}>
+              Group travel experiences in Thailand, Bali, and the Philippines for 18-35 year olds.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center pt-4 md:pt-6">
@@ -116,18 +116,18 @@ export default function Home() {
 
             <div className="flex items-center gap-4 sm:gap-8 md:gap-12 justify-center pt-6 md:pt-12 text-background">
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black drop-shadow-lg">£60</div>
-                <div className="font-black mt-1 md:mt-2 text-xs sm:text-sm md:text-lg drop-shadow-lg">DEPOSITS</div>
+                <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black" style={{ textShadow: '0 3px 8px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9)' }}>£60</div>
+                <div className="font-black mt-1 md:mt-2 text-xs sm:text-sm md:text-lg" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.8)' }}>DEPOSITS</div>
               </div>
-              <div className="h-12 sm:h-16 md:h-20 w-0.5 md:w-1 bg-background/50" />
+              <div className="h-12 sm:h-16 md:h-20 w-0.5 md:w-1 bg-background/80" />
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-accent drop-shadow-lg">18-35</div>
-                <div className="font-black mt-1 md:mt-2 text-xs sm:text-sm md:text-lg drop-shadow-lg">AGE RANGE</div>
+                <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black" style={{ textShadow: '0 3px 8px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9)' }}>18-35</div>
+                <div className="font-black mt-1 md:mt-2 text-xs sm:text-sm md:text-lg" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.8)' }}>AGE RANGE</div>
               </div>
-              <div className="h-12 sm:h-16 md:h-20 w-0.5 md:w-1 bg-background/50" />
+              <div className="h-12 sm:h-16 md:h-20 w-0.5 md:w-1 bg-background/80" />
               <div className="text-center">
-                <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black drop-shadow-lg">3</div>
-                <div className="font-black mt-1 md:mt-2 text-xs sm:text-sm md:text-lg drop-shadow-lg">DESTINATIONS</div>
+                <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black" style={{ textShadow: '0 3px 8px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9)' }}>3</div>
+                <div className="font-black mt-1 md:mt-2 text-xs sm:text-sm md:text-lg" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.8)' }}>DESTINATIONS</div>
               </div>
             </div>
           </div>

@@ -61,3 +61,9 @@
 - [x] Ensure all buttons fit properly on mobile screens
 - [x] Test responsive design across different mobile screen sizes
 - [x] Optimize video hero for mobile performance
+
+## Text Readability Improvements
+- [x] Fix colored text (Thailand, Bali, Philippines) readability against video background
+- [x] Add stronger text shadows or outlines for better contrast
+- [x] Ensure all hero text is clearly readable on both light and dark video frames
+- [x] Test readability across different video playback moments
