@@ -161,3 +161,8 @@
 - [x] Remove text shadow from hero heading and description
 - [x] Improve text contrast with darker overlay (increased from 40% to 50%)
 - [x] Ensure clean white text stands out against background
+
+## Hero Headline and Destination Card Fixes
+- [x] Update hero headline from "YOUR FIRST EPIC ADVENTURE" to "EPIC TRIPS. LIFELONG FRIENDS."
+- [x] Fix white gaps at top and bottom of destination card images (added p-0 to Card, absolute positioning to img)
+- [x] Ensure images fill the entire card properly with object-covers fill the entire card properly with object-cover
