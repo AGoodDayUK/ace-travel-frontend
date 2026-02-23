@@ -32,7 +32,7 @@ export default function HowItWorks() {
   ];
 
   const included = [
-    { icon: Shield, title: "ATOL & ABTA Protected", description: "Complete financial protection" },
+    { icon: Shield, title: "Travel Protection", description: "Comprehensive coverage and support" },
     { icon: Users, title: "Expert Trip Managers", description: "On-ground support 24/7" },
     { icon: Heart, title: "Most Meals Included", description: "Breakfast daily plus group dinners" },
     { icon: Plane, title: "All Activities", description: "Tours, excursions, and experiences" }

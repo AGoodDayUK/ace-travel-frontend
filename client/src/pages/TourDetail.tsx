@@ -707,7 +707,7 @@ export default function TourDetail() {
               <div className="space-y-2 text-center text-sm text-muted-foreground">
                 <p>Secure your spot with just {tour.deposit}</p>
                 <p>Flexible payment plans available</p>
-                <p>ATOL & ABTA protected</p>
+
               </div>
 
               <Button 

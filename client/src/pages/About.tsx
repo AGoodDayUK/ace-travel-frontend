@@ -23,7 +23,7 @@ export default function About() {
     {
       icon: Award,
       title: "Quality & Safety",
-      description: "ATOL and ABTA protected with 24/7 support. Your safety and experience are our top priorities."
+      description: "24/7 support and comprehensive travel protection. Your safety and experience are our top priorities."
     }
   ];
 

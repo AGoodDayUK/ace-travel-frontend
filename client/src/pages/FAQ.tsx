@@ -123,7 +123,7 @@ export default function FAQ() {
       questions: [
         {
           q: "Is it safe to travel with ACE?",
-          a: "Safety is our top priority. All tours are ATOL and ABTA protected, we have 24/7 emergency support, and our trip managers are trained in first aid. We only use vetted accommodation and transport providers, and we have comprehensive safety protocols for all activities."
+          a: "Safety is our top priority. We have comprehensive travel protection, 24/7 emergency support, and our trip managers are trained in first aid. We only use vetted accommodation and transport providers, and we have comprehensive safety protocols for all activities."
         },
         {
           q: "What if I get sick or injured?",

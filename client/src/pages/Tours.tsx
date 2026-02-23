@@ -226,7 +226,7 @@ export default function Tours() {
               <div className="text-5xl font-bold text-primary">100%</div>
               <h3 className="text-xl font-bold">Protected</h3>
               <p className="text-muted-foreground">
-                ATOL and ABTA protected for complete peace of mind when you book
+                Complete peace of mind when you book with our trusted travel protection
               </p>
             </div>
           </div>

@@ -121,3 +121,10 @@
 - [x] Fix React error where review objects are rendered directly instead of JSX
 - [x] Ensure reviews map function returns proper JSX elements
 - [x] Rename reviews array to reviewsList to avoid conflict with reviews count
+
+## Remove Inaccurate ATOL & ABTA Text
+- [x] Remove "ATOL & ABTA protected" text from tour detail page as it's not factual
+- [x] Remove ATOL & ABTA references from Tours.tsx
+- [x] Remove ATOL & ABTA references from About.tsx
+- [x] Remove ATOL & ABTA references from FAQ.tsx
+- [x] Remove ATOL & ABTA references from HowItWorks.tsx
