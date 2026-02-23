@@ -156,3 +156,8 @@
 - [x] Replace Thailand destination card image with authentic tour photo (sunrise gathering)
 - [x] Replace Bali destination card image with authentic tour photo (Mount Batur sunrise)
 - [x] Replace Philippines destination card image with authentic tour photo (Bali beach photo as placeholder)
+
+## Homepage Hero Text Styling
+- [x] Remove text shadow from hero heading and description
+- [x] Improve text contrast with darker overlay (increased from 40% to 50%)
+- [x] Ensure clean white text stands out against background

@@ -75,12 +75,12 @@ export default function Home() {
           >
             <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ZJEyhramabXQATmY.MOV" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-foreground/40" />
+          <div className="absolute inset-0 bg-foreground/50" />
         </div>
         
         <div className="container relative z-10 text-center text-background px-4">
           <div className="space-y-4 md:space-y-8 max-w-5xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter leading-tight" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.9)' }}>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter leading-tight">
               YOUR FIRST EPIC ADVENTURE
             </h1>
             <div className="flex gap-2 md:gap-4 justify-center">
@@ -89,7 +89,7 @@ export default function Home() {
               <div className="h-2 md:h-3 w-8 md:w-12 bg-primary" />
             </div>
             
-            <p className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold max-w-3xl mx-auto leading-relaxed px-4" style={{ textShadow: '0 3px 8px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9)' }}>
+            <p className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold max-w-3xl mx-auto leading-relaxed px-4">
               Group travel experiences in Thailand, Bali, and the Philippines for 18-35 year olds.
             </p>
 
