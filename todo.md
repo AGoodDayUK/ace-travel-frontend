@@ -151,3 +151,8 @@
 
 ## Footer Margin Fix
 - [x] Remove margin-top on footer when banner section (Ready for Adventure) exists
+
+## Homepage Authentic Photos
+- [x] Replace Thailand destination card image with authentic tour photo (sunrise gathering)
+- [x] Replace Bali destination card image with authentic tour photo (Mount Batur sunrise)
+- [x] Replace Philippines destination card image with authentic tour photo (Bali beach photo as placeholder)
