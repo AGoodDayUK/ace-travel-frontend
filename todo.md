@@ -111,3 +111,8 @@
 ## Bali Explorer Route Map
 - [x] Upload Bali Explorer route map to CDN
 - [x] Add route map to tour page showing journey from Canggu to Ubud to Nusa Lembongan to Uluwatu
+
+## Tour Reviews Section
+- [x] Extract reviews from Bali Explorer page on current site
+- [x] Add reviews section with star ratings to tour detail page
+- [x] Create slider for reviews with horizontal scroll

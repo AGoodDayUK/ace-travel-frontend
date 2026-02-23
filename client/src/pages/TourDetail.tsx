@@ -167,6 +167,43 @@ export default function TourDetail() {
           image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/uMFVZdbThVsRJNgG.jpg"
         }
       ],
+      reviews: [
+        {
+          name: "Chloe",
+          date: "24/09/25",
+          rating: 5,
+          title: "Thanks Ace for another amazing trip ❤️",
+          content: "This was my second trip with Ace and once again, it was incredible! It's perfect if you want to travel but don't feel confident going solo. I met so many lovely people and had the best time. We did everything from hiking Mount Batur to visiting a turtle sanctuary and releasing baby turtles into the ocean! The places we stayed in were super clean and comfy too. Thanks again, Ace – can't wait for the next one ❤️"
+        },
+        {
+          name: "Ellie Heinsen",
+          date: "19/09/25",
+          rating: 5,
+          title: "My trip to Bali was absolutely incredible!",
+          content: "My trip to Bali was absolutely incredible! Everything from the people, the activities planned and learning the culture, it made it such an amazing experience. The Ace team were so helpful right from the beginning of booking the trip, all the way to the end! It had a perfect balance of exploring and getting to know the culture to partying! My absolute favourite was hiking Mt Batur. The views were amazing! It's my first international trip and first solo trip and I am genuinely so glad I did it with Ace. It really has boosted my confidence to travel more."
+        },
+        {
+          name: "Maisie",
+          date: "23/09/25",
+          rating: 5,
+          title: "BOOK WITH ACE…you won't regret it 🫶",
+          content: "This is my second trip with Ace! I wouldn't go with any other company because they just do everything right. I never get nervous going with them because I know they've got everything covered and I can rely on the reps. The activities they include are bucket list worthy (turtle conservation was one for me!). This won't be my last trip with them as I'm already planning my third one! The support is above and beyond and you build true friendships from the minute you arrive. I always get asked 'how was your trip' and I don't think it's anything you can fully describe without doing it. None of it would have been possible for me without ACE 🤍"
+        },
+        {
+          name: "Charlotte",
+          date: "24/04/25",
+          rating: 5,
+          title: "I couldn't recommend Ace more...",
+          content: "I couldn't recommend Ace more! from start till end it was the best time of my life! I decided to go with a group to start my travels as booking/organising can be overwhelming and I'm so glad I went with Ace. They do absolutely everything for you and you don't have to worry about a thing which is what I loved about it. Life changing experience 🩷"
+        },
+        {
+          name: "Hannah Taylor",
+          date: "22/09/25",
+          rating: 5,
+          title: "Bali explorer",
+          content: "This is my second trip with Ace and what an experience it was from start to finish. It was the trip of a lifetime, got to experience quite the turtle sanctuary and release turtles back in the ocean. We did surf lessons and climbing Mt Batur to watch the sunrise which was unbelievable! The jewellery class where I got to make my own pendent cross and also got to quad bike through forests, caves and water falls and then did white water rafting! Just all together had the time of my life all thanks to Jay and Ruby, our reps, two of the most amazing people and also Nyoman our local guide - what a man he is, taught us so much about his beautiful country, thank you so much!"
+        }
+      ],
       itinerary: [
         {
           day: "Days 1-3",
@@ -572,7 +609,40 @@ export default function TourDetail() {
               </div>
             </div>
 
-
+            {tour.reviews && Array.isArray(tour.reviews) && tour.reviews.length > 0 && (
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight mb-6">What Travelers Say</h2>
+                <div className="relative">
+                  <div className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
+                    {tour.reviews.map((review: any, index: number) => (
+                      <Card key={index} className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] snap-start p-6 border-2">
+                        <div className="flex flex-col h-full">
+                          <div className="flex items-center gap-1 mb-3">
+                            {[...Array(5)].map((_, i) => (
+                              <svg
+                                key={i}
+                                className={`w-5 h-5 ${i < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                              >
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                              </svg>
+                            ))}
+                          </div>
+                          <h3 className="font-bold text-lg mb-2">{review.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed mb-4 flex-grow">{review.content}</p>
+                          <div className="flex items-center justify-between pt-4 border-t">
+                            <span className="font-semibold">{review.name}</span>
+                            <span className="text-sm text-muted-foreground">{review.date}</span>
+                          </div>
+                        </div>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
