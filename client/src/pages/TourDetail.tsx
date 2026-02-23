@@ -171,22 +171,26 @@ export default function TourDetail() {
         {
           day: "Days 1-3",
           title: "Canggu",
-          description: "Arrive in Bali and head straight to the surf town of Canggu. Learn to surf, explore beach clubs, and soak up the laid-back vibes. Visit nearby temples and enjoy sunset at Echo Beach."
+          description: "Dive into the energetic nightlife of Canggu, Bali's hotspot for party enthusiasts. With its buzzing beach clubs, trendy bars, and vibrant music scene, Canggu promises unforgettable nights filled with excitement. Dance the night away at popular spots like Old Man's and Finns Beach Club, and experience the unique bohemian vibe that makes Canggu the ultimate destination for a lively and unforgettable party experience.",
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/fUxUwdJKjfiBzxEo.jpg"
         },
         {
           day: "Days 4-7",
           title: "Ubud",
-          description: "Cultural heart of Bali. Trek through rice terraces, visit the Monkey Forest, take a cooking class, and explore waterfalls. Swing over the jungle and visit traditional markets."
+          description: "Immerse yourself in the cultural heart of Bali with a visit to Ubud, known for its enchanting temples and lush rice terraces. Explore the iconic Tegallalang Rice Terraces, where emerald-green paddies create a stunning landscape. Visit the sacred temples, each offering a glimpse into Bali's rich spiritual heritage. Ubud's serene atmosphere and breathtaking scenery make it a perfect destination for those seeking tranquility and cultural exploration.",
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/pgiPrslXXbJpmsOo.jpg"
         },
         {
           day: "Days 8-10",
           title: "Nusa Lembongan",
-          description: "Ferry to paradise. Snorkel with manta rays, explore crystal-clear waters, visit stunning viewpoints like Kelingking Beach and Angel's Billabong. Beach-hop Mushroom Bay and Dream Beach, feel the spray at Devil's Tears, and cross the Yellow Bridge to Ceningan."
+          description: "Discover the Nusa Islands, a duo of gems renowned for their spectacular snorkelling spots and breathtaking viewpoints. Dive into the crystal-clear waters around Nusa Lembongan and Nusa Penida to explore vibrant coral reefs teeming with marine life, including the famous Manta Rays. Hike to stunning viewpoints like Kelingking Beach and Angel's Billabong for panoramic vistas that will leave you in awe.",
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FNnmoOgjRdxkwjTo.jpg"
         },
         {
           day: "Days 11-14",
           title: "Uluwatu",
-          description: "Surfer's paradise. World-class waves at Uluwatu Beach and Padang Padang. Relax at cliffside bars, watch stunning sunsets over the Indian Ocean, and celebrate your Bali adventure with beach club parties."
+          description: "Discover the surfer's paradise of Uluwatu, renowned for its world-class waves and stunning coastal scenery. With legendary surf spots like Uluwatu Beach and Padang Padang, it's the perfect destination for both seasoned surfers and beginners looking to catch their first wave. After an exhilarating day on the water, relax at the cliffside bars and watch the sunset over the Indian Ocean.",
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/fxvwBSshNYtNUdKQ.jpg"
         }
       ],
       included: [
@@ -531,22 +535,32 @@ export default function TourDetail() {
             <div>
               <h2 className="text-3xl font-bold tracking-tight mb-6">Itinerary</h2>
               <div className="space-y-6">
-                {tour.itinerary.map((item, index) => (
-                  <Card key={index} className="p-6 border-2">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 flex items-center justify-center bg-primary text-primary-foreground font-bold flex-shrink-0">
-                        {index + 1}
-                      </div>
-                      <div className="space-y-2">
+                {tour.itinerary.map((item, index) => {
+                  const itineraryItem = item as { day: string; title: string; description: string; image?: string };
+                  return (
+                    <Card key={index} className="p-6 border-2">
+                      <div className="flex flex-col md:flex-row items-start gap-6">
+                        {itineraryItem.image && (
+                          <img 
+                            src={itineraryItem.image} 
+                            alt={itineraryItem.title}
+                            className="w-full md:w-48 h-48 object-cover rounded-lg flex-shrink-0"
+                          />
+                        )}
+                      <div className="flex-1 space-y-3">
                         <div className="flex items-center gap-3">
-                          <h3 className="text-xl font-bold">{item.title}</h3>
-                          <Badge variant="outline">{item.day}</Badge>
+                          <div className="w-10 h-10 flex items-center justify-center bg-primary text-primary-foreground font-bold flex-shrink-0 rounded">
+                            {index + 1}
+                          </div>
+                          <h3 className="text-xl font-bold">{itineraryItem.title}</h3>
+                          <Badge variant="outline">{itineraryItem.day}</Badge>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                        <p className="text-muted-foreground leading-relaxed">{itineraryItem.description}</p>
                       </div>
                     </div>
                   </Card>
-                ))}
+                  );
+                })}
               </div>
             </div>
 

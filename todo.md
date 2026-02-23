@@ -97,3 +97,7 @@
 - [x] Add highlights to Bali Explorer tour with images and descriptions
 - [x] Fix Bali Explorer price to £1,199
 - [x] Update Bali Explorer itinerary to match current site (Canggu → Ubud → Nusa Lembongan → Uluwatu)
+
+## Bali Explorer Itinerary Images
+- [x] Add 4 itinerary location images to Bali Explorer tour (Canggu, Uluwatu, Ubud, Nusa Lembongan)
+- [x] Update itinerary rendering to display images alongside descriptions
