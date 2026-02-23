@@ -11,6 +11,7 @@ export default function Tours() {
   const tours = [
     {
       id: 1,
+      slug: "thailand-island-hopper",
       name: "Thailand Island Hopper",
       destination: "Thailand",
       duration: "21 days",
@@ -27,15 +28,16 @@ export default function Tours() {
     },
     {
       id: 2,
-      name: "Thailand Beach & Culture",
+      slug: "thailand-intro",
+      name: "Thailand Intro",
       destination: "Thailand",
-      duration: "14 days",
-      price: "£1,299",
+      duration: "10 days",
+      price: "£999",
       deposit: "£60",
       groupSize: "15-30",
       ageRange: "18-35",
-      image: "https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&q=80",
-      highlights: ["Bangkok", "Ayutthaya", "Phuket", "Krabi"],
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/hCjqPFKzQfIcAvQa.jpg",
+      highlights: ["Chiang Mai", "Yoga Retreats", "Wellness", "Temples"],
       rating: 4.8,
       reviews: 189,
       availability: "Available",
@@ -43,30 +45,15 @@ export default function Tours() {
     },
     {
       id: 3,
-      name: "Thailand Express",
-      destination: "Thailand",
-      duration: "10 days",
-      price: "£899",
-      deposit: "£60",
-      groupSize: "15-30",
-      ageRange: "18-35",
-      image: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=80",
-      highlights: ["Bangkok", "Koh Samui", "Koh Phangan"],
-      rating: 4.7,
-      reviews: 156,
-      availability: "Available",
-      nextDeparture: "5 Apr 2026"
-    },
-    {
-      id: 4,
-      name: "Bali Adventure",
+      slug: "bali-explorer",
+      name: "Bali Explorer",
       destination: "Bali",
       duration: "14 days",
       price: "£1,399",
       deposit: "£60",
       groupSize: "15-30",
       ageRange: "18-35",
-      image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bHljzvhImvBUkIgg.JPG",
       highlights: ["Mt. Batur Trek", "Ubud", "Canggu", "Nusa Islands"],
       rating: 4.9,
       reviews: 203,
@@ -74,56 +61,25 @@ export default function Tours() {
       nextDeparture: "12 Mar 2026"
     },
     {
-      id: 5,
-      name: "Bali Explorer",
+      id: 4,
+      slug: "bali-island-hopper",
+      name: "Bali Island Hopper",
       destination: "Bali",
-      duration: "10 days",
-      price: "£1,099",
-      deposit: "£60",
-      groupSize: "15-30",
-      ageRange: "18-35",
-      image: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80",
-      highlights: ["Ubud", "Seminyak", "Temples", "Rice Terraces"],
-      rating: 4.8,
-      reviews: 178,
-      availability: "Available",
-      nextDeparture: "19 Mar 2026"
-    },
-    {
-      id: 6,
-      name: "Philippines Paradise",
-      destination: "Philippines",
-      duration: "14 days",
-      price: "£1,499",
-      deposit: "£60",
-      groupSize: "15-30",
-      ageRange: "18-35",
-      image: "https://images.unsplash.com/photo-1580452735834-d1c8a3c1e4a8?w=800&q=80",
-      highlights: ["El Nido", "Coron", "Secret Lagoons", "Island Hopping"],
-      rating: 4.9,
-      reviews: 167,
-      availability: "Available",
-      nextDeparture: "8 Apr 2026"
-    },
-    {
-      id: 7,
-      name: "Philippines Island Escape",
-      destination: "Philippines",
       duration: "10 days",
       price: "£1,199",
       deposit: "£60",
       groupSize: "15-30",
       ageRange: "18-35",
-      image: "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=800&q=80",
-      highlights: ["Palawan", "El Nido", "Beach Camping", "Snorkeling"],
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/GsVJxEVQBngZgOoI.JPG",
+      highlights: ["Nusa Islands", "Ubud", "Seminyak", "Beach Clubs"],
       rating: 4.8,
-      reviews: 142,
+      reviews: 156,
       availability: "Available",
-      nextDeparture: "15 Apr 2026"
+      nextDeparture: "18 Mar 2026"
     }
   ];
 
-  const destinations = ["all", "Thailand", "Bali", "Philippines"];
+  const destinations = ["all", "Thailand", "Bali"];
 
   const filteredTours = selectedDestination === "all" 
     ? tours 
@@ -237,7 +193,7 @@ export default function Tours() {
                     asChild
                     className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
                   >
-                    <Link href={`/tour/${tour.id}`} className="flex items-center gap-2">
+                    <Link href={`/tour/${tour.slug}`} className="flex items-center gap-2">
                       View Tour
                       <ArrowRight className="w-4 h-4" />
                     </Link>

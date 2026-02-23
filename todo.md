@@ -82,3 +82,10 @@
 - [x] Upload 6 Thailand North photos to CDN
 - [ ] Create Thailand North wellness/yoga retreat tour page
 - [ ] Add Thailand North photos to gallery
+
+## Tour Name Corrections
+- [x] Rename "Bali Adventure" to "Bali Explorer"
+- [x] Create "Thailand Intro" tour page with Thailand North wellness photos
+- [x] Create "Bali Island Hopper" tour page
+- [x] Update Tours page to show all 4 tours with correct names
+- [x] Ensure tour routing matches new names

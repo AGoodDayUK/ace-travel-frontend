@@ -92,9 +92,9 @@ export default function TourDetail() {
         "Tips for guides and drivers"
       ]
     },
-    "bali-adventure": {
-      id: "bali-adventure",
-      name: "Bali Adventure",
+    "bali-explorer": {
+      id: "bali-explorer",
+      name: "Bali Explorer",
       destination: "Bali",
       duration: "14 days",
       price: "£1,399",
@@ -251,6 +251,160 @@ export default function TourDetail() {
         "Personal expenses",
         "Optional diving courses",
         "Environmental fees (approx £30 total)",
+        "Tips"
+      ]
+    },
+    "thailand-intro": {
+      id: "thailand-intro",
+      name: "Thailand Intro",
+      destination: "Thailand",
+      duration: "10 days",
+      price: "£999",
+      deposit: "£60",
+      groupSize: "15-30",
+      ageRange: "18-35",
+      rating: 4.8,
+      reviews: 189,
+      nextDeparture: "22 Mar 2026",
+      hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/hCjqPFKzQfIcAvQa.jpg",
+      gallery: [
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/hCjqPFKzQfIcAvQa.jpg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/mirOuoHWMgcSDWGB.jpg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/QrYFhzyXjBuRJxLn.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/BJGrLpWkZZByQqyU.JPG"
+      ],
+      description: "Perfect introduction to Thailand. Experience wellness retreats in Chiang Mai's mountains, practice yoga overlooking rice terraces, explore colorful flower gardens, and find your zen with sunrise meditation sessions. This 10-day journey balances cultural immersion with relaxation and adventure.",
+      highlights: [
+        "Daily yoga and meditation sessions in mountain retreats",
+        "Chiang Mai temple exploration and cultural experiences",
+        "Sunrise gatherings with mountain views",
+        "Visit to stunning flower gardens and botanical parks",
+        "Thai massage and wellness workshops",
+        "Healthy farm-to-table meals",
+        "Night market exploration",
+        "Ethical elephant sanctuary visit"
+      ],
+      itinerary: [
+        {
+          day: "Days 1-2",
+          title: "Chiang Mai Arrival",
+          description: "Arrive in Chiang Mai and settle into your wellness retreat. Evening orientation, welcome dinner, and gentle yoga session to ease into the journey."
+        },
+        {
+          day: "Days 3-5",
+          title: "Mountain Wellness Retreat",
+          description: "Daily yoga and meditation sessions with mountain views. Visit local temples, explore flower gardens, and enjoy healthy Thai cuisine. Evening sunset meditation and group bonding."
+        },
+        {
+          day: "Days 6-7",
+          title: "Cultural Immersion",
+          description: "Explore Chiang Mai's old city, visit night markets, take a Thai cooking class, and experience traditional Thai massage. Balance activity with relaxation."
+        },
+        {
+          day: "Day 8",
+          title: "Elephant Sanctuary",
+          description: "Visit an ethical elephant sanctuary. Learn about conservation, feed and bathe elephants in their natural habitat. No riding, just respectful interaction."
+        },
+        {
+          day: "Days 9-10",
+          title: "Final Reflections",
+          description: "Sunrise meditation session, final yoga practice, and farewell ceremony. Depart with new friends and a refreshed mindset."
+        }
+      ],
+      included: [
+        "9 nights accommodation (wellness retreat and boutique hotels)",
+        "Daily breakfast and 6 healthy group dinners",
+        "All yoga and meditation sessions",
+        "Temple entrance fees and activities",
+        "Expert wellness guide throughout",
+        "Airport pickup",
+        "All local transport",
+        "24/7 support"
+      ],
+      notIncluded: [
+        "International flights",
+        "Travel insurance",
+        "Lunches and some dinners",
+        "Personal expenses",
+        "Optional spa treatments",
+        "Tips for guides"
+      ]
+    },
+    "bali-island-hopper": {
+      id: "bali-island-hopper",
+      name: "Bali Island Hopper",
+      destination: "Bali",
+      duration: "10 days",
+      price: "£1,199",
+      deposit: "£60",
+      groupSize: "15-30",
+      ageRange: "18-35",
+      rating: 4.8,
+      reviews: 156,
+      nextDeparture: "18 Mar 2026",
+      hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/GsVJxEVQBngZgOoI.JPG",
+      gallery: [
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/GsVJxEVQBngZgOoI.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/cAbbFXQZkcbhEkDU.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/xgPTVQkkzSGeYzDk.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/tOvtDmcHfUwaukLM.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/AVctsZxyffxrIbVN.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/nfzqJSNUdoFmwGhl.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/qivcwmrDcckGwvru.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ujOcrPuepmZuwPMB.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/PXlQnTbTVcJJJjpj.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/UtZydstnoHgAJiUA.JPG"
+      ],
+      description: "Fast-paced Bali island hopping adventure. Hit the highlights in 10 action-packed days - from Nusa Islands' crystal waters to Ubud's cultural heart. Perfect for travelers short on time but big on adventure.",
+      highlights: [
+        "Nusa Islands day trips (Nusa Lembongan & Nusa Penida)",
+        "Snorkeling with manta rays",
+        "Kelingking Beach (T-Rex cliff) visit",
+        "Ubud rice terrace trekking",
+        "Waterfall exploration",
+        "Beach club parties in Seminyak",
+        "Temple visits and cultural experiences",
+        "Sunset beach dinners"
+      ],
+      itinerary: [
+        {
+          day: "Days 1-2",
+          title: "Seminyak Beach Vibes",
+          description: "Arrive in Bali and head to Seminyak. Beach club welcome party, explore the beach, and get to know your group. Sunset dinner on the sand."
+        },
+        {
+          day: "Days 3-5",
+          title: "Nusa Islands Adventure",
+          description: "Ferry to Nusa Lembongan. Snorkel with manta rays, visit Kelingking Beach on Nusa Penida, cliff jump at Blue Lagoon, and relax on pristine beaches. Island paradise at its finest."
+        },
+        {
+          day: "Days 6-8",
+          title: "Ubud Culture & Nature",
+          description: "Head to Ubud's cultural heart. Trek rice terraces, chase waterfalls, visit temples, explore the Monkey Forest, and experience traditional Balinese culture. Evening fire dance performance."
+        },
+        {
+          day: "Days 9-10",
+          title: "Back to Seminyak",
+          description: "Return to Seminyak for final beach days. Optional surf lessons, spa treatments, or shopping. Farewell beach party and celebration dinner."
+        }
+      ],
+      included: [
+        "9 nights accommodation (beach hotels and island bungalows)",
+        "Daily breakfast and 5 group dinners",
+        "All island hopping tours and boat transfers",
+        "Snorkel gear rental",
+        "Expert trip manager",
+        "Airport pickup",
+        "All transport between destinations",
+        "24/7 support"
+      ],
+      notIncluded: [
+        "International flights",
+        "Travel insurance",
+        "Lunches and some dinners",
+        "Personal expenses",
+        "Optional activities (surfing, spa)",
+        "Visa on arrival fee (approx $35 USD)",
         "Tips"
       ]
     }
