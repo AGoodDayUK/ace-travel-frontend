@@ -533,7 +533,15 @@ export default function TourDetail() {
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold tracking-tight mb-6">Itinerary</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-6">Your Journey</h2>
+              <div className="mb-8 bg-accent/10 p-8 rounded-lg">
+                <img 
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/trjSBWQKzHaQYLlx.webp"
+                  alt="Bali Explorer Route Map"
+                  className="w-full max-w-3xl mx-auto"
+                />
+              </div>
+              <h3 className="text-2xl font-bold tracking-tight mb-6">Day by Day</h3>
               <div className="space-y-6">
                 {tour.itinerary.map((item, index) => {
                   const itineraryItem = item as { day: string; title: string; description: string; image?: string };
@@ -564,56 +572,7 @@ export default function TourDetail() {
               </div>
             </div>
 
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight mb-6">Photo Gallery</h2>
-              <div className="relative aspect-video overflow-hidden bg-muted">
-                <img 
-                  src={tour.gallery[currentImageIndex]}
-                  alt={`Gallery ${currentImageIndex + 1}`}
-                  className="w-full h-full object-cover"
-                />
-                <button
-                  onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/80 hover:bg-background flex items-center justify-center transition-kinetic"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button
-                  onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/80 hover:bg-background flex items-center justify-center transition-kinetic"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                  {tour.gallery.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={`w-2 h-2 transition-kinetic ${
-                        index === currentImageIndex ? 'bg-background' : 'bg-background/40'
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
-              <div className="grid grid-cols-4 gap-2 mt-4">
-                {tour.gallery.map((img, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`aspect-video overflow-hidden border-2 transition-kinetic ${
-                      index === currentImageIndex ? 'border-primary' : 'border-transparent'
-                    }`}
-                  >
-                    <img 
-                      src={img}
-                      alt={`Thumbnail ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </button>
-                ))}
-              </div>
-            </div>
+
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
@@ -693,12 +652,52 @@ export default function TourDetail() {
         </div>
       </section>
 
-      <section className="bg-muted py-16">
-        <div className="container text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">
+      <section className="py-16 bg-background">
+        <div className="container">
+          <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Photo Gallery</h2>
+        </div>
+        <div className="w-full overflow-hidden">
+          <div className="relative">
+            <div className="flex gap-4 px-4 md:px-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              {tour.gallery.map((img, index) => (
+                <div 
+                  key={index}
+                  className="flex-shrink-0 snap-start w-[85vw] md:w-[calc(25%-12px)] aspect-[4/3] overflow-hidden rounded-lg"
+                >
+                  <img 
+                    src={img}
+                    alt={`Gallery ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={prevImage}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/90 hover:bg-background flex items-center justify-center transition-kinetic rounded-full shadow-lg"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/90 hover:bg-background flex items-center justify-center transition-kinetic rounded-full shadow-lg"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section 
+        className="py-24 bg-cover bg-center bg-no-repeat relative"
+        style={{ backgroundImage: `url(${tour.hero})` }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="container text-center space-y-8 relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
             Ready for Your Adventure?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Join hundreds of travelers who have already experienced this incredible journey
           </p>
           <div className="flex flex-wrap gap-4 justify-center">

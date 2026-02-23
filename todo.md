@@ -101,3 +101,13 @@
 ## Bali Explorer Itinerary Images
 - [x] Add 4 itinerary location images to Bali Explorer tour (Canggu, Uluwatu, Ubud, Nusa Lembongan)
 - [x] Update itinerary rendering to display images alongside descriptions
+
+## Tour Detail Gallery Redesign
+- [x] Create modern full-width slider showing 4 images on desktop, 1 on mobile
+- [x] Add peek effect to show next image on mobile
+- [x] Move gallery above "Ready for Adventure" section
+- [x] Update "Ready for Adventure" to use single background image instead of grid
+
+## Bali Explorer Route Map
+- [x] Upload Bali Explorer route map to CDN
+- [x] Add route map to tour page showing journey from Canggu to Ubud to Nusa Lembongan to Uluwatu
