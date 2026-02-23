@@ -73,7 +73,7 @@ export default function Home() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="https://cdn.pixabay.com/video/2024/02/21/201271-915031695_large.mp4" type="video/mp4" />
+            <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ZJEyhramabXQATmY.MOV" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-foreground/40" />
         </div>

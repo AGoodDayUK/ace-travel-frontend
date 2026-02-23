@@ -43,37 +43,34 @@ export default function Header() {
         <div className="container">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link href="/">
-              <a className="text-2xl md:text-3xl font-bold tracking-tight kinetic-underline">
-                ACE
-              </a>
+            <Link href="/" className="text-2xl md:text-3xl font-bold tracking-tight kinetic-underline">
+              ACE
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <a 
-                    className={`text-sm font-medium tracking-tight kinetic-underline transition-kinetic ${
-                      location === link.href ? 'text-primary' : 'text-foreground hover:text-primary'
-                    }`}
-                  >
-                    {link.label}
-                  </a>
+                <Link 
+                  key={link.href} 
+                  href={link.href}
+                  className={`text-sm font-medium tracking-tight kinetic-underline transition-kinetic ${
+                    location === link.href ? 'text-primary' : 'text-foreground hover:text-primary'
+                  }`}
+                >
+                  {link.label}
                 </Link>
               ))}
             </nav>
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Button 
-                asChild
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight transition-kinetic"
-              >
-                <Link href="/tours">
-                  <a>Book Now</a>
-                </Link>
-              </Button>
+              <Link href="/tours">
+                <Button 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight transition-kinetic"
+                >
+                  Book Now
+                </Button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -96,25 +93,25 @@ export default function Header() {
           <div className="md:hidden bg-background border-t border-border animate-fade-in">
             <nav className="container py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <a 
-                    className={`text-lg font-medium tracking-tight transition-kinetic ${
-                      location === link.href ? 'text-primary' : 'text-foreground'
-                    }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </a>
+                <Link 
+                  key={link.href} 
+                  href={link.href}
+                  className={`text-lg font-medium tracking-tight transition-kinetic ${
+                    location === link.href ? 'text-primary' : 'text-foreground'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
                 </Link>
               ))}
-              <Button 
-                asChild
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight mt-4"
-              >
-                <Link href="/tours">
-                  <a onClick={() => setIsMobileMenuOpen(false)}>Book Now</a>
-                </Link>
-              </Button>
+              <Link href="/tours">
+                <Button 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight mt-4"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Book Now
+                </Button>
+              </Link>
             </nav>
           </div>
         )}
