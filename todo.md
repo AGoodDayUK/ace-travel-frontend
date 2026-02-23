@@ -134,3 +134,20 @@
 - [x] Reduce intro text size (h2 from 4xl/5xl to 3xl/4xl, p from xl to lg)
 - [x] Reduce review text size and make content snappier (reduced padding, text sizes, made reviews concise)
 - [x] Make "View All Tours" button text white/visible (added text-white, border-white, hover:bg-white/10)
+
+## Gallery Slider Improvements
+- [x] Add mouse drag functionality to photo gallery
+- [x] Add mobile swipe support to photo gallery (native touch scrolling)
+- [x] Add left/right arrow buttons for gallery navigation
+- [x] Ensure smooth scrolling with snap points
+
+## Reviews Section Trustpilot Redesign
+- [x] Remove emojis from review content
+- [x] Change star color to Trustpilot green (#00B67A)
+- [x] Add "5.0 Based on hundreds of reviews" header with Trustpilot styling
+- [x] Add more reviews to slider (added Dean Garrity review, now 6 total)
+- [x] Make reviews slider scrollable with native touch support
+- [x] Use modern, professional card design with border-top separator
+
+## Footer Margin Fix
+- [x] Remove margin-top on footer when banner section (Ready for Adventure) exists

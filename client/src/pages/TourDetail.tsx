@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRoute, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -8,6 +8,10 @@ import { Calendar, Users, MapPin, Star, Clock, Check, X, ChevronLeft, ChevronRig
 export default function TourDetail() {
   const [, params] = useRoute("/tour/:id");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   const tours = {
     "thailand-island-hopper": {
@@ -170,38 +174,45 @@ export default function TourDetail() {
       reviewsList: [
         {
           name: "Chloe",
-          date: "24/09/25",
+          date: "24 Sep 2025",
           rating: 5,
-          title: "Thanks Ace for another amazing trip ❤️",
-          content: "Second Ace trip and incredible again! Perfect for solo travelers. Met amazing people, hiked Mt Batur, released baby turtles! Clean, comfy stays. Can't wait for number three! ❤️"
+          title: "Thanks Ace for another amazing trip",
+          content: "Second Ace trip and incredible again! Perfect for solo travelers. Met amazing people, hiked Mt Batur, released baby turtles! Clean, comfy stays. Can't wait for number three!"
         },
         {
           name: "Ellie Heinsen",
-          date: "19/09/25",
+          date: "19 Sep 2025",
           rating: 5,
-          title: "My trip to Bali was absolutely incredible!",
+          title: "My trip to Bali was absolutely incredible",
           content: "Absolutely incredible! Perfect balance of culture, exploring, and partying. Ace team was helpful from booking to end. Mt Batur hike was unforgettable! First solo trip and it boosted my confidence to travel more."
         },
         {
           name: "Maisie",
-          date: "23/09/25",
+          date: "23 Sep 2025",
           rating: 5,
-          title: "BOOK WITH ACE…you won't regret it 🫶",
-          content: "Second trip with Ace! They do everything right. Never nervous because everything's covered. Bucket list activities like turtle conservation! Already planning trip three. Amazing support and instant friendships. 🤍"
+          title: "BOOK WITH ACE you won't regret it",
+          content: "Second trip with Ace! They do everything right. Never nervous because everything's covered. Bucket list activities like turtle conservation! Already planning trip three. Amazing support and instant friendships."
         },
         {
           name: "Charlotte",
-          date: "24/04/25",
+          date: "24 Apr 2025",
           rating: 5,
-          title: "I couldn't recommend Ace more...",
-          content: "Best time of my life! Perfect for first-time travelers. Ace handles everything so you don't worry about a thing. Life changing experience! 🩷"
+          title: "I couldn't recommend Ace more",
+          content: "Best time of my life! Perfect for first-time travelers. Ace handles everything so you don't worry about a thing. Life changing experience!"
         },
         {
           name: "Hannah Taylor",
-          date: "22/09/25",
+          date: "22 Sep 2025",
           rating: 5,
           title: "Bali explorer",
           content: "Trip of a lifetime! Released turtles, surfed, climbed Mt Batur for sunrise, made jewelry, quad biked through waterfalls, white water rafted! Jay, Ruby, and Nyoman were incredible guides. Best experience ever!"
+        },
+        {
+          name: "Dean Garrity",
+          date: "18 Sep 2025",
+          rating: 5,
+          title: "Unforgettable Bali adventure",
+          content: "Amazing experience from start to finish. The reps were fantastic and the activities were perfectly balanced. Mt Batur sunrise was breathtaking and the turtle sanctuary was a highlight. Would definitely travel with Ace again!"
         }
       ],
       itinerary: [
@@ -481,12 +492,45 @@ export default function TourDetail() {
   const tourId = params?.id || "thailand-island-hopper";
   const tour = tours[tourId as keyof typeof tours] || tours["thailand-island-hopper"];
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % tour.gallery.length);
+  const scrollGallery = (direction: 'left' | 'right') => {
+    if (!galleryRef.current) return;
+    const scrollAmount = galleryRef.current.clientWidth * 0.8;
+    galleryRef.current.scrollBy({
+      left: direction === 'right' ? scrollAmount : -scrollAmount,
+      behavior: 'smooth'
+    });
   };
 
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + tour.gallery.length) % tour.gallery.length);
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!galleryRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - galleryRef.current.offsetLeft);
+    setScrollLeft(galleryRef.current.scrollLeft);
+    galleryRef.current.style.cursor = 'grabbing';
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !galleryRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - galleryRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    galleryRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    if (galleryRef.current) {
+      galleryRef.current.style.cursor = 'grab';
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      setIsDragging(false);
+      if (galleryRef.current) {
+        galleryRef.current.style.cursor = 'grab';
+      }
+    }
   };
 
   return (
@@ -611,30 +655,50 @@ export default function TourDetail() {
 
             {tour.reviewsList && Array.isArray(tour.reviewsList) && tour.reviewsList.length > 0 && (
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6">What Travelers Say</h2>
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="flex items-center gap-2">
+                    <span className="text-4xl font-bold">5.0</span>
+                    <div>
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <svg
+                            key={i}
+                            className="w-5 h-5 fill-current"
+                            style={{ color: '#00B67A' }}
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
+                      <p className="text-sm text-muted-foreground">Based on hundreds of reviews</p>
+                    </div>
+                  </div>
+                </div>
                 <div className="relative">
-                  <div className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
+                  <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
                     {tour.reviewsList.map((review: any, index: number) => (
-                        <Card key={index} className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] snap-start p-4 border-2">
+                        <Card key={index} className="flex-shrink-0 w-full md:w-[calc(33.333%-0.75rem)] snap-start p-6 border">
                         <div className="flex flex-col h-full">
-                          <div className="flex items-center gap-1 mb-2">
+                          <div className="flex items-center gap-1 mb-3">
                             {[...Array(5)].map((_, i) => (
                               <svg
                                 key={i}
-                                className={`w-5 h-5 ${i < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+                                className="w-5 h-5 fill-current"
+                                style={{ color: '#00B67A' }}
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20"
-                                fill="currentColor"
                               >
                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                               </svg>
                             ))}
                           </div>
-                             <h3 className="text-base font-bold mb-1">{review.title}</h3>
-                          <p className="text-sm text-muted-foreground mb-3 flex-grow line-clamp-3">{review.content}</p>
-                          <div className="text-xs text-muted-foreground">
-                            <p className="font-medium">{review.name}</p>
-                            <p>{review.date}</p>
+                          <h3 className="font-bold mb-2">{review.title}</h3>
+                          <p className="text-sm text-muted-foreground mb-4 flex-grow">{review.content}</p>
+                          <div className="text-sm text-muted-foreground border-t pt-3">
+                            <p className="font-semibold text-foreground">{review.name}</p>
+                            <p className="text-xs">{review.date}</p>
                           </div>
                         </div>
                       </Card>
@@ -728,7 +792,15 @@ export default function TourDetail() {
         </div>
         <div className="w-full overflow-hidden">
           <div className="relative">
-            <div className="flex gap-4 px-4 md:px-8 overflow-x-scroll snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+            <div 
+              ref={galleryRef}
+              className="flex gap-4 px-4 md:px-8 overflow-x-scroll snap-x snap-mandatory scrollbar-hide cursor-grab select-none" 
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseLeave}
+            >
               {tour.gallery.map((img, index) => (
                 <div 
                   key={index}
@@ -743,14 +815,14 @@ export default function TourDetail() {
               ))}
             </div>
             <button
-              onClick={prevImage}
-              className="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/90 hover:bg-background flex items-center justify-center transition-kinetic rounded-full shadow-lg"
+              onClick={() => scrollGallery('left')}
+              className="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/90 hover:bg-background flex items-center justify-center transition-kinetic rounded-full shadow-lg z-10"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
-              onClick={nextImage}
-              className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/90 hover:bg-background flex items-center justify-center transition-kinetic rounded-full shadow-lg"
+              onClick={() => scrollGallery('right')}
+              className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/90 hover:bg-background flex items-center justify-center transition-kinetic rounded-full shadow-lg z-10"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
