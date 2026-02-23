@@ -94,7 +94,8 @@ export default function TourDetail() {
         "Optional activities",
         "Visa fees (if applicable)",
         "Tips for guides and drivers"
-      ]
+      ],
+      reviewsList: []
     },
     "bali-explorer": {
       id: "bali-explorer",
@@ -257,7 +258,7 @@ export default function TourDetail() {
         "Lunches and some dinners",
         "Personal expenses",
         "Optional activities",
-        "Visa on arrival fee (approx $35 USD)",
+        "Visa fees",
         "Tips"
       ]
     },
@@ -331,7 +332,8 @@ export default function TourDetail() {
         "Optional diving courses",
         "Environmental fees (approx £30 total)",
         "Tips"
-      ]
+      ],
+      reviewsList: []
     },
     "thailand-intro": {
       id: "thailand-intro",
@@ -407,7 +409,8 @@ export default function TourDetail() {
         "Personal expenses",
         "Optional spa treatments",
         "Tips for guides"
-      ]
+      ],
+      reviewsList: []
     },
     "bali-island-hopper": {
       id: "bali-island-hopper",
@@ -485,7 +488,8 @@ export default function TourDetail() {
         "Optional activities (surfing, spa)",
         "Visa on arrival fee (approx $35 USD)",
         "Tips"
-      ]
+      ],
+      reviewsList: []
     }
   };
 
@@ -672,12 +676,12 @@ export default function TourDetail() {
                           </svg>
                         ))}
                       </div>
-                      <p className="text-sm text-muted-foreground">Based on hundreds of reviews</p>
+                      <p className="text-sm text-muted-foreground">Based on hundreds of traveller reviews</p>
                     </div>
                   </div>
                 </div>
                 <div className="relative">
-                  <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
+                  <div className="flex gap-4 overflow-x-scroll pb-4 snap-x snap-mandatory scrollbar-hide touch-pan-x">
                     {tour.reviewsList.map((review: any, index: number) => (
                         <Card key={index} className="flex-shrink-0 w-full md:w-[calc(33.333%-0.75rem)] snap-start p-6 border">
                         <div className="flex flex-col h-full">
@@ -860,6 +864,24 @@ export default function TourDetail() {
           </div>
         </div>
       </section>
+
+      {/* Sticky Mobile Book Now CTA */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background border-t border-border shadow-lg">
+        <div className="container py-3">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <div className="text-xl font-bold text-primary">{tour.price}</div>
+              <div className="text-xs text-muted-foreground">{tour.deposit} deposit</div>
+            </div>
+            <Button 
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8"
+            >
+              Book Now
+            </Button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

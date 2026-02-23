@@ -174,3 +174,12 @@
 ## Further Reduce Tour Description
 - [x] Make tour description text even smaller for mobile (text-sm md:text-base)
 - [x] Shorten Bali Explorer description content from 3 sentences to 2 for better mobile fit
+
+## Reviews Section Updates
+- [x] Change "Based on hundreds of reviews" to "Based on hundreds of traveller reviews"
+- [x] Fix reviews slider not working on mobile (add touch scrolling)
+
+## Mobile Book Now CTA
+- [x] Add sticky "Book Now" button at bottom of screen on mobile
+- [x] Hide sticky CTA on desktop (sidebar already has booking info)
+- [x] Ensure CTA is always visible and accessible while scrolling
