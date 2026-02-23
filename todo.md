@@ -183,3 +183,9 @@
 - [x] Add sticky "Book Now" button at bottom of screen on mobile
 - [x] Hide sticky CTA on desktop (sidebar already has booking info)
 - [x] Ensure CTA is always visible and accessible while scrolling
+
+## Fix Reviews Slider Scrolling
+- [x] Investigate why reviews slider is not scrolling horizontally
+- [x] Ensure reviews cards are properly laid out for horizontal scroll
+- [x] Test scrolling on both desktop and mobile
+- [x] Add navigation arrows for desktop reviews slider

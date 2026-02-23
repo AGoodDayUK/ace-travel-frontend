@@ -9,6 +9,7 @@ export default function TourDetail() {
   const [, params] = useRoute("/tour/:id");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const galleryRef = useRef<HTMLDivElement>(null);
+  const reviewsRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
@@ -681,9 +682,12 @@ export default function TourDetail() {
                   </div>
                 </div>
                 <div className="relative">
-                  <div className="flex gap-4 overflow-x-scroll pb-4 snap-x snap-mandatory scrollbar-hide touch-pan-x">
+                  <div 
+                    ref={reviewsRef}
+                    className="flex gap-4 overflow-x-scroll pb-4 snap-x snap-mandatory scrollbar-hide touch-pan-x"
+                  >
                     {tour.reviewsList.map((review: any, index: number) => (
-                        <Card key={index} className="flex-shrink-0 w-full md:w-[calc(33.333%-0.75rem)] snap-start p-6 border">
+                        <Card key={index} className="flex-shrink-0 w-[85vw] md:w-[400px] snap-start p-6 border">
                         <div className="flex flex-col h-full">
                           <div className="flex items-center gap-1 mb-3">
                             {[...Array(5)].map((_, i) => (
@@ -708,6 +712,26 @@ export default function TourDetail() {
                       </Card>
                     ))}
                   </div>
+                  <button
+                    onClick={() => {
+                      if (reviewsRef.current) {
+                        reviewsRef.current.scrollBy({ left: -420, behavior: 'smooth' });
+                      }
+                    }}
+                    className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-10"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button
+                    onClick={() => {
+                      if (reviewsRef.current) {
+                        reviewsRef.current.scrollBy({ left: 420, behavior: 'smooth' });
+                      }
+                    }}
+                    className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-10"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
                 </div>
               </div>
             )}
