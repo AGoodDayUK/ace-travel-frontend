@@ -173,35 +173,35 @@ export default function TourDetail() {
           date: "24/09/25",
           rating: 5,
           title: "Thanks Ace for another amazing trip ❤️",
-          content: "This was my second trip with Ace and once again, it was incredible! It's perfect if you want to travel but don't feel confident going solo. I met so many lovely people and had the best time. We did everything from hiking Mount Batur to visiting a turtle sanctuary and releasing baby turtles into the ocean! The places we stayed in were super clean and comfy too. Thanks again, Ace – can't wait for the next one ❤️"
+          content: "Second Ace trip and incredible again! Perfect for solo travelers. Met amazing people, hiked Mt Batur, released baby turtles! Clean, comfy stays. Can't wait for number three! ❤️"
         },
         {
           name: "Ellie Heinsen",
           date: "19/09/25",
           rating: 5,
           title: "My trip to Bali was absolutely incredible!",
-          content: "My trip to Bali was absolutely incredible! Everything from the people, the activities planned and learning the culture, it made it such an amazing experience. The Ace team were so helpful right from the beginning of booking the trip, all the way to the end! It had a perfect balance of exploring and getting to know the culture to partying! My absolute favourite was hiking Mt Batur. The views were amazing! It's my first international trip and first solo trip and I am genuinely so glad I did it with Ace. It really has boosted my confidence to travel more."
+          content: "Absolutely incredible! Perfect balance of culture, exploring, and partying. Ace team was helpful from booking to end. Mt Batur hike was unforgettable! First solo trip and it boosted my confidence to travel more."
         },
         {
           name: "Maisie",
           date: "23/09/25",
           rating: 5,
           title: "BOOK WITH ACE…you won't regret it 🫶",
-          content: "This is my second trip with Ace! I wouldn't go with any other company because they just do everything right. I never get nervous going with them because I know they've got everything covered and I can rely on the reps. The activities they include are bucket list worthy (turtle conservation was one for me!). This won't be my last trip with them as I'm already planning my third one! The support is above and beyond and you build true friendships from the minute you arrive. I always get asked 'how was your trip' and I don't think it's anything you can fully describe without doing it. None of it would have been possible for me without ACE 🤍"
+          content: "Second trip with Ace! They do everything right. Never nervous because everything's covered. Bucket list activities like turtle conservation! Already planning trip three. Amazing support and instant friendships. 🤍"
         },
         {
           name: "Charlotte",
           date: "24/04/25",
           rating: 5,
           title: "I couldn't recommend Ace more...",
-          content: "I couldn't recommend Ace more! from start till end it was the best time of my life! I decided to go with a group to start my travels as booking/organising can be overwhelming and I'm so glad I went with Ace. They do absolutely everything for you and you don't have to worry about a thing which is what I loved about it. Life changing experience 🩷"
+          content: "Best time of my life! Perfect for first-time travelers. Ace handles everything so you don't worry about a thing. Life changing experience! 🩷"
         },
         {
           name: "Hannah Taylor",
           date: "22/09/25",
           rating: 5,
           title: "Bali explorer",
-          content: "This is my second trip with Ace and what an experience it was from start to finish. It was the trip of a lifetime, got to experience quite the turtle sanctuary and release turtles back in the ocean. We did surf lessons and climbing Mt Batur to watch the sunrise which was unbelievable! The jewellery class where I got to make my own pendent cross and also got to quad bike through forests, caves and water falls and then did white water rafting! Just all together had the time of my life all thanks to Jay and Ruby, our reps, two of the most amazing people and also Nyoman our local guide - what a man he is, taught us so much about his beautiful country, thank you so much!"
+          content: "Trip of a lifetime! Released turtles, surfed, climbed Mt Batur for sunrise, made jewelry, quad biked through waterfalls, white water rafted! Jay, Ruby, and Nyoman were incredible guides. Best experience ever!"
         }
       ],
       itinerary: [
@@ -611,13 +611,13 @@ export default function TourDetail() {
 
             {tour.reviewsList && Array.isArray(tour.reviewsList) && tour.reviewsList.length > 0 && (
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-6">What Travelers Say</h2>
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6">What Travelers Say</h2>
                 <div className="relative">
                   <div className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
                     {tour.reviewsList.map((review: any, index: number) => (
-                      <Card key={index} className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] snap-start p-6 border-2">
+                        <Card key={index} className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] snap-start p-4 border-2">
                         <div className="flex flex-col h-full">
-                          <div className="flex items-center gap-1 mb-3">
+                          <div className="flex items-center gap-1 mb-2">
                             {[...Array(5)].map((_, i) => (
                               <svg
                                 key={i}
@@ -630,11 +630,11 @@ export default function TourDetail() {
                               </svg>
                             ))}
                           </div>
-                          <h3 className="font-bold text-lg mb-2">{review.title}</h3>
-                          <p className="text-muted-foreground leading-relaxed mb-4 flex-grow">{review.content}</p>
-                          <div className="flex items-center justify-between pt-4 border-t">
-                            <span className="font-semibold">{review.name}</span>
-                            <span className="text-sm text-muted-foreground">{review.date}</span>
+                             <h3 className="text-base font-bold mb-1">{review.title}</h3>
+                          <p className="text-sm text-muted-foreground mb-3 flex-grow line-clamp-3">{review.content}</p>
+                          <div className="text-xs text-muted-foreground">
+                            <p className="font-medium">{review.name}</p>
+                            <p>{review.date}</p>
                           </div>
                         </div>
                       </Card>
@@ -728,7 +728,7 @@ export default function TourDetail() {
         </div>
         <div className="w-full overflow-hidden">
           <div className="relative">
-            <div className="flex gap-4 px-4 md:px-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div className="flex gap-4 px-4 md:px-8 overflow-x-scroll snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
               {tour.gallery.map((img, index) => (
                 <div 
                   key={index}
@@ -764,11 +764,11 @@ export default function TourDetail() {
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="container text-center space-y-8 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-white">
             Ready for Your Adventure?
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Join hundreds of travelers who have already experienced this incredible journey
+          <p className="text-lg text-white/90 max-w-2xl mx-auto">
+            Join hundreds of travelers on this incredible journey
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button 
@@ -781,7 +781,7 @@ export default function TourDetail() {
               asChild
               size="lg"
               variant="outline"
-              className="font-medium tracking-tight text-lg h-14 px-8"
+              className="font-medium tracking-tight text-lg h-14 px-8 text-white border-white hover:bg-white/10"
             >
               <Link href="/tours">View All Tours</Link>
             </Button>

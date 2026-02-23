@@ -128,3 +128,9 @@
 - [x] Remove ATOL & ABTA references from About.tsx
 - [x] Remove ATOL & ABTA references from FAQ.tsx
 - [x] Remove ATOL & ABTA references from HowItWorks.tsx
+
+## Tour Detail Page UI Fixes
+- [x] Fix photo gallery slider not working (changed overflow-x-auto to overflow-x-scroll with touch scrolling)
+- [x] Reduce intro text size (h2 from 4xl/5xl to 3xl/4xl, p from xl to lg)
+- [x] Reduce review text size and make content snappier (reduced padding, text sizes, made reviews concise)
+- [x] Make "View All Tours" button text white/visible (added text-white, border-white, hover:bg-white/10)
