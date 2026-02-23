@@ -116,3 +116,8 @@
 - [x] Extract reviews from Bali Explorer page on current site
 - [x] Add reviews section with star ratings to tour detail page
 - [x] Create slider for reviews with horizontal scroll
+
+## Fix Reviews Rendering Error
+- [x] Fix React error where review objects are rendered directly instead of JSX
+- [x] Ensure reviews map function returns proper JSX elements
+- [x] Rename reviews array to reviewsList to avoid conflict with reviews count

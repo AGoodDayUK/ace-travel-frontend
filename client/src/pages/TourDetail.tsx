@@ -167,7 +167,7 @@ export default function TourDetail() {
           image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/uMFVZdbThVsRJNgG.jpg"
         }
       ],
-      reviews: [
+      reviewsList: [
         {
           name: "Chloe",
           date: "24/09/25",
@@ -609,12 +609,12 @@ export default function TourDetail() {
               </div>
             </div>
 
-            {tour.reviews && Array.isArray(tour.reviews) && tour.reviews.length > 0 && (
+            {tour.reviewsList && Array.isArray(tour.reviewsList) && tour.reviewsList.length > 0 && (
               <div>
                 <h2 className="text-3xl font-bold tracking-tight mb-6">What Travelers Say</h2>
                 <div className="relative">
                   <div className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
-                    {tour.reviews.map((review: any, index: number) => (
+                    {tour.reviewsList.map((review: any, index: number) => (
                       <Card key={index} className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] snap-start p-6 border-2">
                         <div className="flex flex-col h-full">
                           <div className="flex items-center gap-1 mb-3">
