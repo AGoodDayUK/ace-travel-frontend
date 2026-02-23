@@ -97,7 +97,7 @@ export default function TourDetail() {
       name: "Bali Explorer",
       destination: "Bali",
       duration: "14 days",
-      price: "£1,399",
+      price: "£1,199",
       deposit: "£60",
       groupSize: "15-30",
       ageRange: "18-35",
@@ -124,16 +124,48 @@ export default function TourDetail() {
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/PXlQnTbTVcJJJjpj.JPG",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/UtZydstnoHgAJiUA.JPG"
       ],
-      description: "Experience the magic of Bali. Trek to sunrise at Mount Batur, surf the waves of Canggu, explore ancient temples, and discover the rice terraces of Ubud. This 14-day adventure combines culture, adventure, and beach vibes.",
+      description: "The ultimate Bali adventure. Explore Canggu's surf scene and nightlife, immerse yourself in Ubud's cultural heart with rice terraces and temples, discover the pristine beaches of Nusa Lembongan, and finish in Uluwatu's surfer paradise. This 14-day journey takes you through the best of Bali's beaches, culture, and adventure.",
       highlights: [
-        "Sunrise trek up Mount Batur volcano",
-        "Surf lessons in Canggu",
-        "Ubud rice terrace exploration",
-        "Temple visits including Tanah Lot",
-        "Nusa Islands day trip (snorkeling and cliff jumping)",
-        "Traditional Balinese cooking class",
-        "Waterfall chasing and jungle swings",
-        "Beach club parties in Seminyak"
+        {
+          title: "Surf lessons",
+          description: "Experience the thrill of riding the waves with our expert-led surfing lessons! Whether you are a complete beginner or looking to hone your skills, our instructors will guide you every step of the way. Set against the backdrop of stunning beaches and crystal-clear waters, our surfing lessons offer an unforgettable adventure.",
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/AlpnMoPBGszdZZHg.jpg"
+        },
+        {
+          title: "Mount Batur",
+          description: "*ACE MOMENT* Embark on an unforgettable adventure to Mt. Batur, one of Bali's most iconic volcanoes. Begin your journey with a pre-dawn hike, reaching the summit just in time to witness a breathtaking sunrise over the island. The panoramic views from the top are spectacular, with the caldera lake and surrounding mountains creating a mesmerizing landscape.",
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/lGNRdnfktzUASiEC.jpg"
+        },
+        {
+          title: "Nusa Lembongan tour",
+          description: "Sail to a postcard island of turquoise bays, coral gardens, and cliffside drama; drift through the mangrove maze, beach-hop Mushroom Bay and Dream Beach, feel the spray at Devil's Tears, and cross the Yellow Bridge to Ceningan—an effortless day packed with island magic.",
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/OCTNMdDPIwINYUnL.jpg"
+        },
+        {
+          title: "Snorkelling tours",
+          description: "Dive into the crystal-clear waters of Bali with our exhilarating snorkelling tours. Explore vibrant coral reefs teeming with colourful marine life, from playful fish to graceful sea turtles. Our experienced guides will lead you to the best snorkelling spots, ensuring a safe and unforgettable underwater adventure.",
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/cRojyLsiDXxWQqzE.jpg"
+        },
+        {
+          title: "Iconic viewpoints",
+          description: "Discover Bali's most iconic viewpoints, from the lush terraces of Tegallalang to the majestic heights of Mount Batur, each viewpoint offers a unique perspective of the island's natural beauty. Marvel at the panoramic views of the coastline from Uluwatu Temple or take in the serene expanse of Lake Bratan with its picturesque temple setting.",
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/oSzURVcUCKZXqkJb.jpg"
+        },
+        {
+          title: "Giant manta rays",
+          description: "Encounter the awe-inspiring giant manta rays in their natural habitat. These majestic creatures glide gracefully through the crystal-clear waters, offering a mesmerising sight for snorkellers and divers alike. Witnessing their elegant movements up close is a truly unforgettable experience, making it a must-do activity for any marine life enthusiast.",
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/BEBsUGvmQvVYgUsC.jpg"
+        },
+        {
+          title: "World famous beach clubs",
+          description: "Experience the vibrant energy of Bali's beach clubs, where sun-soaked days merge into lively nights. Relax on stylish loungers, sip on refreshing cocktails, and enjoy stunning ocean views. As the sun sets, these beach clubs transform into dynamic party spots with live music and DJ sets, offering an unforgettable blend of relaxation and excitement on Bali's picturesque shores.",
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/EngoliYHRVMWhoJy.jpg"
+        },
+        {
+          title: "Rice terraces",
+          description: "Step into emerald staircases shaped by centuries-old subak canals; wander ridge paths at Tegallalang or UNESCO-listed Jatiluwih, meet local farmers, and linger over a coconut coffee as the paddies glow at sunrise or sunset—a calm, culture-soaked Bali must-do.",
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/uMFVZdbThVsRJNgG.jpg"
+        }
       ],
       itinerary: [
         {
@@ -147,19 +179,14 @@ export default function TourDetail() {
           description: "Cultural heart of Bali. Trek through rice terraces, visit the Monkey Forest, take a cooking class, and explore waterfalls. Swing over the jungle and visit traditional markets."
         },
         {
-          day: "Day 8",
-          title: "Mount Batur Sunrise Trek",
-          description: "Early morning trek to the summit of Mount Batur volcano. Watch the sunrise over the clouds and enjoy breakfast cooked by volcanic steam. Unforgettable experience."
+          day: "Days 8-10",
+          title: "Nusa Lembongan",
+          description: "Ferry to paradise. Snorkel with manta rays, explore crystal-clear waters, visit stunning viewpoints like Kelingking Beach and Angel's Billabong. Beach-hop Mushroom Bay and Dream Beach, feel the spray at Devil's Tears, and cross the Yellow Bridge to Ceningan."
         },
         {
-          day: "Days 9-11",
-          title: "Nusa Islands",
-          description: "Ferry to Nusa Lembongan and Nusa Penida. Snorkel with manta rays, cliff jump at Blue Lagoon, visit Kelingking Beach (T-Rex cliff), and relax on pristine beaches."
-        },
-        {
-          day: "Days 12-14",
-          title: "Seminyak",
-          description: "End your trip in style. Beach clubs, shopping, spa days, and farewell beach party. Visit Tanah Lot temple for sunset and celebrate your Bali adventure."
+          day: "Days 11-14",
+          title: "Uluwatu",
+          description: "Surfer's paradise. World-class waves at Uluwatu Beach and Padang Padang. Relax at cliffside bars, watch stunning sunsets over the Indian Ocean, and celebrate your Bali adventure with beach club parties."
         }
       ],
       included: [
@@ -470,14 +497,35 @@ export default function TourDetail() {
           <div className="lg:col-span-2 space-y-12">
             <div>
               <h2 className="text-3xl font-bold tracking-tight mb-6">Highlights</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {tour.highlights.map((highlight, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <span>{highlight}</span>
-                  </div>
-                ))}
-              </div>
+              {typeof tour.highlights[0] === 'string' ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {tour.highlights.map((highlight, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                      <span>{highlight as string}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="space-y-8">
+                  {tour.highlights.map((highlight, index) => {
+                    const h = highlight as { title: string; description: string; image: string };
+                    return (
+                      <div key={index} className="flex flex-col md:flex-row gap-6">
+                        <img 
+                          src={h.image} 
+                          alt={h.title}
+                          className="w-full md:w-64 h-48 object-cover rounded-lg"
+                        />
+                        <div className="flex-1 space-y-2">
+                          <h3 className="text-xl font-bold">{h.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed">{h.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             <div>

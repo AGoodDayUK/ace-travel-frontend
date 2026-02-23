@@ -89,3 +89,11 @@
 - [x] Create "Bali Island Hopper" tour page
 - [x] Update Tours page to show all 4 tours with correct names
 - [x] Ensure tour routing matches new names
+
+## Bali Explorer Highlights Section
+- [x] Download 8 highlight images from Squarespace CDN
+- [x] Upload highlight images to Manus CDN
+- [x] Create highlights section component for tour detail pages
+- [x] Add highlights to Bali Explorer tour with images and descriptions
+- [x] Fix Bali Explorer price to £1,199
+- [x] Update Bali Explorer itinerary to match current site (Canggu → Ubud → Nusa Lembongan → Uluwatu)
