@@ -320,3 +320,12 @@
 - [x] Add clear call-to-action button with "View Tour" link
 - [x] Show price (£1,899) and 21 Days badge
 - [x] List 4 key highlights with checkmarks
+
+## Reduce Trust Badge Size
+- [x] Make trust badge more compact and subtle
+- [x] Reduce font sizes (4.9 rating from text-5xl to text-2xl, text from text-sm to text-xs)
+- [x] Reduce padding and spacing (px-6 py-4 to px-3 py-2)
+- [x] Reduce star size (w-5 h-5 to w-3 h-3)
+- [x] Ensure it doesn't dominate the hero section
+- [x] Reposition trust badge to the right edge of hero section
+- [x] Hide on mobile (hidden md:block) to avoid layout issues
