@@ -448,3 +448,10 @@
 - [x] Used bg-cyan-50/text-cyan-600 for Destinations/Tours
 - [x] Used bg-pink-50/text-pink-600 for Deals
 - [x] Added hover states with darker shades (cyan-100/700, pink-100/700)
+
+## Match Navigation Cyan to Logo Color
+- [x] Extract exact cyan/teal color from ACE logo (#44c5c3)
+- [x] Update Destinations and Tours navigation buttons to use logo cyan
+- [x] Ensure light and dark shades match brand identity
+- [x] Used #44c5c3/10 for light background, #44c5c3 for text
+- [x] Used #44c5c3/20 for hover background, #2a7a79 for darker text

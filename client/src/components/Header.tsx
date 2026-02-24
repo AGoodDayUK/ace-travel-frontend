@@ -100,8 +100,8 @@ export default function Header() {
                 <button
                   className={`text-sm font-bold tracking-tight transition-kinetic flex items-center gap-1.5 px-3 py-1.5 rounded-md ${
                     location.startsWith('/destination') 
-                      ? 'bg-cyan-100 text-cyan-700' 
-                      : 'bg-cyan-50 text-cyan-600 hover:bg-cyan-100 hover:text-cyan-700'
+                      ? 'bg-[#44c5c3]/20 text-[#2a7a79]' 
+                      : 'bg-[#44c5c3]/10 text-[#44c5c3] hover:bg-[#44c5c3]/20 hover:text-[#2a7a79]'
                   }`}
                 >
                   <MapPin className="w-4 h-4" />
@@ -148,8 +148,8 @@ export default function Header() {
                 <button
                   className={`text-sm font-bold tracking-tight transition-kinetic flex items-center gap-1.5 px-3 py-1.5 rounded-md ${
                     location.startsWith('/tour') 
-                      ? 'bg-cyan-100 text-cyan-700' 
-                      : 'bg-cyan-50 text-cyan-600 hover:bg-cyan-100 hover:text-cyan-700'
+                      ? 'bg-[#44c5c3]/20 text-[#2a7a79]' 
+                      : 'bg-[#44c5c3]/10 text-[#44c5c3] hover:bg-[#44c5c3]/20 hover:text-[#2a7a79]'
                   }`}
                 >
                   <Compass className="w-4 h-4" />
