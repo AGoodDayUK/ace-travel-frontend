@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown, Calendar, MapPin } from 'lucide-react';
+import { Menu, X, ChevronDown, Calendar, MapPin, Compass, Tag } from 'lucide-react';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -98,12 +98,13 @@ export default function Header() {
                 onMouseLeave={() => setShowDestinationsMenu(false)}
               >
                 <button
-                  className={`text-sm font-bold tracking-tight transition-kinetic flex items-center gap-1 px-3 py-1.5 rounded-md ${
+                  className={`text-sm font-bold tracking-tight transition-kinetic flex items-center gap-1.5 px-3 py-1.5 rounded-md ${
                     location.startsWith('/destination') 
-                      ? 'bg-primary/10 text-primary' 
-                      : 'bg-accent/50 text-foreground hover:bg-primary/10 hover:text-primary'
+                      ? 'bg-cyan-100 text-cyan-700' 
+                      : 'bg-cyan-50 text-cyan-600 hover:bg-cyan-100 hover:text-cyan-700'
                   }`}
                 >
+                  <MapPin className="w-4 h-4" />
                   Destinations
                   <ChevronDown className="w-4 h-4" />
                 </button>
@@ -145,12 +146,13 @@ export default function Header() {
                 onMouseLeave={() => setShowToursMegaMenu(false)}
               >
                 <button
-                  className={`text-sm font-bold tracking-tight transition-kinetic flex items-center gap-1 px-3 py-1.5 rounded-md ${
+                  className={`text-sm font-bold tracking-tight transition-kinetic flex items-center gap-1.5 px-3 py-1.5 rounded-md ${
                     location.startsWith('/tour') 
-                      ? 'bg-primary/10 text-primary' 
-                      : 'bg-accent/50 text-foreground hover:bg-primary/10 hover:text-primary'
+                      ? 'bg-cyan-100 text-cyan-700' 
+                      : 'bg-cyan-50 text-cyan-600 hover:bg-cyan-100 hover:text-cyan-700'
                   }`}
                 >
+                  <Compass className="w-4 h-4" />
                   Tours
                   <ChevronDown className="w-4 h-4" />
                 </button>
@@ -203,16 +205,17 @@ export default function Header() {
                   href={link.href}
                   className={`text-sm tracking-tight transition-kinetic ${
                     link.highlight 
-                      ? `font-bold px-3 py-1.5 rounded-md ${
+                      ? `font-bold px-3 py-1.5 rounded-md flex items-center gap-1.5 ${
                           location === link.href 
-                            ? 'bg-primary/10 text-primary' 
-                            : 'bg-accent/50 text-foreground hover:bg-primary/10 hover:text-primary'
+                            ? 'bg-pink-100 text-pink-700' 
+                            : 'bg-pink-50 text-pink-600 hover:bg-pink-100 hover:text-pink-700'
                         }`
                       : `font-medium kinetic-underline ${
                           location === link.href ? 'text-primary' : 'text-foreground hover:text-primary'
                         }`
                   }`}
                 >
+                  {link.highlight && <Tag className="w-4 h-4" />}
                   {link.label}
                 </Link>
               ))}

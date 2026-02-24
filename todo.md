@@ -439,3 +439,12 @@
 - [x] Make widget clickable linking to Trustpilot page
 - [x] Styled with bg-accent/30 background and border
 - [x] Shows large 4.9 rating, Excellent text, and 5 green Trustpilot stars
+
+## Color-Code Navigation Items
+- [x] Style Destinations and Tours with light blue/cyan background and darker blue text
+- [x] Style Deals with light pink background and dark pink text
+- [x] Add icons to navigation items (MapPin for Destinations, Compass for Tours, Tag for Deals)
+- [x] Ensure colors match brand identity (cyan/teal and pink/magenta)
+- [x] Used bg-cyan-50/text-cyan-600 for Destinations/Tours
+- [x] Used bg-pink-50/text-pink-600 for Deals
+- [x] Added hover states with darker shades (cyan-100/700, pink-100/700)
