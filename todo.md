@@ -423,3 +423,19 @@
 - [x] Search for and add Philippines beach/lagoon images for Philippines tours/destination
 - [x] Copied bali-temple.jpg, bali-beach.webp, philippines-beach.jpg, philippines-lagoon.jpg to public folder
 - [x] Updated all image paths in Header.tsx to use correct filenames
+
+## Update Main Navigation
+- [x] Remove About from main navigation menu
+- [x] Make Destinations, Tours, and Deals stand out with visual styling (background, border, or size)
+- [x] Added bg-accent/50 background with rounded corners to Destinations, Tours, and Deals
+- [x] Made buttons font-bold instead of font-medium
+- [x] Added hover states with bg-primary/10
+- [x] Ensure navigation remains clean and uncluttered
+
+## Add Trust Widget to Mobile Menu
+- [x] Add Trustpilot reviews widget to mobile navigation menu
+- [x] Display 4.9 rating with stars and "Trusted by 500+ travellers" text
+- [x] Position prominently at top of mobile menu (first item)
+- [x] Make widget clickable linking to Trustpilot page
+- [x] Styled with bg-accent/30 background and border
+- [x] Shows large 4.9 rating, Excellent text, and 5 green Trustpilot stars

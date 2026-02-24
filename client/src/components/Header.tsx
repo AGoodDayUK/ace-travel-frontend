@@ -64,8 +64,7 @@ export default function Header() {
 
   const navLinks = [
     { href: '/how-it-works', label: 'How It Works' },
-    { href: '/deals', label: 'Deals' },
-    { href: '/about', label: 'About' },
+    { href: '/deals', label: 'Deals', highlight: true },
   ];
 
   return (
@@ -99,8 +98,10 @@ export default function Header() {
                 onMouseLeave={() => setShowDestinationsMenu(false)}
               >
                 <button
-                  className={`text-sm font-medium tracking-tight transition-kinetic flex items-center gap-1 ${
-                    location.startsWith('/destination') ? 'text-primary' : 'text-foreground hover:text-primary'
+                  className={`text-sm font-bold tracking-tight transition-kinetic flex items-center gap-1 px-3 py-1.5 rounded-md ${
+                    location.startsWith('/destination') 
+                      ? 'bg-primary/10 text-primary' 
+                      : 'bg-accent/50 text-foreground hover:bg-primary/10 hover:text-primary'
                   }`}
                 >
                   Destinations
@@ -144,8 +145,10 @@ export default function Header() {
                 onMouseLeave={() => setShowToursMegaMenu(false)}
               >
                 <button
-                  className={`text-sm font-medium tracking-tight transition-kinetic flex items-center gap-1 ${
-                    location.startsWith('/tour') ? 'text-primary' : 'text-foreground hover:text-primary'
+                  className={`text-sm font-bold tracking-tight transition-kinetic flex items-center gap-1 px-3 py-1.5 rounded-md ${
+                    location.startsWith('/tour') 
+                      ? 'bg-primary/10 text-primary' 
+                      : 'bg-accent/50 text-foreground hover:bg-primary/10 hover:text-primary'
                   }`}
                 >
                   Tours
@@ -198,8 +201,16 @@ export default function Header() {
                 <Link 
                   key={link.href} 
                   href={link.href}
-                  className={`text-sm font-medium tracking-tight kinetic-underline transition-kinetic ${
-                    location === link.href ? 'text-primary' : 'text-foreground hover:text-primary'
+                  className={`text-sm tracking-tight transition-kinetic ${
+                    link.highlight 
+                      ? `font-bold px-3 py-1.5 rounded-md ${
+                          location === link.href 
+                            ? 'bg-primary/10 text-primary' 
+                            : 'bg-accent/50 text-foreground hover:bg-primary/10 hover:text-primary'
+                        }`
+                      : `font-medium kinetic-underline ${
+                          location === link.href ? 'text-primary' : 'text-foreground hover:text-primary'
+                        }`
                   }`}
                 >
                   {link.label}
@@ -237,6 +248,30 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-background border-t border-border animate-fade-in max-h-[80vh] overflow-y-auto">
             <nav className="container py-6 flex flex-col gap-4">
+              {/* Trust Widget */}
+              <a 
+                href="https://uk.trustpilot.com/review/www.acetravelexperiences.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-4 bg-accent/30 rounded-lg border border-border mb-2"
+              >
+                <div className="flex-shrink-0">
+                  <div className="text-3xl font-bold text-foreground">4.9</div>
+                  <div className="text-xs text-muted-foreground font-medium">Excellent</div>
+                  <div className="flex gap-0.5 mt-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 fill-[#00b67a]" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm font-medium text-foreground mb-1">Trusted by 500+ travellers</div>
+                  <div className="text-xs text-muted-foreground">from all over the world</div>
+                </div>
+              </a>
+              
               {/* Destinations Accordion */}
               <div className="border-b border-border pb-4">
                 <button
