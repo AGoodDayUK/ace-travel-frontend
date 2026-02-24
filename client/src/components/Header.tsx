@@ -109,7 +109,7 @@ export default function Header() {
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {showDestinationsMenu && (
-                  <div className="absolute top-full left-0 mt-2 bg-background border border-border shadow-xl rounded-lg p-4 w-[600px] animate-fade-in z-50">
+                  <div className="absolute top-full left-0 pt-2 bg-background border border-border shadow-xl rounded-lg p-4 w-[600px] animate-fade-in z-50">
                     <div className="grid grid-cols-3 gap-4">
                       {destinations.map((dest) => (
                         <Link
@@ -157,7 +157,7 @@ export default function Header() {
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {showToursMegaMenu && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-background border border-border shadow-xl rounded-lg p-6 w-[800px] animate-fade-in z-50">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 bg-background border border-border shadow-xl rounded-lg p-6 w-[800px] animate-fade-in z-50">
                     <div className="grid grid-cols-3 gap-6">
                       {Object.entries(toursByDestination).map(([destination, tours]) => (
                         <div key={destination}>

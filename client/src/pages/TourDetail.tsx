@@ -92,42 +92,50 @@ export default function TourDetail() {
         {
           day: "Days 1-2",
           title: "Phuket",
-          description: "Arrive in Thailand! Meet your trip manager and group at the hostel. Day 2: Visit the Elephant Sanctuary to feed and bathe these majestic creatures. In the evening, experience the thrills of Bangla Road—cocktails in buckets included!"
+          description: "Arrive in Thailand! Meet your trip manager and group at the hostel. Day 2: Visit the Elephant Sanctuary to feed and bathe these majestic creatures. In the evening, experience the thrills of Bangla Road—cocktails in buckets included!",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722873195633-2KNTRWRP39CRP34JVS7X/unsplash-image-7pEPjI1rJKA.jpg"
         },
         {
           day: "Days 3-5",
           title: "Phi Phi Islands",
-          description: "Ferry to Koh Phi Phi! Day 4: Embark on a stunning boat tour visiting Bamboo Island, Viking Cave, Monkey Beach, Phi Leh Lagoon, and Maya Bay. Catch sunset from a long tail boat and snorkel with bio-luminescent plankton. Day 5: Free day to explore viewpoints or relax on the beach."
+          description: "Ferry to Koh Phi Phi! Day 4: Embark on a stunning boat tour visiting Bamboo Island, Viking Cave, Monkey Beach, Phi Leh Lagoon, and Maya Bay. Catch sunset from a long tail boat and snorkel with bio-luminescent plankton. Day 5: Free day to explore viewpoints or relax on the beach.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/2b1eea8d-5844-4951-a9aa-1ddcc7c11c4c/unsplash-image-pMIlNaeJvr0.jpg"
         },
         {
           day: "Days 6-7",
           title: "Khao Sok National Park",
-          description: "Welcome to the jungle! Transfer through limestone karst mountains to Khao Sok village. Day 7: Float down the river on a traditional bamboo raft, then embark on a head-torch-lit night safari to spot monkeys and jungle creatures."
+          description: "Welcome to the jungle! Transfer through limestone karst mountains to Khao Sok village. Day 7: Float down the river on a traditional bamboo raft, then embark on a head-torch-lit night safari to spot monkeys and jungle creatures.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/954b6dc0-2c04-49e3-8bce-c7fefb30abd0/unsplash-image-chnSOB50-Ro.jpg"
         },
         {
           day: "Day 8",
           title: "Floating Bungalows",
-          description: "Take a long tail boat into Cheow Lan Lake and stay on floating bungalows. Explore Diamond Cave, kayak on the lake, and take an early morning boat safari to spot elephants, monkeys, and birds in their natural habitat."
+          description: "Take a long tail boat into Cheow Lan Lake and stay on floating bungalows. Explore Diamond Cave, kayak on the lake, and take an early morning boat safari to spot elephants, monkeys, and birds in their natural habitat.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722869565399-BCEDJD8XCBSRYXGFNLJ3/unsplash-image-YcXOWbWk8-U.jpg"
         },
         {
           day: "Days 9-11",
           title: "Koh Samui",
-          description: "Arrive in Chaweng! Enjoy fire shows on the beach and nightlife at Sound Club, Arkbar, and Green Mango. Optional tours: Pig Island speedboat trip with snorkelling (Day 10) and zip lining through the jungle canopy (Day 11)."
+          description: "Arrive in Chaweng! Enjoy fire shows on the beach and nightlife at Sound Club, Arkbar, and Green Mango. Optional tours: Pig Island speedboat trip with snorkelling (Day 10) and zip lining through the jungle canopy (Day 11).",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722868969591-ROD61KFKSFP3FOA4XP6B/unsplash-image-xa-fv2RQCPY.jpg"
         },
         {
           day: "Days 12-15",
           title: "Koh Tao",
-          description: "Welcome to Turtle Island! Perfect for scuba diving—complete your Open Water Qualification or try a discovery dive. Optional tours: Snorkelling boat tour to Koh Nang Yuan (Day 13) and Thai cooking class (Day 15). Day 14 is yours to explore viewpoints or enjoy a Thai massage."
+          description: "Welcome to Turtle Island! Perfect for scuba diving—complete your Open Water Qualification or try a discovery dive. Optional tours: Snorkelling boat tour to Koh Nang Yuan (Day 13) and Thai cooking class (Day 15). Day 14 is yours to explore viewpoints or enjoy a Thai massage.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/8e29ce02-4b4e-44b2-9d56-6d76495b549e/Koh-Tao.jpg"
         },
         {
           day: "Days 16-19",
           title: "Koh Phangan",
-          description: "Arrive at Puk's Palace with its beachfront bar, 3 swimming pools, and friendly hostel dogs! Day 17: Quad biking adventure through the jungle with cliff-top views. Optional Muay Thai boxing class (Day 18). Day 19: Visit waterfalls and beaches, or catch sunset from the west coast."
+          description: "Arrive at Puk's Palace with its beachfront bar, 3 swimming pools, and friendly hostel dogs! Day 17: Quad biking adventure through the jungle with cliff-top views. Optional Muay Thai boxing class (Day 18). Day 19: Visit waterfalls and beaches, or catch sunset from the west coast.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/292afbb5-f398-4e04-a739-51e2c1a9c795/Koh-Phangan.jpg"
         },
         {
           day: "Days 20-21",
           title: "Phuket Old Town",
-          description: "Final journey back to Phuket by ferry. Explore Old Town's amazing restaurants, boutique shops, and famous architecture. Emotional farewell to your Thai guide. Day 21: Onward travel or fly home with memories for a lifetime!"
+          description: "Final journey back to Phuket by ferry. Explore Old Town's amazing restaurants, boutique shops, and famous architecture. Emotional farewell to your Thai guide. Day 21: Onward travel or fly home with memories for a lifetime!",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722873195633-2KNTRWRP39CRP34JVS7X/unsplash-image-7pEPjI1rJKA.jpg"
         }
       ],
       included: [
@@ -1133,7 +1141,7 @@ export default function TourDetail() {
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative h-64 md:h-auto">
                   <img 
-                    src="/thailand-hero.jpg"
+                    src="https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722873195633-2KNTRWRP39CRP34JVS7X/unsplash-image-7pEPjI1rJKA.jpg"
                     alt="Thailand Intro"
                     className="w-full h-full object-cover"
                   />

@@ -484,3 +484,7 @@
 - [x] Move "Want a shorter/longer trip?" cross-sell sections to appear directly under photo gallery on relevant tour pages
 - [x] Add authentic highlight and itinerary images to Thailand Island Hopper tour page from user-provided content
 - [x] Add departure dates to Thailand Island Hopper (all 2026 and 2027 dates with correct pricing)
+- [x] Add social media links to footer (Instagram, TikTok, Facebook, Email)
+- [x] Fix menu dropdown gap causing menu to close when moving mouse to submenu
+- [x] Add destination images to Thailand Island Hopper day-by-day itinerary from pasted content
+- [x] Fix 'Want a shorter trip?' cross-sell section image

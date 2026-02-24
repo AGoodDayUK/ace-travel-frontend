@@ -1,5 +1,6 @@
 import { Link } from 'wouter';
 import { Instagram, Facebook, Mail } from 'lucide-react';
+import { FaTiktok } from 'react-icons/fa';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -25,9 +26,10 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { href: 'https://instagram.com/acetravelexperiences', icon: Instagram, label: 'Instagram' },
-    { href: 'https://facebook.com/acetravelexperiences', icon: Facebook, label: 'Facebook' },
-    { href: 'mailto:hello@acetravelexperiences.com', icon: Mail, label: 'Email' },
+    { href: 'https://www.instagram.com/acetravelexperiences/', icon: Instagram, label: 'Instagram' },
+    { href: 'https://www.tiktok.com/@acetravelexperiences', icon: FaTiktok, label: 'TikTok' },
+    { href: 'https://www.facebook.com/groups/565386292003692', icon: Facebook, label: 'Facebook' },
+    { href: 'mailto:admin@acetravelexperiences.com', icon: Mail, label: 'Email' },
   ];
 
   return (
