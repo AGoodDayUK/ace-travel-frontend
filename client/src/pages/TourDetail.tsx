@@ -388,7 +388,7 @@ export default function TourDetail() {
         {
           title: "Sticky waterfalls",
           description: "Climb the grippy limestone cascades barefoot—your feet stick like Velcro. Cool water, jungle shade, and the thrill of walking straight up a waterfall make this one of Chiang Mai's quirkiest natural wonders.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755193340991-VVFQY2HQXQN4DXVFHX8Y/unsplash-image-5gQHPZxQQ4s.jpg"
+          image: "/thailand-waterfall.webp"
         }
       ],
       itinerary: [
@@ -693,7 +693,7 @@ export default function TourDetail() {
               <h2 className="text-3xl font-bold tracking-tight mb-6">Your Journey</h2>
               <div className="mb-8 bg-accent/10 p-8 rounded-lg">
                 <img 
-                  src={tourId === 'thailand-intro' ? '/thailand-route-map.jpg' : 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/trjSBWQKzHaQYLlx.webp'}
+                  src={tourId === 'thailand-intro' ? '/thailand-intro-map.webp' : 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/trjSBWQKzHaQYLlx.webp'}
                   alt={`${tour.name} Route Map`}
                   className="w-full max-w-3xl mx-auto"
                 />

@@ -198,3 +198,7 @@
 - [x] Add What's Included section (12 days accommodation, Experienced Ace Rep & Local Guide, Activities packages, Iconic viewpoints, Private WhatsApp group, Flight assistance, 14 meals)
 - [x] Add 6 customer reviews in horizontal slider
 - [x] Use stock images for any missing photos
+
+## Update Thailand Intro Images
+- [x] Replace sticky waterfalls image with user-provided turquoise waterfall photo
+- [x] Replace route map with user-provided Thailand Intro map showing Bangkok → Chiang Mai → Pai
