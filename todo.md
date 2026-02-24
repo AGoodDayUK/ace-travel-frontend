@@ -254,3 +254,12 @@
 ## Adjust Tipsy Tubing Image Crop
 - [x] Modify tipsy tubing highlight image to show more of the bottom (river/tubing action) and less sky
 - [x] Use CSS object-position to adjust vertical alignment
+
+## Update Chiang Mai Days 10-11 Itinerary Image
+- [x] Replace umbrella factory image with authentic Thai cooking class group photo
+
+## Create Photo Gallery Section
+- [x] Add photo gallery section to Thailand Intro tour page
+- [x] Add temple interior group photo to gallery
+- [x] Design gallery layout with grid or horizontal scroll
+- [x] Include 6 authentic tour photos (temple interior, cooking class, farewell dinner, temple visit, waterfall, Bangkok boat)

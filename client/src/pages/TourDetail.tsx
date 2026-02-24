@@ -414,7 +414,7 @@ export default function TourDetail() {
           day: "Days 10-11",
           title: "Chiang Mai",
           description: "Day 10: Breakfast included. Bye bye Pai! Head south back to Chiang Mai, stopping at an authentic Thai umbrella factory and silk factory.\n\nDay 11: Breakfast included. Indulge in an authentic Thai cooking class - cook up a storm and enjoy your creations! Learn how Thai cuisine hits the spot every time. Head back to Bangkok in the evening via train.",
-          image: "/thai-umbrella-factory.jpg"
+          image: "/cooking-class.jpg"
         },
         {
           day: "Day 12",
@@ -823,6 +823,45 @@ export default function TourDetail() {
                   >
                     <ChevronRight className="w-6 h-6" />
                   </button>
+                </div>
+              </div>
+            )}
+
+            {/* Photo Gallery */}
+            {tour.id === 'thailand-intro' && (
+              <div>
+                <h3 className="text-2xl font-bold tracking-tight mb-6">Photo Gallery</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <img 
+                    src="/thailand-temple-interior.jpg" 
+                    alt="Group photo at Thai temple"
+                    className="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
+                  />
+                  <img 
+                    src="/cooking-class.jpg" 
+                    alt="Thai cooking class"
+                    className="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
+                  />
+                  <img 
+                    src="/farewell-meal.jpg" 
+                    alt="Farewell dinner"
+                    className="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
+                  />
+                  <img 
+                    src="/temples.jpg" 
+                    alt="Temple visit"
+                    className="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
+                  />
+                  <img 
+                    src="/thailand-waterfall.webp" 
+                    alt="Sticky waterfalls"
+                    className="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
+                  />
+                  <img 
+                    src="/bangkok-longtail-boat.jpg" 
+                    alt="Bangkok river tour"
+                    className="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
+                  />
                 </div>
               </div>
             )}
