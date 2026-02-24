@@ -374,3 +374,10 @@
 - [ ] Add form fields: name, email, preferred month
 - [ ] Add "Notify Me" submit button
 - [ ] Apply to Thailand Island Hopper and other tours without dates
+
+## Thailand Intro Lead Capture Updates
+- [x] Remove departure dates from Thailand Intro tour data
+- [x] Change "Book Now" buttons to "Dates Coming Soon! Register Interest" when no dates available
+- [x] Add smooth scroll functionality to scroll to lead capture form
+- [x] Test scroll behavior on desktop - works perfectly, scrolls to centered lead form
+- [x] Ensure lead capture form displays correctly on Thailand Intro

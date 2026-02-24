@@ -366,10 +366,7 @@ export default function TourDetail() {
       rating: 5.0,
       reviews: 203,
       nextDeparture: "22 Mar 2026",
-      departureDates: [
-        { date: "12 Apr 2026", spotsLeft: 12, price: "£999" },
-        { date: "6 Sep 2026", spotsLeft: 15, price: "£999" }
-      ],
+      departureDates: [],
       hero: "/thailand-intro-hero.webp",
       gallery: [
         "/thailand-intro-hero.webp",
@@ -928,14 +925,27 @@ export default function TourDetail() {
                 </div>
               </div>
 
-              <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
+              {(!tour.departureDates || tour.departureDates.length === 0) ? (
                 <Button 
                   size="lg"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium text-lg h-14"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium text-base h-14"
+                  onClick={() => {
+                    const leadForm = document.getElementById('lead-capture-form');
+                    leadForm?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }}
                 >
-                  Book Now
+                  Dates Coming Soon! Register Interest
                 </Button>
-              </a>
+              ) : (
+                <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    size="lg"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium text-lg h-14"
+                  >
+                    Book Now
+                  </Button>
+                </a>
+              )}
 
               <div className="space-y-2 text-center text-sm text-muted-foreground">
                 <p>Secure your spot with just {tour.deposit}</p>
@@ -1120,7 +1130,7 @@ export default function TourDetail() {
 
       {/* Lead Capture for Tours Without Dates */}
       {(!tour.departureDates || tour.departureDates.length === 0) && (
-        <section className="py-16 bg-muted/30">
+        <section id="lead-capture-form" className="py-16 bg-muted/30">
           <div className="container max-w-3xl">
             <Card className="p-8 md:p-12 text-center">
               <div className="mb-6">
@@ -1360,14 +1370,27 @@ export default function TourDetail() {
               <div className="text-xl font-bold text-primary">{tour.price}</div>
               <div className="text-xs text-muted-foreground">{tour.deposit} deposit</div>
             </div>
-            <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
+            {(!tour.departureDates || tour.departureDates.length === 0) ? (
               <Button 
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-4 text-sm"
+                onClick={() => {
+                  const leadForm = document.getElementById('lead-capture-form');
+                  leadForm?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }}
               >
-                Book Now
+                Register Interest
               </Button>
-            </a>
+            ) : (
+              <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8"
+                >
+                  Book Now
+                </Button>
+              </a>
+            )}
           </div>
         </div>
       </div>
