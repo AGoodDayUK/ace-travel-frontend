@@ -227,3 +227,10 @@
 
 ## Update Temple Visit Highlight Image
 - [x] Replace Temple visits highlight image with group photo at ornate Thai temple
+
+## Fix Thailand Intro Itinerary Details
+- [x] Update itinerary with correct detailed day-by-day information from user
+- [x] Ensure all breakfast inclusions are mentioned
+- [x] Add optional extras (Khatok Dinner, Hot Springs & Nam Lod Cave)
+- [x] Update Day 11 to mention Thai cooking class instead of generic exploration
+- [x] Update Day 10 to mention umbrella factory and silk factory stops

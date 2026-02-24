@@ -395,31 +395,31 @@ export default function TourDetail() {
         {
           day: "Days 1-3",
           title: "Bangkok",
-          description: "Arrive in Thailand! Grab your bag at the airport and meet our airport rep who will get you into your pre-booked airport transfer. Arrive at the first hostel and meet your trip manager and the rest of the guests on the tour! Day 2 includes breakfast and a city tour of Bangkok: Temples, China Town and the famous MBK shopping mall. Day 3 is a free day to explore Bangkok and experience Khao San road in the evening. Begin the journey north to Chiang Mai via the night train.",
+          description: "Day 1: Arrive in Thailand! Meet our airport rep for your pre-booked transfer to the hostel where you'll meet your trip manager and fellow travelers. Day 2: Breakfast included. Group briefing, then city tour of Bangkok covering Temples, China Town, and MBK shopping mall. Day 3: Free day to explore! Experience the thrills of Khao San road in the evening - cocktails in buckets and scorpion on a stick? Begin the night train journey north to Chiang Mai.",
           image: "/thailand-temple.jpg"
         },
         {
           day: "Days 4-6",
           title: "Chiang Mai",
-          description: "Arrive in Chiang Mai in the morning. Visit the famous Doi Suthep Temple with panoramic views. Day 5 is ACE MOMENT - Elephant Sanctuary day! Visit the majestic Asian Elephants in one of our ethically sourced sanctuaries. Day 6 journey into the hills, stopping at the sticky waterfalls. Finish at Two Huts for a breathtaking sunset over the hills with live music.",
+          description: "Day 4: Arrive in the morning, check in and explore Chiang Mai's busy streets. Afternoon visit to Doi Suthep Temple with panoramic views. Day 5: *ACE MOMENT* Breakfast included. Elephant Sanctuary day! Visit majestic Asian Elephants in our ethically sourced sanctuary in the hills. Optional: Traditional Khatok Dinner. Day 6: Breakfast included. Journey to Pai, stopping at the sticky waterfalls. Finish at Two Huts for sunset with live music and ice cold drinks.",
           image: "/thailand-elephant.jpg"
         },
         {
           day: "Days 7-9",
           title: "Pai",
-          description: "Day 7 - Tipsy Tubing! Grab your inflatable ring and drift down Pai's River in a massive group. Stop halfway for a foam party boogie on the bank. Day 8 includes a relaxing morning to recover, then head to Pai Canyon for a glowing orange sunset. Day 9 is a free day to explore Pai's hidden gems or chill at the hostel.",
+          description: "Day 7: Breakfast included. Tipsy Tubing - a massive floating party! Grab your inflatable ring and drift down Pai's River. Stop halfway for a foam party boogie on the riverbank. Hangovers guaranteed! Day 8: Breakfast included. Relaxing morning to recover, or explore Pai's beautiful streets and cute coffee spots. Evening trip to Pai Canyon for glowing orange sunset. Day 9: Breakfast included. Free day to explore Pai's hidden gems or chill at the hostel. Optional: Pai Hot Springs & Nam Lod Cave.",
           image: "/pai-canyon.jpg"
         },
         {
           day: "Days 10-11",
           title: "Chiang Mai",
-          description: "Return to Chiang Mai for more exploration. Visit local markets, try street food, and experience the vibrant nightlife. Optional activities include cooking classes and traditional Thai massage.",
+          description: "Day 10: Breakfast included. Bye bye Pai! Head south back to Chiang Mai, stopping at an authentic Thai umbrella factory and silk factory. Day 11: Breakfast included. Indulge in an authentic Thai cooking class - cook up a storm and enjoy your creations! Learn how Thai cuisine hits the spot every time. Head back to Bangkok in the evening via train.",
           image: "/thai-umbrella-factory.jpg"
         },
         {
           day: "Day 12",
           title: "Bangkok",
-          description: "Return to Bangkok for final adventures. Last-minute shopping, rooftop bars, and farewell dinner with your new travel family. Depart with unforgettable memories and lifelong friendships.",
+          description: "Breakfast included. The dreaded farewells! Give your new besties a big squeeze - you'll see them again, either in your own time or on another Ace Travel Experience! Chill at the hostel until your airport transfer arrives. Depart with unforgettable memories and lifelong friendships.",
           image: "/thailand-farewell-dinner.jpg"
         }
       ],
