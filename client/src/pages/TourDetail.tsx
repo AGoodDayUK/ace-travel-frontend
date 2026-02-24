@@ -677,6 +677,7 @@ export default function TourDetail() {
                           src={h.image} 
                           alt={h.title}
                           className="w-full md:w-64 h-48 object-cover rounded-lg"
+                          style={h.title === 'Tipsy tubing' ? { objectPosition: 'center 70%' } : undefined}
                         />
                         <div className="flex-1 space-y-2">
                           <h3 className="text-xl font-bold">{h.title}</h3>

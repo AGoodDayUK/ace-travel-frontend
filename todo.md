@@ -250,3 +250,7 @@
 
 ## Update Bangkok City Tour Image
 - [x] Replace Bangkok city tour highlight image with longtail boat photo showing Wat Arun
+
+## Adjust Tipsy Tubing Image Crop
+- [x] Modify tipsy tubing highlight image to show more of the bottom (river/tubing action) and less sky
+- [x] Use CSS object-position to adjust vertical alignment
