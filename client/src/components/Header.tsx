@@ -148,8 +148,8 @@ export default function Header() {
                 <button
                   className={`text-sm font-bold tracking-tight transition-kinetic flex items-center gap-1.5 px-3 py-1.5 rounded-md ${
                     location.startsWith('/tour') 
-                      ? 'bg-[#44c5c3]/20 text-[#2a7a79]' 
-                      : 'bg-[#44c5c3]/10 text-[#44c5c3] hover:bg-[#44c5c3]/20 hover:text-[#2a7a79]'
+                      ? 'bg-[#44c5c3]/30 text-[#1a5a59]' 
+                      : 'bg-[#44c5c3]/20 text-[#2a7a79] hover:bg-[#44c5c3]/30 hover:text-[#1a5a59]'
                   }`}
                 >
                   <Compass className="w-4 h-4" />

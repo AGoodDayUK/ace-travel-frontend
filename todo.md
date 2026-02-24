@@ -462,3 +462,10 @@
 - [x] Ensure neutral color is professional and clean
 - [x] Used bg-slate-100/text-slate-600 for Destinations (neutral)
 - [x] Updated Deals to use exact ACE pink (#ee2f6d) matching logo
+
+## Update Tours Button Default Style
+- [x] Swap Tours button default and hover states
+- [x] Make darker cyan (#2a7a79) with bg-[#44c5c3]/20 the default
+- [x] Ensure Tours button is more prominent from the start
+- [x] Default: bg-[#44c5c3]/20 with text-[#2a7a79]
+- [x] Hover: bg-[#44c5c3]/30 with text-[#1a5a59] (even darker)
