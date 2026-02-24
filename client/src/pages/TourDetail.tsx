@@ -348,9 +348,9 @@ export default function TourDetail() {
       rating: 5.0,
       reviews: 203,
       nextDeparture: "22 Mar 2026",
-      hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/hCjqPFKzQfIcAvQa.jpg",
+      hero: "/thailand-intro-hero.webp",
       gallery: [
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/hCjqPFKzQfIcAvQa.jpg",
+        "/thailand-intro-hero.webp",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/mirOuoHWMgcSDWGB.jpg",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/QrYFhzyXjBuRJxLn.JPG",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/BJGrLpWkZZByQqyU.JPG",

@@ -218,3 +218,6 @@
 
 ## Update Chiang Mai Itinerary Image
 - [x] Replace Days 10-11 Chiang Mai itinerary image with Thai umbrella factory image
+
+## Update Thailand Intro Hero Image
+- [x] Replace hero/header image with Chiang Mai temple photo
