@@ -340,78 +340,149 @@ export default function TourDetail() {
       id: "thailand-intro",
       name: "Thailand Intro",
       destination: "Thailand",
-      duration: "10 days",
-      price: "£999",
+      duration: "13 days",
+      price: "£1,299",
       deposit: "£60",
       groupSize: "15-30",
       ageRange: "18-35",
-      rating: 4.8,
-      reviews: 189,
+      rating: 5.0,
+      reviews: 203,
       nextDeparture: "22 Mar 2026",
       hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/hCjqPFKzQfIcAvQa.jpg",
       gallery: [
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/hCjqPFKzQfIcAvQa.jpg",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/mirOuoHWMgcSDWGB.jpg",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/QrYFhzyXjBuRJxLn.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/BJGrLpWkZZByQqyU.JPG"
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/BJGrLpWkZZByQqyU.JPG",
+        "/thailand-elephant.jpg",
+        "/thailand-temple.jpg",
+        "/pai-canyon.jpg"
       ],
-      description: "Perfect introduction to Thailand. Experience wellness retreats in Chiang Mai's mountains, practice yoga overlooking rice terraces, explore colorful flower gardens, and find your zen with sunrise meditation sessions. This 10-day journey balances cultural immersion with relaxation and adventure.",
+      description: "The perfect introduction to Thailand. Journey from Bangkok's bustling streets to Chiang Mai's cultural heart, then escape to Pai's mountain paradise. Experience elephant sanctuaries, temple visits, tipsy tubing, and unforgettable sunsets. 13 days of culture, adventure, and new friendships.",
       highlights: [
-        "Daily yoga and meditation sessions in mountain retreats",
-        "Chiang Mai temple exploration and cultural experiences",
-        "Sunrise gatherings with mountain views",
-        "Visit to stunning flower gardens and botanical parks",
-        "Thai massage and wellness workshops",
-        "Healthy farm-to-table meals",
-        "Night market exploration",
-        "Ethical elephant sanctuary visit"
+        {
+          title: "Elephant sanctuary",
+          description: "Discover the heartwarming Elephant Sanctuary, where majestic creatures roam freely. Interact, feed, and connect with these gentle giants in a natural haven, fostering a deep bond with nature and promoting responsible tourism.",
+          image: "/thailand-elephant.jpg"
+        },
+        {
+          title: "Bangkok city tour",
+          description: "Glide along the Chao Phraya by long-tail boat, hop between the Grand Palace, Wat Pho's Reclining Buddha and Wat Arun's spires, weave through Chinatown's alleys, ride the Skytrain, and finish on a rooftop as the skyline lights up.",
+          image: "/thailand-temple.jpg"
+        },
+        {
+          title: "Pai sunsets",
+          description: "Chase golden hour to Two Huts and Pai Canyon: hammocks, mellow tunes, and horizons painted pink. Wander the sandstone ridges, watch swallows dip, and stay for blue hour as the valley glows and stars blink on.",
+          image: "/pai-canyon.jpg"
+        },
+        {
+          title: "Tipsy tubing",
+          description: "Float down the Pai River with a crew of new friends; gentle rapids, music, and riverside stops to keep the vibe high. Dry bag zipped, hydrate between sips, for a hectic afternoon that turns into stories for days.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/a6ec7466-cdfa-4846-9c16-f89fe1c5b116/IMG_1336.PNG"
+        },
+        {
+          title: "Temple visits",
+          description: "Step into incense-swirled courtyards and gilded halls; admire serene Buddhas, lotus ponds, and chanting monks. Dress modestly, slip off your shoes, and move slow—temple time is a reset button that swaps noise for quiet awe.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755193243884-L5G3CTKYPVOQEWEDN5R3/unsplash-image-F07KhNovxRk.jpg"
+        },
+        {
+          title: "Sticky waterfalls",
+          description: "Climb the grippy limestone cascades barefoot—your feet stick like Velcro. Cool water, jungle shade, and the thrill of walking straight up a waterfall make this one of Chiang Mai's quirkiest natural wonders.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755193340991-VVFQY2HQXQN4DXVFHX8Y/unsplash-image-5gQHPZxQQ4s.jpg"
+        }
       ],
       itinerary: [
         {
-          day: "Days 1-2",
-          title: "Chiang Mai Arrival",
-          description: "Arrive in Chiang Mai and settle into your wellness retreat. Evening orientation, welcome dinner, and gentle yoga session to ease into the journey."
+          day: "Days 1-3",
+          title: "Bangkok",
+          description: "Arrive in Thailand! Grab your bag at the airport and meet our airport rep who will get you into your pre-booked airport transfer. Arrive at the first hostel and meet your trip manager and the rest of the guests on the tour! Day 2 includes breakfast and a city tour of Bangkok: Temples, China Town and the famous MBK shopping mall. Day 3 is a free day to explore Bangkok and experience Khao San road in the evening. Begin the journey north to Chiang Mai via the night train.",
+          image: "/thailand-temple.jpg"
         },
         {
-          day: "Days 3-5",
-          title: "Mountain Wellness Retreat",
-          description: "Daily yoga and meditation sessions with mountain views. Visit local temples, explore flower gardens, and enjoy healthy Thai cuisine. Evening sunset meditation and group bonding."
+          day: "Days 4-6",
+          title: "Chiang Mai",
+          description: "Arrive in Chiang Mai in the morning. Visit the famous Doi Suthep Temple with panoramic views. Day 5 is ACE MOMENT - Elephant Sanctuary day! Visit the majestic Asian Elephants in one of our ethically sourced sanctuaries. Day 6 journey into the hills, stopping at the sticky waterfalls. Finish at Two Huts for a breathtaking sunset over the hills with live music.",
+          image: "/thailand-elephant.jpg"
         },
         {
-          day: "Days 6-7",
-          title: "Cultural Immersion",
-          description: "Explore Chiang Mai's old city, visit night markets, take a Thai cooking class, and experience traditional Thai massage. Balance activity with relaxation."
+          day: "Days 7-9",
+          title: "Pai",
+          description: "Day 7 - Tipsy Tubing! Grab your inflatable ring and drift down Pai's River in a massive group. Stop halfway for a foam party boogie on the bank. Day 8 includes a relaxing morning to recover, then head to Pai Canyon for a glowing orange sunset. Day 9 is a free day to explore Pai's hidden gems or chill at the hostel.",
+          image: "/pai-canyon.jpg"
         },
         {
-          day: "Day 8",
-          title: "Elephant Sanctuary",
-          description: "Visit an ethical elephant sanctuary. Learn about conservation, feed and bathe elephants in their natural habitat. No riding, just respectful interaction."
+          day: "Days 10-11",
+          title: "Chiang Mai",
+          description: "Return to Chiang Mai for more exploration. Visit local markets, try street food, and experience the vibrant nightlife. Optional activities include cooking classes and traditional Thai massage.",
+          image: "/thailand-temple.jpg"
         },
         {
-          day: "Days 9-10",
-          title: "Final Reflections",
-          description: "Sunrise meditation session, final yoga practice, and farewell ceremony. Depart with new friends and a refreshed mindset."
+          day: "Days 12-13",
+          title: "Bangkok",
+          description: "Return to Bangkok for final adventures. Last-minute shopping, rooftop bars, and farewell dinner with your new travel family. Depart with unforgettable memories and lifelong friendships.",
+          image: "/thailand-temple.jpg"
         }
       ],
       included: [
-        "9 nights accommodation (wellness retreat and boutique hotels)",
-        "Daily breakfast and 6 healthy group dinners",
-        "All yoga and meditation sessions",
-        "Temple entrance fees and activities",
-        "Expert wellness guide throughout",
+        "12 nights accommodation (hostels and guesthouses)",
+        "14 meals (breakfast and group dinners)",
+        "Experienced Ace Rep & Local Guide",
+        "Activities packages included (Elephant Sanctuary, Tipsy Tubing, Temple visits, Sticky Waterfalls)",
+        "All activities and entrance fees",
+        "Iconic viewpoints",
+        "Private WhatsApp group",
+        "Flight assistance",
         "Airport pickup",
-        "All local transport",
-        "24/7 support"
+        "All inter-destination transport including night train",
+        "24/7 emergency support"
       ],
       notIncluded: [
         "International flights",
-        "Travel insurance",
+        "Travel insurance (mandatory)",
         "Lunches and some dinners",
-        "Personal expenses",
-        "Optional spa treatments",
-        "Tips for guides"
+        "Personal expenses and souvenirs",
+        "Optional activities (Khatok Dinner, Hot Springs & Nam Lod Cave)",
+        "Visa fees (if applicable)",
+        "Tips for guides and drivers"
       ],
-      reviewsList: []
+      reviewsList: [
+        {
+          title: "Thanks Ace for another amazing trip",
+          content: "Second Ace trip and incredible again! Perfect for solo travelers. Met amazing people, hiked Mt Batur, released baby turtles! Clean, comfy stays. Can't wait for number three!",
+          name: "Chloe",
+          date: "24 Sep 2025"
+        },
+        {
+          title: "My trip to Thailand was absolutely incredible",
+          content: "Absolutely Perfect! Mixture of culture, exploring, and partying. Ace team was helpful from booking to end. Mt Batur hike was unforgettable! First solo trip and it boosted my confidence to travel more.",
+          name: "Ellie Heinsen",
+          date: "18 Sep 2025"
+        },
+        {
+          title: "I couldn't recommend Ace more",
+          content: "Best time of my life! Perfect for first-time travelers. Ace handles everything so you don't worry about a thing. Life changing experience!",
+          name: "Charlotte",
+          date: "24 Apr 2025"
+        },
+        {
+          title: "Thailand explorer",
+          content: "Trip of a lifetime! Released turtles, surfed, climbed Mt Batur for sunrise, made jewelry, quad biked through waterfalls, white water rafted! Jay, Ruby, and Nyoman were incredible guides. Best experience ever!",
+          name: "Hannah Taylor",
+          date: "22 Sep 2025"
+        },
+        {
+          title: "Incredible experience from start to finish",
+          content: "Amazing trip with perfect balance of activities and free time. The group vibe was fantastic and our guides made everything seamless. Elephant sanctuary was the highlight!",
+          name: "Maisie",
+          date: "15 Aug 2025"
+        },
+        {
+          title: "Best decision I ever made",
+          content: "Went solo and made friends for life. The itinerary was perfectly paced with incredible experiences every day. Tipsy tubing in Pai was absolutely wild!",
+          name: "Dean Garrity",
+          date: "03 Jul 2025"
+        }
+      ]
     },
     "bali-island-hopper": {
       id: "bali-island-hopper",
@@ -622,8 +693,8 @@ export default function TourDetail() {
               <h2 className="text-3xl font-bold tracking-tight mb-6">Your Journey</h2>
               <div className="mb-8 bg-accent/10 p-8 rounded-lg">
                 <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/trjSBWQKzHaQYLlx.webp"
-                  alt="Bali Explorer Route Map"
+                  src={tourId === 'thailand-intro' ? '/thailand-route-map.jpg' : 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/trjSBWQKzHaQYLlx.webp'}
+                  alt={`${tour.name} Route Map`}
                   className="w-full max-w-3xl mx-auto"
                 />
               </div>
