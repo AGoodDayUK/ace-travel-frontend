@@ -414,7 +414,7 @@ export default function TourDetail() {
           day: "Days 10-11",
           title: "Chiang Mai",
           description: "Return to Chiang Mai for more exploration. Visit local markets, try street food, and experience the vibrant nightlife. Optional activities include cooking classes and traditional Thai massage.",
-          image: "/thailand-temple.jpg"
+          image: "/thai-umbrella-factory.jpg"
         },
         {
           day: "Day 12",

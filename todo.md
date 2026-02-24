@@ -215,3 +215,6 @@
 - [x] Update accommodation from "12 nights" to "11 nights" (12 days = 11 nights)
 - [x] Update final itinerary day from "Days 12-13" to "Day 12"
 - [x] Update description to say "12 days" instead of "13 days"
+
+## Update Chiang Mai Itinerary Image
+- [x] Replace Days 10-11 Chiang Mai itinerary image with Thai umbrella factory image
