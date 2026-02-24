@@ -237,7 +237,7 @@ export default function Home() {
               READY FOR YOUR FIRST ADVENTURE?
             </h2>
             <p className="text-2xl text-background/90 leading-relaxed font-bold">
-              Join thousands of solo travelers who've found their tribe with ACE. 
+              Join thousands of solo travellers who've found their tribe with ACE. 
               Secure your spot with just £60 today.
             </p>
             <Button 

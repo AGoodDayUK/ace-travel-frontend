@@ -381,3 +381,45 @@
 - [x] Add smooth scroll functionality to scroll to lead capture form
 - [x] Test scroll behavior on desktop - works perfectly, scrolls to centered lead form
 - [x] Ensure lead capture form displays correctly on Thailand Intro
+
+## Update to British English Spelling
+- [x] Replace "finalizing" with "finalising"
+- [x] Replace "travelers" with "travellers" across all pages
+- [x] Checked for other American spellings (color/colour, center/centre) - only found in CSS/technical contexts where US spelling is standard
+- [x] Updated across all pages: Home, Tours, Tour Detail, Destinations, FAQ, About, Reviews
+
+## Add Mega Menu for Tours Navigation
+- [x] Create mega menu dropdown for "Tours" navigation item
+- [x] Organize tours by destination (Thailand, Bali, Philippines)
+- [x] Show tour name, duration (days), price, and thumbnail for each tour
+- [x] Make mega menu responsive for desktop (onMouseEnter/onMouseLeave)
+- [x] Style mega menu to match site design with hover effects
+- [x] Added 3-column grid layout with 800px width
+- [x] Each tour card shows image, name, days, and price
+
+## Add Destinations Dropdown Submenu
+- [x] Add dropdown submenu under "Destinations" in navigation
+- [x] Include links to Thailand, Bali, and Philippines destination pages
+- [x] Dropdown works on desktop with hover (onMouseEnter/onMouseLeave)
+- [x] Style dropdown to match site design with rounded corners and shadow
+- [x] Upgrade to visual mega menu with destination images
+- [x] Add tour count and key highlights for each destination
+- [x] Make destinations dropdown more engaging and visual
+- [x] 3-column grid layout with 600px width
+- [x] Each destination shows image, name, highlight, tour count, and starting price
+
+## Create Amazing Mobile Menu UX
+- [x] Build collapsible sections for Destinations and Tours in mobile menu
+- [x] Add smooth animations and transitions (animate-fade-in, rotate chevrons)
+- [x] Make mobile menu thumb-friendly with large tap targets (h-12 buttons, p-3 cards)
+- [x] Show tour thumbnails in mobile Tours accordion (16x16 images)
+- [x] Ensure mobile menu closes after navigation (onClick handlers)
+- [x] Added max-h-[80vh] with overflow-y-auto for scrollability
+- [x] Organized tours by destination in mobile accordion
+
+## Fix Missing Navigation Menu Images
+- [x] Update Header.tsx to use existing Thailand images for Thailand tours/destination
+- [x] Search for and add Bali temple/beach images for Bali tours/destination
+- [x] Search for and add Philippines beach/lagoon images for Philippines tours/destination
+- [x] Copied bali-temple.jpg, bali-beach.webp, philippines-beach.jpg, philippines-lagoon.jpg to public folder
+- [x] Updated all image paths in Header.tsx to use correct filenames

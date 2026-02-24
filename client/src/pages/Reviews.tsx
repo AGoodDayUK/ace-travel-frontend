@@ -111,7 +111,7 @@ export default function Reviews() {
             Traveler Reviews
           </h1>
           <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
-            Real stories from real travelers who've experienced ACE adventures
+            Real stories from real travellers who've experienced ACE adventures
           </p>
           <div className="flex items-center justify-center gap-2 pt-4">
             {[...Array(5)].map((_, i) => (
@@ -182,7 +182,7 @@ export default function Reviews() {
             Ready to Create Your Own Story?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of travelers who've had the adventure of a lifetime with ACE
+            Join thousands of travellers who've had the adventure of a lifetime with ACE
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="/tours">

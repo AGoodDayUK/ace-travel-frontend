@@ -208,10 +208,10 @@ export default function DestinationThailand() {
 
             <AccordionItem value="safety">
               <AccordionTrigger className="text-left text-lg font-semibold">
-                Is Thailand safe for travelers?
+                Is Thailand safe for travellers?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                Thailand is very safe for travelers and welcomes millions of tourists annually. Standard travel precautions apply: watch your belongings in crowded areas, avoid unlicensed taxis, and drink responsibly. Our experienced reps are with you throughout the trip and know the safest spots. Solo travelers and first-timers feel completely comfortable on our tours.
+                Thailand is very safe for travellers and welcomes millions of tourists annually. Standard travel precautions apply: watch your belongings in crowded areas, avoid unlicensed taxis, and drink responsibly. Our experienced reps are with you throughout the trip and know the safest spots. Solo travellers and first-timers feel completely comfortable on our tours.
               </AccordionContent>
             </AccordionItem>
 

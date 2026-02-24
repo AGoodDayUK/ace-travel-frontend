@@ -28,7 +28,7 @@ export default function About() {
   ];
 
   const stats = [
-    { number: "10,000+", label: "Travelers" },
+    { number: "10,000+", label: "Travellers" },
     { number: "4.9/5", label: "Average Rating" },
     { number: "3", label: "Destinations" },
     { number: "11", label: "Tours" }
@@ -47,7 +47,7 @@ export default function About() {
               ACE Travel Experiences was founded on a simple belief: travel should be accessible, social, and unforgettable. We create group adventures for 18-35 year olds who want to explore the world without the hassle of planning or the loneliness of solo travel.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Since 2019, we've helped over 10,000 travelers discover Southeast Asia, make lifelong friends, and create memories that last forever. We're not just a tour company. We're a community.
+              Since 2019, we've helped over 10,000 travellers discover Southeast Asia, make lifelong friends, and create memories that last forever. We're not just a tour company. We're a community.
             </p>
           </div>
           <div className="md:col-span-6">

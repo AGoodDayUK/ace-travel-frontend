@@ -196,7 +196,7 @@ export default function TourDetail() {
           date: "24 Sep 2025",
           rating: 5,
           title: "Thanks Ace for another amazing trip",
-          content: "Second Ace trip and incredible again! Perfect for solo travelers. Met amazing people, hiked Mt Batur, released baby turtles! Clean, comfy stays. Can't wait for number three!"
+          content: "Second Ace trip and incredible again! Perfect for solo travellers. Met amazing people, hiked Mt Batur, released baby turtles! Clean, comfy stays. Can't wait for number three!"
         },
         {
           name: "Ellie Heinsen",
@@ -217,7 +217,7 @@ export default function TourDetail() {
           date: "24 Apr 2025",
           rating: 5,
           title: "I couldn't recommend Ace more",
-          content: "Best time of my life! Perfect for first-time travelers. Ace handles everything so you don't worry about a thing. Life changing experience!"
+          content: "Best time of my life! Perfect for first-time travellers. Ace handles everything so you don't worry about a thing. Life changing experience!"
         },
         {
           name: "Hannah Taylor",
@@ -414,7 +414,7 @@ export default function TourDetail() {
         {
           day: "Days 1-3",
           title: "Bangkok",
-          description: "Day 1: Arrive in Thailand! Meet our airport rep for your pre-booked transfer to the hostel where you'll meet your trip manager and fellow travelers.\n\nDay 2: Breakfast included. Group briefing, then city tour of Bangkok covering Temples, China Town, and MBK shopping mall.\n\nDay 3: Free day to explore! Experience the thrills of Khao San road in the evening - cocktails in buckets and scorpion on a stick? Begin the night train journey north to Chiang Mai.",
+          description: "Day 1: Arrive in Thailand! Meet our airport rep for your pre-booked transfer to the hostel where you'll meet your trip manager and fellow travellers.\n\nDay 2: Breakfast included. Group briefing, then city tour of Bangkok covering Temples, China Town, and MBK shopping mall.\n\nDay 3: Free day to explore! Experience the thrills of Khao San road in the evening - cocktails in buckets and scorpion on a stick? Begin the night train journey north to Chiang Mai.",
           image: "/thailand-temple.jpg"
         },
         {
@@ -467,7 +467,7 @@ export default function TourDetail() {
       reviewsList: [
         {
           title: "Thanks Ace for another amazing trip",
-          content: "Second Ace trip and incredible again! Perfect for solo travelers. Met amazing people, hiked Mt Batur, released baby turtles! Clean, comfy stays. Can't wait for number three!",
+          content: "Second Ace trip and incredible again! Perfect for solo travellers. Met amazing people, hiked Mt Batur, released baby turtles! Clean, comfy stays. Can't wait for number three!",
           name: "Chloe",
           date: "24 Sep 2025"
         },
@@ -479,7 +479,7 @@ export default function TourDetail() {
         },
         {
           title: "I couldn't recommend Ace more",
-          content: "Best time of my life! Perfect for first-time travelers. Ace handles everything so you don't worry about a thing. Life changing experience!",
+          content: "Best time of my life! Perfect for first-time travellers. Ace handles everything so you don't worry about a thing. Life changing experience!",
           name: "Charlotte",
           date: "24 Apr 2025"
         },
@@ -529,7 +529,7 @@ export default function TourDetail() {
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/PXlQnTbTVcJJJjpj.JPG",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/UtZydstnoHgAJiUA.JPG"
       ],
-      description: "Fast-paced Bali island hopping adventure. Hit the highlights in 10 action-packed days - from Nusa Islands' crystal waters to Ubud's cultural heart. Perfect for travelers short on time but big on adventure.",
+      description: "Fast-paced Bali island hopping adventure. Hit the highlights in 10 action-packed days - from Nusa Islands' crystal waters to Ubud's cultural heart. Perfect for travellers short on time but big on adventure.",
       highlights: [
         "Nusa Islands day trips (Nusa Lembongan & Nusa Penida)",
         "Snorkeling with manta rays",
@@ -688,7 +688,7 @@ export default function TourDetail() {
                 </div>
                 <div className="border-l border-gray-300 pl-2">
                   <div className="text-xs font-semibold text-gray-900 leading-tight">Trusted by 500+</div>
-                  <div className="text-xs font-semibold text-gray-900 leading-tight">travelers from all</div>
+                  <div className="text-xs font-semibold text-gray-900 leading-tight">travellers from all</div>
                   <div className="text-xs font-semibold text-gray-900 leading-tight">over the world</div>
                 </div>
               </div>
@@ -972,7 +972,7 @@ export default function TourDetail() {
           <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
             We carefully select comfortable, social hostels that strike the perfect balance between rest and connection. 
             Each accommodation features modern amenities, clean facilities, and vibrant common areas where you'll meet 
-            fellow travelers and create lasting friendships. From cozy dorm rooms to relaxing social spaces, 
+            fellow travellers and create lasting friendships. From cozy dorm rooms to relaxing social spaces, 
             your accommodation is designed to enhance your adventure experience.
           </p>
           
@@ -1137,7 +1137,7 @@ export default function TourDetail() {
                 <Calendar className="w-16 h-16 text-primary mx-auto mb-4" />
                 <h2 className="text-3xl font-bold tracking-tight mb-2">Dates Coming Soon!</h2>
                 <p className="text-lg text-muted-foreground">
-                  We're finalizing departure dates for this tour. Register your interest and we'll notify you as soon as dates are released.
+                  We're finalising departure dates for this tour. Register your interest and we'll notify you as soon as dates are released.
                 </p>
               </div>
               
@@ -1249,7 +1249,7 @@ export default function TourDetail() {
                 Can I join solo?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                Absolutely! Over 70% of our travelers join solo. Our group tours are specifically designed to help you make friends from day one. You'll share accommodation with other travelers, and our experienced trip managers create a welcoming atmosphere where everyone feels included. Many of our solo travelers tell us they made lifelong friends on their ACE adventure.
+                Absolutely! Over 70% of our travellers join solo. Our group tours are specifically designed to help you make friends from day one. You'll share accommodation with other travellers, and our experienced trip managers create a welcoming atmosphere where everyone feels included. Many of our solo travellers tell us they made lifelong friends on their ACE adventure.
               </AccordionContent>
             </AccordionItem>
 
@@ -1312,7 +1312,7 @@ export default function TourDetail() {
                 What's the group dynamic like?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                Our tours are social, group-based experiences for ages 18-35. Groups typically range from 15-30 travelers. The vibe is social, adventurous, and inclusive. We attract open-minded people who love to explore, try new things, and make friends. There's a perfect balance of organized group activities and free time to do your own thing.
+                Our tours are social, group-based experiences for ages 18-35. Groups typically range from 15-30 travellers. The vibe is social, adventurous, and inclusive. We attract open-minded people who love to explore, try new things, and make friends. There's a perfect balance of organized group activities and free time to do your own thing.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -1329,7 +1329,7 @@ export default function TourDetail() {
             Ready for Your Adventure?
           </h2>
           <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            Join hundreds of travelers on this incredible journey
+            Join hundreds of travellers on this incredible journey
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button 

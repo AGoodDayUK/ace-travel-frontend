@@ -25,7 +25,7 @@ export default function FAQ() {
         },
         {
           q: "Is travel insurance included?",
-          a: "Travel insurance is not included but is mandatory for all travelers. We can recommend trusted insurance providers that cover adventure activities, medical emergencies, and trip cancellations. Insurance typically costs between £40-80 depending on your tour length and coverage level."
+          a: "Travel insurance is not included but is mandatory for all travellers. We can recommend trusted insurance providers that cover adventure activities, medical emergencies, and trip cancellations. Insurance typically costs between £40-80 depending on your tour length and coverage level."
         }
       ]
     },
@@ -68,15 +68,15 @@ export default function FAQ() {
       questions: [
         {
           q: "What if I'm traveling solo?",
-          a: "Most of our travelers join solo! That's the beauty of group travel. You'll be added to a WhatsApp group before departure to start connecting with your travel crew. Our trip managers facilitate introductions and group activities to help everyone bond quickly."
+          a: "Most of our travellers join solo! That's the beauty of group travel. You'll be added to a WhatsApp group before departure to start connecting with your travel crew. Our trip managers facilitate introductions and group activities to help everyone bond quickly."
         },
         {
           q: "What's the typical group size?",
-          a: "Groups range from 15-30 travelers, which is the perfect size for making friends while still being manageable. You'll have the flexibility to do activities with the whole group or break into smaller groups based on interests."
+          a: "Groups range from 15-30 travellers, which is the perfect size for making friends while still being manageable. You'll have the flexibility to do activities with the whole group or break into smaller groups based on interests."
         },
         {
           q: "What's the age range?",
-          a: "All our tours are designed for 18-35 year olds. The average age is typically 22-28, with a mix of gap year travelers, recent graduates, and young professionals taking career breaks."
+          a: "All our tours are designed for 18-35 year olds. The average age is typically 22-28, with a mix of gap year travellers, recent graduates, and young professionals taking career breaks."
         },
         {
           q: "Can I bring a friend?",
