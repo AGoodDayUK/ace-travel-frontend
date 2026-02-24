@@ -490,3 +490,4 @@
 - [x] Fix 'Want a shorter trip?' cross-sell section image
 - [x] Review and fix tours page mobile design overlaps and spacing issues
 - [x] Create white versions of ACE Travel logos and update website branding
+- [x] Update header to use colored blue ACE logo
