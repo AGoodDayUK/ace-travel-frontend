@@ -79,14 +79,24 @@ export default function Header() {
       
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-kinetic ${
-          isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+          isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-sm' : 'bg-background/80 backdrop-blur-sm md:bg-transparent'
         }`}
       >
         <div className="container">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center kinetic-underline">
-              <img src="/ace-logo-full.png" alt="ACE Travel Experiences" className="h-10 md:h-14" />
+              {/* Use white logo on mobile for better visibility, colored logo on desktop */}
+              <img 
+                src="/ace-logo-horizontal-white.png" 
+                alt="ACE Travel Experiences" 
+                className="h-10 md:hidden" 
+              />
+              <img 
+                src="/ace-logo-full.png" 
+                alt="ACE Travel Experiences" 
+                className="hidden md:block h-14" 
+              />
             </Link>
 
             {/* Desktop Navigation */}

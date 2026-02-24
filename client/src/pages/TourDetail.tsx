@@ -695,7 +695,7 @@ export default function TourDetail() {
 
   return (
     <div className="animate-fade-in">
-      <div className="relative h-[60vh] overflow-hidden">
+      <div className="relative min-h-[70vh] md:min-h-[80vh] overflow-hidden">
         <img 
           src={tour.hero}
           alt={tour.name}
@@ -712,10 +712,10 @@ export default function TourDetail() {
               <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
                 {tour.name}
               </h1>
-              <p className="text-sm md:text-base mb-6 leading-relaxed">
+              <p className="text-sm md:text-lg mb-8 leading-relaxed">
                 {tour.description}
               </p>
-              <div className="flex flex-wrap gap-4 text-sm">
+              <div className="flex flex-wrap gap-6 text-sm md:text-base">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-5 h-5" />
                   <span>{tour.duration}</span>
