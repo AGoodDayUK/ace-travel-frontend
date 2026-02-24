@@ -269,3 +269,32 @@
 - [ ] Update tour detail page Book Now buttons (sidebar and mobile sticky)
 - [ ] Update homepage Book Now buttons
 - [ ] Update Tours page Book Now buttons
+
+## Add Accommodation Section
+- [x] Create accommodation section with image slider showing hostel photos
+- [x] Write description about carefully selected hostels for comfort and social atmosphere
+- [x] Add horizontal scrolling image gallery with 4-6 hostel photos
+- [x] Position section after What's Included/Not Included
+
+## Add Speak to a Rep Contact Option
+- [x] Add "Speak to a Rep" button/section in Ready for Adventure area at bottom
+- [x] Include phone number: +44 7450 996 347
+- [x] Add messaging about questions and personal assistance before booking
+
+## Add Accommodation Section
+- [x] Create accommodation section with image slider showing hostel photos
+- [x] Write description about carefully selected hostels for comfort and social atmosphere
+- [x] Add horizontal scrolling image gallery with 4-6 hostel photos
+- [x] Position section after What's Included/Not Included
+
+## Add Speak to a Travel Expert Contact Option
+- [x] Add "Speak to a Travel Expert" button/section in Ready for Adventure area at bottom
+- [x] Include phone number: +44 7450 996 347
+- [x] Add messaging about questions and personal assistance before booking
+
+## Add Trust Signals to Tour Pages
+- [x] Add Trustpilot-style trust badge in header/hero area
+- [x] Include "Trusted by 500+ travelers" messaging
+- [x] Add star rating display (5 stars)
+- [x] Position prominently for social proof and conversion optimization
+- [x] Link trust badge to Trustpilot page (https://uk.trustpilot.com/review/www.acetravelexperiences.com)

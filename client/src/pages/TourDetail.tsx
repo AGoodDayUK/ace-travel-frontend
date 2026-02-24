@@ -648,6 +648,22 @@ export default function TourDetail() {
                   <span>{tour.rating} ({tour.reviews} reviews)</span>
                 </div>
               </div>
+              <a 
+                href="https://uk.trustpilot.com/review/www.acetravelexperiences.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-3 bg-white/95 backdrop-blur-sm px-5 py-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+              >
+                <div className="flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-[#00B67A] text-[#00B67A]" />
+                  ))}
+                </div>
+                <div className="border-l border-gray-300 pl-3">
+                  <div className="text-sm font-semibold text-gray-900">Trusted by 500+ travelers</div>
+                  <div className="text-xs text-gray-600">from all over the world</div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -907,6 +923,57 @@ export default function TourDetail() {
         </div>
       </section>
 
+      {/* Accommodation Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container">
+          <h2 className="text-3xl font-bold tracking-tight mb-4 text-center">Your Home Away From Home</h2>
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+            We carefully select comfortable, social hostels that strike the perfect balance between rest and connection. 
+            Each accommodation features modern amenities, clean facilities, and vibrant common areas where you'll meet 
+            fellow travelers and create lasting friendships. From cozy dorm rooms to relaxing social spaces, 
+            your accommodation is designed to enhance your adventure experience.
+          </p>
+          
+          <div className="w-full overflow-hidden">
+            <div className="relative">
+              <div 
+                className="flex gap-4 px-4 md:px-8 overflow-x-scroll snap-x snap-mandatory scrollbar-hide" 
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+              >
+                <div className="flex-shrink-0 snap-start w-[85vw] md:w-[calc(25%-12px)] aspect-[4/3] overflow-hidden rounded-lg">
+                  <img 
+                    src="/hostel-pod.jpg"
+                    alt="Modern hostel pod beds with privacy curtains"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex-shrink-0 snap-start w-[85vw] md:w-[calc(25%-12px)] aspect-[4/3] overflow-hidden rounded-lg">
+                  <img 
+                    src="/hostel-dorm.jpg"
+                    alt="Comfortable hostel dorm room"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex-shrink-0 snap-start w-[85vw] md:w-[calc(25%-12px)] aspect-[4/3] overflow-hidden rounded-lg">
+                  <img 
+                    src="/hostel-common.webp"
+                    alt="Vibrant hostel common area"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex-shrink-0 snap-start w-[85vw] md:w-[calc(25%-12px)] aspect-[4/3] overflow-hidden rounded-lg">
+                  <img 
+                    src="/hostel-rooftop.webp"
+                    alt="Hostel rooftop terrace"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-background">
         <div className="container">
           <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Photo Gallery</h2>
@@ -978,6 +1045,18 @@ export default function TourDetail() {
             >
               <Link href="/tours">View All Tours</Link>
             </Button>
+          </div>
+          <div className="mt-8 pt-8 border-t border-white/20">
+            <p className="text-white/90 mb-4">Have questions before booking?</p>
+            <a href="tel:+447450996347" className="inline-block">
+              <Button 
+                size="lg"
+                variant="outline"
+                className="font-medium tracking-tight text-lg h-14 px-8 text-white border-white hover:bg-white/10"
+              >
+                📞 Speak to a Travel Expert: +44 7450 996 347
+              </Button>
+            </a>
           </div>
         </div>
       </section>
