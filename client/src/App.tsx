@@ -16,6 +16,7 @@ import Tours from "./pages/Tours";
 import HowItWorks from "./pages/HowItWorks";
 import Deals from "./pages/Deals";
 import About from "./pages/About";
+import DestinationThailand from "./pages/DestinationThailand";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -23,6 +24,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/tour/:id"} component={TourDetail} />
       <Route path={"/destinations"} component={Destinations} />
+      <Route path={"/destinations/thailand"} component={DestinationThailand} />
       <Route path={"/tours"} component={Tours} />
       <Route path={"/how-it-works"} component={HowItWorks} />
       <Route path={"/deals"} component={Deals} />

@@ -354,3 +354,11 @@
 - [ ] Update main navigation to include Destinations dropdown
 - [ ] Optimize meta titles and descriptions for SEO
 - [ ] Add schema markup for destination FAQs
+
+## Complete All Tour Detail Pages
+- [x] Apply all enhancements to Bali Explorer (accommodation, Trustpilot badge, departure dates, Travel Expert contact, FAQ)
+- [ ] Build Thailand Island Hopper tour page with full details
+- [ ] Build Bali Island Hopper tour page with full details
+- [ ] Build Philippines Paradise tour page with full details
+- [ ] Ensure all tours have consistent layout and sections
+- [ ] Test all tour pages for errors and broken links

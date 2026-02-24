@@ -117,7 +117,16 @@ export default function TourDetail() {
       rating: 4.9,
       reviews: 203,
       nextDeparture: "12 Mar 2026",
-      departureDates: [],
+      departureDates: [
+        { date: "May 2026", price: "£1,199" },
+        { date: "October 2026", price: "£1,199" }
+      ],
+      accommodation: [
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bHljzvhImvBUkIgg.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/kyTvbTPGjActsIBg.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/mpDakhCkwHVjNNqd.JPG",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/qvVNpgeRyDtsGSbr.JPG"
+      ],
       hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bHljzvhImvBUkIgg.JPG",
       gallery: [
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bHljzvhImvBUkIgg.JPG",
@@ -1012,9 +1021,9 @@ export default function TourDetail() {
                       <div className="flex items-center gap-2 mb-2">
                         <Calendar className="w-5 h-5 text-primary" />
                         <span className="text-lg font-bold">{departure.date}</span>
-                        {departure.spotsLeft <= 5 && (
+                        {(departure as any).spotsLeft && (departure as any).spotsLeft <= 5 && (
                           <Badge variant="destructive" className="text-xs ml-2">
-                            Only {departure.spotsLeft} left!
+                            Only {(departure as any).spotsLeft} left!
                           </Badge>
                         )}
                       </div>

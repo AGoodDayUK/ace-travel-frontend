@@ -193,8 +193,8 @@ export default function Destinations() {
                     size="lg"
                     className="bg-primary hover:bg-primary/90 text-primary-foreground font-black border-4 border-foreground transition-all duration-200 hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_rgba(0,0,0,1)]"
                   >
-                    <Link href={`/tours/${dest.slug}`}>
-                      VIEW TOURS
+                    <Link href={`/destinations/${dest.slug}`}>
+                      EXPLORE {dest.name.toUpperCase()}
                       <ArrowRight className="w-5 h-5" />
                     </Link>
                   </Button>
