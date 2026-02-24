@@ -652,16 +652,23 @@ export default function TourDetail() {
                 href="https://uk.trustpilot.com/review/www.acetravelexperiences.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-3 bg-white/95 backdrop-blur-sm px-5 py-3 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                className="mt-6 inline-block bg-white/95 backdrop-blur-sm px-6 py-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
               >
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-[#00B67A] text-[#00B67A]" />
-                  ))}
-                </div>
-                <div className="border-l border-gray-300 pl-3">
-                  <div className="text-sm font-semibold text-gray-900">Trusted by 500+ travelers</div>
-                  <div className="text-xs text-gray-600">from all over the world</div>
+                <div className="flex items-start gap-4">
+                  <div className="text-left">
+                    <div className="text-5xl font-bold text-gray-900 leading-none">4.9</div>
+                    <div className="text-sm font-semibold text-gray-900 mt-1">Excellent</div>
+                    <div className="flex items-center gap-0.5 mt-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-[#00B67A] text-[#00B67A]" />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="border-l border-gray-300 pl-4 pt-1">
+                    <div className="text-sm font-semibold text-gray-900">Trusted by 500+</div>
+                    <div className="text-sm font-semibold text-gray-900">travelers from all</div>
+                    <div className="text-sm font-semibold text-gray-900">over the world</div>
+                  </div>
                 </div>
               </a>
             </div>

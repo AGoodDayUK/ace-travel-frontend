@@ -298,3 +298,9 @@
 - [x] Add star rating display (5 stars)
 - [x] Position prominently for social proof and conversion optimization
 - [x] Link trust badge to Trustpilot page (https://uk.trustpilot.com/review/www.acetravelexperiences.com)
+
+## Update Trust Badge to Trustpilot Format
+- [x] Change trust badge design to show 4.9 rating score prominently
+- [x] Add "Excellent" text below rating
+- [x] Show 5 green Trustpilot stars in horizontal bar
+- [x] Match classic Trustpilot badge styling
