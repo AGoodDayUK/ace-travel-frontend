@@ -488,3 +488,4 @@
 - [x] Fix menu dropdown gap causing menu to close when moving mouse to submenu
 - [x] Add destination images to Thailand Island Hopper day-by-day itinerary from pasted content
 - [x] Fix 'Want a shorter trip?' cross-sell section image
+- [x] Review and fix tours page mobile design overlaps and spacing issues

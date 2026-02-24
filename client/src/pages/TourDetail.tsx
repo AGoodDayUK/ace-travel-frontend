@@ -964,7 +964,7 @@ export default function TourDetail() {
             </div>
           </div>
 
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 hidden lg:block">
             <Card className="p-6 border-2 sticky top-24 space-y-6">
               <div>
                 <div className="text-sm text-muted-foreground">From</div>
