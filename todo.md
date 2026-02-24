@@ -455,3 +455,10 @@
 - [x] Ensure light and dark shades match brand identity
 - [x] Used #44c5c3/10 for light background, #44c5c3 for text
 - [x] Used #44c5c3/20 for hover background, #2a7a79 for darker text
+
+## Change Destinations to Neutral Color
+- [x] Update Destinations button from cyan to neutral gray/slate
+- [x] Keep Tours in cyan (#44c5c3) and Deals in pink (#ee2f6d)
+- [x] Ensure neutral color is professional and clean
+- [x] Used bg-slate-100/text-slate-600 for Destinations (neutral)
+- [x] Updated Deals to use exact ACE pink (#ee2f6d) matching logo

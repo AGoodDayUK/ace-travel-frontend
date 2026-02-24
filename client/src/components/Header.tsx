@@ -100,8 +100,8 @@ export default function Header() {
                 <button
                   className={`text-sm font-bold tracking-tight transition-kinetic flex items-center gap-1.5 px-3 py-1.5 rounded-md ${
                     location.startsWith('/destination') 
-                      ? 'bg-[#44c5c3]/20 text-[#2a7a79]' 
-                      : 'bg-[#44c5c3]/10 text-[#44c5c3] hover:bg-[#44c5c3]/20 hover:text-[#2a7a79]'
+                      ? 'bg-slate-200 text-slate-700' 
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-700'
                   }`}
                 >
                   <MapPin className="w-4 h-4" />
@@ -207,8 +207,8 @@ export default function Header() {
                     link.highlight 
                       ? `font-bold px-3 py-1.5 rounded-md flex items-center gap-1.5 ${
                           location === link.href 
-                            ? 'bg-pink-100 text-pink-700' 
-                            : 'bg-pink-50 text-pink-600 hover:bg-pink-100 hover:text-pink-700'
+                            ? 'bg-[#ee2f6d]/20 text-[#c01850]' 
+                            : 'bg-[#ee2f6d]/10 text-[#ee2f6d] hover:bg-[#ee2f6d]/20 hover:text-[#c01850]'
                         }`
                       : `font-medium kinetic-underline ${
                           location === link.href ? 'text-primary' : 'text-foreground hover:text-primary'
