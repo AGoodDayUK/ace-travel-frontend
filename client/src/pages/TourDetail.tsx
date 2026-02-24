@@ -827,45 +827,6 @@ export default function TourDetail() {
               </div>
             )}
 
-            {/* Photo Gallery */}
-            {tour.id === 'thailand-intro' && (
-              <div>
-                <h3 className="text-2xl font-bold tracking-tight mb-6">Photo Gallery</h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  <img 
-                    src="/thailand-temple-interior.jpg" 
-                    alt="Group photo at Thai temple"
-                    className="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
-                  />
-                  <img 
-                    src="/cooking-class.jpg" 
-                    alt="Thai cooking class"
-                    className="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
-                  />
-                  <img 
-                    src="/farewell-meal.jpg" 
-                    alt="Farewell dinner"
-                    className="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
-                  />
-                  <img 
-                    src="/temples.jpg" 
-                    alt="Temple visit"
-                    className="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
-                  />
-                  <img 
-                    src="/thailand-waterfall.webp" 
-                    alt="Sticky waterfalls"
-                    className="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
-                  />
-                  <img 
-                    src="/bangkok-longtail-boat.jpg" 
-                    alt="Bangkok river tour"
-                    className="w-full h-64 object-cover rounded-lg hover:scale-105 transition-transform cursor-pointer"
-                  />
-                </div>
-              </div>
-            )}
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-2xl font-bold tracking-tight mb-4">What's Included</h3>
@@ -919,12 +880,14 @@ export default function TourDetail() {
                 </div>
               </div>
 
-              <Button 
-                size="lg"
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium text-lg h-14"
-              >
-                Book Now
-              </Button>
+              <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="lg"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium text-lg h-14"
+                >
+                  Book Now
+                </Button>
+              </a>
 
               <div className="space-y-2 text-center text-sm text-muted-foreground">
                 <p>Secure your spot with just {tour.deposit}</p>
@@ -1027,12 +990,14 @@ export default function TourDetail() {
               <div className="text-xl font-bold text-primary">{tour.price}</div>
               <div className="text-xs text-muted-foreground">{tour.deposit} deposit</div>
             </div>
-            <Button 
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8"
-            >
-              Book Now
-            </Button>
+            <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
+              <Button 
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-8"
+              >
+                Book Now
+              </Button>
+            </a>
           </div>
         </div>
       </div>

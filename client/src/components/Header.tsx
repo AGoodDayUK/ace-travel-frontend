@@ -64,13 +64,13 @@ export default function Header() {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Link href="/tours">
+              <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
                 <Button 
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight transition-kinetic"
                 >
                   Book Now
                 </Button>
-              </Link>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -104,14 +104,14 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Link href="/tours">
+              <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
                 <Button 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight mt-4"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Book Now
                 </Button>
-              </Link>
+              </a>
             </nav>
           </div>
         )}

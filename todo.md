@@ -258,8 +258,14 @@
 ## Update Chiang Mai Days 10-11 Itinerary Image
 - [x] Replace umbrella factory image with authentic Thai cooking class group photo
 
-## Create Photo Gallery Section
-- [x] Add photo gallery section to Thailand Intro tour page
-- [x] Add temple interior group photo to gallery
-- [x] Design gallery layout with grid or horizontal scroll
-- [x] Include 6 authentic tour photos (temple interior, cooking class, farewell dinner, temple visit, waterfall, Bangkok boat)
+## Remove Duplicate Photo Gallery
+- [x] Remove photo gallery section that duplicates images from highlights/itinerary
+
+## Update Booking Links
+- [x] Update all "Book Now" buttons to link to https://booking.acetravelexperiences.com/book/
+- [x] Update header Book Now button (desktop and mobile)
+- [x] Update tour detail page Book Now buttons (sidebar and mobile sticky)
+- [x] Homepage and Tours page don't have Book Now buttons (verified)
+- [ ] Update tour detail page Book Now buttons (sidebar and mobile sticky)
+- [ ] Update homepage Book Now buttons
+- [ ] Update Tours page Book Now buttons
