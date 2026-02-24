@@ -242,3 +242,11 @@
 ## Fix Itinerary Line Breaks Rendering
 - [x] Change description rendering to properly display line breaks (use white-space: pre-line CSS or split into paragraphs)
 - [x] Ensure each day appears as a separate paragraph visually
+
+## Style Itinerary Day Labels
+- [x] Make day labels (Day 1:, Day 2:, Day 3:, etc.) bold and pink for better visual hierarchy
+- [x] Apply styling across all tour pages
+- [x] Test readability and visual impact
+
+## Update Bangkok City Tour Image
+- [x] Replace Bangkok city tour highlight image with longtail boat photo showing Wat Arun

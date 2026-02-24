@@ -368,7 +368,7 @@ export default function TourDetail() {
         {
           title: "Bangkok city tour",
           description: "Glide along the Chao Phraya by long-tail boat, hop between the Grand Palace, Wat Pho's Reclining Buddha and Wat Arun's spires, weave through Chinatown's alleys, ride the Skytrain, and finish on a rooftop as the skyline lights up.",
-          image: "/thailand-temple.jpg"
+          image: "/bangkok-longtail-boat.jpg"
         },
         {
           title: "Pai sunsets",
@@ -720,7 +720,26 @@ export default function TourDetail() {
                           <h3 className="text-xl font-bold">{itineraryItem.title}</h3>
                           <Badge variant="outline">{itineraryItem.day}</Badge>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{itineraryItem.description}</p>
+                        <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                          {itineraryItem.description.split('\n').map((line, i) => {
+                            const dayMatch = line.match(/^(Day \d+:)(.*)$/);
+                            if (dayMatch) {
+                              return (
+                                <span key={i}>
+                                  <span className="font-bold text-primary">{dayMatch[1]}</span>
+                                  {dayMatch[2]}
+                                  {i < itineraryItem.description.split('\n').length - 1 && <br />}
+                                </span>
+                              );
+                            }
+                            return (
+                              <span key={i}>
+                                {line}
+                                {i < itineraryItem.description.split('\n').length - 1 && <br />}
+                              </span>
+                            );
+                          })}
+                        </p>
                       </div>
                     </div>
                   </Card>
