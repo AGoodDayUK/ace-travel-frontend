@@ -395,25 +395,25 @@ export default function TourDetail() {
         {
           day: "Days 1-3",
           title: "Bangkok",
-          description: "Day 1: Arrive in Thailand! Meet our airport rep for your pre-booked transfer to the hostel where you'll meet your trip manager and fellow travelers. Day 2: Breakfast included. Group briefing, then city tour of Bangkok covering Temples, China Town, and MBK shopping mall. Day 3: Free day to explore! Experience the thrills of Khao San road in the evening - cocktails in buckets and scorpion on a stick? Begin the night train journey north to Chiang Mai.",
+          description: "Day 1: Arrive in Thailand! Meet our airport rep for your pre-booked transfer to the hostel where you'll meet your trip manager and fellow travelers.\n\nDay 2: Breakfast included. Group briefing, then city tour of Bangkok covering Temples, China Town, and MBK shopping mall.\n\nDay 3: Free day to explore! Experience the thrills of Khao San road in the evening - cocktails in buckets and scorpion on a stick? Begin the night train journey north to Chiang Mai.",
           image: "/thailand-temple.jpg"
         },
         {
           day: "Days 4-6",
           title: "Chiang Mai",
-          description: "Day 4: Arrive in the morning, check in and explore Chiang Mai's busy streets. Afternoon visit to Doi Suthep Temple with panoramic views. Day 5: *ACE MOMENT* Breakfast included. Elephant Sanctuary day! Visit majestic Asian Elephants in our ethically sourced sanctuary in the hills. Optional: Traditional Khatok Dinner. Day 6: Breakfast included. Journey to Pai, stopping at the sticky waterfalls. Finish at Two Huts for sunset with live music and ice cold drinks.",
+          description: "Day 4: Arrive in the morning, check in and explore Chiang Mai's busy streets. Afternoon visit to Doi Suthep Temple with panoramic views.\n\nDay 5: *ACE MOMENT* Breakfast included. Elephant Sanctuary day! Visit majestic Asian Elephants in our ethically sourced sanctuary in the hills. Optional: Traditional Khatok Dinner.\n\nDay 6: Breakfast included. Journey to Pai, stopping at the sticky waterfalls. Finish at Two Huts for sunset with live music and ice cold drinks.",
           image: "/thailand-elephant.jpg"
         },
         {
           day: "Days 7-9",
           title: "Pai",
-          description: "Day 7: Breakfast included. Tipsy Tubing - a massive floating party! Grab your inflatable ring and drift down Pai's River. Stop halfway for a foam party boogie on the riverbank. Hangovers guaranteed! Day 8: Breakfast included. Relaxing morning to recover, or explore Pai's beautiful streets and cute coffee spots. Evening trip to Pai Canyon for glowing orange sunset. Day 9: Breakfast included. Free day to explore Pai's hidden gems or chill at the hostel. Optional: Pai Hot Springs & Nam Lod Cave.",
+          description: "Day 7: Breakfast included. Tipsy Tubing - a massive floating party! Grab your inflatable ring and drift down Pai's River. Stop halfway for a foam party boogie on the riverbank. Hangovers guaranteed!\n\nDay 8: Breakfast included. Relaxing morning to recover, or explore Pai's beautiful streets and cute coffee spots. Evening trip to Pai Canyon for glowing orange sunset.\n\nDay 9: Breakfast included. Free day to explore Pai's hidden gems or chill at the hostel. Optional: Pai Hot Springs & Nam Lod Cave.",
           image: "/pai-canyon.jpg"
         },
         {
           day: "Days 10-11",
           title: "Chiang Mai",
-          description: "Day 10: Breakfast included. Bye bye Pai! Head south back to Chiang Mai, stopping at an authentic Thai umbrella factory and silk factory. Day 11: Breakfast included. Indulge in an authentic Thai cooking class - cook up a storm and enjoy your creations! Learn how Thai cuisine hits the spot every time. Head back to Bangkok in the evening via train.",
+          description: "Day 10: Breakfast included. Bye bye Pai! Head south back to Chiang Mai, stopping at an authentic Thai umbrella factory and silk factory.\n\nDay 11: Breakfast included. Indulge in an authentic Thai cooking class - cook up a storm and enjoy your creations! Learn how Thai cuisine hits the spot every time. Head back to Bangkok in the evening via train.",
           image: "/thai-umbrella-factory.jpg"
         },
         {

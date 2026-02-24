@@ -234,3 +234,7 @@
 - [x] Add optional extras (Khatok Dinner, Hot Springs & Nam Lod Cave)
 - [x] Update Day 11 to mention Thai cooking class instead of generic exploration
 - [x] Update Day 10 to mention umbrella factory and silk factory stops
+
+## Format Itinerary Day Descriptions
+- [x] Add line breaks between Day 1, Day 2, Day 3 etc. in itinerary descriptions
+- [x] Make each day clearly separated for better readability
