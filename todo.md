@@ -202,3 +202,9 @@
 ## Update Thailand Intro Images
 - [x] Replace sticky waterfalls image with user-provided turquoise waterfall photo
 - [x] Replace route map with user-provided Thailand Intro map showing Bangkok → Chiang Mai → Pai
+
+## Update ACE Logo
+- [x] Replace text-based "ACE" logo with user-provided custom logo image
+- [x] Update logo in header navigation
+- [x] Update logo in footer
+- [x] Ensure logo is responsive and displays correctly on all screen sizes

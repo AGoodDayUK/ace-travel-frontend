@@ -43,8 +43,8 @@ export default function Header() {
         <div className="container">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="text-2xl md:text-3xl font-bold tracking-tight kinetic-underline">
-              ACE
+            <Link href="/" className="flex items-center kinetic-underline">
+              <img src="/ace-logo.jpg" alt="ACE Travel" className="h-8 md:h-10" />
             </Link>
 
             {/* Desktop Navigation */}

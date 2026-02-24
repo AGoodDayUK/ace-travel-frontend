@@ -37,8 +37,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
           {/* Brand column */}
           <div className="md:col-span-4">
-            <Link href="/" className="text-3xl font-bold tracking-tight mb-4 inline-block">
-              ACE
+            <Link href="/" className="mb-4 inline-block">
+              <img src="/ace-logo.jpg" alt="ACE Travel" className="h-12" />
             </Link>
             <p className="text-background/80 text-sm leading-relaxed max-w-xs">
               Epic group travel experiences in Thailand, Bali, and the Philippines for 18-35 year olds. Your first adventure with your future best friends.
