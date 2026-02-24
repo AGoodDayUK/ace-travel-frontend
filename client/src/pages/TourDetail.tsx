@@ -340,8 +340,8 @@ export default function TourDetail() {
       id: "thailand-intro",
       name: "Thailand Intro",
       destination: "Thailand",
-      duration: "13 days",
-      price: "£1,299",
+      duration: "12 days",
+      price: "£999",
       deposit: "£60",
       groupSize: "15-30",
       ageRange: "18-35",
@@ -358,7 +358,7 @@ export default function TourDetail() {
         "/thailand-temple.jpg",
         "/pai-canyon.jpg"
       ],
-      description: "The perfect introduction to Thailand. Journey from Bangkok's bustling streets to Chiang Mai's cultural heart, then escape to Pai's mountain paradise. Experience elephant sanctuaries, temple visits, tipsy tubing, and unforgettable sunsets. 13 days of culture, adventure, and new friendships.",
+      description: "The perfect introduction to Thailand. Journey from Bangkok's bustling streets to Chiang Mai's cultural heart, then escape to Pai's mountain paradise. Experience elephant sanctuaries, temple visits, tipsy tubing, and unforgettable sunsets. 12 days of culture, adventure, and new friendships.",
       highlights: [
         {
           title: "Elephant sanctuary",
@@ -417,14 +417,14 @@ export default function TourDetail() {
           image: "/thailand-temple.jpg"
         },
         {
-          day: "Days 12-13",
+          day: "Day 12",
           title: "Bangkok",
           description: "Return to Bangkok for final adventures. Last-minute shopping, rooftop bars, and farewell dinner with your new travel family. Depart with unforgettable memories and lifelong friendships.",
           image: "/thailand-temple.jpg"
         }
       ],
       included: [
-        "12 nights accommodation (hostels and guesthouses)",
+        "11 nights accommodation (hostels and guesthouses)",
         "14 meals (breakfast and group dinners)",
         "Experienced Ace Rep & Local Guide",
         "Activities packages included (Elephant Sanctuary, Tipsy Tubing, Temple visits, Sticky Waterfalls)",

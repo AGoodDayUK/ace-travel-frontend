@@ -208,3 +208,10 @@
 - [x] Update logo in header navigation
 - [x] Update logo in footer
 - [x] Ensure logo is responsive and displays correctly on all screen sizes
+
+## Fix Thailand Intro Pricing and Duration
+- [x] Update duration from 13 days to 12 days
+- [x] Update price from £1,299 to £999
+- [x] Update accommodation from "12 nights" to "11 nights" (12 days = 11 nights)
+- [x] Update final itinerary day from "Days 12-13" to "Day 12"
+- [x] Update description to say "12 days" instead of "13 days"
