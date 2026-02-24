@@ -221,3 +221,9 @@
 
 ## Update Thailand Intro Hero Image
 - [x] Replace hero/header image with Chiang Mai temple photo
+
+## Update Day 12 Bangkok Image
+- [x] Replace Day 12 Bangkok itinerary image with farewell dinner group photo
+
+## Update Temple Visit Highlight Image
+- [x] Replace Temple visits highlight image with group photo at ornate Thai temple

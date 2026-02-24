@@ -383,7 +383,7 @@ export default function TourDetail() {
         {
           title: "Temple visits",
           description: "Step into incense-swirled courtyards and gilded halls; admire serene Buddhas, lotus ponds, and chanting monks. Dress modestly, slip off your shoes, and move slow—temple time is a reset button that swaps noise for quiet awe.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755193243884-L5G3CTKYPVOQEWEDN5R3/unsplash-image-F07KhNovxRk.jpg"
+          image: "/thailand-temple-group.jpg"
         },
         {
           title: "Sticky waterfalls",
@@ -420,7 +420,7 @@ export default function TourDetail() {
           day: "Day 12",
           title: "Bangkok",
           description: "Return to Bangkok for final adventures. Last-minute shopping, rooftop bars, and farewell dinner with your new travel family. Depart with unforgettable memories and lifelong friendships.",
-          image: "/thailand-temple.jpg"
+          image: "/thailand-farewell-dinner.jpg"
         }
       ],
       included: [
