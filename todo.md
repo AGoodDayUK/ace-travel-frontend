@@ -238,3 +238,7 @@
 ## Format Itinerary Day Descriptions
 - [x] Add line breaks between Day 1, Day 2, Day 3 etc. in itinerary descriptions
 - [x] Make each day clearly separated for better readability
+
+## Fix Itinerary Line Breaks Rendering
+- [x] Change description rendering to properly display line breaks (use white-space: pre-line CSS or split into paragraphs)
+- [x] Ensure each day appears as a separate paragraph visually

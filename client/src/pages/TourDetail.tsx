@@ -720,7 +720,7 @@ export default function TourDetail() {
                           <h3 className="text-xl font-bold">{itineraryItem.title}</h3>
                           <Badge variant="outline">{itineraryItem.day}</Badge>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">{itineraryItem.description}</p>
+                        <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{itineraryItem.description}</p>
                       </div>
                     </div>
                   </Card>
