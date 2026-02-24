@@ -26,14 +26,23 @@ export default function TourDetail() {
       name: "Thailand Island Hopper",
       destination: "Thailand",
       duration: "21 days",
-      price: "£1,899",
+      price: "£1,599",
       deposit: "£60",
       groupSize: "15-30",
       ageRange: "18-35",
       rating: 4.9,
       reviews: 247,
-      nextDeparture: "15 Mar 2026",
-      departureDates: [],
+      nextDeparture: "1st April 2026",
+      departureDates: [
+        { date: "1st - 21st April 2026", price: "£1,599", duration: "21 Days", badge: "Songkran Included!" },
+        { date: "1st - 21st October 2026", price: "£1,599", duration: "21 Days" },
+        { date: "1st - 21st November 2026", price: "£1,599", duration: "21 Days" },
+        { date: "1st - 21st December 2026", price: "£1,599", duration: "21 Days" },
+        { date: "7th - 27th January 2027", price: "£1,799", duration: "21 Days" },
+        { date: "30th Jan - 19th Feb 2027", price: "£1,799", duration: "21 Days", badge: "Full Moon Party +£150" },
+        { date: "28th Feb - 20th Mar 2027", price: "£1,799", duration: "21 Days", badge: "Full Moon Party +£150" },
+        { date: "30th Mar - 19th Apr 2027", price: "£1,799", duration: "21 Days", badge: "Full Moon Party +£150" }
+      ],
       hero: "/thailand-island-hopper-hero.webp",
       gallery: [
         "https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&q=80",
@@ -43,14 +52,41 @@ export default function TourDetail() {
       ],
       description: "The ultimate 21-day Thailand adventure. Island hop from Phuket to Phi Phi, explore the ancient rainforests of Khao Sok, party on Koh Samui and Koh Phangan, dive in Koh Tao, and experience quad biking through the jungle. This epic journey combines culture, adventure, and unforgettable island vibes.",
       highlights: [
-        "Elephant sanctuary experience in Phuket",
-        "Phi Phi Islands boat tour to Maya Bay",
-        "Floating bungalows in Khao Sok National Park",
-        "Quad biking adventure in Koh Phangan",
-        "Scuba diving opportunities in Koh Tao",
-        "Bamboo rafting through the jungle",
-        "Night safari in the rainforest",
-        "Beach parties and fire shows"
+        {
+          title: "Elephant sanctuary",
+          description: "Discover the heartwarming Elephant Sanctuary, where majestic creatures roam freely. Interact, feed, and connect with these gentle giants in a natural haven, fostering a deep bond with nature and promoting responsible tourism.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/21d450f7-c5e4-485e-ad72-8613f34a05c2/elephant-sanctuary.jpg"
+        },
+        {
+          title: "Phi Phi boat tour",
+          description: "A Phi Phi Island boat tour is the perfect way to explore the stunning beauty of Thailand's hidden Islands. Take in the breathtaking views of Maya Bay's white sand beaches and dive into surrounding crystal clear waters with your snorkel to see the incredible reefs and marine life below.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/8d413e46-a264-4eb0-8b20-ffa94aeec178/phi-phi-boat-tour.jpg"
+        },
+        {
+          title: "Iconic viewpoints",
+          description: "Ascend to new heights where Thailand's stunning landscapes unfold before your eyes. Hike to breathtaking summits, witness the beauty of lush valleys, and be captivated by the enchanting vistas, especially during the golden hues of a Thai sunset. Our reps will take you to those Insta-worthy spots!",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/b3464952-6035-4cd3-8997-6f24cf67697c/unsplash-image-2CjOnwJCMJM.jpg"
+        },
+        {
+          title: "Famous Maya Bay",
+          description: "Embark on a mesmerising Maya Bay Tour, sailing through turquoise waters to witness the iconic Phi Phi Islands. Explore hidden lagoons, pristine beaches, and the breathtaking beauty of Maya Bay featured in 'The Beach.'",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755256682519-BUHLSCMNAGI42LXHRXF6/unsplash-image-pUYxB1CxbSY.jpg"
+        },
+        {
+          title: "Bangla Road bar crawl",
+          description: "Immerse yourself in Phuket's nightlife with our Bangla Road Bar Crawl. Explore lively bars, sip exotic cocktails, and dance the night away along Patong's famous street for an unforgettable evening of camaraderie and entertainment.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/43f20e77-9aae-4ad7-b2bf-0d592502ba0e/bar-crawl.jpg"
+        },
+        {
+          title: "Quad biking",
+          description: "Rev up for a thrilling drive through the jungle with stunning cliff-top views and exhilarating off-roading. Our guides will take you down some gnarly paths, so if you want to be a passenger, that's totally fine! Either way, you're guaranteed to love this activity!",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/a7e36531-4017-474f-b36b-f809863012f1/quad-bikes.jpg"
+        },
+        {
+          title: "Floating bungalows",
+          description: "Take a long tail boat into the heart of Cheow Lan Lake where you'll stay on floating bungalows. Embark on an afternoon adventure to Diamond Cave, kayak on the pristine waters, and take an early morning boat safari to spot elephants, monkeys, and birds.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722869565399-BCEDJD8XCBSRYXGFNLJ3/unsplash-image-YcXOWbWk8-U.jpg"
+        }
       ],
       itinerary: [
         {
