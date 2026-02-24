@@ -304,3 +304,19 @@
 - [x] Add "Excellent" text below rating
 - [x] Show 5 green Trustpilot stars in horizontal bar
 - [x] Match classic Trustpilot badge styling
+
+## Add Available Departure Dates Section
+- [x] Create "Choose Your Dates" section showing multiple departure dates
+- [x] Display date, available spots, and price for each departure
+- [x] Add Book Now button for each date option
+- [x] Position section prominently on tour detail pages
+- [x] Add sample dates to tour data structure (will be made editable via admin later)
+- [x] Use single-column centered layout that works well with 1-8 dates
+
+## Add Cross-Sell to Longer Tours
+- [x] Add "Want to go for longer?" section on Thailand Intro linking to Thailand Island Hopper (21 days)
+- [x] Position after departure dates section
+- [x] Include tour image, duration, and key highlights
+- [x] Add clear call-to-action button with "View Tour" link
+- [x] Show price (£1,899) and 21 Days badge
+- [x] List 4 key highlights with checkmarks

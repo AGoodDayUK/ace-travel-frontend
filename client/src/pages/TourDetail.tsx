@@ -3,7 +3,7 @@ import { useRoute, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Users, MapPin, Star, Clock, Check, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Calendar, Users, MapPin, Star, Clock, Check, X, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 
 export default function TourDetail() {
   const [, params] = useRoute("/tour/:id");
@@ -27,6 +27,7 @@ export default function TourDetail() {
       rating: 4.9,
       reviews: 247,
       nextDeparture: "15 Mar 2026",
+      departureDates: [],
       hero: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1600&q=80",
       gallery: [
         "https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&q=80",
@@ -110,6 +111,7 @@ export default function TourDetail() {
       rating: 4.9,
       reviews: 203,
       nextDeparture: "12 Mar 2026",
+      departureDates: [],
       hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bHljzvhImvBUkIgg.JPG",
       gallery: [
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bHljzvhImvBUkIgg.JPG",
@@ -275,6 +277,7 @@ export default function TourDetail() {
       rating: 4.9,
       reviews: 167,
       nextDeparture: "8 Apr 2026",
+      departureDates: [],
       hero: "https://images.unsplash.com/photo-1580452735834-d1c8a3c1e4a8?w=1600&q=80",
       gallery: [
         "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=800&q=80",
@@ -348,6 +351,10 @@ export default function TourDetail() {
       rating: 5.0,
       reviews: 203,
       nextDeparture: "22 Mar 2026",
+      departureDates: [
+        { date: "12 Apr 2026", spotsLeft: 12, price: "£999" },
+        { date: "6 Sep 2026", spotsLeft: 15, price: "£999" }
+      ],
       hero: "/thailand-intro-hero.webp",
       gallery: [
         "/thailand-intro-hero.webp",
@@ -496,6 +503,7 @@ export default function TourDetail() {
       rating: 4.8,
       reviews: 156,
       nextDeparture: "18 Mar 2026",
+      departureDates: [],
       hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/GsVJxEVQBngZgOoI.JPG",
       gallery: [
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/GsVJxEVQBngZgOoI.JPG",
@@ -980,6 +988,110 @@ export default function TourDetail() {
           </div>
         </div>
       </section>
+
+      {/* Departure Dates Section */}
+      {tour.departureDates && tour.departureDates.length > 0 && (
+        <section className="py-16 bg-background">
+          <div className="container max-w-5xl">
+            <h2 className="text-3xl font-bold tracking-tight mb-4 text-center">Choose Your Dates</h2>
+            <p className="text-lg text-muted-foreground text-center mb-12">Select your preferred departure date and secure your spot</p>
+            
+            <div className="max-w-2xl mx-auto space-y-3">
+              {tour.departureDates.map((departure, index) => (
+                <Card key={index} className="p-5 hover:shadow-lg transition-shadow">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Calendar className="w-5 h-5 text-primary" />
+                        <span className="text-lg font-bold">{departure.date}</span>
+                        {departure.spotsLeft <= 5 && (
+                          <Badge variant="destructive" className="text-xs ml-2">
+                            Only {departure.spotsLeft} left!
+                          </Badge>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        <span className="font-semibold text-primary text-base">{departure.price}</span>
+                      </div>
+                    </div>
+                    <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
+                      <Button className="bg-primary hover:bg-primary/90">
+                        Book Now
+                      </Button>
+                    </a>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Cross-sell to longer tour */}
+      {tour.id === "thailand-intro" && (
+        <section className="py-16 bg-gradient-to-br from-primary/5 to-primary/10">
+          <div className="container max-w-4xl">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold tracking-tight mb-2">Want to go for longer?</h2>
+              <p className="text-lg text-muted-foreground">Extend your adventure with our 21-day Thailand Island Hopper</p>
+            </div>
+            
+            <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-64 md:h-auto">
+                  <img 
+                    src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80"
+                    alt="Thailand Island Hopper"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-primary text-white">21 Days</Badge>
+                  </div>
+                </div>
+                <div className="p-6 md:p-8 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-3">Thailand Island Hopper</h3>
+                    <p className="text-muted-foreground mb-4">
+                      The ultimate Thailand adventure. Everything from Thailand Intro plus paradise islands, 
+                      the legendary Full Moon Party, jungle trekking, and island hopping in Phi Phi and Krabi.
+                    </p>
+                    <ul className="space-y-2 mb-6">
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span>Full Moon Party on Koh Phangan</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span>Phi Phi Islands & Maya Bay</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span>Jungle trekking in Khao Sok National Park</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span>All Thailand Intro highlights included</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm text-muted-foreground">From</div>
+                      <div className="text-3xl font-bold text-primary">£1,899</div>
+                    </div>
+                    <Link href="/tour/thailand-island-hopper">
+                      <Button size="lg" className="bg-primary hover:bg-primary/90">
+                        View Tour
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </section>
+      )}
 
       <section className="py-16 bg-background">
         <div className="container">
