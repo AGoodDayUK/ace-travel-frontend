@@ -469,3 +469,15 @@
 - [x] Ensure Tours button is more prominent from the start
 - [x] Default: bg-[#44c5c3]/20 with text-[#2a7a79]
 - [x] Hover: bg-[#44c5c3]/30 with text-[#1a5a59] (even darker)
+
+## Build Thailand Island Hopper Tour Page
+- [x] Upload Khao Sok lagoon hero image to public folder
+- [x] Update Thailand Island Hopper tour data with new hero image (/thailand-island-hopper-hero.webp)
+- [x] Add comprehensive highlights section (8 highlights already present)
+- [x] Create detailed 21-day itinerary with day-by-day breakdown (6 sections already present)
+- [x] Add accommodation section with hostel images
+- [x] FAQ accordion automatically displays (shared component)
+- [x] Lead capture form automatically displays (no departureDates set)
+- [x] Travel Expert contact section automatically displays (shared component)
+- [x] Trustpilot badge automatically displays in hero (shared component)
+- [ ] Add cross-sell to Thailand Intro ("Want a shorter trip?")

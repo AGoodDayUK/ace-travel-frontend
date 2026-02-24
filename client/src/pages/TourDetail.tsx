@@ -34,65 +34,74 @@ export default function TourDetail() {
       reviews: 247,
       nextDeparture: "15 Mar 2026",
       departureDates: [],
-      hero: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1600&q=80",
+      hero: "/thailand-island-hopper-hero.webp",
       gallery: [
         "https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&q=80",
         "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=80",
         "https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=800&q=80",
         "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80"
       ],
-      description: "The ultimate Thailand adventure. Explore bustling Bangkok, party on paradise islands, experience the legendary Full Moon Party, and discover hidden jungle gems. This 21-day journey takes you through the best of Thailand's culture, beaches, and nightlife.",
+      description: "The ultimate 21-day Thailand adventure. Island hop from Phuket to Phi Phi, explore the ancient rainforests of Khao Sok, party on Koh Samui and Koh Phangan, dive in Koh Tao, and experience quad biking through the jungle. This epic journey combines culture, adventure, and unforgettable island vibes.",
       highlights: [
-        "Bangkok street food tour and temple exploration",
-        "Phi Phi Islands boat parties and beach clubs",
-        "Full Moon Party on Koh Phangan",
-        "Jungle trekking in Khao Sok National Park",
-        "Snorkeling and diving in crystal clear waters",
-        "Floating markets and night markets",
-        "Thai cooking class in Chiang Mai",
-        "Elephant sanctuary visit (ethical, no riding)"
+        "Elephant sanctuary experience in Phuket",
+        "Phi Phi Islands boat tour to Maya Bay",
+        "Floating bungalows in Khao Sok National Park",
+        "Quad biking adventure in Koh Phangan",
+        "Scuba diving opportunities in Koh Tao",
+        "Bamboo rafting through the jungle",
+        "Night safari in the rainforest",
+        "Beach parties and fire shows"
       ],
       itinerary: [
         {
-          day: "Days 1-3",
-          title: "Bangkok",
-          description: "Arrive in Bangkok and meet your group. Explore the Grand Palace, Wat Pho, and experience the vibrant street food scene. Visit floating markets and enjoy rooftop bars with skyline views."
-        },
-        {
-          day: "Days 4-7",
-          title: "Koh Samui & Koh Phangan",
-          description: "Ferry to the islands. Beach days, snorkeling, and preparing for the legendary Full Moon Party. Experience beach clubs, fire shows, and make memories that last forever."
-        },
-        {
-          day: "Days 8-10",
-          title: "Khao Sok National Park",
-          description: "Jungle adventure time. Trek through ancient rainforest, swim in emerald pools, and stay in floating bungalows on Cheow Lan Lake. Spot wildlife and disconnect from the world."
-        },
-        {
-          day: "Days 11-15",
-          title: "Krabi & Phi Phi Islands",
-          description: "Island hopping paradise. Visit Maya Bay, snorkel in turquoise lagoons, rock climb limestone cliffs, and party on the beach. Sunset boat cruises and beach bonfires."
-        },
-        {
-          day: "Days 16-18",
+          day: "Days 1-2",
           title: "Phuket",
-          description: "Beach relaxation and water sports. Try surfing, paddleboarding, or just chill on the sand. Explore Old Town Phuket and enjoy the famous nightlife of Patong."
+          description: "Arrive in Thailand! Meet your trip manager and group at the hostel. Day 2: Visit the Elephant Sanctuary to feed and bathe these majestic creatures. In the evening, experience the thrills of Bangla Road—cocktails in buckets included!"
         },
         {
-          day: "Days 19-21",
-          title: "Chiang Mai",
-          description: "Cultural immersion in the north. Visit temples, take a Thai cooking class, explore night markets, and visit an ethical elephant sanctuary. Farewell dinner with your new family."
+          day: "Days 3-5",
+          title: "Phi Phi Islands",
+          description: "Ferry to Koh Phi Phi! Day 4: Embark on a stunning boat tour visiting Bamboo Island, Viking Cave, Monkey Beach, Phi Leh Lagoon, and Maya Bay. Catch sunset from a long tail boat and snorkel with bio-luminescent plankton. Day 5: Free day to explore viewpoints or relax on the beach."
+        },
+        {
+          day: "Days 6-7",
+          title: "Khao Sok National Park",
+          description: "Welcome to the jungle! Transfer through limestone karst mountains to Khao Sok village. Day 7: Float down the river on a traditional bamboo raft, then embark on a head-torch-lit night safari to spot monkeys and jungle creatures."
+        },
+        {
+          day: "Day 8",
+          title: "Floating Bungalows",
+          description: "Take a long tail boat into Cheow Lan Lake and stay on floating bungalows. Explore Diamond Cave, kayak on the lake, and take an early morning boat safari to spot elephants, monkeys, and birds in their natural habitat."
+        },
+        {
+          day: "Days 9-11",
+          title: "Koh Samui",
+          description: "Arrive in Chaweng! Enjoy fire shows on the beach and nightlife at Sound Club, Arkbar, and Green Mango. Optional tours: Pig Island speedboat trip with snorkelling (Day 10) and zip lining through the jungle canopy (Day 11)."
+        },
+        {
+          day: "Days 12-15",
+          title: "Koh Tao",
+          description: "Welcome to Turtle Island! Perfect for scuba diving—complete your Open Water Qualification or try a discovery dive. Optional tours: Snorkelling boat tour to Koh Nang Yuan (Day 13) and Thai cooking class (Day 15). Day 14 is yours to explore viewpoints or enjoy a Thai massage."
+        },
+        {
+          day: "Days 16-19",
+          title: "Koh Phangan",
+          description: "Arrive at Puk's Palace with its beachfront bar, 3 swimming pools, and friendly hostel dogs! Day 17: Quad biking adventure through the jungle with cliff-top views. Optional Muay Thai boxing class (Day 18). Day 19: Visit waterfalls and beaches, or catch sunset from the west coast."
+        },
+        {
+          day: "Days 20-21",
+          title: "Phuket Old Town",
+          description: "Final journey back to Phuket by ferry. Explore Old Town's amazing restaurants, boutique shops, and famous architecture. Emotional farewell to your Thai guide. Day 21: Onward travel or fly home with memories for a lifetime!"
         }
       ],
       included: [
-        "20 nights accommodation (mix of hostels, beach bungalows, and jungle lodges)",
-        "Daily breakfast and 12 group dinners",
-        "All activities and entrance fees listed in itinerary",
-        "Expert trip manager throughout",
-        "Airport pickup on Day 1",
-        "All inter-destination transport",
-        "24/7 emergency support",
-        "Pre-departure WhatsApp group access"
+        "21 days accommodation included",
+        "Activities packages included",
+        "Iconic viewpoints",
+        "Full access to the private members group",
+        "Flight assistance",
+        "Experienced ACE Rep travelling with you",
+        "Local Thai guide"
       ],
       notIncluded: [
         "International flights",
@@ -103,6 +112,15 @@ export default function TourDetail() {
         "Visa fees (if applicable)",
         "Tips for guides and drivers"
       ],
+      accommodation: {
+        description: "Experience the best of Thailand's accommodation scene. From social hostels in Bangkok perfect for meeting your travel crew, to beachfront bungalows on the islands where you'll wake up to ocean views, and unique floating lodges in Khao Sok's jungle. Every stay is carefully selected for comfort, atmosphere, and that perfect balance of adventure and relaxation.",
+        images: [
+          "/thailand-hostel-pod.jpg",
+          "/thailand-hostel-dorm.jpg",
+          "/thailand-hostel-social.jpg",
+          "/thailand-hostel-rooftop.jpg"
+        ]
+      },
       reviewsList: []
     },
     "bali-explorer": {
@@ -739,7 +757,11 @@ export default function TourDetail() {
               <h2 className="text-3xl font-bold tracking-tight mb-6">Your Journey</h2>
               <div className="mb-8 bg-accent/10 p-8 rounded-lg">
                 <img 
-                  src={tourId === 'thailand-intro' ? '/thailand-intro-map.webp' : 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/trjSBWQKzHaQYLlx.webp'}
+                  src={
+                    tourId === 'thailand-intro' ? '/thailand-intro-map.webp' : 
+                    tourId === 'thailand-island-hopper' ? '/thailand-island-hopper-map.webp' :
+                    'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/trjSBWQKzHaQYLlx.webp'
+                  }
                   alt={`${tour.name} Route Map`}
                   className="w-full max-w-3xl mx-auto"
                 />
@@ -1058,6 +1080,71 @@ export default function TourDetail() {
                 </Card>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Cross-sell to shorter tour */}
+      {tour.id === "thailand-island-hopper" && (
+        <section className="py-16 bg-gradient-to-br from-accent/5 to-accent/10">
+          <div className="container max-w-4xl">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold tracking-tight mb-2">Want a shorter trip?</h2>
+              <p className="text-lg text-muted-foreground">Try our 10-day Thailand Intro for the perfect introduction</p>
+            </div>
+            
+            <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-64 md:h-auto">
+                  <img 
+                    src="/thailand-hero.jpg"
+                    alt="Thailand Intro"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-primary text-white">10 Days</Badge>
+                  </div>
+                </div>
+                <div className="p-6 md:p-8 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-3">Thailand Intro</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Perfect for first-timers or those with limited time. Experience Bangkok's culture, 
+                      Chiang Mai's temples, and the stunning beaches of Krabi in just 10 days.
+                    </p>
+                    <ul className="space-y-2 mb-6">
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                        <span>Bangkok temples & street food</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                        <span>Chiang Mai cultural immersion</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                        <span>Krabi beaches & island hopping</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                        <span>Perfect for 18-35 year olds</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-2xl font-bold text-primary">£899</p>
+                      <p className="text-sm text-muted-foreground">per person</p>
+                    </div>
+                    <Link href="/tour/thailand-intro">
+                      <Button size="lg" className="gap-2">
+                        View Tour <ArrowRight className="w-4 h-4" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
         </section>
       )}
