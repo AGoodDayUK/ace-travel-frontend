@@ -79,25 +79,26 @@ export default function Header() {
       
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-kinetic ${
-          isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-sm' : 'bg-background/80 backdrop-blur-sm md:bg-transparent'
+          isScrolled ? 'bg-white shadow-sm' : 'bg-white md:bg-transparent'
         }`}
       >
         <div className="container">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center kinetic-underline">
-              {/* Use white logo on mobile for better visibility, colored logo on desktop */}
-              <img 
-                src="/ace-logo-horizontal-white.png" 
-                alt="ACE Travel Experiences" 
-                className="h-10 md:hidden" 
-              />
               <img 
                 src="/ace-logo-full.png" 
                 alt="ACE Travel Experiences" 
-                className="hidden md:block h-14" 
+                className="h-10 md:h-14" 
               />
             </Link>
+
+            {/* Mobile Menu Button */}
+            <button className="md:hidden p-2 text-slate-700">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">

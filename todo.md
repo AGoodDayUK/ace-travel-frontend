@@ -495,3 +495,6 @@
 - [x] Add payment calculator to tour page with monthly payment schedule and 2-month pre-departure deadline
 - [x] Fix mobile header visibility issue
 - [x] Increase padding/spacing in tour page hero headers for better visual hierarchy
+- [x] Revert mobile header to use blue/black logo (ace-logo-full.png)
+- [x] Fix mobile header bar visibility (logo and menu not showing)
+- [x] Add mobile hamburger menu icon
