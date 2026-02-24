@@ -3,6 +3,12 @@ import { useRoute, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Calendar, Users, MapPin, Star, Clock, Check, X, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 
 export default function TourDetail() {
@@ -1136,6 +1142,90 @@ export default function TourDetail() {
               <ChevronRight className="w-6 h-6" />
             </button>
           </div>
+        </div>
+      </section>
+
+      <section className="container py-16">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4 text-center">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-muted-foreground text-center mb-12">
+            Everything you need to know before booking your adventure
+          </p>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="solo">
+              <AccordionTrigger className="text-left text-lg font-semibold">
+                Can I join solo?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground leading-relaxed">
+                Absolutely! Over 70% of our travelers join solo. Our group tours are specifically designed to help you make friends from day one. You'll share accommodation with other travelers, and our experienced trip managers create a welcoming atmosphere where everyone feels included. Many of our solo travelers tell us they made lifelong friends on their ACE adventure.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="payment">
+              <AccordionTrigger className="text-left text-lg font-semibold">
+                How do I book and pay?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground leading-relaxed">
+                To secure your place, a non-refundable deposit of £60 is required. The balance is due no later than 30 days before departure, unless you are on a pre-agreed installment plan. All payments are processed in GBP (£) and we accept all major credit and debit cards.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="cancellation">
+              <AccordionTrigger className="text-left text-lg font-semibold">
+                What if I need to cancel?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground leading-relaxed">
+                If you need to cancel, please let us know as soon as possible. If you have paid £60 or more of the total package price, you may have the option to carry your place over to another trip date (must be requested at least 2 months before departure, subject to our discretion). Due to commitments with our accommodation partners, we cannot offer refunds on payments made once terms are accepted, except for mistakes on our part or duplicate payments. We strongly recommend comprehensive travel insurance that covers cancellations.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="changes">
+              <AccordionTrigger className="text-left text-lg font-semibold">
+                Can I change my booking?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground leading-relaxed">
+                Date or trip changes may be requested up to 45 days before departure, subject to availability and a £50 admin fee. Bookings are not transferable to another person without our written approval.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="insurance">
+              <AccordionTrigger className="text-left text-lg font-semibold">
+                Is travel insurance required?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground leading-relaxed">
+                Yes, comprehensive travel insurance covering medical treatment, repatriation, theft, cancellation, and personal liability is mandatory. Proof of insurance must be provided before departure. We recommend purchasing insurance as soon as you book to ensure maximum coverage.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="visa">
+              <AccordionTrigger className="text-left text-lg font-semibold">
+                Do I need a visa?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground leading-relaxed">
+                You are responsible for arranging correct visas and entry permits for your trip. We provide guidance but cannot guarantee approval. Your passport must be valid for at least 6 months beyond your return date. UK, EU, US, Canadian, and Australian passport holders typically receive a free visa on arrival for Thailand, Bali, and the Philippines (30 days each). Always check current requirements with your local embassy before traveling.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="included">
+              <AccordionTrigger className="text-left text-lg font-semibold">
+                What's included in the price?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground leading-relaxed">
+                Inclusions are listed in your chosen trip itinerary and typically include accommodation, some meals, excursions, transfers, and your tour leader. Exclusions usually include flights, travel insurance, visas, vaccinations, personal spending money, optional extras, and meals not listed in the itinerary.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="group">
+              <AccordionTrigger className="text-left text-lg font-semibold">
+                What's the group dynamic like?
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground leading-relaxed">
+                Our tours are social, group-based experiences for ages 18-35. Groups typically range from 15-30 travelers. The vibe is social, adventurous, and inclusive. We attract open-minded people who love to explore, try new things, and make friends. There's a perfect balance of organized group activities and free time to do your own thing.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 

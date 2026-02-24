@@ -329,3 +329,28 @@
 - [x] Ensure it doesn't dominate the hero section
 - [x] Reposition trust badge to the right edge of hero section
 - [x] Hide on mobile (hidden md:block) to avoid layout issues
+
+## Add FAQ Accordion Section
+- [x] Create FAQ accordion component using shadcn/ui Accordion
+- [x] Add 8 comprehensive FAQ questions with accurate ACE policies
+- [x] Update FAQ content to match existing website policies (£60 deposit, 30-day balance, cancellation terms)
+- [x] Position FAQ section before "Ready for Your Adventure" on tour pages
+- [x] Ensure accordion is accessible with keyboard navigation
+- [ ] Add common questions: Can I join solo?, What's the cancellation policy?, Is travel insurance required?, Do I need a visa?, What's included in the price?, How do payments work?, What's the group dynamic like?, Can I extend my trip?
+- [ ] Position FAQ section before "Ready for Your Adventure" section
+- [ ] Write clear, friendly answers that reduce booking friction
+- [ ] Ensure accordion is fully accessible with keyboard navigation
+
+## Create Destination Overview Pages for SEO
+- [ ] Create Thailand destination page at /destinations/thailand
+- [ ] Create Bali destination page at /destinations/bali
+- [ ] Create Philippines destination page at /destinations/philippines
+- [ ] Add destination-specific FAQs (weather, safety, currency, best time to visit)
+- [ ] Include "Why Visit [Country]" section with key attractions
+- [ ] Display all available tours for each destination
+- [ ] Add hero section with destination imagery
+- [ ] Implement breadcrumb navigation
+- [ ] Add internal linking between destination and tour pages
+- [ ] Update main navigation to include Destinations dropdown
+- [ ] Optimize meta titles and descriptions for SEO
+- [ ] Add schema markup for destination FAQs
