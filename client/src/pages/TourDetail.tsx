@@ -10,6 +10,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Calendar, Users, MapPin, Star, Clock, Check, X, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { PaymentCalculator } from "@/components/PaymentCalculator";
+import { parseDepartureDate, parsePrice } from "@/lib/dateUtils";
 
 export default function TourDetail() {
   const [, params] = useRoute("/tour/:id");
@@ -1088,6 +1090,17 @@ export default function TourDetail() {
           <div className="container max-w-5xl">
             <h2 className="text-3xl font-bold tracking-tight mb-4 text-center">Choose Your Dates</h2>
             <p className="text-lg text-muted-foreground text-center mb-12">Select your preferred departure date and secure your spot</p>
+            
+            {/* Payment Calculator - shown for first departure date as example */}
+            {tour.departureDates[0] && (
+              <div className="max-w-lg mx-auto mb-12">
+                <PaymentCalculator 
+                  tourPrice={parsePrice(tour.departureDates[0].price)}
+                  departureDate={parseDepartureDate(tour.departureDates[0].date)}
+                  tourName={tour.name}
+                />
+              </div>
+            )}
             
             <div className="max-w-2xl mx-auto space-y-3">
               {tour.departureDates.map((departure, index) => (

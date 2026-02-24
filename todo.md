@@ -492,3 +492,4 @@
 - [x] Create white versions of ACE Travel logos and update website branding
 - [x] Update header to use colored blue ACE logo
 - [x] Update header to use full ACE Travel Experiences logo with black text
+- [x] Add payment calculator to tour page with monthly payment schedule and 2-month pre-departure deadline
