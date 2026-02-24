@@ -118,8 +118,8 @@ export default function TourDetail() {
       reviews: 203,
       nextDeparture: "12 Mar 2026",
       departureDates: [
-        { date: "May 2026", price: "£1,199" },
-        { date: "October 2026", price: "£1,199" }
+        { date: "13th - 26th June 2026", duration: "14 Days", price: "£1199" },
+        { date: "31st Jul - 13th Aug 2026", duration: "14 Days", price: "£1199", badge: "Summer Holiday Friendly!" }
       ],
       accommodation: [
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bHljzvhImvBUkIgg.JPG",
@@ -1026,8 +1026,16 @@ export default function TourDetail() {
                             Only {(departure as any).spotsLeft} left!
                           </Badge>
                         )}
+                        {(departure as any).badge && (
+                          <Badge className="text-xs ml-2 bg-accent text-accent-foreground">
+                            {(departure as any).badge}
+                          </Badge>
+                        )}
                       </div>
                       <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        {(departure as any).duration && (
+                          <span className="font-medium">{(departure as any).duration}</span>
+                        )}
                         <span className="font-semibold text-primary text-base">{departure.price}</span>
                       </div>
                     </div>
@@ -1105,6 +1113,69 @@ export default function TourDetail() {
                   </div>
                 </div>
               </div>
+            </Card>
+          </div>
+        </section>
+      )}
+
+      {/* Lead Capture for Tours Without Dates */}
+      {(!tour.departureDates || tour.departureDates.length === 0) && (
+        <section className="py-16 bg-muted/30">
+          <div className="container max-w-3xl">
+            <Card className="p-8 md:p-12 text-center">
+              <div className="mb-6">
+                <Calendar className="w-16 h-16 text-primary mx-auto mb-4" />
+                <h2 className="text-3xl font-bold tracking-tight mb-2">Dates Coming Soon!</h2>
+                <p className="text-lg text-muted-foreground">
+                  We're finalizing departure dates for this tour. Register your interest and we'll notify you as soon as dates are released.
+                </p>
+              </div>
+              
+              <form className="max-w-md mx-auto space-y-4" onSubmit={(e) => { e.preventDefault(); alert('Thank you for your interest! We\'ll notify you when dates are available.'); }}>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                    className="w-full px-4 py-3 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                    className="w-full px-4 py-3 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div>
+                  <select
+                    className="w-full px-4 py-3 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
+                  >
+                    <option value="">Preferred Month</option>
+                    <option value="january">January</option>
+                    <option value="february">February</option>
+                    <option value="march">March</option>
+                    <option value="april">April</option>
+                    <option value="may">May</option>
+                    <option value="june">June</option>
+                    <option value="july">July</option>
+                    <option value="august">August</option>
+                    <option value="september">September</option>
+                    <option value="october">October</option>
+                    <option value="november">November</option>
+                    <option value="december">December</option>
+                  </select>
+                </div>
+                <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90">
+                  Notify Me When Dates Are Available
+                </Button>
+              </form>
+              
+              <p className="text-sm text-muted-foreground mt-6">
+                Have questions? <a href="tel:+447450996347" className="text-primary hover:underline font-semibold">Call us at +44 7450 996 347</a>
+              </p>
             </Card>
           </div>
         </section>

@@ -362,3 +362,15 @@
 - [ ] Build Philippines Paradise tour page with full details
 - [ ] Ensure all tours have consistent layout and sections
 - [ ] Test all tour pages for errors and broken links
+
+## Update Bali Explorer Departure Dates
+- [ ] Change dates to 13th-26th June 2026 and 31st Jul-13th Aug 2026
+- [ ] Update format to show "14 Days - £1199"
+- [ ] Add "Summer Holiday Friendly!" badge to July departure
+
+## Create Lead Capture Form for Tours Without Dates
+- [ ] Build lead capture component for tours with no available dates
+- [ ] Include "Dates coming soon!" messaging
+- [ ] Add form fields: name, email, preferred month
+- [ ] Add "Notify Me" submit button
+- [ ] Apply to Thailand Island Hopper and other tours without dates
