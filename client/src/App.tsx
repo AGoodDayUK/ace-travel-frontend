@@ -17,6 +17,8 @@ import HowItWorks from "./pages/HowItWorks";
 import Deals from "./pages/Deals";
 import About from "./pages/About";
 import DestinationThailand from "./pages/DestinationThailand";
+import WelcomePack from "./pages/WelcomePack";
+
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -33,9 +35,37 @@ function Router() {
       <Route path={"/faq"} component={FAQ} />
       <Route path={"/reviews"} component={Reviews} />
       <Route path={"/404"} component={NotFound} />
+      {/* Welcome pack pages - hidden from search engines, no header/footer */}
+      <Route path={"/welcome/:tour"} component={({ params }: { params: { tour: string } }) => <WelcomePack tour={params.tour} />} />
       {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
+  );
+}
+
+function MainLayout() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-1">
+        <Switch>
+          <Route path={"/"} component={Home} />
+          <Route path={"/tour/:id"} component={TourDetail} />
+          <Route path={"/destinations"} component={Destinations} />
+          <Route path={"/destinations/thailand"} component={DestinationThailand} />
+          <Route path={"/tours"} component={Tours} />
+          <Route path={"/how-it-works"} component={HowItWorks} />
+          <Route path={"/deals"} component={Deals} />
+          <Route path={"/about"} component={About} />
+          <Route path={"/contact"} component={Contact} />
+          <Route path={"/faq"} component={FAQ} />
+          <Route path={"/reviews"} component={Reviews} />
+          <Route path={"/404"} component={NotFound} />
+          <Route component={NotFound} />
+        </Switch>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
@@ -45,13 +75,12 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-1">
-              <Router />
-            </main>
-            <Footer />
-          </div>
+          <Switch>
+            {/* Welcome pack pages - no header/footer, hidden from search engines */}
+            <Route path={"/welcome/:tour"} component={({ params }: { params: { tour: string } }) => <WelcomePack tour={params.tour} />} />
+            {/* All other pages use the main layout with header and footer */}
+            <Route component={MainLayout} />
+          </Switch>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

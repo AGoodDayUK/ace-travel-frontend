@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block welcome/download pages from search engines
+Disallow: /welcome/
+
+Sitemap: https://acetravelexperiences.manus.space/sitemap.xml

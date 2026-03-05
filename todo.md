@@ -498,3 +498,5 @@
 - [x] Revert mobile header to use blue/black logo (ace-logo-full.png)
 - [x] Fix mobile header bar visibility (logo and menu not showing)
 - [x] Add mobile hamburger menu icon
+- [x] Create hidden welcome pack download page for Thailand Island Hopper (noindex, PDF cover image, download button)
+- [x] Add XML sitemap at /sitemap.xml covering all public pages (excluding noindex pages)
