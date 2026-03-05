@@ -2,7 +2,83 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ArrowRight, Users, Calendar, Heart, Shield, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, Users, Calendar, Heart, Shield, Sparkles, Zap, ChevronDown } from "lucide-react";
+import { useState } from "react";
+
+const MOMENTS_PHOTOS = [
+  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/0177ed67-4cf6-453a-ab87-7d6dc1a33b65/WhatsApp+Image+2024-07-17+at+10.02.06_cd1ec11f.jpg?format=750w", alt: "ACE group on tour" },
+  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/43f20e77-9aae-4ad7-b2bf-0d592502ba0e/bar-crawl.jpg?format=750w", alt: "Bar crawl night out" },
+  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/21d450f7-c5e4-485e-ad72-8613f34a05c2/elephant-sanctuary.jpg?format=750w", alt: "Elephant sanctuary" },
+  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/0d48797c-3b7c-4dce-ba76-3e47d9a9896a/WhatsApp+Image+2024-07-17+at+10.26.07_c4d95941.jpg?format=750w", alt: "ACE travellers" },
+  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/a7e36531-4017-474f-b36b-f809863012f1/quad-bikes.jpg?format=750w", alt: "Quad biking adventure" },
+  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/8d413e46-a264-4eb0-8b20-ffa94aeec178/phi-phi-boat-tour.jpg?format=750w", alt: "Phi Phi boat tour" },
+  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/b3836b89-fea5-4d4f-8da1-eacd66288c48/WhatsApp+Image+2024-07-17+at+10.36.26_97a7e4d1.jpg?format=750w", alt: "Group adventure" },
+  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/292afbb5-f398-4e04-a739-51e2c1a9c795/Koh-Phangan.jpg?format=750w", alt: "Koh Phangan beach" },
+  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/8e29ce02-4b4e-44b2-9d56-6d76495b549e/Koh-Tao.jpg?format=750w", alt: "Koh Tao diving" },
+  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/b9c0f6c5-5c3a-462c-b467-1f90a32330cd/WhatsApp+Image+2024-07-17+at+10.23.45_10dfbd5c.jpg?format=750w", alt: "ACE moments" },
+  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/7fa2d973-3b59-4cf6-9920-59c338517720/IMG-20250521-WA0040.jpg?format=750w", alt: "Tour group fun" },
+  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/954b6dc0-2c04-49e3-8bce-c7fefb30abd0/unsplash-image-chnSOB50-Ro.jpg?format=750w", alt: "Thailand scenery" },
+];
+
+const COLS_PER_ROW = 4; // 4 columns on desktop
+
+function AceMomentsGallery() {
+  const [visibleRows, setVisibleRows] = useState(2);
+  const visibleCount = visibleRows * COLS_PER_ROW;
+  const visiblePhotos = MOMENTS_PHOTOS.slice(0, visibleCount);
+  const hasMore = visibleCount < MOMENTS_PHOTOS.length;
+
+  return (
+    <section className="py-16 md:py-24 bg-gray-950">
+      <div className="container">
+        <div className="text-center mb-12 space-y-4">
+          <p className="text-sm font-bold uppercase tracking-widest text-[#e91e8c]">Real People. Real Trips.</p>
+          <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-white">
+            #ACEMOMENTS
+          </h2>
+          <p className="text-lg text-gray-400 max-w-xl mx-auto">
+            Memories made on every tour. Captured by the people who live them.
+          </p>
+        </div>
+
+        {/* Uniform grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          {visiblePhotos.map((photo, i) => (
+            <div
+              key={i}
+              className="aspect-square overflow-hidden rounded-lg group cursor-pointer"
+            >
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Load More */}
+        {hasMore && (
+          <div className="text-center mt-10">
+            <button
+              onClick={() => setVisibleRows(r => r + 1)}
+              className="inline-flex items-center gap-2 border-2 border-white/20 text-white font-bold px-8 py-4 rounded-full hover:border-[#e91e8c] hover:text-[#e91e8c] transition-all duration-200"
+            >
+              Load More <ChevronDown className="w-5 h-5" />
+            </button>
+          </div>
+        )}
+
+        <div className="text-center mt-6">
+          <p className="text-gray-600 text-sm">
+            Share your moments using <span className="text-[#e91e8c] font-bold">#acemoments</span>
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   const { user, loading, error, isAuthenticated, logout } = useAuth();
@@ -226,55 +302,7 @@ export default function Home() {
       </section>
 
       {/* Ace Moments Gallery */}
-      <section className="py-16 md:py-24 bg-gray-950">
-        <div className="container">
-          <div className="text-center mb-12 space-y-4">
-            <p className="text-sm font-bold uppercase tracking-widest text-[#e91e8c]">Real People. Real Trips.</p>
-            <h2 className="text-5xl md:text-6xl font-black tracking-tighter text-white">
-              #ACEMOMENTS
-            </h2>
-            <p className="text-lg text-gray-400 max-w-xl mx-auto">
-              Memories made on every tour. Captured by the people who live them.
-            </p>
-          </div>
-
-          {/* Masonry-style grid */}
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
-            {[
-              { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/0177ed67-4cf6-453a-ab87-7d6dc1a33b65/WhatsApp+Image+2024-07-17+at+10.02.06_cd1ec11f.jpg?format=750w", alt: "ACE group on tour" },
-              { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/43f20e77-9aae-4ad7-b2bf-0d592502ba0e/bar-crawl.jpg?format=750w", alt: "Bar crawl night out" },
-              { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/21d450f7-c5e4-485e-ad72-8613f34a05c2/elephant-sanctuary.jpg?format=750w", alt: "Elephant sanctuary" },
-              { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/0d48797c-3b7c-4dce-ba76-3e47d9a9896a/WhatsApp+Image+2024-07-17+at+10.26.07_c4d95941.jpg?format=750w", alt: "ACE travellers" },
-              { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/a7e36531-4017-474f-b36b-f809863012f1/quad-bikes.jpg?format=750w", alt: "Quad biking adventure" },
-              { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/8d413e46-a264-4eb0-8b20-ffa94aeec178/phi-phi-boat-tour.jpg?format=750w", alt: "Phi Phi boat tour" },
-              { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/b3836b89-fea5-4d4f-8da1-eacd66288c48/WhatsApp+Image+2024-07-17+at+10.36.26_97a7e4d1.jpg?format=750w", alt: "Group adventure" },
-              { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/292afbb5-f398-4e04-a739-51e2c1a9c795/Koh-Phangan.jpg?format=750w", alt: "Koh Phangan beach" },
-              { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/8e29ce02-4b4e-44b2-9d56-6d76495b549e/Koh-Tao.jpg?format=750w", alt: "Koh Tao diving" },
-              { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/b9c0f6c5-5c3a-462c-b467-1f90a32330cd/WhatsApp+Image+2024-07-17+at+10.23.45_10dfbd5c.jpg?format=750w", alt: "ACE moments" },
-              { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/7fa2d973-3b59-4cf6-9920-59c338517720/IMG-20250521-WA0040.jpg?format=750w", alt: "Tour group fun" },
-              { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/954b6dc0-2c04-49e3-8bce-c7fefb30abd0/unsplash-image-chnSOB50-Ro.jpg?format=750w", alt: "Thailand scenery" },
-            ].map((photo, i) => (
-              <div
-                key={i}
-                className="break-inside-avoid overflow-hidden rounded-lg group cursor-pointer"
-              >
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <p className="text-gray-500 text-sm">
-              Share your moments using <span className="text-[#e91e8c] font-bold">#acemoments</span>
-            </p>
-          </div>
-        </div>
-      </section>
+      <AceMomentsGallery />
 
       {/* CTA Section with Bold Design */}
       <section className="container py-16 md:py-24">

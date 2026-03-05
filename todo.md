@@ -502,3 +502,4 @@
 - [x] Add XML sitemap at /sitemap.xml covering all public pages (excluding noindex pages)
 - [x] Update FAQ page with comprehensive content from pasted_content_15.txt (general, tour-specific, high-conversion FAQs)
 - [x] Add curated Ace Moments photo gallery section to homepage bottom
+- [x] Convert Ace Moments from masonry to modern uniform grid with Load More button
