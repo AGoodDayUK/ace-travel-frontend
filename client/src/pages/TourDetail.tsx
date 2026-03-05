@@ -587,7 +587,7 @@ export default function TourDetail() {
         { date: "17th - 30th July 2027", price: "£1,199", duration: "14 Days" },
         { date: "28th August - 10th September 2027", price: "£1,199", duration: "14 Days" }
       ],
-      hero: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/4d19dbe1-0cf3-4ed7-8b3a-b19f118abfff/WhatsApp+Image+2024-07-17+at+10.05.01_76a2fd1c.jpg?format=1500w",
+      hero: "/bali-island-hopper-hero.webp",
       gallery: [
         "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/794b172f-bebd-45f4-9575-a700255e954f/WhatsApp+Image+2024-07-17+at+10.11.52_f402bd63.jpg?format=1000w",
         "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755266310015-JHHRSV9OIO9RZFZJHDF1/unsplash-image-OizacLd_W7I.jpg?format=1000w",
