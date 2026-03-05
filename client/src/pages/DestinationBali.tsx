@@ -10,51 +10,51 @@ import { ArrowRight, Calendar, Users, Star, Shield, MapPin, Clock, Heart } from 
 
 const tours = [
   {
-    id: "thailand-intro",
-    name: "Thailand Intro",
-    slug: "thailand-intro",
-    duration: "12 Days",
-    price: "£999",
-    image: "/thailand-intro-hero.webp",
-    badge: "Perfect for First-Timers",
-    badgeColour: "bg-primary",
-    description: "The perfect introduction to Thailand. Journey from Bangkok's vibrant streets to Chiang Mai's temples, an elephant sanctuary, and Pai's laid-back mountain vibes.",
-    highlights: ["Elephant Sanctuary", "Bangkok City Tour", "Pai Sunsets", "Temple Visits", "Night Markets", "Cooking Class"]
+    id: "bali-explorer",
+    name: "Bali Explorer",
+    slug: "bali-explorer",
+    duration: "14 Days",
+    price: "£1,199",
+    image: "/bali-island-hopper-hero.webp",
+    badge: "Summer Holiday Friendly",
+    badgeColour: "bg-[#00b4d8]",
+    description: "Explore the best of Bali's iconic sights — Ubud's rice terraces, Uluwatu's clifftop temple, Seminyak's beach clubs, and the stunning Nusa Penida island.",
+    highlights: ["Ubud Rice Terraces", "Uluwatu Temple", "Nusa Penida", "Seminyak Beach", "Cooking Class", "Waterfall Hike"]
   },
   {
-    id: "thailand-island-hopper",
-    name: "Thailand Island Hopper",
-    slug: "thailand-island-hopper",
-    duration: "21 Days",
-    price: "£1,599",
-    image: "/thailand-island-hopper-hero.webp",
-    badge: "Most Popular",
+    id: "bali-island-hopper",
+    name: "Bali Island Hopper",
+    slug: "bali-island-hopper",
+    duration: "14 Days",
+    price: "£1,199",
+    image: "/bali-beach.webp",
+    badge: "Island Adventure",
     badgeColour: "bg-accent",
-    description: "The ultimate Thailand adventure. Explore Bangkok, Chiang Mai, Pai, then island-hop through Koh Samui, Koh Phangan, and Koh Tao. Full Moon Party included.",
-    highlights: ["Full Moon Party", "Island Hopping", "Scuba Diving", "Elephant Sanctuary", "Bamboo Rafting", "Koh Tao Snorkelling"]
+    description: "Go beyond Bali and explore the neighbouring Gili Islands and Lombok. Snorkel with turtles, climb a volcano, and discover some of the most beautiful beaches in the world.",
+    highlights: ["Gili Islands", "Lombok Volcano", "Turtle Snorkelling", "Bali Temples", "Sunset Sailing", "Beach Clubs"]
   }
 ];
 
 const highlights = [
   {
-    image: "/thailand-temple.jpg",
-    title: "Ancient Temples",
-    description: "Explore ornate Buddhist temples, from Bangkok's Grand Palace to Chiang Mai's mountain sanctuaries. Wat Phra That Doi Suthep at sunrise is unforgettable."
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bNROoWDCfWwuPcRn.jpg",
+    title: "Rice Terraces",
+    description: "The Tegalalang rice terraces near Ubud are one of Bali's most iconic sights. Walk through emerald-green paddies and learn about the ancient subak irrigation system."
   },
   {
-    image: "/thailand-waterfall.webp",
-    title: "Tropical Islands",
-    description: "Crystal-clear waters, white sand beaches, and legendary Full Moon Parties. Koh Tao, Koh Phangan, and Koh Samui are three of the world's most beautiful islands."
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/jcWWuKjCrUcKCosk.jpg",
+    title: "Clifftop Temples",
+    description: "Uluwatu Temple perches dramatically on a 70-metre cliff above the Indian Ocean. Watch the famous Kecak fire dance at sunset for a truly magical Bali experience."
   },
   {
-    image: "/thailand-elephant.jpg",
-    title: "Elephant Sanctuary",
-    description: "Spend a day with rescued elephants at an ethical sanctuary in Chiang Mai. Feed, bathe, and walk with these incredible animals in their natural habitat."
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/hanWFTxOSyBYBGGv.jpg",
+    title: "Beach & Surf Culture",
+    description: "From Seminyak's beach clubs to Canggu's surf breaks, Bali's coastline has something for everyone. Catch a surf lesson, sip a cocktail at sunset, or just relax on the sand."
   },
   {
-    image: "/thailand-farewell-dinner.jpg",
-    title: "Group Experiences",
-    description: "From night markets to cooking classes, every experience is shared with a brilliant group of like-minded 18-35s. Friendships made on ACE tours last a lifetime."
+    image: "/bali-island-hopper-hero.webp",
+    title: "Island Life",
+    description: "The Gili Islands are three tiny paradise islands off the coast of Lombok — no cars, no motorbikes, just white sand, turquoise water, and the sound of the ocean."
   }
 ];
 
@@ -65,7 +65,7 @@ const trustSignals = [
   { icon: Heart, value: "100%", label: "Repeat bookers", sub: "Come back every year" }
 ];
 
-export default function DestinationThailand() {
+export default function DestinationBali() {
   return (
     <div className="min-h-screen">
 
@@ -73,8 +73,8 @@ export default function DestinationThailand() {
       <section className="relative min-h-[75vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/thailand-island-hopper-hero.webp"
-            alt="Thailand temples and beaches"
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/jcWWuKjCrUcKCosk.jpg"
+            alt="Bali temples and rice terraces"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
@@ -85,15 +85,15 @@ export default function DestinationThailand() {
             <span className="text-accent font-semibold tracking-wide uppercase text-sm">Southeast Asia</span>
           </div>
           <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-4">
-            Thailand
+            Bali
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mb-8">
-            Temples, islands, elephants, and the Full Moon Party. Thailand has it all — and ACE takes you to every bit of it.
+            Volcanoes, rice terraces, clifftop temples, and paradise beaches. Bali is unlike anywhere else on earth.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-white font-bold h-12 px-8">
               <a href="#tours">
-                View Thailand Tours <ArrowRight className="ml-2 h-5 w-5" />
+                View Bali Tours <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/20 h-12 px-8 bg-white/10">
@@ -104,7 +104,7 @@ export default function DestinationThailand() {
       </section>
 
       {/* Trust Signals Bar */}
-      <section className="bg-primary text-primary-foreground py-6">
+      <section className="bg-[#00b4d8] text-white py-6">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {trustSignals.map((signal) => (
@@ -119,15 +119,15 @@ export default function DestinationThailand() {
         </div>
       </section>
 
-      {/* Why Thailand */}
+      {/* Why Bali */}
       <section className="py-20 bg-background">
         <div className="container">
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
-              Why Thailand?
+              Why Bali?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From the buzzing streets of Bangkok to the serene mountain town of Pai and the paradise islands of the Gulf — Thailand is one of the most diverse and rewarding destinations on earth.
+              Bali is one of those places that gets under your skin. The combination of spiritual culture, dramatic landscapes, incredible food, and warm hospitality makes it a destination like no other.
             </p>
           </div>
 
@@ -157,10 +157,10 @@ export default function DestinationThailand() {
         <div className="container">
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
-              Thailand Tours
+              Bali Tours
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Whether you want a quick taste or the full adventure, we have the perfect Thailand tour for you.
+              Both tours are 14 days and £1,199 — the difference is where you go beyond Bali itself.
             </p>
           </div>
 
@@ -211,7 +211,25 @@ export default function DestinationThailand() {
       <section className="py-20 bg-background">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="relative order-2 md:order-1">
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/hanWFTxOSyBYBGGv.jpg"
+                alt="ACE Travel group in Bali"
+                className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
+                <div className="flex">
+                  {[1,2,3,4,5].map(i => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <div>
+                  <p className="font-bold text-sm">4.9 out of 5</p>
+                  <p className="text-xs text-muted-foreground">500+ verified reviews</p>
+                </div>
+              </div>
+            </div>
+            <div className="order-1 md:order-2">
               <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6">
                 Why Book With ACE?
               </h2>
@@ -239,8 +257,8 @@ export default function DestinationThailand() {
                   }
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 rounded-xl bg-[#00b4d8]/10 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-6 h-6 text-[#00b4d8]" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">{item.title}</h3>
@@ -248,24 +266,6 @@ export default function DestinationThailand() {
                     </div>
                   </div>
                 ))}
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="/thailand-temple-group.jpg"
-                alt="ACE Travel group in Thailand"
-                className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
-                <div className="flex">
-                  {[1,2,3,4,5].map(i => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  ))}
-                </div>
-                <div>
-                  <p className="font-bold text-sm">4.9 out of 5</p>
-                  <p className="text-xs text-muted-foreground">500+ verified reviews</p>
-                </div>
               </div>
             </div>
           </div>
@@ -276,7 +276,7 @@ export default function DestinationThailand() {
       <section className="py-20 bg-muted/30">
         <div className="container max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-black text-center mb-4">
-            Thailand FAQs
+            Bali FAQs
           </h2>
           <p className="text-muted-foreground text-center mb-12 text-lg">
             Everything you need to know before you go
@@ -285,37 +285,37 @@ export default function DestinationThailand() {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="visa">
               <AccordionTrigger className="text-left text-lg font-semibold">
-                Do I need a visa for Thailand?
+                Do I need a visa for Bali?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                UK, EU, US, Canadian, and Australian passport holders receive a free 30-day visa on arrival in Thailand. Your passport must be valid for at least 6 months beyond your return date. If you plan to stay longer than 30 days, you will need to apply for a tourist visa before travelling.
+                UK, EU, US, Canadian, and Australian passport holders can enter Indonesia (Bali) visa-free for up to 30 days. For stays longer than 30 days, you can apply for a Visa on Arrival (around £25) which extends your stay to 60 days. Your passport must be valid for at least 6 months beyond your return date.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="best-time">
               <AccordionTrigger className="text-left text-lg font-semibold">
-                When is the best time to visit Thailand?
+                When is the best time to visit Bali?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                November to March is peak season with cooler, dry weather perfect for exploring. April to May is hot season (great for islands), and June to October is monsoon season with occasional rain but fewer crowds and lower prices. Thailand is brilliant year-round.
+                The dry season (April to October) is the best time to visit Bali, with sunny days and low humidity. July and August are peak season. The wet season (November to March) brings daily rain showers, but it is still warm and the island is less crowded. Our summer tours (June and July) are perfectly timed for the best weather.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="currency">
               <AccordionTrigger className="text-left text-lg font-semibold">
-                What currency does Thailand use?
+                What currency does Bali use?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                Thailand uses the Thai Baht (THB). £1 is approximately 42-45 Baht. ATMs are everywhere and accept international cards. Credit cards are widely accepted in cities, but bring cash for markets, street food, and rural areas. Thailand is very affordable — budget around £20-30 per day for meals and activities.
+                Bali uses the Indonesian Rupiah (IDR). £1 is approximately 20,000 Rupiah. ATMs are widely available, and most tourist areas accept card payments. Bali is very affordable — you can eat a delicious meal for £2-3, and a beer costs around £1.50.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="safety">
               <AccordionTrigger className="text-left text-lg font-semibold">
-                Is Thailand safe for travellers?
+                Is Bali safe for travellers?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                Thailand is very safe for travellers and welcomes millions of tourists annually. Standard travel precautions apply: watch your belongings in crowded areas, avoid unlicensed taxis, and drink responsibly. Our experienced ACE reps are with you throughout the trip and know the safest spots.
+                Bali is very safe for tourists. The Balinese people are incredibly welcoming and friendly. Standard precautions apply: watch your belongings, use reputable transport, and be respectful of local customs at temples. Our ACE reps are with you throughout the trip to ensure everyone stays safe and has a great time.
               </AccordionContent>
             </AccordionItem>
 
@@ -335,18 +335,18 @@ export default function DestinationThailand() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/thailand-waterfall.webp"
-            alt="Thailand adventure"
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bNROoWDCfWwuPcRn.jpg"
+            alt="Bali rice terraces"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="relative z-10 container text-center text-white">
           <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6">
-            Ready for Thailand?
+            Ready for Bali?
           </h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10">
-            Join hundreds of 18-35s who have already experienced Thailand with ACE. Secure your spot today with a small deposit.
+            Join hundreds of 18-35s who have already experienced Bali with ACE. Secure your spot today with a small deposit.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-white font-bold h-14 px-10 text-lg">

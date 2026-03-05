@@ -342,9 +342,9 @@
 - [ ] Ensure accordion is fully accessible with keyboard navigation
 
 ## Create Destination Overview Pages for SEO
-- [ ] Create Thailand destination page at /destinations/thailand
-- [ ] Create Bali destination page at /destinations/bali
-- [ ] Create Philippines destination page at /destinations/philippines
+- [x] Create Thailand destination page at /destinations/thailand
+- [x] Create Bali destination page at /destinations/bali
+- [x] Create Philippines destination page at /destinations/philippines
 - [ ] Add destination-specific FAQs (weather, safety, currency, best time to visit)
 - [ ] Include "Why Visit [Country]" section with key attractions
 - [ ] Display all available tours for each destination
@@ -507,3 +507,12 @@
 - [ ] Build complete Bali Island Hopper tour page with authentic content, images, dates, highlights, itinerary
 - [x] Fix Bali Island Hopper map image to use correct bali-island-hopper-map.webp
 - [x] Reduce hero banner height on Bali Island Hopper page
+- [x] Fix Day by Day itinerary styling on all tours to match Thailand Intro format
+- [x] Remove photo gallery section from all tour pages
+
+## Payment Calendar Popup
+- [x] Payment calendar: each departure date opens a popup modal showing full £ payment schedule (today as start, final payment 2 months before departure)
+- [x] Remove photo gallery section from all tour pages (already done for Thailand, ensure Philippines also has no gallery)
+- [x] Build Blogs, Vlogs & Frogs page (Vlogs first, Blogs second, Frogs at bottom)
+- [x] Add blog/vlogs link to header nav and footer
+- [x] Redesign About Us page with Jay & Ruby, inspired by Intro Travel

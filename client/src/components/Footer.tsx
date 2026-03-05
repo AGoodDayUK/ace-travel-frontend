@@ -19,7 +19,6 @@ export default function Footer() {
     ],
     support: [
       { href: '/faq', label: 'FAQ' },
-      { href: '/payments', label: 'Payments' },
       { href: '/terms', label: 'Terms & Conditions' },
       { href: '/privacy', label: 'Privacy Policy' },
     ],
@@ -52,7 +51,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center border border-background/20 hover:border-accent hover:text-accent transition-kinetic"
+                  className="w-11 h-11 rounded-full flex items-center justify-center bg-[#ee2f6d]/30 border-2 border-[#ee2f6d]/70 text-[#ff4d8d] hover:bg-[#ee2f6d] hover:border-[#ee2f6d] hover:text-white transition-all duration-200"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />

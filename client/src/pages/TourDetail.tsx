@@ -43,7 +43,8 @@ export default function TourDetail() {
         { date: "7th - 27th January 2027", price: "£1,799", duration: "21 Days" },
         { date: "30th Jan - 19th Feb 2027", price: "£1,799", duration: "21 Days", badge: "Full Moon Party +£150" },
         { date: "28th Feb - 20th Mar 2027", price: "£1,799", duration: "21 Days", badge: "Full Moon Party +£150" },
-        { date: "30th Mar - 19th Apr 2027", price: "£1,799", duration: "21 Days", badge: "Full Moon Party +£150" }
+        { date: "30th Mar - 19th Apr 2027", price: "£1,799", duration: "21 Days", badge: "Full Moon Party +£150" },
+        { date: "8th - 28th January 2028", price: "£1,799", duration: "21 Days" }
       ],
       hero: "/thailand-island-hopper-hero.webp",
       gallery: [
@@ -151,12 +152,12 @@ export default function TourDetail() {
       ],
       notIncluded: [
         "International flights",
-        "Travel insurance (mandatory)",
+        "Travel insurance",
         "Lunches and some dinners",
-        "Personal expenses and souvenirs",
+        "Personal expenses",
         "Optional activities",
         "Visa fees (if applicable)",
-        "Tips for guides and drivers"
+        "Tips"
       ],
       accommodation: {
         description: "Experience the best of Thailand's accommodation scene. From social hostels in Bangkok perfect for meeting your travel crew, to beachfront bungalows on the islands where you'll wake up to ocean views, and unique floating lodges in Khao Sok's jungle. Every stay is carefully selected for comfort, atmosphere, and that perfect balance of adventure and relaxation.",
@@ -302,45 +303,44 @@ export default function TourDetail() {
         {
           day: "Days 1-3",
           title: "Canggu",
-          description: "Dive into the energetic nightlife of Canggu, Bali's hotspot for party enthusiasts. With its buzzing beach clubs, trendy bars, and vibrant music scene, Canggu promises unforgettable nights filled with excitement. Dance the night away at popular spots like Old Man's and Finns Beach Club, and experience the unique bohemian vibe that makes Canggu the ultimate destination for a lively and unforgettable party experience.",
+          description: "Day 1 - Arrive in Bali! Grab your bag at the airport and meet our airport rep who will get you into your pre-booked airport transfer. Arrive at the first hostel and meet your trip manager and the rest of the guests on the tour!\n\nDay 2 - Breakfast included. Bucket list memory number 1: The Turtle Sanctuary! Jump in a transfer to Serangan Island and see baby turtles in captivity before their release into the oceans! Learn about the different species of turtle around Bali and then jump on a boat out to sea to release a baby back into the ocean!\n\nDay 3 - Surfs up! Get your swimsuits on and head to Double Six Beach for a 1-2-1 surf lesson. Our amazing instructors will guide you through the basics and have you riding waves in no time!",
           image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/fUxUwdJKjfiBzxEo.jpg"
         },
         {
           day: "Days 4-7",
           title: "Ubud",
-          description: "Immerse yourself in the cultural heart of Bali with a visit to Ubud, known for its enchanting temples and lush rice terraces. Explore the iconic Tegallalang Rice Terraces, where emerald-green paddies create a stunning landscape. Visit the sacred temples, each offering a glimpse into Bali's rich spiritual heritage. Ubud's serene atmosphere and breathtaking scenery make it a perfect destination for those seeking tranquility and cultural exploration.",
+          description: "Day 4 - Breakfast Included. Check out and get your first private transfer up to Ubud! Probably the greenest town you'll ever visit! We'll break up the journey with a visit to a traditional Temple and Balinese House.\n\nDay 5 - Breakfast Included. Spend the day exploring and swimming in Ubud's beautiful waterfalls. You'll visit the famous rice terraces and have the opportunity to get a classic picture on one of their swings. Finally you'll visit a local coffee plantation to learn about what grows in Bali and try a variety of teas & coffees — you can also try the famous Luwak coffee here!\n\nDay 6 - *ACE MOMENT* Early start alert! But goodness will it be worth it. Today you'll be hopping into an open top jeep to take you to the base of Mount Batur, one of Bali's active volcanoes (don't worry, it's safe!). The climb up will get the thighs burning but you'll get the most incredible view of the sunrise, with Mt. Agung in the background. Pack some tissues… it really is quite something! After your descent, you'll jump back in the jeep to visit a lava field formed years ago, before heading back to the hostel for a late breakfast. A local family-style dinner is included at the hostel!\n\nDay 7 - Breakfast Included. Wake up to some yoga at the hostel — a perfect way to start your free day. Explore Ubud's boutique shops or jump on one of our optional extras: Jewellery making class, Monkey Forest.",
           image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/pgiPrslXXbJpmsOo.jpg"
         },
         {
           day: "Days 8-10",
           title: "Nusa Lembongan",
-          description: "Discover the Nusa Islands, a duo of gems renowned for their spectacular snorkelling spots and breathtaking viewpoints. Dive into the crystal-clear waters around Nusa Lembongan and Nusa Penida to explore vibrant coral reefs teeming with marine life, including the famous Manta Rays. Hike to stunning viewpoints like Kelingking Beach and Angel's Billabong for panoramic vistas that will leave you in awe.",
+          description: "Day 8 - Breakfast Included. Today you get a transfer and short ferry over to Nusa Lembongan, a small island off the south east coast of Bali. Despite its size this little island has so much to do and explore! Check in at one of our top hostels with an infinity pool, gym, sauna, cold plunge and panoramic view over the island.\n\nDay 9 - Today you'll jump in a private transfer and head out for a tour of the island! We'll take you to the Devil's Tears, Dream Beach, Mahagiri Beach, Yellow Bridge and included a boat tour through some mangroves on the north of the island! Definitely a day to slap on the sun cream!\n\nDay 10 - Free day today! Enjoy the hostel's amazing facilities or head for a stroll down to the western beachfront for a sunset in the evening. For any water lovers, we've organised an optional manta ray snorkelling tour in the morning to see these majestic creatures fly through the ocean.\n\nOptional Extra: Manta Ray Snorkelling Trip.",
           image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FNnmoOgjRdxkwjTo.jpg"
         },
         {
           day: "Days 11-14",
           title: "Uluwatu",
-          description: "Discover the surfer's paradise of Uluwatu, renowned for its world-class waves and stunning coastal scenery. With legendary surf spots like Uluwatu Beach and Padang Padang, it's the perfect destination for both seasoned surfers and beginners looking to catch their first wave. After an exhilarating day on the water, relax at the cliffside bars and watch the sunset over the Indian Ocean.",
+          description: "Day 11 - Breakfast Included. Back to the mainland today, and heading to the southern tip of Bali to Uluwatu! Another cracker of a hostel fit with pools, gym, sauna, Jacuzzi and cold plunge! Just round the corner is the famous Padang Padang Beach — ever seen Eat, Pray, Love?\n\nDay 12 - Breakfast Included. In the evening you'll get to experience the Kecak fire dance — a famous tribal dance in Bali, performed at sunset. There is plenty of nightlife for you to enjoy here too with the famous Savaya Beach Club.\n\nDay 13 - Breakfast Included. Free Day! Need to grab some souvenirs before you head home? Today is the day and Uluwatu is a haven for gift shops! Head down to the beach and chill or jump in a transfer and head up to Finns Beach Club for a final boogie!\n\nDay 14 - Breakfast Included. The dreaded farewells! Give your new besties a big squeeze — we're positive you'll see them again, either in your own time or on another Ace Travel Experience! Chill at the hostel today until your airport transfer arrives.",
           image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/fxvwBSshNYtNUdKQ.jpg"
         }
       ],
       included: [
-        "13 nights accommodation (hostels and beach bungalows)",
-        "Daily breakfast and 8 group dinners",
-        "All activities and entrance fees",
-        "Expert trip manager",
-        "Airport pickup",
-        "All transport between destinations",
-        "Surf lesson and board rental",
-        "24/7 support"
+        "14 days accommodation included",
+        "Activities package included",
+        "Internal transport",
+        "Experienced ACE Rep & Local Guide",
+        "Private WhatsApp group",
+        "Flight assistance",
+        "Flexible payment plan",
+        "14 meals"
       ],
       notIncluded: [
         "International flights",
         "Travel insurance",
-        "Lunches and some dinners",
         "Personal expenses",
         "Optional activities",
-        "Visa fees",
+        "Visa fees (if applicable)",
         "Tips"
       ]
     },
@@ -348,64 +348,106 @@ export default function TourDetail() {
       id: "philippines-paradise",
       name: "Philippines Paradise",
       destination: "Philippines",
-      duration: "14 days",
-      price: "£1,499",
+      duration: "10 days",
+      price: "£999",
       deposit: "£60",
       groupSize: "15-30",
       ageRange: "18-35",
       rating: 4.9,
       reviews: 167,
-      nextDeparture: "8 Apr 2026",
-      departureDates: [],
-      hero: "https://images.unsplash.com/photo-1580452735834-d1c8a3c1e4a8?w=1600&q=80",
-      gallery: [
-        "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=800&q=80",
-        "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80",
-        "https://images.unsplash.com/photo-1621277224630-81d9af65e40e?w=800&q=80",
-        "https://images.unsplash.com/photo-1606490965834-e3f4e7c3e0f5?w=800&q=80"
+      nextDeparture: "19 Jan 2027",
+      departureDates: [
+        { date: "19th - 28th January 2027", duration: "10 Days", price: "£999" }
       ],
-      description: "Discover the hidden paradise of the Philippines. Explore the secret lagoons of El Nido, island hop in Coron, and camp on deserted beaches. This 14-day adventure takes you off the beaten path to some of the world's most beautiful islands.",
+      hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/gMgbXqqaIFwmNoLk.webp",
+      routeMap: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/POfIzUgSEAnzPWyk.webp",
+      gallery: [
+        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755334534898-U2MJBV2UW9EQ7A7FX6SW/unsplash-image-LBMvueaBKT8.jpg?format=750w",
+        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755516580750-Z07FAD920S1P2XSM39TY/unsplash-image-cTHDCXrljaI.jpg?format=750w",
+        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755513572352-ZM2SL5OLNTWCGDDAKBJB/unsplash-image-jCIIInzOm-Y.jpg?format=500w",
+        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510661488-WFZAEL2WJT5JRPLKLPG6/unsplash-image-9ZXHUr5aCwM.jpg?format=750w"
+      ],
+      description: "The Philippines Ultimate Adventure — 10 days island-hopping from Cebu through Moalboal, Oslob, Dumaguete, Siquijor, Bohol, Siargao, Puerto Princesa, Port Barton, and El Nido. Sardine runs, canyoneering, whale sharks, mystical islands, and karst lagoons await.",
       highlights: [
-        "El Nido island hopping tours (Big Lagoon, Secret Lagoon, Hidden Beach)",
-        "Coron shipwreck diving and snorkeling",
-        "Beach camping under the stars",
-        "Kayaking through limestone cliffs",
-        "Twin Lagoon and Barracuda Lake",
-        "Underground river tour",
-        "Sunset boat parties",
-        "Fresh seafood BBQs on the beach"
+        "Sardine run at Moalboal — millions of sardines in a living silver storm",
+        "Canyoneering at Kawasan Falls — leap, slide & swim through turquoise gorges",
+        "Siquijor countryside tour — Cambugahay Falls, Balete Tree fish spa & Cantabon Cave",
+        "Bohol — Chocolate Hills, Loboc River cruise & tarsier sanctuary",
+        "Siargao — Cloud 9 surf break, Sugba Lagoon & island hopping",
+        "El Nido island tour — Big Lagoon, Secret Beach & Shimizu snorkelling",
+        "Sunset boat cruise along Panglao's coast",
+        "Surfing lesson at Siargao"
       ],
       itinerary: [
         {
-          day: "Days 1-2",
-          title: "Manila",
-          description: "Arrive in Manila and meet your group. Quick city tour including Intramuros (old walled city) and rooftop bars. Prepare for island adventure."
+          day: "Day 1",
+          title: "Cebu",
+          description: "Coral-rich coasts, limestone canyons, and Spanish-era streets. Arrive in Cebu and meet your group. City tour including Magellan's Cross, Basilica del Santo Niño, Fort San Pedro, and a lechon tasting. Prepare for 10 days of island adventure!",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755334534898-U2MJBV2UW9EQ7A7FX6SW/unsplash-image-LBMvueaBKT8.jpg?format=750w"
         },
         {
-          day: "Days 3-7",
-          title: "El Nido, Palawan",
-          description: "Paradise found. Daily island hopping tours to secret lagoons, hidden beaches, and snorkeling spots. Kayak through limestone cliffs, cliff jump, and camp on a deserted beach for one night."
+          day: "Day 2",
+          title: "Moalboal",
+          description: "Drop into a living silver storm just off Panagsama — millions of sardines swirling in one hypnotic bait ball, often with turtles cruising past. No boat needed, just fins and a mask. Then head to Kawasan Falls for canyoneering: leap, slide, and swim through turquoise gorges from Alegria — natural rock slides, blue pools, and cliff jumps under jungle walls.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755516580750-Z07FAD920S1P2XSM39TY/unsplash-image-cTHDCXrljaI.jpg?format=750w"
         },
         {
-          day: "Days 8-12",
-          title: "Coron",
-          description: "Wreck diving capital. Snorkel Japanese shipwrecks from WWII, swim in Twin Lagoon, explore Barracuda Lake, and visit pristine beaches. Sunset boat parties and beach bonfires."
+          day: "Day 3",
+          title: "Oslob",
+          description: "Wake up early for one of the most incredible experiences in the Philippines — swimming with whale sharks! These gentle giants are the largest fish in the ocean and Oslob is one of the best places in the world to see them up close. Afternoon free to explore the local area.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755513572352-ZM2SL5OLNTWCGDDAKBJB/unsplash-image-jCIIInzOm-Y.jpg?format=500w"
         },
         {
-          day: "Days 13-14",
-          title: "Return to Manila",
-          description: "Ferry and flight back to Manila. Final night exploring the nightlife and farewell dinner with your crew. Depart the next day or extend your stay."
+          day: "Day 4",
+          title: "Dumaguete",
+          description: "Laid-back university town vibes with a seafront boulevard and easy island escapes. Indulge in a love affair with Dumaguete through our tour of the fiery Pulang Bato Falls. Dive Apo Island's world-class reefs with turtles, breathe the Twin Lakes mist, then wander Silliman's acacia-shaded campus and snack along Rizal Boulevard at sunset.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755509877207-AX5OBQ4HB7HCMYN7MMQC/unsplash-image-re2Meno1UIU.jpg?format=750w"
+        },
+        {
+          day: "Day 5",
+          title: "Siquijor",
+          description: "Mystic island vibes with powder-white coves, turquoise falls, and cliff jumps. Swim Cambugahay's turquoise tiers and swing into the falls, then dip your toes at the centuries-old Balete Tree fish spa. Crawl through Cantabon Cave's cathedral chambers, meet traditional healers, and cap the day with clifftop coffee, hammocks, and sunset views at Bucafé.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510026499-HEOI9QSK7P7RCSBFU6MC/unsplash-image-HyoHPFoU9Kg.jpg?format=500w"
+        },
+        {
+          day: "Day 6",
+          title: "Bohol",
+          description: "Chocolate Hills panoramas, river-valley charm, and wildlife up close. Glide the Loboc River, visit tarsiers at ethical sanctuaries, chase waterfalls and cave pools, and cap it with countryside viewpoints or a zipline. Then settle into Panglao — stretch out on Alona Beach, snorkel or dive Balicasag's coral walls, and watch the sky go gold.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510189740-BGTVRWRRVHV810VWBO51/unsplash-image-MyiYvI-EKis.jpg?format=750w"
+        },
+        {
+          day: "Day 7",
+          title: "Siargao",
+          description: "Surf-lagoon paradise with laid-back island energy. Watch Cloud 9's legendary break, float through Sugba Lagoon, swim Magpupungko's tidal pools, and island-hop Naked, Daku, and Guyam. Surfing lesson included — start on the sand with pop-up basics, then paddle out to mellow beach breaks with an instructor by your side.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510373939-FCE8J96P5L5LB7EPKXO7/unsplash-image-h1dEzlP12hs.jpg?format=750w"
+        },
+        {
+          day: "Day 8",
+          title: "Puerto Princesa",
+          description: "Fly into Palawan's capital and gateway to the island's wonders. Visit the UNESCO-listed Puerto Princesa Subterranean River — an extraordinary underground river navigating through a spectacular cave system before flowing directly into the sea.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510458688-S4MGT2NDDLJG1L9KWPYR/unsplash-image-wrHnE3kMplg.jpg?format=750w"
+        },
+        {
+          day: "Day 9",
+          title: "Port Barton",
+          description: "Sleepy-bay bliss with island-hopping on your doorstep. Cruise to Starfish Sandbar, German Island, and Inaladelan, snorkel turtle-filled reefs, laze on White Beach, then end with a sunset beer and a beachfront bonfire — Palawan at its most mellow.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510549398-HN8KAZZA2VTJPK79TJXQ/unsplash-image-PnPslMS_Lds.jpg?format=750w"
+        },
+        {
+          day: "Day 10",
+          title: "El Nido",
+          description: "Karst cathedrals over jade water. Kayak Big and Small Lagoon, slip into Secret Beach, snorkel Shimizu and Seven Commandos, then chase sunset along Nacpan's twin sands — Bacuit Bay island-hopping at its most unreal. Beach BBQ lunch included. The perfect finale to your Philippines adventure!",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510661488-WFZAEL2WJT5JRPLKLPG6/unsplash-image-9ZXHUr5aCwM.jpg?format=750w"
         }
       ],
       included: [
-        "13 nights accommodation (hostels and beach bungalows)",
-        "Daily breakfast and 9 group dinners",
-        "All island hopping tours and activities",
-        "Expert trip manager",
-        "Airport pickup",
-        "All ferries and domestic flights",
-        "Snorkel gear rental",
-        "24/7 support"
+        "10 nights accommodation",
+        "Experienced ACE Rep & local guide",
+        "Activities packages included",
+        "Iconic viewpoints",
+        "Private WhatsApp group",
+        "Flight assistance",
+        "Daily breakfast & some meals"
       ],
       notIncluded: [
         "International flights",
@@ -413,7 +455,6 @@ export default function TourDetail() {
         "Lunches and some dinners",
         "Personal expenses",
         "Optional diving courses",
-        "Environmental fees (approx £30 total)",
         "Tips"
       ],
       reviewsList: []
@@ -669,7 +710,7 @@ export default function TourDetail() {
         "Travel insurance",
         "Personal expenses",
         "Optional activities (scuba diving, spa)",
-        "Visa on arrival fee (approx $35 USD)",
+        "Visa on arrival fee (if applicable)",
         "Tips"
       ],
       reviewsList: [
@@ -700,6 +741,20 @@ export default function TourDetail() {
           date: "09/10/25",
           title: "Bali Island Hopper",
           text: "Loved every minute of my trip, from the activities, organisation, communication and the friendliness of both Jay and Ruby!"
+        },
+        {
+          name: "Liberty Abbott",
+          rating: 5,
+          date: "13/10/25",
+          title: "Memories that will last a lifetime!",
+          text: "I can't thank Ace enough! Firstly, I was added into a group chat with everyone. This made things so much easier as it broke the ice before we met each other. From there everything was effortless as all the activities & accommodation were booked so I didn't have to lift a finger! Overall, it was an amazing experience and all I can say is 'Book that trip'."
+        },
+        {
+          name: "Lily-Mae",
+          rating: 5,
+          date: "17/10/25",
+          title: "Best trip of my life!",
+          text: "This was my second trip with Ace and once again, it was incredible! It's perfect if you want to travel but don't feel confident going solo. I met so many lovely people and had the best time. The places we stayed in were super clean and comfy too. Thanks again, Ace – can't wait for the next one!"
         }
       ]
     }
@@ -751,41 +806,41 @@ export default function TourDetail() {
 
   return (
     <div className="animate-fade-in">
-      <div className="relative min-h-[60vh] md:min-h-[70vh] overflow-hidden">
+      <div className="relative overflow-hidden">
         <img 
           src={tour.hero}
           alt={tour.name}
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-foreground/40" />
-        <div className="absolute inset-0 flex items-center">
-          <div className="container">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black/70" />
+        <div className="relative z-10 flex items-end md:items-center min-h-[520px] md:min-h-[75vh] pb-8 md:pb-0">
+          <div className="container py-10 md:py-16">
             <div className="flex items-start justify-between gap-8">
             <div className="max-w-3xl text-background">
               <Badge className="bg-primary text-primary-foreground mb-4">
                 {tour.destination}
               </Badge>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4 leading-tight">
                 {tour.name}
               </h1>
-              <p className="text-sm md:text-lg mb-8 leading-relaxed">
+              <p className="text-sm md:text-lg mb-6 leading-relaxed max-w-2xl">
                 {tour.description}
               </p>
-              <div className="flex flex-wrap gap-6 text-sm md:text-base">
+              <div className="flex flex-wrap gap-4 md:gap-6 text-sm md:text-base">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-5 h-5" />
+                  <Calendar className="w-4 h-4 md:w-5 md:h-5" />
                   <span>{tour.duration}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5" />
+                  <Users className="w-4 h-4 md:w-5 md:h-5" />
                   <span>{tour.groupSize} people</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5" />
+                  <MapPin className="w-4 h-4 md:w-5 md:h-5" />
                   <span>{tour.ageRange} years</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Star className="w-5 h-5 fill-current" />
+                  <Star className="w-4 h-4 md:w-5 md:h-5 fill-current" />
                   <span>{tour.rating} ({tour.reviews} reviews)</span>
                 </div>
               </div>
@@ -860,10 +915,11 @@ export default function TourDetail() {
               <div className="mb-8 bg-accent/10 p-8 rounded-lg">
                 <img 
                   src={
-                    tourId === 'thailand-intro' ? '/thailand-intro-map.webp' : 
+                    (tour as any).routeMap ||
+                    (tourId === 'thailand-intro' ? '/thailand-intro-map.webp' : 
                     tourId === 'thailand-island-hopper' ? '/thailand-island-hopper-map.webp' :
                     tourId === 'bali-island-hopper' ? '/bali-island-hopper-map.webp' :
-                    'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/trjSBWQKzHaQYLlx.webp'
+                    'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/trjSBWQKzHaQYLlx.webp')
                   }
                   alt={`${tour.name} Route Map`}
                   className="w-full max-w-3xl mx-auto"
@@ -893,20 +949,32 @@ export default function TourDetail() {
                         </div>
                         <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
                           {itineraryItem.description.split('\n').map((line, i) => {
-                            const dayMatch = line.match(/^(Day \d+:)(.*)$/);
-                            if (dayMatch) {
+                            const lines = itineraryItem.description.split('\n');
+                            // Match "Day N:", "Day N —" or "Day N -" formats
+                            const colonMatch = line.match(/^(Day \d+:)(.*)$/);
+                            const dashMatch = line.match(/^(Day \d+)\s*(?:—|–|-)(.*)$/);
+                            if (colonMatch) {
                               return (
                                 <span key={i}>
-                                  <span className="font-bold text-primary">{dayMatch[1]}</span>
-                                  {dayMatch[2]}
-                                  {i < itineraryItem.description.split('\n').length - 1 && <br />}
+                                  <span className="font-bold text-primary">{colonMatch[1]}</span>
+                                  {colonMatch[2]}
+                                  {i < lines.length - 1 && <br />}
+                                </span>
+                              );
+                            }
+                            if (dashMatch) {
+                              return (
+                                <span key={i}>
+                                  <span className="font-bold text-primary">{dashMatch[1]} —</span>
+                                  {dashMatch[2]}
+                                  {i < lines.length - 1 && <br />}
                                 </span>
                               );
                             }
                             return (
                               <span key={i}>
                                 {line}
-                                {i < itineraryItem.description.split('\n').length - 1 && <br />}
+                                {i < lines.length - 1 && <br />}
                               </span>
                             );
                           })}
@@ -964,7 +1032,7 @@ export default function TourDetail() {
                             ))}
                           </div>
                           <h3 className="font-bold mb-2">{review.title}</h3>
-                          <p className="text-sm text-muted-foreground mb-4 flex-grow">{review.content}</p>
+                          <p className="text-sm text-muted-foreground mb-4 flex-grow">{review.content || review.text}</p>
                           <div className="text-sm text-muted-foreground border-t pt-3">
                             <p className="font-semibold text-foreground">{review.name}</p>
                             <p className="text-xs">{review.date}</p>
@@ -1148,45 +1216,40 @@ export default function TourDetail() {
             <h2 className="text-3xl font-bold tracking-tight mb-4 text-center">Choose Your Dates</h2>
             <p className="text-lg text-muted-foreground text-center mb-12">Select your preferred departure date and secure your spot</p>
             
-            {/* Payment Calculator - shown for first departure date as example */}
-            {tour.departureDates[0] && (
-              <div className="max-w-lg mx-auto mb-12">
-                <PaymentCalculator 
-                  tourPrice={parsePrice(tour.departureDates[0].price)}
-                  departureDate={parseDepartureDate(tour.departureDates[0].date)}
-                  tourName={tour.name}
-                />
-              </div>
-            )}
-            
             <div className="max-w-2xl mx-auto space-y-3">
               {tour.departureDates.map((departure, index) => (
                 <Card key={index} className="p-5 hover:shadow-lg transition-shadow">
                   <div className="flex items-center justify-between gap-4">
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Calendar className="w-5 h-5 text-primary" />
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        <Calendar className="w-5 h-5 text-primary flex-shrink-0" />
                         <span className="text-lg font-bold">{departure.date}</span>
                         {(departure as any).spotsLeft && (departure as any).spotsLeft <= 5 && (
-                          <Badge variant="destructive" className="text-xs ml-2">
+                          <Badge variant="destructive" className="text-xs">
                             Only {(departure as any).spotsLeft} left!
                           </Badge>
                         )}
                         {(departure as any).badge && (
-                          <Badge className="text-xs ml-2 bg-accent text-accent-foreground">
+                          <Badge className="text-xs bg-accent text-accent-foreground">
                             {(departure as any).badge}
                           </Badge>
                         )}
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-4 text-sm">
                         {(departure as any).duration && (
-                          <span className="font-medium">{(departure as any).duration}</span>
+                          <span className="text-muted-foreground font-medium">{(departure as any).duration}</span>
                         )}
-                        <span className="font-semibold text-primary text-base">{departure.price}</span>
+                        <span className="font-bold text-primary text-base">{departure.price}</span>
+                        <PaymentCalculator
+                          tourPrice={parsePrice(departure.price)}
+                          departureDate={parseDepartureDate(departure.date)}
+                          tourName={tour.name}
+                          departureDateLabel={departure.date}
+                        />
                       </div>
                     </div>
-                    <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
-                      <Button className="bg-primary hover:bg-primary/90">
+                    <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer" className="flex-shrink-0">
+                      <Button className="bg-primary hover:bg-primary/90 font-semibold">
                         Book Now
                       </Button>
                     </a>
@@ -1223,8 +1286,8 @@ export default function TourDetail() {
                   <div>
                     <h3 className="text-2xl font-bold mb-3">Thailand Intro</h3>
                     <p className="text-muted-foreground mb-4">
-                      Perfect for first-timers or those with limited time. Experience Bangkok's culture, 
-                      Chiang Mai's temples, and the stunning beaches of Krabi in just 10 days.
+                      Perfect for first-timers or those with limited time. Experience Bangkok's temples, 
+                      Chiang Mai's culture, and the mountain paradise of Pai in just 12 days.
                     </p>
                     <ul className="space-y-2 mb-6">
                       <li className="flex items-start gap-2 text-sm">
@@ -1233,11 +1296,11 @@ export default function TourDetail() {
                       </li>
                       <li className="flex items-start gap-2 text-sm">
                         <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                        <span>Chiang Mai cultural immersion</span>
+                        <span>Chiang Mai elephant sanctuary</span>
                       </li>
                       <li className="flex items-start gap-2 text-sm">
                         <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                        <span>Krabi beaches & island hopping</span>
+                        <span>Pai sunsets & tipsy tubing</span>
                       </li>
                       <li className="flex items-start gap-2 text-sm">
                         <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
@@ -1247,7 +1310,7 @@ export default function TourDetail() {
                   </div>
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-2xl font-bold text-primary">£899</p>
+                      <p className="text-2xl font-bold text-primary">£999</p>
                       <p className="text-sm text-muted-foreground">per person</p>
                     </div>
                     <Link href="/tour/thailand-intro">
@@ -1313,7 +1376,7 @@ export default function TourDetail() {
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-sm text-muted-foreground">From</div>
-                      <div className="text-3xl font-bold text-primary">£1,899</div>
+                      <div className="text-3xl font-bold text-primary">£1,599</div>
                     </div>
                     <Link href="/tour/thailand-island-hopper">
                       <Button size="lg" className="bg-primary hover:bg-primary/90">
@@ -1392,49 +1455,7 @@ export default function TourDetail() {
         </section>
       )}
 
-      <section className="py-16 bg-background">
-        <div className="container">
-          <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Photo Gallery</h2>
-        </div>
-        <div className="w-full overflow-hidden">
-          <div className="relative">
-            <div 
-              ref={galleryRef}
-              className="flex gap-4 px-4 md:px-8 overflow-x-scroll snap-x snap-mandatory scrollbar-hide cursor-grab select-none" 
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-              onMouseLeave={handleMouseLeave}
-            >
-              {tour.gallery.map((img, index) => (
-                <div 
-                  key={index}
-                  className="flex-shrink-0 snap-start w-[85vw] md:w-[calc(25%-12px)] aspect-[4/3] overflow-hidden rounded-lg"
-                >
-                  <img 
-                    src={img}
-                    alt={`Gallery ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-            <button
-              onClick={() => scrollGallery('left')}
-              className="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/90 hover:bg-background flex items-center justify-center transition-kinetic rounded-full shadow-lg z-10"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={() => scrollGallery('right')}
-              className="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/90 hover:bg-background flex items-center justify-center transition-kinetic rounded-full shadow-lg z-10"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
-        </div>
-      </section>
+
 
       <section className="container py-16">
         <div className="max-w-3xl mx-auto">

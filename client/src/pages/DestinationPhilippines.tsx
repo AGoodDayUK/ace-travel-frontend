@@ -10,51 +10,39 @@ import { ArrowRight, Calendar, Users, Star, Shield, MapPin, Clock, Heart } from 
 
 const tours = [
   {
-    id: "thailand-intro",
-    name: "Thailand Intro",
-    slug: "thailand-intro",
-    duration: "12 Days",
+    id: "philippines-paradise",
+    name: "Philippines Paradise",
+    slug: "philippines-paradise",
+    duration: "10 Days",
     price: "£999",
-    image: "/thailand-intro-hero.webp",
-    badge: "Perfect for First-Timers",
-    badgeColour: "bg-primary",
-    description: "The perfect introduction to Thailand. Journey from Bangkok's vibrant streets to Chiang Mai's temples, an elephant sanctuary, and Pai's laid-back mountain vibes.",
-    highlights: ["Elephant Sanctuary", "Bangkok City Tour", "Pai Sunsets", "Temple Visits", "Night Markets", "Cooking Class"]
-  },
-  {
-    id: "thailand-island-hopper",
-    name: "Thailand Island Hopper",
-    slug: "thailand-island-hopper",
-    duration: "21 Days",
-    price: "£1,599",
-    image: "/thailand-island-hopper-hero.webp",
-    badge: "Most Popular",
+    image: "/philippines-hero.webp",
+    badge: "New for 2027",
     badgeColour: "bg-accent",
-    description: "The ultimate Thailand adventure. Explore Bangkok, Chiang Mai, Pai, then island-hop through Koh Samui, Koh Phangan, and Koh Tao. Full Moon Party included.",
-    highlights: ["Full Moon Party", "Island Hopping", "Scuba Diving", "Elephant Sanctuary", "Bamboo Rafting", "Koh Tao Snorkelling"]
+    description: "Discover the hidden paradise of the Philippines. From Cebu to El Nido, explore secret lagoons, swim with whale sharks, surf in Siargao, and island-hop through some of the world's most beautiful islands.",
+    highlights: ["El Nido Lagoons", "Whale Shark Snorkelling", "Siargao Surfing", "Chocolate Hills", "Gili-style Beaches", "Island Hopping"]
   }
 ];
 
 const highlights = [
   {
-    image: "/thailand-temple.jpg",
-    title: "Ancient Temples",
-    description: "Explore ornate Buddhist temples, from Bangkok's Grand Palace to Chiang Mai's mountain sanctuaries. Wat Phra That Doi Suthep at sunrise is unforgettable."
+    image: "/philippines-hero.webp",
+    title: "El Nido Lagoons",
+    description: "El Nido in Palawan is home to some of the most dramatic scenery in the world. Towering limestone karsts, hidden lagoons, and crystal-clear turquoise water make it a bucket-list destination."
   },
   {
-    image: "/thailand-waterfall.webp",
-    title: "Tropical Islands",
-    description: "Crystal-clear waters, white sand beaches, and legendary Full Moon Parties. Koh Tao, Koh Phangan, and Koh Samui are three of the world's most beautiful islands."
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/IMutWpLXypOxxteu.jpg",
+    title: "Siargao Surfing",
+    description: "Siargao is the surfing capital of the Philippines. Cloud 9 is one of the world's most famous waves, but even beginners can learn to surf on the gentler breaks around the island."
   },
   {
-    image: "/thailand-elephant.jpg",
-    title: "Elephant Sanctuary",
-    description: "Spend a day with rescued elephants at an ethical sanctuary in Chiang Mai. Feed, bathe, and walk with these incredible animals in their natural habitat."
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/wolbzhDEinkirHmb.jpg",
+    title: "Chocolate Hills",
+    description: "Bohol's famous Chocolate Hills are one of the Philippines' most unique natural wonders — over 1,200 perfectly cone-shaped hills that turn chocolate-brown in the dry season."
   },
   {
-    image: "/thailand-farewell-dinner.jpg",
-    title: "Group Experiences",
-    description: "From night markets to cooking classes, every experience is shared with a brilliant group of like-minded 18-35s. Friendships made on ACE tours last a lifetime."
+    image: "/philippines-lagoon.jpg",
+    title: "Island Life",
+    description: "The Philippines has over 7,000 islands. Our tour takes you to the very best of them — from the cosmopolitan energy of Cebu to the laid-back paradise of Port Barton."
   }
 ];
 
@@ -65,7 +53,7 @@ const trustSignals = [
   { icon: Heart, value: "100%", label: "Repeat bookers", sub: "Come back every year" }
 ];
 
-export default function DestinationThailand() {
+export default function DestinationPhilippines() {
   return (
     <div className="min-h-screen">
 
@@ -73,8 +61,8 @@ export default function DestinationThailand() {
       <section className="relative min-h-[75vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/thailand-island-hopper-hero.webp"
-            alt="Thailand temples and beaches"
+            src="/philippines-hero.webp"
+            alt="Philippines El Nido limestone cliffs"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
@@ -85,15 +73,15 @@ export default function DestinationThailand() {
             <span className="text-accent font-semibold tracking-wide uppercase text-sm">Southeast Asia</span>
           </div>
           <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-4">
-            Thailand
+            Philippines
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mb-8">
-            Temples, islands, elephants, and the Full Moon Party. Thailand has it all — and ACE takes you to every bit of it.
+            7,000 islands. Secret lagoons. Whale sharks. Surfing. The Philippines is one of the most underrated destinations on earth — and ACE is taking you there.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-white font-bold h-12 px-8">
               <a href="#tours">
-                View Thailand Tours <ArrowRight className="ml-2 h-5 w-5" />
+                View Philippines Tours <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/20 h-12 px-8 bg-white/10">
@@ -104,7 +92,7 @@ export default function DestinationThailand() {
       </section>
 
       {/* Trust Signals Bar */}
-      <section className="bg-primary text-primary-foreground py-6">
+      <section className="bg-accent text-white py-6">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {trustSignals.map((signal) => (
@@ -119,15 +107,15 @@ export default function DestinationThailand() {
         </div>
       </section>
 
-      {/* Why Thailand */}
+      {/* Why Philippines */}
       <section className="py-20 bg-background">
         <div className="container">
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
-              Why Thailand?
+              Why the Philippines?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From the buzzing streets of Bangkok to the serene mountain town of Pai and the paradise islands of the Gulf — Thailand is one of the most diverse and rewarding destinations on earth.
+              The Philippines is one of Southeast Asia's best-kept secrets. Fewer crowds than Thailand, more dramatic scenery than Bali, and some of the friendliest people you will ever meet.
             </p>
           </div>
 
@@ -157,14 +145,14 @@ export default function DestinationThailand() {
         <div className="container">
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
-              Thailand Tours
+              Philippines Tours
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Whether you want a quick taste or the full adventure, we have the perfect Thailand tour for you.
+              Our Philippines Paradise tour launches in January 2027. Be one of the first to experience it.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="max-w-2xl mx-auto">
             {tours.map((tour) => (
               <div key={tour.id} className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all bg-card border border-border hover:border-primary">
                 <div className="relative h-72 overflow-hidden">
@@ -235,12 +223,12 @@ export default function DestinationThailand() {
                   {
                     icon: Heart,
                     title: "18-35 Only",
-                    desc: "Every person on your tour is aged 18-35. You'll meet people at the same stage of life, and friendships made on ACE tours last years."
+                    desc: "Every person on your tour is aged 18-35. You will meet people at the same stage of life, and friendships made on ACE tours last years."
                   }
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-6 h-6 text-accent" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">{item.title}</h3>
@@ -252,8 +240,8 @@ export default function DestinationThailand() {
             </div>
             <div className="relative">
               <img
-                src="/thailand-temple-group.jpg"
-                alt="ACE Travel group in Thailand"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/mHpHRfsSMXkVOXLL.jpg"
+                alt="Philippines El Nido lagoon"
                 className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
               />
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
@@ -276,7 +264,7 @@ export default function DestinationThailand() {
       <section className="py-20 bg-muted/30">
         <div className="container max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-black text-center mb-4">
-            Thailand FAQs
+            Philippines FAQs
           </h2>
           <p className="text-muted-foreground text-center mb-12 text-lg">
             Everything you need to know before you go
@@ -285,37 +273,37 @@ export default function DestinationThailand() {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="visa">
               <AccordionTrigger className="text-left text-lg font-semibold">
-                Do I need a visa for Thailand?
+                Do I need a visa for the Philippines?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                UK, EU, US, Canadian, and Australian passport holders receive a free 30-day visa on arrival in Thailand. Your passport must be valid for at least 6 months beyond your return date. If you plan to stay longer than 30 days, you will need to apply for a tourist visa before travelling.
+                UK, EU, US, Canadian, and Australian passport holders can enter the Philippines visa-free for up to 30 days. This can be extended to 59 days at a local immigration office for a small fee. Your passport must be valid for at least 6 months beyond your return date.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="best-time">
               <AccordionTrigger className="text-left text-lg font-semibold">
-                When is the best time to visit Thailand?
+                When is the best time to visit the Philippines?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                November to March is peak season with cooler, dry weather perfect for exploring. April to May is hot season (great for islands), and June to October is monsoon season with occasional rain but fewer crowds and lower prices. Thailand is brilliant year-round.
+                The dry season (November to May) is the best time to visit, with warm sunny days and calm seas. Our January 2027 tour is perfectly timed for the best weather. June to October is typhoon season, which is why we do not run tours during this period.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="currency">
               <AccordionTrigger className="text-left text-lg font-semibold">
-                What currency does Thailand use?
+                What currency does the Philippines use?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                Thailand uses the Thai Baht (THB). £1 is approximately 42-45 Baht. ATMs are everywhere and accept international cards. Credit cards are widely accepted in cities, but bring cash for markets, street food, and rural areas. Thailand is very affordable — budget around £20-30 per day for meals and activities.
+                The Philippines uses the Philippine Peso (PHP). £1 is approximately 70-75 Pesos. ATMs are available in cities and larger towns, but it is worth carrying cash when visiting more remote islands. The Philippines is very affordable — street food costs around £1-2, and a cold beer is about £1.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="safety">
               <AccordionTrigger className="text-left text-lg font-semibold">
-                Is Thailand safe for travellers?
+                Is the Philippines safe for travellers?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                Thailand is very safe for travellers and welcomes millions of tourists annually. Standard travel precautions apply: watch your belongings in crowded areas, avoid unlicensed taxis, and drink responsibly. Our experienced ACE reps are with you throughout the trip and know the safest spots.
+                The tourist areas of the Philippines (Cebu, Bohol, Siargao, Palawan) are very safe and welcoming to tourists. The Filipino people are renowned for their warmth and hospitality. Our ACE reps are with you throughout the trip and know the safest routes and areas to visit.
               </AccordionContent>
             </AccordionItem>
 
@@ -324,7 +312,7 @@ export default function DestinationThailand() {
                 Do flights come with the tour?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                Flights are not included in the tour price, but our team provides full flight assistance to help you find the best routes and prices. We recommend booking flights as early as possible once your tour place is confirmed. We will share all the flight details you need in your welcome pack.
+                Flights are not included in the tour price, but our team provides full flight assistance to help you find the best routes and prices. We recommend flying into Cebu (Mactan-Cebu International Airport) and flying home from El Nido or Puerto Princesa. We will share all the flight details in your welcome pack.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -335,18 +323,18 @@ export default function DestinationThailand() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/thailand-waterfall.webp"
-            alt="Thailand adventure"
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/mHpHRfsSMXkVOXLL.jpg"
+            alt="Philippines El Nido"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="relative z-10 container text-center text-white">
           <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6">
-            Ready for Thailand?
+            Ready for the Philippines?
           </h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10">
-            Join hundreds of 18-35s who have already experienced Thailand with ACE. Secure your spot today with a small deposit.
+            Be one of the first to experience the Philippines with ACE. Launching January 2027 — secure your spot now.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-white font-bold h-14 px-10 text-lg">

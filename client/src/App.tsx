@@ -17,7 +17,12 @@ import HowItWorks from "./pages/HowItWorks";
 import Deals from "./pages/Deals";
 import About from "./pages/About";
 import DestinationThailand from "./pages/DestinationThailand";
+import DestinationBali from "./pages/DestinationBali";
+import DestinationPhilippines from "./pages/DestinationPhilippines";
 import WelcomePack from "./pages/WelcomePack";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsConditions from "@/pages/TermsConditions";
+import BlogsVlogs from "@/pages/BlogsVlogs";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -27,6 +32,8 @@ function Router() {
       <Route path={"/tour/:id"} component={TourDetail} />
       <Route path={"/destinations"} component={Destinations} />
       <Route path={"/destinations/thailand"} component={DestinationThailand} />
+      <Route path={"/destinations/bali"} component={DestinationBali} />
+      <Route path={"/destinations/philippines"} component={DestinationPhilippines} />
       <Route path={"/tours"} component={Tours} />
       <Route path={"/how-it-works"} component={HowItWorks} />
       <Route path={"/deals"} component={Deals} />
@@ -34,6 +41,9 @@ function Router() {
       <Route path={"/contact"} component={Contact} />
       <Route path={"/faq"} component={FAQ} />
       <Route path={"/reviews"} component={Reviews} />
+      <Route path={"/privacy"} component={PrivacyPolicy} />
+      <Route path={"/terms"} component={TermsConditions} />
+      <Route path={"/blogs-vlogs"} component={BlogsVlogs} />
       <Route path={"/404"} component={NotFound} />
       {/* Welcome pack pages - hidden from search engines, no header/footer */}
       <Route path={"/welcome/:tour"} component={({ params }: { params: { tour: string } }) => <WelcomePack tour={params.tour} />} />
@@ -53,6 +63,8 @@ function MainLayout() {
           <Route path={"/tour/:id"} component={TourDetail} />
           <Route path={"/destinations"} component={Destinations} />
           <Route path={"/destinations/thailand"} component={DestinationThailand} />
+          <Route path={"/destinations/bali"} component={DestinationBali} />
+          <Route path={"/destinations/philippines"} component={DestinationPhilippines} />
           <Route path={"/tours"} component={Tours} />
           <Route path={"/how-it-works"} component={HowItWorks} />
           <Route path={"/deals"} component={Deals} />
@@ -60,6 +72,9 @@ function MainLayout() {
           <Route path={"/contact"} component={Contact} />
           <Route path={"/faq"} component={FAQ} />
           <Route path={"/reviews"} component={Reviews} />
+          <Route path={"/privacy"} component={PrivacyPolicy} />
+          <Route path={"/terms"} component={TermsConditions} />
+          <Route path={"/blogs-vlogs"} component={BlogsVlogs} />
           <Route path={"/404"} component={NotFound} />
           <Route component={NotFound} />
         </Switch>

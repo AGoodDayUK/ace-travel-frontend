@@ -1,117 +1,236 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
-import { Users, Heart, Globe, Award } from "lucide-react";
+import { CheckCircle, Users, Star, Shield, MapPin, MessageCircle } from "lucide-react";
+
+const JAY_CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/oojkNrXjNgfrIBJo.webp";
+const RUBY_CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/YZwMffRCOSwJTzqj.webp";
+
+const features = [
+  {
+    title: "Everything Actually Included",
+    description: "No sneaky extras. No 'pay when you get there.' If it's on the itinerary, it's in the price. Every experience, every activity, already covered.",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/AbstOSiVVfNKoBYN.jpg",
+    alt: "Group of travellers on an elephant sanctuary experience in Chiang Mai"
+  },
+  {
+    title: "Your ACE Rep Has Got You",
+    description: "Real humans. Really good ones. Your dedicated ACE Rep is with you every step of the way — they'll hype you up, have your back, and make sure no one gets left behind. Solo traveller? First big trip? You're covered.",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bNROoWDCfWwuPcRn.jpg",
+    alt: "Lush green rice terraces in Bali"
+  },
+  {
+    title: "Support From Start to Finish",
+    description: "From the moment you book to the last goodbye, we've got you. Pre-travel prep, a private WhatsApp group, and flight assistance. Got a question? Just ask. We're here the whole way.",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/mHpHRfsSMXkVOXLL.jpg",
+    alt: "El Nido lagoon in the Philippines"
+  }
+];
+
+const whyACE = [
+  { icon: CheckCircle, title: "Flexible Payments", description: "Secure your spot with a small deposit and spread the rest across easy instalments." },
+  { icon: Star, title: "4.9 Star Rated", description: "Hundreds of five-star reviews from real travellers who've been on our tours." },
+  { icon: Users, title: "18-35 Age Group", description: "Travel with people your own age who are just as excited about adventure as you are." },
+  { icon: Shield, title: "Safe & Supported", description: "24/7 support, trusted local partners, and comprehensive safety planning on every trip." },
+  { icon: MapPin, title: "Handpicked Destinations", description: "Thailand, Bali and the Philippines — curated routes that hit the best spots." },
+  { icon: MessageCircle, title: "Private WhatsApp Group", description: "Connect with your travel group before you even leave home. The adventure starts early." }
+];
 
 export default function About() {
-  const values = [
-    {
-      icon: Users,
-      title: "Community First",
-      description: "We're building a global community of adventurers who believe travel brings people together."
-    },
-    {
-      icon: Heart,
-      title: "Accessible Travel",
-      description: "Epic adventures shouldn't break the bank. We make travel affordable with low deposits and payment plans."
-    },
-    {
-      icon: Globe,
-      title: "Authentic Experiences",
-      description: "We go beyond tourist traps to show you the real culture, food, and hidden gems of each destination."
-    },
-    {
-      icon: Award,
-      title: "Quality & Safety",
-      description: "24/7 support and comprehensive travel protection. Your safety and experience are our top priorities."
-    }
-  ];
-
-  const stats = [
-    { number: "10,000+", label: "Travellers" },
-    { number: "4.9/5", label: "Average Rating" },
-    { number: "3", label: "Destinations" },
-    { number: "11", label: "Tours" }
-  ];
-
   return (
     <div className="animate-fade-in">
+
+      {/* Hero */}
       <section className="container py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6 space-y-6">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">
-              About ACE
+            <p className="text-sm font-semibold tracking-widest uppercase text-primary">About ACE Travel</p>
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight">
+              Real adventures.<br />
+              Real friendships.<br />
+              Real memories.
             </h1>
-            <div className="h-1 w-16 bg-primary" />
+            <div className="h-1 w-16 bg-accent" />
             <p className="text-xl text-muted-foreground leading-relaxed">
-              ACE Travel Experiences was founded on a simple belief: travel should be accessible, social, and unforgettable. We create group adventures for 18-35 year olds who want to explore the world without the hassle of planning or the loneliness of solo travel.
+              We're not just a travel company. We're your trusty sidekick in exploring Southeast Asia and Indonesia. Whether you're after pristine beaches, bustling markets, or hidden gems, we've got you covered.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Since 2019, we've helped over 10,000 travellers discover Southeast Asia, make lifelong friends, and create memories that last forever. We're not just a tour company. We're a community.
+              Our team of passionate travel enthusiasts and local experts are here to take the stress out of planning and put the magic back into travel. Imagine group trips filled with laughter, new friends, and moments that'll last a lifetime.
             </p>
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-12 px-8">
+              <Link href="/tours">Browse Our Tours</Link>
+            </Button>
           </div>
           <div className="md:col-span-6">
-            <img 
-              src="https://private-us-east-1.manuscdn.com/sessionFile/pXVHXcSbPXyc4MWdg9U3VE/sandbox/vQIa9gQhvpiaeVZHjvhxJC-img-4_1770480744000_na1fn_Z3JvdXAtdHJhdmVsLWhlcm8.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvcFhWSFhjU2JQWHljNE1XZGc5VTNWRS9zYW5kYm94L3ZRSWE5Z1FodnBpYWVWWkhqdmh4SkMtaW1nLTRfMTc3MDQ4MDc0NDAwMF9uYTFmbl9aM0p2ZFhBdGRISmhkbVZzTFdobGNtOC5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=pWclah8wEL29jJrqhhVyZbo-dPKLMCPSioZB-AgrlpHNAfnbOMjUn1HxFPeSzIhjUUvhHrzggwIn0QwRxf3p-424KgxZsLuoar8xbeosJM89lAB494cUcKLWFS8KX45jyHzZMkBNjoC8R~HO2s3-804tOYdzxfwMmmFBTGg7zUeWiKaGsBTOdK0Ci8etH5~bmp8qkJYvsM37lwu7ZLKMPNvMYJ3lWMD8GxEfJGQ97DfzPomCt2ZT7qzQzfJRgV77oIMglIB9zRoWgGBXNhvbt5TS7ynFzDi01Y~u3LRzUBssLfuWckLsoqEzkOgggBHqUJKoa2Hjwvnzsbwqn4dZPg__"
-              alt="ACE Travel group"
-              className="w-full aspect-[4/3] object-cover"
-            />
+            <div className="relative">
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/VNDmlCNoSkrrWiQj.jpg"
+                alt="ACE Travel group on a beautiful beach in Thailand"
+                className="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl"
+              />
+              <div className="absolute -bottom-6 -left-6 bg-accent text-accent-foreground rounded-xl p-4 shadow-lg">
+                <div className="text-3xl font-bold">4.9 ★</div>
+                <div className="text-sm font-medium">Average Rating</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-primary text-primary-foreground py-16">
+      {/* Stats bar */}
+      <section className="bg-primary text-primary-foreground py-14 mt-8">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat) => (
+            {[
+              { number: "500+", label: "Happy Travellers" },
+              { number: "4.9/5", label: "Average Rating" },
+              { number: "3", label: "Destinations" },
+              { number: "5", label: "Tours Available" }
+            ].map((stat) => (
               <div key={stat.label} className="space-y-2">
                 <div className="text-5xl md:text-6xl font-bold">{stat.number}</div>
-                <div className="text-lg opacity-90">{stat.label}</div>
+                <div className="text-base opacity-90">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* What makes ACE, ACE */}
       <section className="container py-16 md:py-24">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">
-            Our Values
-          </h2>
+        <div className="text-center space-y-4 mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">What makes ACE, ACE?</h2>
           <div className="h-1 w-16 bg-accent mx-auto" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {values.map((value) => (
-            <Card key={value.title} className="p-8 border-2 hover:border-primary transition-kinetic">
-              <div className="space-y-4">
-                <div className="w-12 h-12 flex items-center justify-center bg-accent text-accent-foreground">
-                  <value.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-bold tracking-tight">{value.title}</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">{value.description}</p>
+        <div className="space-y-24">
+          {features.map((feature, i) => (
+            <div
+              key={feature.title}
+              className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}
+            >
+              <div className="space-y-5">
+                <h3 className="text-3xl md:text-4xl font-bold tracking-tight">{feature.title}</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
-            </Card>
+              <div>
+                <img
+                  src={feature.image}
+                  alt={feature.alt}
+                  className="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg"
+                />
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
+      {/* The ACE Team */}
       <section className="bg-muted py-16 md:py-24">
-        <div className="container text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">
-            Join the ACE Community
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to start your adventure? Browse our tours and find your perfect trip.
-          </p>
-          <Button 
-            asChild
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight text-lg h-14 px-8"
-          >
-            <Link href="/tours">View All Tours</Link>
-          </Button>
+        <div className="container">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">The A-ce Team</h2>
+            <div className="h-1 w-16 bg-accent mx-auto" />
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Behind every incredible trip is a small, passionate team who genuinely love what they do. Say hello to the people who make it all happen.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {/* Jay */}
+            <div className="bg-background rounded-2xl overflow-hidden shadow-md group">
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={JAY_CDN}
+                  alt="Jay, Operations Manager at ACE Travel Experiences"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-2xl font-bold text-primary">Jay</h3>
+                <p className="text-muted-foreground font-medium mt-1">Operations Manager</p>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  The engine behind every tour. Jay makes sure every detail is sorted so you can focus on having the time of your life.
+                </p>
+              </div>
+            </div>
+            {/* Ruby */}
+            <div className="bg-background rounded-2xl overflow-hidden shadow-md group">
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={RUBY_CDN}
+                  alt="Ruby, Social Media Manager at ACE Travel Experiences"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-2xl font-bold text-primary">Ruby</h3>
+                <p className="text-muted-foreground font-medium mt-1">Social Media Manager</p>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  The face behind the content. Ruby captures the real moments that make you want to pack your bags and join us.
+                </p>
+              </div>
+            </div>
+            {/* Mollie */}
+            <div className="bg-background rounded-2xl overflow-hidden shadow-md group">
+              <div className="aspect-[3/4] overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <div className="text-7xl">🌴</div>
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-2xl font-bold text-primary">Mollie</h3>
+                <p className="text-muted-foreground font-medium mt-1">Trip Manager</p>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  Your on-the-ground guide. Mollie is the one making sure every day of your trip runs like clockwork and every memory sticks.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Why Choose ACE */}
+      <section className="container py-16 md:py-24">
+        <div className="text-center space-y-4 mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">Why Choose ACE?</h2>
+          <div className="h-1 w-16 bg-accent mx-auto" />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {whyACE.map((item) => (
+            <div key={item.title} className="p-8 border-2 border-border hover:border-primary rounded-2xl transition-all duration-300 group">
+              <div className="w-12 h-12 flex items-center justify-center bg-primary/10 text-primary rounded-xl mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                <item.icon className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold tracking-tight mb-3">{item.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section
+        className="relative py-24 text-white overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.4)), url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/IMutWpLXypOxxteu.jpg)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center"
+        }}
+      >
+        <div className="container text-center space-y-6">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">
+            Ready to join the adventure?
+          </h2>
+          <p className="text-xl opacity-90 max-w-2xl mx-auto">
+            Grab your rucksack. We'll handle the rest.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold h-14 px-10 text-lg">
+              <Link href="/tours">View All Tours</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-semibold h-14 px-10 text-lg">
+              <Link href="/contact">Get in Touch</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
