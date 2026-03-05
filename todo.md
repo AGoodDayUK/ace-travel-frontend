@@ -516,3 +516,16 @@
 - [x] Build Blogs, Vlogs & Frogs page (Vlogs first, Blogs second, Frogs at bottom)
 - [x] Add blog/vlogs link to header nav and footer
 - [x] Redesign About Us page with Jay & Ruby, inspired by Intro Travel
+
+## Contact Page Redesign
+- [x] Redesign Contact page inspired by Intro Travel layout
+- [x] Add quick-action cards: Chat/WhatsApp, FAQs, Manage Booking
+- [x] Add enquiry type dropdown (General, Booking, Tour Info, etc.)
+- [x] Add contact form with name, email, phone, message fields
+- [x] Add contact detail cards (email, phone, response time)
+- [x] Use admin@acetravelexperiences.com and +44 7450 996 347
+
+## How It Works Page - Real Photography
+- [x] Replace icon-based layout with real photography sections
+- [x] Add full-width image panels between steps
+- [x] Source real travel group photos for each step
