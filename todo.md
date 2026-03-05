@@ -358,7 +358,7 @@
 ## Complete All Tour Detail Pages
 - [x] Apply all enhancements to Bali Explorer (accommodation, Trustpilot badge, departure dates, Travel Expert contact, FAQ)
 - [ ] Build Thailand Island Hopper tour page with full details
-- [ ] Build Bali Island Hopper tour page with full details
+- [x] Build Bali Island Hopper tour page with full details
 - [ ] Build Philippines Paradise tour page with full details
 - [ ] Ensure all tours have consistent layout and sections
 - [ ] Test all tour pages for errors and broken links
@@ -503,3 +503,5 @@
 - [x] Update FAQ page with comprehensive content from pasted_content_15.txt (general, tour-specific, high-conversion FAQs)
 - [x] Add curated Ace Moments photo gallery section to homepage bottom
 - [x] Convert Ace Moments from masonry to modern uniform grid with Load More button
+- [x] Build Bali Island Hopper tour page with authentic images, itinerary, highlights, departure dates, and payment calculator
+- [ ] Build complete Bali Island Hopper tour page with authentic content, images, dates, highlights, itinerary

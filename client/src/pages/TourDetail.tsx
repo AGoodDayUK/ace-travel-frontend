@@ -571,81 +571,137 @@ export default function TourDetail() {
       id: "bali-island-hopper",
       name: "Bali Island Hopper",
       destination: "Bali",
-      duration: "10 days",
+      duration: "14 days",
       price: "£1,199",
       deposit: "£60",
       groupSize: "15-30",
       ageRange: "18-35",
-      rating: 4.8,
-      reviews: 156,
-      nextDeparture: "18 Mar 2026",
-      departureDates: [],
-      hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/GsVJxEVQBngZgOoI.JPG",
-      gallery: [
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/GsVJxEVQBngZgOoI.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/cAbbFXQZkcbhEkDU.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/xgPTVQkkzSGeYzDk.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/tOvtDmcHfUwaukLM.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/AVctsZxyffxrIbVN.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/nfzqJSNUdoFmwGhl.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/qivcwmrDcckGwvru.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ujOcrPuepmZuwPMB.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/PXlQnTbTVcJJJjpj.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/UtZydstnoHgAJiUA.JPG"
+      rating: 4.9,
+      reviews: 189,
+      nextDeparture: "23rd May 2026",
+      departureDates: [
+        { date: "23rd May - 5th June 2026", price: "£1,199", duration: "14 Days" },
+        { date: "4th - 17th July 2026", price: "£1,199", duration: "14 Days" },
+        { date: "1st - 14th September 2026", price: "£1,199", duration: "14 Days" },
+        { date: "29th May - 11th June 2027", price: "£1,199", duration: "14 Days" },
+        { date: "17th - 30th July 2027", price: "£1,199", duration: "14 Days" },
+        { date: "28th August - 10th September 2027", price: "£1,199", duration: "14 Days" }
       ],
-      description: "Fast-paced Bali island hopping adventure. Hit the highlights in 10 action-packed days - from Nusa Islands' crystal waters to Ubud's cultural heart. Perfect for travellers short on time but big on adventure.",
+      hero: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/4d19dbe1-0cf3-4ed7-8b3a-b19f118abfff/WhatsApp+Image+2024-07-17+at+10.05.01_76a2fd1c.jpg?format=1500w",
+      gallery: [
+        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/794b172f-bebd-45f4-9575-a700255e954f/WhatsApp+Image+2024-07-17+at+10.11.52_f402bd63.jpg?format=1000w",
+        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755266310015-JHHRSV9OIO9RZFZJHDF1/unsplash-image-OizacLd_W7I.jpg?format=1000w",
+        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755266197128-MWHRSGMUQRYPXR80S74B/unsplash-image-7RvPpfof4P4.jpg?format=1000w",
+        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722874636424-EV6KRAF5P4C4T0L8SZ8B/unsplash-image-wbhgIkk2vMM.jpg?format=1000w",
+        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/b3836b89-fea5-4d4f-8da1-eacd66288c48/WhatsApp+Image+2024-07-17+at+10.36.26_97a7e4d1.jpg?format=750w",
+        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/eb06e9c2-bdea-42bf-adeb-db17690df642/WhatsApp+Image+2024-07-17+at+10.06.39_680c7cbd.jpg?format=750w",
+        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722786414203-CM1RQ59Y51IQ4UTE6GTX/unsplash-image-AZMmUy2qL6A.jpg?format=1000w",
+        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755265503266-6BVPJ5X0ITM6HUHL2OUF/unsplash-image-p1aFK6ayTYg.jpg?format=1000w"
+      ],
+      description: "The ultimate 14-day Bali island hopping adventure. Surf the legendary waves of Kuta, snorkel with giant manta rays in Nusa Lembongan, explore the dramatic cliffs of Nusa Penida, discover Lombok's wild beaches and waterfalls, and party on the car-free paradise of Gili Trawangan.",
+      routeMap: "/bali-island-hopper-map.webp",
       highlights: [
-        "Nusa Islands day trips (Nusa Lembongan & Nusa Penida)",
-        "Snorkeling with manta rays",
-        "Kelingking Beach (T-Rex cliff) visit",
-        "Ubud rice terrace trekking",
-        "Waterfall exploration",
-        "Beach club parties in Seminyak",
-        "Temple visits and cultural experiences",
-        "Sunset beach dinners"
+        {
+          title: "Surf lessons",
+          description: "Experience the thrill of riding the waves with our expert-led surfing lessons! Whether you are a complete beginner or looking to hone your skills, our instructors will guide you every step of the way. Set against the backdrop of stunning beaches and crystal-clear waters, our surfing lessons offer an unforgettable adventure. Dive in, catch your first wave, and embrace the excitement of surfing!",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/794b172f-bebd-45f4-9575-a700255e954f/WhatsApp+Image+2024-07-17+at+10.11.52_f402bd63.jpg?format=750w"
+        },
+        {
+          title: "Snorkelling with turtles",
+          description: "Slip into calm, crystal water and drift over coral gardens where turtles cruise unbothered. Join a morning boat to Turtle Point or swim from the east coast, float alongside these gentle icons, then rinse off with a beachside coconut. Keep your distance, don't touch, and use reef-safe sunscreen — pure island magic, done right.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755266310015-JHHRSV9OIO9RZFZJHDF1/unsplash-image-OizacLd_W7I.jpg?format=750w"
+        },
+        {
+          title: "Iconic viewpoints",
+          description: "Chase horizons from hilltops and cliff edges: in Lombok, greet sunrise over Rinjani from Pergasingan and catch golden hour at Merese and Malimbu. On the Nusas, gaze down Kelingking's \"T-Rex,\" Diamond Beach, Devil's Tears, and Blue Lagoon. On the Gilis, wander to Sunset Point for sea-pink skies and silhouettes of Bali and Rinjani — views that stop you mid-sentence.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755266197128-MWHRSGMUQRYPXR80S74B/unsplash-image-7RvPpfof4P4.jpg?format=750w"
+        },
+        {
+          title: "Giant manta rays",
+          description: "Encounter the awe-inspiring giant manta rays in their natural habitat. These majestic creatures glide gracefully through the crystal-clear waters, offering a mesmerising sight for snorkellers and divers alike. Witnessing their elegant movements up close is a truly unforgettable experience, making it a must-do activity for any marine life enthusiast.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722874636424-EV6KRAF5P4C4T0L8SZ8B/unsplash-image-wbhgIkk2vMM.jpg?format=750w"
+        }
       ],
       itinerary: [
         {
-          day: "Days 1-2",
-          title: "Seminyak Beach Vibes",
-          description: "Arrive in Bali and head to Seminyak. Beach club welcome party, explore the beach, and get to know your group. Sunset dinner on the sand."
+          day: "Day 1",
+          title: "Kuta — Arrival",
+          description: "Arrive in Bali! Grab your bag at the airport and meet our airport rep who will get you into your pre-booked airport transfer. Arrive at the first hostel and meet your trip manager and the rest of the guests on the tour!",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755265503266-6BVPJ5X0ITM6HUHL2OUF/unsplash-image-p1aFK6ayTYg.jpg?format=750w"
         },
         {
-          day: "Days 3-5",
-          title: "Nusa Islands Adventure",
-          description: "Ferry to Nusa Lembongan. Snorkel with manta rays, visit Kelingking Beach on Nusa Penida, cliff jump at Blue Lagoon, and relax on pristine beaches. Island paradise at its finest."
+          day: "Days 2-4",
+          title: "Nusa Lembongan & Nusa Penida",
+          description: "Day 2 — Breakfast included. Transfer and short ferry over to Nusa Lembongan. Check in at one of our top hostels with an infinity pool, gym, sauna, cold plunge and panoramic views.\n\nDay 3 — Head out on a boat to Manta Bay for snorkelling with giant manta rays. Most are 3-4 metres wide — gentle giants that will make you feel very small!\n\nDay 4 — Breakfast included. Boat over to Nusa Penida for an island tour visiting Angel Billabong, Broken Beach, Kelingking Beach and Crystal Bay. Bring your cameras!",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755265674810-T86SUHW3F1DDMVCOS17A/unsplash-image-2ZJxGgv-Hww.jpg?format=750w"
         },
         {
-          day: "Days 6-8",
-          title: "Ubud Culture & Nature",
-          description: "Head to Ubud's cultural heart. Trek rice terraces, chase waterfalls, visit temples, explore the Monkey Forest, and experience traditional Balinese culture. Evening fire dance performance."
+          day: "Days 5-8",
+          title: "Lombok — Beaches, Waterfalls & Sunsets",
+          description: "Day 5 — Breakfast included. Ferry over to Lombok! Enjoy breathtaking scenery with rice terraces and Mount Rinjani in the background.\n\nDay 6 — Visit Lombok's most beautiful waterfalls hidden in the jungle. Evening dinner and a little boogie at local hotspots.\n\nDay 7 — Beach day! Mawun for body surfing, Are Guling for tanning, Selong Belanak for lunch, and Bukit Merese for a pastel sunset.\n\nDay 8 — Free day to explore Kuta Lombok. Optional surfing lessons available!",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722786414203-CM1RQ59Y51IQ4UTE6GTX/unsplash-image-AZMmUy2qL6A.jpg?format=750w"
         },
         {
-          day: "Days 9-10",
-          title: "Back to Seminyak",
-          description: "Return to Seminyak for final beach days. Optional surf lessons, spa treatments, or shopping. Farewell beach party and celebration dinner."
+          day: "Days 9-12",
+          title: "Gili Trawangan — Island Paradise",
+          description: "Day 9 — Breakfast included. Welcome to THE island life. No cars, no motorbikes — just bicycles and your legs! Beachfront hostel with family BBQs, pool and beach volleyball.\n\nDay 10 — Snorkelling trip where you are 99.9% likely to swim with turtles! Visit the famous underwater statues and turtle sanctuary on Gili Air.\n\nDay 11 — Breakfast included. Free day to explore by bicycle. Grab a snorkel from street rentals, shop for souvenirs, or find a great spot for a boogie!\n\nDay 12 — Breakfast included. Chill at the hostel or beach. Group sunset, then beanbags and a film at the beach cinema.",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/eb06e9c2-bdea-42bf-adeb-db17690df642/WhatsApp+Image+2024-07-17+at+10.06.39_680c7cbd.jpg?format=750w"
+        },
+        {
+          day: "Days 13-14",
+          title: "Kuta — Final Days",
+          description: "Day 13 — Breakfast included. The last hop. Back to mainland Bali by ferry then a short transfer to Kuta. Grab a final sunset and family dinner together before packing your bags.\n\nDay 14 — The dreaded farewells! Give your new besties a big squeeze — we're positive you'll see them again, either in your own time or on another ACE Travel Experience!",
+          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/b3836b89-fea5-4d4f-8da1-eacd66288c48/WhatsApp+Image+2024-07-17+at+10.36.26_97a7e4d1.jpg?format=750w"
         }
       ],
       included: [
-        "9 nights accommodation (beach hotels and island bungalows)",
-        "Daily breakfast and 5 group dinners",
-        "All island hopping tours and boat transfers",
-        "Snorkel gear rental",
-        "Expert trip manager",
-        "Airport pickup",
-        "All transport between destinations",
-        "24/7 support"
+        "14 days accommodation included",
+        "Activities packages included",
+        "Experienced ACE Rep & Local Guide",
+        "Iconic viewpoints",
+        "Private group WhatsApp",
+        "Flight assistance",
+        "Flexible payment plan",
+        "14 meals"
       ],
       notIncluded: [
         "International flights",
         "Travel insurance",
-        "Lunches and some dinners",
         "Personal expenses",
-        "Optional activities (surfing, spa)",
+        "Optional activities (scuba diving, spa)",
         "Visa on arrival fee (approx $35 USD)",
         "Tips"
       ],
-      reviewsList: []
+      reviewsList: [
+        {
+          name: "Evelyn",
+          rating: 5,
+          date: "05/10/25",
+          title: "I went to Bali with Ace Travel Experiences",
+          text: "I went on the Bali Island Hopper trip in September 2025 and I can honestly say that it was one of the best trips of my life. Having never flown outside of Europe, it was comforting to know that the reps Ruby and Jay were on hand to help with any questions. I couldn't thank Jay enough for encouraging me to face my fear to scuba dive for the first time, and Ruby for being so warm and welcoming and treating me as a friend, rather than just a guest on the trip. Thank you Ace for such an amazing experience!"
+        },
+        {
+          name: "Carly J",
+          rating: 5,
+          date: "09/10/25",
+          title: "Just book it, no regrets!",
+          text: "I did the Bali Island Hopper in September and absolutely loved the snorkelling, Gili T was amazing! Seeing the manta rays was probably the best experience I've ever had in my life! Jay and Ruby were incredible. Will absolutely be booking another tour with Ace!! All the accommodations were impeccable and everything was so so so well organised!"
+        },
+        {
+          name: "Charlotte",
+          rating: 5,
+          date: "24/04/25",
+          title: "I couldn't recommend Ace more...",
+          text: "I couldn't recommend Ace more! From start till end it was the best time of my life! I decided to go with a group to start my travels as booking/organising can be overwhelming and I'm so glad I went with Ace. They do absolutely everything for you and you don't have to worry about a thing which is what I loved about it. Life changing experience!"
+        },
+        {
+          name: "Jayden",
+          rating: 5,
+          date: "09/10/25",
+          title: "Bali Island Hopper",
+          text: "Loved every minute of my trip, from the activities, organisation, communication and the friendliness of both Jay and Ruby!"
+        }
+      ]
     }
   };
 
