@@ -751,7 +751,7 @@ export default function TourDetail() {
 
   return (
     <div className="animate-fade-in">
-      <div className="relative min-h-[70vh] md:min-h-[80vh] overflow-hidden">
+      <div className="relative min-h-[60vh] md:min-h-[70vh] overflow-hidden">
         <img 
           src={tour.hero}
           alt={tour.name}
@@ -862,6 +862,7 @@ export default function TourDetail() {
                   src={
                     tourId === 'thailand-intro' ? '/thailand-intro-map.webp' : 
                     tourId === 'thailand-island-hopper' ? '/thailand-island-hopper-map.webp' :
+                    tourId === 'bali-island-hopper' ? '/bali-island-hopper-map.webp' :
                     'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/trjSBWQKzHaQYLlx.webp'
                   }
                   alt={`${tour.name} Route Map`}

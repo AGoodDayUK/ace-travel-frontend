@@ -505,3 +505,5 @@
 - [x] Convert Ace Moments from masonry to modern uniform grid with Load More button
 - [x] Build Bali Island Hopper tour page with authentic images, itinerary, highlights, departure dates, and payment calculator
 - [ ] Build complete Bali Island Hopper tour page with authentic content, images, dates, highlights, itinerary
+- [x] Fix Bali Island Hopper map image to use correct bali-island-hopper-map.webp
+- [x] Reduce hero banner height on Bali Island Hopper page
