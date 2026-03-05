@@ -500,3 +500,5 @@
 - [x] Add mobile hamburger menu icon
 - [x] Create hidden welcome pack download page for Thailand Island Hopper (noindex, PDF cover image, download button)
 - [x] Add XML sitemap at /sitemap.xml covering all public pages (excluding noindex pages)
+- [x] Update FAQ page with comprehensive content from pasted_content_15.txt (general, tour-specific, high-conversion FAQs)
+- [x] Add curated Ace Moments photo gallery section to homepage bottom
