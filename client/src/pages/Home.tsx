@@ -5,18 +5,18 @@ import { ArrowRight, Users, Calendar, Heart, Shield, Star, ChevronDown, MapPin }
 import { useState } from "react";
 
 const MOMENTS_PHOTOS = [
-  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/0177ed67-4cf6-453a-ab87-7d6dc1a33b65/WhatsApp+Image+2024-07-17+at+10.02.06_cd1ec11f.jpg?format=750w", alt: "ACE group on tour" },
-  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/43f20e77-9aae-4ad7-b2bf-0d592502ba0e/bar-crawl.jpg?format=750w", alt: "Bar crawl night out" },
-  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/21d450f7-c5e4-485e-ad72-8613f34a05c2/elephant-sanctuary.jpg?format=750w", alt: "Elephant sanctuary" },
-  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/0d48797c-3b7c-4dce-ba76-3e47d9a9896a/WhatsApp+Image+2024-07-17+at+10.26.07_c4d95941.jpg?format=750w", alt: "ACE travellers" },
-  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/a7e36531-4017-474f-b36b-f809863012f1/quad-bikes.jpg?format=750w", alt: "Quad biking adventure" },
-  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/8d413e46-a264-4eb0-8b20-ffa94aeec178/phi-phi-boat-tour.jpg?format=750w", alt: "Phi Phi boat tour" },
-  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/b3836b89-fea5-4d4f-8da1-eacd66288c48/WhatsApp+Image+2024-07-17+at+10.36.26_97a7e4d1.jpg?format=750w", alt: "Group adventure" },
-  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/292afbb5-f398-4e04-a739-51e2c1a9c795/Koh-Phangan.jpg?format=750w", alt: "Koh Phangan beach" },
-  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/8e29ce02-4b4e-44b2-9d56-6d76495b549e/Koh-Tao.jpg?format=750w", alt: "Koh Tao diving" },
-  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/b9c0f6c5-5c3a-462c-b467-1f90a32330cd/WhatsApp+Image+2024-07-17+at+10.23.45_10dfbd5c.jpg?format=750w", alt: "ACE moments" },
-  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/7fa2d973-3b59-4cf6-9920-59c338517720/IMG-20250521-WA0040.jpg?format=750w", alt: "Tour group fun" },
-  { src: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/954b6dc0-2c04-49e3-8bce-c7fefb30abd0/unsplash-image-chnSOB50-Ro.jpg?format=750w", alt: "Thailand scenery" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/AfrqckRqZWYBfsZI.jpg", alt: "ACE group on tour" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/PVcTxhBeHMSxsxaM.jpg", alt: "Bar crawl night out" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/eOGfHFdwzhjprocw.jpg", alt: "Elephant sanctuary" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/PsQGqtplQJVjngak.jpg", alt: "ACE travellers" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/XjlZbktLFblnlapI.jpg", alt: "Quad biking adventure" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/yVIviyKVphfQFQvW.jpg", alt: "Phi Phi boat tour" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ElOPcITQITYxAUYp.jpg", alt: "Group adventure" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/eZucBmIINTLQzkWf.jpg", alt: "Koh Phangan beach" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/SkkkXQebmyXdVeku.jpg", alt: "Koh Tao diving" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/HzkAzSiHHurpNQTN.jpg", alt: "ACE moments" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/nGhdDzGbDHyRBopl.jpg", alt: "Tour group fun" },
+  { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/xwBrCzYTGUOSKoiY.jpg", alt: "Thailand scenery" },
 ];
 
 const COLS_PER_ROW = 4;

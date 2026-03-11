@@ -114,7 +114,7 @@ export default function Tours() {
     <div className="animate-fade-in min-h-screen bg-background">
       {/* Hero */}
       <section className="relative bg-foreground text-background overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-40">
           <img
             src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/nbdFlsyYCgCVjCdb.jpeg"
             alt=""

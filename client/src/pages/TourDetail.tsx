@@ -62,37 +62,37 @@ export default function TourDetail() {
         {
           title: "Elephant sanctuary",
           description: "Discover the heartwarming Elephant Sanctuary, where majestic creatures roam freely. Interact, feed, and connect with these gentle giants in a natural haven, fostering a deep bond with nature and promoting responsible tourism.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/21d450f7-c5e4-485e-ad72-8613f34a05c2/elephant-sanctuary.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/tsHbOJIkOEbtvFOv.jpg"
         },
         {
           title: "Phi Phi boat tour",
           description: "A Phi Phi Island boat tour is the perfect way to explore the stunning beauty of Thailand's hidden Islands. Take in the breathtaking views of Maya Bay's white sand beaches and dive into surrounding crystal clear waters with your snorkel to see the incredible reefs and marine life below.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/8d413e46-a264-4eb0-8b20-ffa94aeec178/phi-phi-boat-tour.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/pdezzlCaycGgtzKB.jpg"
         },
         {
           title: "Iconic viewpoints",
           description: "Ascend to new heights where Thailand's stunning landscapes unfold before your eyes. Hike to breathtaking summits, witness the beauty of lush valleys, and be captivated by the enchanting vistas, especially during the golden hues of a Thai sunset. Our reps will take you to those Insta-worthy spots!",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/b3464952-6035-4cd3-8997-6f24cf67697c/unsplash-image-2CjOnwJCMJM.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/txedNxPWRXoSZcIZ.jpg"
         },
         {
           title: "Famous Maya Bay",
           description: "Embark on a mesmerising Maya Bay Tour, sailing through turquoise waters to witness the iconic Phi Phi Islands. Explore hidden lagoons, pristine beaches, and the breathtaking beauty of Maya Bay featured in 'The Beach.'",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755256682519-BUHLSCMNAGI42LXHRXF6/unsplash-image-pUYxB1CxbSY.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/CURNFcqETdjUqnUO.jpg"
         },
         {
           title: "Bangla Road bar crawl",
           description: "Immerse yourself in Phuket's nightlife with our Bangla Road Bar Crawl. Explore lively bars, sip exotic cocktails, and dance the night away along Patong's famous street for an unforgettable evening of camaraderie and entertainment.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/43f20e77-9aae-4ad7-b2bf-0d592502ba0e/bar-crawl.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/SGVqfZvbQUgGQlsf.jpg"
         },
         {
           title: "Quad biking",
           description: "Rev up for a thrilling drive through the jungle with stunning cliff-top views and exhilarating off-roading. Our guides will take you down some gnarly paths, so if you want to be a passenger, that's totally fine! Either way, you're guaranteed to love this activity!",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/a7e36531-4017-474f-b36b-f809863012f1/quad-bikes.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ucCEgRZUBgbZdZRH.jpg"
         },
         {
           title: "Floating bungalows",
           description: "Take a long tail boat into the heart of Cheow Lan Lake where you'll stay on floating bungalows. Embark on an afternoon adventure to Diamond Cave, kayak on the pristine waters, and take an early morning boat safari to spot elephants, monkeys, and birds.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722869565399-BCEDJD8XCBSRYXGFNLJ3/unsplash-image-YcXOWbWk8-U.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/UKHPnxRSgpKiJsFE.jpg"
         }
       ],
       itinerary: [
@@ -100,49 +100,49 @@ export default function TourDetail() {
           day: "Days 1-2",
           title: "Phuket",
           description: "Arrive in Thailand! Meet your trip manager and group at the hostel. Day 2: Visit the Elephant Sanctuary to feed and bathe these majestic creatures. In the evening, experience the thrills of Bangla Road—cocktails in buckets included!",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722873195633-2KNTRWRP39CRP34JVS7X/unsplash-image-7pEPjI1rJKA.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/OFnOfrZosxyQrcKw.jpg"
         },
         {
           day: "Days 3-5",
           title: "Phi Phi Islands",
           description: "Ferry to Koh Phi Phi! Day 4: Embark on a stunning boat tour visiting Bamboo Island, Viking Cave, Monkey Beach, Phi Leh Lagoon, and Maya Bay. Catch sunset from a long tail boat and snorkel with bio-luminescent plankton. Day 5: Free day to explore viewpoints or relax on the beach.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/2b1eea8d-5844-4951-a9aa-1ddcc7c11c4c/unsplash-image-pMIlNaeJvr0.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/MyGZjwRfoNhSkXSQ.jpg"
         },
         {
           day: "Days 6-7",
           title: "Khao Sok National Park",
           description: "Welcome to the jungle! Transfer through limestone karst mountains to Khao Sok village. Day 7: Float down the river on a traditional bamboo raft, then embark on a head-torch-lit night safari to spot monkeys and jungle creatures.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/954b6dc0-2c04-49e3-8bce-c7fefb30abd0/unsplash-image-chnSOB50-Ro.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/EITYUCsTgGnKhaze.jpg"
         },
         {
           day: "Day 8",
           title: "Floating Bungalows",
           description: "Take a long tail boat into Cheow Lan Lake and stay on floating bungalows. Explore Diamond Cave, kayak on the lake, and take an early morning boat safari to spot elephants, monkeys, and birds in their natural habitat.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722869565399-BCEDJD8XCBSRYXGFNLJ3/unsplash-image-YcXOWbWk8-U.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/UKHPnxRSgpKiJsFE.jpg"
         },
         {
           day: "Days 9-11",
           title: "Koh Samui",
           description: "Arrive in Chaweng! Enjoy fire shows on the beach and nightlife at Sound Club, Arkbar, and Green Mango. Optional tours: Pig Island speedboat trip with snorkelling (Day 10) and zip lining through the jungle canopy (Day 11).",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722868969591-ROD61KFKSFP3FOA4XP6B/unsplash-image-xa-fv2RQCPY.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/YrAHSXwpQBuOQuWL.jpg"
         },
         {
           day: "Days 12-15",
           title: "Koh Tao",
           description: "Welcome to Turtle Island! Perfect for scuba diving—complete your Open Water Qualification or try a discovery dive. Optional tours: Snorkelling boat tour to Koh Nang Yuan (Day 13) and Thai cooking class (Day 15). Day 14 is yours to explore viewpoints or enjoy a Thai massage.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/8e29ce02-4b4e-44b2-9d56-6d76495b549e/Koh-Tao.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/psViiqBNwbIATfSx.jpg"
         },
         {
           day: "Days 16-19",
           title: "Koh Phangan",
           description: "Arrive at Puk's Palace with its beachfront bar, 3 swimming pools, and friendly hostel dogs! Day 17: Quad biking adventure through the jungle with cliff-top views. Optional Muay Thai boxing class (Day 18). Day 19: Visit waterfalls and beaches, or catch sunset from the west coast.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/292afbb5-f398-4e04-a739-51e2c1a9c795/Koh-Phangan.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/iaPveexGDHypAfLW.jpg"
         },
         {
           day: "Days 20-21",
           title: "Phuket Old Town",
           description: "Final journey back to Phuket by ferry. Explore Old Town's amazing restaurants, boutique shops, and famous architecture. Emotional farewell to your Thai guide. Day 21: Onward travel or fly home with memories for a lifetime!",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722873195633-2KNTRWRP39CRP34JVS7X/unsplash-image-7pEPjI1rJKA.jpg"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/OFnOfrZosxyQrcKw.jpg"
         }
       ],
       included: [
@@ -367,10 +367,10 @@ export default function TourDetail() {
       hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/gMgbXqqaIFwmNoLk.webp",
       routeMap: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/POfIzUgSEAnzPWyk.webp",
       gallery: [
-        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755334534898-U2MJBV2UW9EQ7A7FX6SW/unsplash-image-LBMvueaBKT8.jpg?format=750w",
-        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755516580750-Z07FAD920S1P2XSM39TY/unsplash-image-cTHDCXrljaI.jpg?format=750w",
-        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755513572352-ZM2SL5OLNTWCGDDAKBJB/unsplash-image-jCIIInzOm-Y.jpg?format=500w",
-        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510661488-WFZAEL2WJT5JRPLKLPG6/unsplash-image-9ZXHUr5aCwM.jpg?format=750w"
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/uLTlOTBMuEZqghNx.jpg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/WoujlXbabyOriBIR.jpg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/miLxplESvbOdUEjr.jpg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/KZYnEHrKDtJXjbvY.jpg"
       ],
       description: "The Philippines Ultimate Adventure — 10 days island-hopping from Cebu through Moalboal, Oslob, Dumaguete, Siquijor, Bohol, Siargao, Puerto Princesa, Port Barton, and El Nido. Sardine runs, canyoneering, whale sharks, mystical islands, and karst lagoons await.",
       highlights: [
@@ -388,61 +388,61 @@ export default function TourDetail() {
           day: "Day 1",
           title: "Cebu",
           description: "Coral-rich coasts, limestone canyons, and Spanish-era streets. Arrive in Cebu and meet your group. City tour including Magellan's Cross, Basilica del Santo Niño, Fort San Pedro, and a lechon tasting. Prepare for 10 days of island adventure!",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755334534898-U2MJBV2UW9EQ7A7FX6SW/unsplash-image-LBMvueaBKT8.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/uLTlOTBMuEZqghNx.jpg"
         },
         {
           day: "Day 2",
           title: "Moalboal",
           description: "Drop into a living silver storm just off Panagsama — millions of sardines swirling in one hypnotic bait ball, often with turtles cruising past. No boat needed, just fins and a mask. Then head to Kawasan Falls for canyoneering: leap, slide, and swim through turquoise gorges from Alegria — natural rock slides, blue pools, and cliff jumps under jungle walls.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755516580750-Z07FAD920S1P2XSM39TY/unsplash-image-cTHDCXrljaI.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/WoujlXbabyOriBIR.jpg"
         },
         {
           day: "Day 3",
           title: "Oslob",
           description: "Wake up early for one of the most incredible experiences in the Philippines — swimming with whale sharks! These gentle giants are the largest fish in the ocean and Oslob is one of the best places in the world to see them up close. Afternoon free to explore the local area.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755513572352-ZM2SL5OLNTWCGDDAKBJB/unsplash-image-jCIIInzOm-Y.jpg?format=500w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/miLxplESvbOdUEjr.jpg"
         },
         {
           day: "Day 4",
           title: "Dumaguete",
           description: "Laid-back university town vibes with a seafront boulevard and easy island escapes. Indulge in a love affair with Dumaguete through our tour of the fiery Pulang Bato Falls. Dive Apo Island's world-class reefs with turtles, breathe the Twin Lakes mist, then wander Silliman's acacia-shaded campus and snack along Rizal Boulevard at sunset.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755509877207-AX5OBQ4HB7HCMYN7MMQC/unsplash-image-re2Meno1UIU.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/xiyhRrqmKQbxbNXQ.jpg"
         },
         {
           day: "Day 5",
           title: "Siquijor",
           description: "Mystic island vibes with powder-white coves, turquoise falls, and cliff jumps. Swim Cambugahay's turquoise tiers and swing into the falls, then dip your toes at the centuries-old Balete Tree fish spa. Crawl through Cantabon Cave's cathedral chambers, meet traditional healers, and cap the day with clifftop coffee, hammocks, and sunset views at Bucafé.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510026499-HEOI9QSK7P7RCSBFU6MC/unsplash-image-HyoHPFoU9Kg.jpg?format=500w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/LwGoYILHfQfzQIKp.jpg"
         },
         {
           day: "Day 6",
           title: "Bohol",
           description: "Chocolate Hills panoramas, river-valley charm, and wildlife up close. Glide the Loboc River, visit tarsiers at ethical sanctuaries, chase waterfalls and cave pools, and cap it with countryside viewpoints or a zipline. Then settle into Panglao — stretch out on Alona Beach, snorkel or dive Balicasag's coral walls, and watch the sky go gold.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510189740-BGTVRWRRVHV810VWBO51/unsplash-image-MyiYvI-EKis.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/DhWXeRLEEJReaUvV.jpg"
         },
         {
           day: "Day 7",
           title: "Siargao",
           description: "Surf-lagoon paradise with laid-back island energy. Watch Cloud 9's legendary break, float through Sugba Lagoon, swim Magpupungko's tidal pools, and island-hop Naked, Daku, and Guyam. Surfing lesson included — start on the sand with pop-up basics, then paddle out to mellow beach breaks with an instructor by your side.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510373939-FCE8J96P5L5LB7EPKXO7/unsplash-image-h1dEzlP12hs.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/IQWsNxdiTTUXSrIJ.jpg"
         },
         {
           day: "Day 8",
           title: "Puerto Princesa",
           description: "Fly into Palawan's capital and gateway to the island's wonders. Visit the UNESCO-listed Puerto Princesa Subterranean River — an extraordinary underground river navigating through a spectacular cave system before flowing directly into the sea.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510458688-S4MGT2NDDLJG1L9KWPYR/unsplash-image-wrHnE3kMplg.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/PLLzXYldchWKIXOk.jpg"
         },
         {
           day: "Day 9",
           title: "Port Barton",
           description: "Sleepy-bay bliss with island-hopping on your doorstep. Cruise to Starfish Sandbar, German Island, and Inaladelan, snorkel turtle-filled reefs, laze on White Beach, then end with a sunset beer and a beachfront bonfire — Palawan at its most mellow.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510549398-HN8KAZZA2VTJPK79TJXQ/unsplash-image-PnPslMS_Lds.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/tdJzaWbFdqZQWTHl.jpg"
         },
         {
           day: "Day 10",
           title: "El Nido",
           description: "Karst cathedrals over jade water. Kayak Big and Small Lagoon, slip into Secret Beach, snorkel Shimizu and Seven Commandos, then chase sunset along Nacpan's twin sands — Bacuit Bay island-hopping at its most unreal. Beach BBQ lunch included. The perfect finale to your Philippines adventure!",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755510661488-WFZAEL2WJT5JRPLKLPG6/unsplash-image-9ZXHUr5aCwM.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/KZYnEHrKDtJXjbvY.jpg"
         }
       ],
       included: [
@@ -507,7 +507,7 @@ export default function TourDetail() {
         {
           title: "Tipsy tubing",
           description: "Float down the Pai River with a crew of new friends; gentle rapids, music, and riverside stops to keep the vibe high. Dry bag zipped, hydrate between sips, for a hectic afternoon that turns into stories for days.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/a6ec7466-cdfa-4846-9c16-f89fe1c5b116/IMG_1336.PNG"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/LRUcyMWFnlifpfyf.PNG"
         },
         {
           title: "Temple visits",
@@ -656,22 +656,22 @@ export default function TourDetail() {
         {
           title: "Surf lessons",
           description: "Experience the thrill of riding the waves with our expert-led surfing lessons! Whether you are a complete beginner or looking to hone your skills, our instructors will guide you every step of the way. Set against the backdrop of stunning beaches and crystal-clear waters, our surfing lessons offer an unforgettable adventure. Dive in, catch your first wave, and embrace the excitement of surfing!",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/794b172f-bebd-45f4-9575-a700255e954f/WhatsApp+Image+2024-07-17+at+10.11.52_f402bd63.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/pgjBFhnsFhBdxVMb.jpg"
         },
         {
           title: "Snorkelling with turtles",
           description: "Slip into calm, crystal water and drift over coral gardens where turtles cruise unbothered. Join a morning boat to Turtle Point or swim from the east coast, float alongside these gentle icons, then rinse off with a beachside coconut. Keep your distance, don't touch, and use reef-safe sunscreen — pure island magic, done right.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755266310015-JHHRSV9OIO9RZFZJHDF1/unsplash-image-OizacLd_W7I.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/GrBbfpRZKijgNVMU.jpg"
         },
         {
           title: "Iconic viewpoints",
           description: "Chase horizons from hilltops and cliff edges: in Lombok, greet sunrise over Rinjani from Pergasingan and catch golden hour at Merese and Malimbu. On the Nusas, gaze down Kelingking's \"T-Rex,\" Diamond Beach, Devil's Tears, and Blue Lagoon. On the Gilis, wander to Sunset Point for sea-pink skies and silhouettes of Bali and Rinjani — views that stop you mid-sentence.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755266197128-MWHRSGMUQRYPXR80S74B/unsplash-image-7RvPpfof4P4.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/kZBMVyuYtYulmbOo.jpg"
         },
         {
           title: "Giant manta rays",
           description: "Encounter the awe-inspiring giant manta rays in their natural habitat. These majestic creatures glide gracefully through the crystal-clear waters, offering a mesmerising sight for snorkellers and divers alike. Witnessing their elegant movements up close is a truly unforgettable experience, making it a must-do activity for any marine life enthusiast.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722874636424-EV6KRAF5P4C4T0L8SZ8B/unsplash-image-wbhgIkk2vMM.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/TyaRKXcqzkCYorYC.jpg"
         }
       ],
       itinerary: [
@@ -679,31 +679,31 @@ export default function TourDetail() {
           day: "Day 1",
           title: "Kuta — Arrival",
           description: "Arrive in Bali! Grab your bag at the airport and meet our airport rep who will get you into your pre-booked airport transfer. Arrive at the first hostel and meet your trip manager and the rest of the guests on the tour!",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755265503266-6BVPJ5X0ITM6HUHL2OUF/unsplash-image-p1aFK6ayTYg.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/budABBFlIjauFajf.jpg"
         },
         {
           day: "Days 2-4",
           title: "Nusa Lembongan & Nusa Penida",
           description: "Day 2 — Breakfast included. Transfer and short ferry over to Nusa Lembongan. Check in at one of our top hostels with an infinity pool, gym, sauna, cold plunge and panoramic views.\n\nDay 3 — Head out on a boat to Manta Bay for snorkelling with giant manta rays. Most are 3-4 metres wide — gentle giants that will make you feel very small!\n\nDay 4 — Breakfast included. Boat over to Nusa Penida for an island tour visiting Angel Billabong, Broken Beach, Kelingking Beach and Crystal Bay. Bring your cameras!",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755265674810-T86SUHW3F1DDMVCOS17A/unsplash-image-2ZJxGgv-Hww.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/VUEsCMqGAxiEopwZ.jpg"
         },
         {
           day: "Days 5-8",
           title: "Lombok — Beaches, Waterfalls & Sunsets",
           description: "Day 5 — Breakfast included. Ferry over to Lombok! Enjoy breathtaking scenery with rice terraces and Mount Rinjani in the background.\n\nDay 6 — Visit Lombok's most beautiful waterfalls hidden in the jungle. Evening dinner and a little boogie at local hotspots.\n\nDay 7 — Beach day! Mawun for body surfing, Are Guling for tanning, Selong Belanak for lunch, and Bukit Merese for a pastel sunset.\n\nDay 8 — Free day to explore Kuta Lombok. Optional surfing lessons available!",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722786414203-CM1RQ59Y51IQ4UTE6GTX/unsplash-image-AZMmUy2qL6A.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/XYqLNHpEfBdUvWJD.jpg"
         },
         {
           day: "Days 9-12",
           title: "Gili Trawangan — Island Paradise",
           description: "Day 9 — Breakfast included. Welcome to THE island life. No cars, no motorbikes — just bicycles and your legs! Beachfront hostel with family BBQs, pool and beach volleyball.\n\nDay 10 — Snorkelling trip where you are 99.9% likely to swim with turtles! Visit the famous underwater statues and turtle sanctuary on Gili Air.\n\nDay 11 — Breakfast included. Free day to explore by bicycle. Grab a snorkel from street rentals, shop for souvenirs, or find a great spot for a boogie!\n\nDay 12 — Breakfast included. Chill at the hostel or beach. Group sunset, then beanbags and a film at the beach cinema.",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/eb06e9c2-bdea-42bf-adeb-db17690df642/WhatsApp+Image+2024-07-17+at+10.06.39_680c7cbd.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ZUYKUdylsrYrDeOq.jpg"
         },
         {
           day: "Days 13-14",
           title: "Kuta — Final Days",
           description: "Day 13 — Breakfast included. The last hop. Back to mainland Bali by ferry then a short transfer to Kuta. Grab a final sunset and family dinner together before packing your bags.\n\nDay 14 — The dreaded farewells! Give your new besties a big squeeze — we're positive you'll see them again, either in your own time or on another ACE Travel Experience!",
-          image: "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/b3836b89-fea5-4d4f-8da1-eacd66288c48/WhatsApp+Image+2024-07-17+at+10.36.26_97a7e4d1.jpg?format=750w"
+          image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ElOPcITQITYxAUYp.jpg"
         }
       ],
       included: [
@@ -1285,7 +1285,7 @@ export default function TourDetail() {
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative h-64 md:h-auto">
                   <img 
-                    src="https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722873195633-2KNTRWRP39CRP34JVS7X/unsplash-image-7pEPjI1rJKA.jpg"
+                    src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/OFnOfrZosxyQrcKw.jpg"
                     alt="Thailand Intro"
                     className="w-full h-full object-cover"
                   />
