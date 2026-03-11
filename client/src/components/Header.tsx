@@ -307,17 +307,17 @@ export default function Header() {
         </div>
 
         {/* Drawer Content */}
-        <nav className="flex-1 overflow-y-auto px-5 py-5 flex flex-col gap-2">
+        <nav className="flex-1 overflow-y-auto px-5 pt-4 pb-5 flex flex-col">
           {/* Trust Widget */}
           <a 
             href="https://uk.trustpilot.com/review/www.acetravelexperiences.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center gap-3 p-3 bg-green-50 rounded-lg border border-green-100 mb-3"
+            className="flex items-center gap-4 p-4 bg-green-50 rounded-xl border border-green-100 mb-6"
           >
-            <div className="flex-shrink-0">
-              <div className="text-2xl font-bold text-slate-800">4.9</div>
-              <div className="flex gap-0.5 mt-0.5">
+            <div className="flex-shrink-0 text-center">
+              <div className="text-3xl font-bold text-slate-800 leading-none">4.9</div>
+              <div className="flex gap-0.5 mt-1.5 justify-center">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-3.5 h-3.5 fill-[#00b67a]" viewBox="0 0 24 24">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -326,148 +326,157 @@ export default function Header() {
               </div>
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-sm font-semibold text-slate-800">Trusted by 500+ travellers</div>
-              <div className="text-xs text-slate-500">Rated Excellent on Trustpilot</div>
+              <div className="text-sm font-bold text-slate-800">Trusted by 500+ travellers</div>
+              <div className="text-xs text-slate-500 mt-0.5">Rated Excellent on Trustpilot</div>
             </div>
           </a>
-          
-          {/* Destinations Accordion */}
-          <div className="border-b border-border pb-3">
-            <button
-              onClick={() => setMobileDestinationsOpen(!mobileDestinationsOpen)}
-              className="w-full flex items-center justify-between text-base font-semibold text-foreground py-3"
-            >
-              <span className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-primary" />
-                Destinations
-              </span>
-              <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${mobileDestinationsOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {mobileDestinationsOpen && (
-              <div className="mt-2 space-y-2">
-                {destinations.map((dest) => (
-                  <Link
-                    key={dest.slug}
-                    href={`/destinations/${dest.slug}`}
-                    className="block"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <div className="flex gap-3 p-3 border border-border rounded-lg hover:border-primary hover:bg-accent/30 transition-colors">
-                      <img 
-                        src={dest.image} 
-                        alt={dest.name}
-                        className="w-16 h-16 object-cover rounded-md flex-shrink-0"
-                      />
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-bold text-sm mb-0.5">{dest.name}</h4>
-                        <p className="text-xs text-muted-foreground mb-1.5 line-clamp-2">{dest.highlight}</p>
-                        <div className="flex items-center justify-between text-xs">
-                          <span className="text-muted-foreground">{dest.tours}</span>
-                          <span className="font-bold text-primary">From {dest.from}</span>
+
+          {/* PRIMARY NAV — Destinations, Tours, Deals */}
+          <div className="space-y-2 mb-6">
+
+            {/* Destinations Accordion */}
+            <div className="rounded-xl overflow-hidden border border-slate-200">
+              <button
+                onClick={() => setMobileDestinationsOpen(!mobileDestinationsOpen)}
+                className="w-full flex items-center justify-between bg-slate-100 hover:bg-slate-200 transition-colors px-4 py-3.5"
+              >
+                <span className="flex items-center gap-2.5">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <span className="text-base font-bold text-slate-800">Destinations</span>
+                </span>
+                <ChevronDown className={`w-5 h-5 text-slate-500 transition-transform duration-200 ${mobileDestinationsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileDestinationsOpen && (
+                <div className="px-3 pt-2 pb-3 space-y-2">
+                  {destinations.map((dest) => (
+                    <Link
+                      key={dest.slug}
+                      href={`/destinations/${dest.slug}`}
+                      className="block"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <div className="flex gap-3 p-3 border border-border rounded-lg hover:border-primary hover:bg-accent/30 transition-colors">
+                        <img
+                          src={dest.image}
+                          alt={dest.name}
+                          className="w-16 h-16 object-cover rounded-md flex-shrink-0"
+                        />
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-bold text-sm mb-0.5">{dest.name}</h4>
+                          <p className="text-xs text-muted-foreground mb-1.5 line-clamp-2">{dest.highlight}</p>
+                          <div className="flex items-center justify-between text-xs">
+                            <span className="text-muted-foreground">{dest.tours}</span>
+                            <span className="font-bold text-primary">From {dest.from}</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-          {/* Tours Accordion */}
-          <div className="border-b border-border pb-3">
-            <button
-              onClick={() => setMobileToursOpen(!mobileToursOpen)}
-              className="w-full flex items-center justify-between text-base font-semibold text-foreground py-3"
-            >
-              <span className="flex items-center gap-2">
-                <Compass className="w-4 h-4 text-[#44c5c3]" />
-                Tours
-              </span>
-              <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform duration-200 ${mobileToursOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {mobileToursOpen && (
-              <div className="mt-2 space-y-4">
-                {Object.entries(toursByDestination).map(([destination, tours]) => (
-                  <div key={destination}>
-                    <h4 className="text-xs font-bold text-primary mb-2 flex items-center gap-1.5 uppercase tracking-wider">
-                      <MapPin className="w-3.5 h-3.5" />
-                      {destination}
-                    </h4>
-                    <div className="space-y-2">
-                      {tours.map((tour) => (
-                        <Link
-                          key={tour.slug}
-                          href={`/tour/${tour.slug}`}
-                          className="block"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          <div className="flex gap-3 p-3 border border-border rounded-lg hover:border-primary hover:bg-accent/30 transition-colors">
-                            <img 
-                              src={tour.image} 
-                              alt={tour.name}
-                              className="w-14 h-14 object-cover rounded-md flex-shrink-0"
-                            />
-                            <div className="flex-1 min-w-0">
-                              <h5 className="font-semibold text-sm mb-1">{tour.name}</h5>
-                              <div className="flex items-center justify-between text-xs">
-                                <span className="flex items-center gap-1 text-muted-foreground">
-                                  <Calendar className="w-3 h-3" />
-                                  {tour.days}
-                                </span>
-                                <span className="font-bold text-primary">{tour.price}</span>
+            {/* Tours Accordion */}
+            <div className="rounded-xl overflow-hidden border border-[#44c5c3]/30">
+              <button
+                onClick={() => setMobileToursOpen(!mobileToursOpen)}
+                className="w-full flex items-center justify-between bg-[#44c5c3]/15 hover:bg-[#44c5c3]/25 transition-colors px-4 py-3.5"
+              >
+                <span className="flex items-center gap-2.5">
+                  <Compass className="w-5 h-5 text-[#2a7a79]" />
+                  <span className="text-base font-bold text-[#1a5a59]">Tours</span>
+                </span>
+                <ChevronDown className={`w-5 h-5 text-[#2a7a79] transition-transform duration-200 ${mobileToursOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileToursOpen && (
+                <div className="px-3 pt-2 pb-3 space-y-4">
+                  {Object.entries(toursByDestination).map(([destination, tours]) => (
+                    <div key={destination}>
+                      <h4 className="text-xs font-bold text-primary mb-2 flex items-center gap-1.5 uppercase tracking-wider">
+                        <MapPin className="w-3.5 h-3.5" />
+                        {destination}
+                      </h4>
+                      <div className="space-y-2">
+                        {tours.map((tour) => (
+                          <Link
+                            key={tour.slug}
+                            href={`/tour/${tour.slug}`}
+                            className="block"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <div className="flex gap-3 p-3 border border-border rounded-lg hover:border-primary hover:bg-accent/30 transition-colors">
+                              <img
+                                src={tour.image}
+                                alt={tour.name}
+                                className="w-14 h-14 object-cover rounded-md flex-shrink-0"
+                              />
+                              <div className="flex-1 min-w-0">
+                                <h5 className="font-semibold text-sm mb-1">{tour.name}</h5>
+                                <div className="flex items-center justify-between text-xs">
+                                  <span className="flex items-center gap-1 text-muted-foreground">
+                                    <Calendar className="w-3 h-3" />
+                                    {tour.days}
+                                  </span>
+                                  <span className="font-bold text-primary">{tour.price}</span>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </Link>
-                      ))}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            )}
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Deals */}
+            <Link
+              href="/deals"
+              className="flex items-center gap-2.5 px-4 py-3.5 rounded-xl bg-[#ee2f6d]/10 border border-[#ee2f6d]/20 hover:bg-[#ee2f6d]/20 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Tag className="w-5 h-5 text-[#ee2f6d]" />
+              <span className="text-base font-bold text-[#c01850]">Deals</span>
+            </Link>
+
+          </div>{/* end primary nav */}
+
+
+          {/* SECONDARY NAV — divider + smaller links */}
+          <div className="border-t border-border pt-4">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-3 px-1">More</p>
+            <div className="space-y-0.5">
+              <Link 
+                href="/how-it-works"
+                className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-primary hover:bg-accent/40 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                How It Works
+              </Link>
+              <Link 
+                href="/faq"
+                className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-primary hover:bg-accent/40 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                FAQs
+              </Link>
+              <Link 
+                href="/about"
+                className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-primary hover:bg-accent/40 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About Us
+              </Link>
+              <Link 
+                href="/contact"
+                className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-primary hover:bg-accent/40 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </div>
           </div>
-
-          {/* Other Nav Links */}
-          <Link 
-            href="/how-it-works"
-            className="flex items-center py-3 text-base font-semibold text-foreground hover:text-primary transition-colors border-b border-border"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            How It Works
-          </Link>
-
-          <Link 
-            href="/deals"
-            className="flex items-center gap-2 py-3 text-base font-semibold text-[#ee2f6d] hover:text-[#c01850] transition-colors border-b border-border"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <Tag className="w-4 h-4" />
-            Deals
-          </Link>
-
-          <Link 
-            href="/faq"
-            className="flex items-center py-3 text-base font-semibold text-foreground hover:text-primary transition-colors border-b border-border"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            FAQs
-          </Link>
-
-          <Link 
-            href="/about"
-            className="flex items-center py-3 text-base font-semibold text-foreground hover:text-primary transition-colors border-b border-border"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            About Us
-          </Link>
-
-          <Link 
-            href="/contact"
-            className="flex items-center py-3 text-base font-semibold text-foreground hover:text-primary transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Contact
-          </Link>
         </nav>
 
         {/* Drawer Footer - CTAs */}
