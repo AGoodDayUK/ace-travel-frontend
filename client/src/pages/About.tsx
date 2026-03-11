@@ -2,8 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle, Users, Star, Shield, MapPin, MessageCircle } from "lucide-react";
 
-const JAY_CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/oojkNrXjNgfrIBJo.webp";
-const RUBY_CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/YZwMffRCOSwJTzqj.webp";
+const JAY_CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/RhbDAdBlBLuZiRxy.webp";
+const RUBY_CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/NcwbxXKmAmIpVQgh.webp";
+const MOLLIE_CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/obArGQYQxcqpKqme.webp";
 
 const features = [
   {
@@ -45,9 +46,9 @@ export default function About() {
           <div className="md:col-span-6 space-y-6">
             <p className="text-sm font-semibold tracking-widest uppercase text-primary">About ACE Travel</p>
             <h1 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight">
-              Real adventures.<br />
-              Real friendships.<br />
-              Real memories.
+              Born from a love<br />
+              of travel, built<br />
+              for adventurers.
             </h1>
             <div className="h-1 w-16 bg-accent" />
             <p className="text-xl text-muted-foreground leading-relaxed">
@@ -170,8 +171,12 @@ export default function About() {
             </div>
             {/* Mollie */}
             <div className="bg-background rounded-2xl overflow-hidden shadow-md group">
-              <div className="aspect-[3/4] overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <div className="text-7xl">🌴</div>
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={MOLLIE_CDN}
+                  alt="Mollie, Trip Manager at ACE Travel Experiences"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="p-6 text-center">
                 <h3 className="text-2xl font-bold text-primary">Mollie</h3>
@@ -188,7 +193,7 @@ export default function About() {
       {/* Why Choose ACE */}
       <section className="container py-16 md:py-24">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">Why Choose ACE?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">What Makes Us ACE</h2>
           <div className="h-1 w-16 bg-accent mx-auto" />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

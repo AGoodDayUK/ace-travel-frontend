@@ -57,7 +57,6 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -81,12 +80,6 @@ export default function Header() {
     };
   }, [isMobileMenuOpen]);
 
-  const navLinks = [
-    { href: '/how-it-works', label: 'How It Works' },
-    { href: '/blogs-vlogs', label: 'Vlogs & Blogs' },
-    { href: '/deals', label: 'Deals', highlight: true },
-  ];
-
   return (
     <>
       {/* Scroll progress indicator */}
@@ -99,22 +92,24 @@ export default function Header() {
       
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-kinetic ${
-          isScrolled ? 'bg-white shadow-sm' : 'bg-white md:bg-transparent'
+          isScrolled ? 'bg-white shadow-sm' : 'bg-white lg:bg-transparent'
         }`}
       >
-        <div className="container">
-          <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 lg:h-20">
+
             {/* Logo */}
-            <Link href="/" className="flex items-center kinetic-underline">
+            <Link href="/" className="flex items-center flex-shrink-0">
               <img 
                 src="/ace-logo-full.png" 
                 alt="ACE Travel Experiences" 
-                className="h-10 md:h-14" 
+                className="h-9 sm:h-10 lg:h-12 w-auto" 
               />
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8">
+            {/* Desktop Navigation — only shown on lg+ */}
+            <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+
               {/* Destinations Dropdown */}
               <div 
                 className="relative"
@@ -133,8 +128,8 @@ export default function Header() {
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {showDestinationsMenu && (
-                  <div className="absolute top-full left-0 pt-2 bg-background border border-border shadow-xl rounded-lg p-4 w-[600px] animate-fade-in z-50">
-                    <div className="grid grid-cols-3 gap-4">
+                  <div className="absolute top-full left-0 pt-2 bg-background border border-border shadow-xl rounded-lg p-4 w-[560px] animate-fade-in z-50">
+                    <div className="grid grid-cols-3 gap-3">
                       {destinations.map((dest) => (
                         <Link
                           key={dest.slug}
@@ -145,11 +140,11 @@ export default function Header() {
                             <img 
                               src={dest.image} 
                               alt={dest.name}
-                              className="w-full h-32 object-cover group-hover:scale-105 transition-transform"
+                              className="w-full h-28 object-cover group-hover:scale-105 transition-transform"
                             />
-                            <div className="p-3">
-                              <h4 className="font-bold text-sm mb-1 group-hover:text-primary transition-colors">{dest.name}</h4>
-                              <p className="text-xs text-muted-foreground mb-2">{dest.highlight}</p>
+                            <div className="p-2.5">
+                              <h4 className="font-bold text-sm mb-0.5 group-hover:text-primary transition-colors">{dest.name}</h4>
+                              <p className="text-xs text-muted-foreground mb-1.5 line-clamp-1">{dest.highlight}</p>
                               <div className="flex items-center justify-between text-xs">
                                 <span className="text-muted-foreground">{dest.tours}</span>
                                 <span className="font-bold text-primary">From {dest.from}</span>
@@ -181,15 +176,15 @@ export default function Header() {
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {showToursMegaMenu && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 bg-background border border-border shadow-xl rounded-lg p-6 w-[800px] animate-fade-in z-50">
-                    <div className="grid grid-cols-3 gap-6">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 bg-background border border-border shadow-xl rounded-lg p-5 w-[720px] animate-fade-in z-50">
+                    <div className="grid grid-cols-3 gap-5">
                       {Object.entries(toursByDestination).map(([destination, tours]) => (
                         <div key={destination}>
                           <h3 className="text-sm font-bold text-primary mb-3 flex items-center gap-2">
                             <MapPin className="w-4 h-4" />
                             {destination}
                           </h3>
-                          <div className="space-y-3">
+                          <div className="space-y-2">
                             {tours.map((tour) => (
                               <Link
                                 key={tour.slug}
@@ -200,9 +195,9 @@ export default function Header() {
                                   <img 
                                     src={tour.image} 
                                     alt={tour.name}
-                                    className="w-full h-24 object-cover group-hover:scale-105 transition-transform"
+                                    className="w-full h-20 object-cover group-hover:scale-105 transition-transform"
                                   />
-                                  <div className="p-3">
+                                  <div className="p-2.5">
                                     <h4 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">{tour.name}</h4>
                                     <div className="flex items-center justify-between text-xs text-muted-foreground">
                                       <span className="flex items-center gap-1">
@@ -223,51 +218,51 @@ export default function Header() {
                 )}
               </div>
 
-              {navLinks.map((link) => (
-                <Link 
-                  key={link.href} 
-                  href={link.href}
-                  className={`text-sm tracking-tight transition-kinetic ${
-                    link.highlight 
-                      ? `font-bold px-3 py-1.5 rounded-md flex items-center gap-1.5 ${
-                          location === link.href 
-                            ? 'bg-[#ee2f6d]/20 text-[#c01850]' 
-                            : 'bg-[#ee2f6d]/10 text-[#ee2f6d] hover:bg-[#ee2f6d]/20 hover:text-[#c01850]'
-                        }`
-                      : `font-medium kinetic-underline ${
-                          location === link.href ? 'text-primary' : 'text-foreground hover:text-primary'
-                        }`
-                  }`}
-                >
-                  {link.highlight && <Tag className="w-4 h-4" />}
-                  {link.label}
-                </Link>
-              ))}
+              {/* How It Works */}
+              <Link 
+                href="/how-it-works"
+                className={`text-sm font-medium tracking-tight transition-kinetic kinetic-underline ${
+                  location === '/how-it-works' ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`}
+              >
+                How It Works
+              </Link>
+
+              {/* Deals */}
+              <Link 
+                href="/deals"
+                className={`text-sm font-bold tracking-tight transition-kinetic px-3 py-1.5 rounded-md flex items-center gap-1.5 ${
+                  location === '/deals'
+                    ? 'bg-[#ee2f6d]/20 text-[#c01850]' 
+                    : 'bg-[#ee2f6d]/10 text-[#ee2f6d] hover:bg-[#ee2f6d]/20 hover:text-[#c01850]'
+                }`}
+              >
+                <Tag className="w-4 h-4" />
+                Deals
+              </Link>
             </nav>
 
-            {/* Desktop CTA */}
-            <div className="hidden md:flex items-center gap-3">
+            {/* Desktop CTAs — only shown on lg+ */}
+            <div className="hidden lg:flex items-center gap-3">
               <a 
                 href="https://booking.acetravelexperiences.com/account/signin/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 underline-offset-4 hover:underline"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 underline-offset-4 hover:underline whitespace-nowrap"
               >
                 Manage my booking
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
               <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
-                <Button 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight transition-kinetic"
-                >
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight transition-kinetic whitespace-nowrap">
                   Book Now
                 </Button>
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Hamburger — shown on mobile AND tablet (below lg) */}
             <button
-              className="md:hidden p-2 text-slate-700 hover:text-primary transition-colors"
+              className="lg:hidden p-2 text-slate-700 hover:text-primary transition-colors rounded-md"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
@@ -281,17 +276,17 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile/Tablet Menu Overlay */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
 
-      {/* Mobile Slide-out Drawer */}
+      {/* Slide-out Drawer — mobile & tablet */}
       <div
-        className={`fixed top-0 right-0 h-full w-[85vw] max-w-sm bg-background z-50 md:hidden transform transition-transform duration-300 ease-in-out shadow-2xl flex flex-col ${
+        className={`fixed top-0 right-0 h-full w-[85vw] max-w-sm bg-background z-50 lg:hidden transform transition-transform duration-300 ease-in-out shadow-2xl flex flex-col ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -300,11 +295,11 @@ export default function Header() {
           <img 
             src="/ace-logo-full.png" 
             alt="ACE Travel Experiences" 
-            className="h-9" 
+            className="h-9 w-auto" 
           />
           <button
             onClick={() => setIsMobileMenuOpen(false)}
-            className="p-2 text-slate-700 hover:text-primary transition-colors"
+            className="p-2 text-slate-700 hover:text-primary transition-colors rounded-md"
             aria-label="Close menu"
           >
             <X className="w-5 h-5" />
@@ -442,11 +437,12 @@ export default function Header() {
           </Link>
 
           <Link 
-            href="/blogs-vlogs"
-            className="flex items-center py-3 text-base font-semibold text-foreground hover:text-primary transition-colors border-b border-border"
+            href="/deals"
+            className="flex items-center gap-2 py-3 text-base font-semibold text-[#ee2f6d] hover:text-[#c01850] transition-colors border-b border-border"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Vlogs &amp; Blogs
+            <Tag className="w-4 h-4" />
+            Deals
           </Link>
 
           <Link 
@@ -482,9 +478,7 @@ export default function Header() {
             rel="noopener noreferrer"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <Button 
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-12 text-base"
-            >
+            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-12 text-base">
               Book Now
             </Button>
           </a>
@@ -502,7 +496,7 @@ export default function Header() {
       </div>
       
       {/* Spacer to prevent content from going under fixed header */}
-      <div className="h-16 md:h-20" />
+      <div className="h-16 lg:h-20" />
     </>
   );
 }

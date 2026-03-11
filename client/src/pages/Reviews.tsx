@@ -176,23 +176,36 @@ export default function Reviews() {
         </div>
       </section>
 
-      <section className="bg-muted py-16">
-        <div className="container text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">
-            Ready to Create Your Own Story?
+      <section
+        className="relative py-24 md:py-36 overflow-hidden"
+        style={{
+          backgroundImage: `url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/EkbTwtPubGBZnpjI.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/40" />
+        <div className="relative container text-center space-y-8">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white/90 text-sm font-medium mb-2">
+            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+            Rated 4.9/5 by 500+ travellers
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white">
+            Ready to Create Your<br className="hidden md:block" /> Own Story?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of travellers who've had the adventure of a lifetime with ACE
+          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+            Join hundreds of travellers who've had the adventure of a lifetime with ACE. Your group is waiting.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center pt-2">
             <a href="/tours">
-              <button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium tracking-tight text-lg h-14 px-8 inline-flex items-center justify-center">
+              <button className="bg-primary hover:bg-primary/90 text-white font-semibold tracking-tight text-lg h-14 px-10 rounded-full inline-flex items-center justify-center shadow-lg shadow-primary/30 transition-all hover:scale-105">
                 Browse Tours
               </button>
             </a>
             <a href="/contact">
-              <button className="border-2 border-border bg-background hover:bg-muted font-medium tracking-tight text-lg h-14 px-8 inline-flex items-center justify-center">
-                Contact Us
+              <button className="border-2 border-white/70 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-semibold tracking-tight text-lg h-14 px-10 rounded-full inline-flex items-center justify-center transition-all hover:scale-105">
+                Get in Touch
               </button>
             </a>
           </div>

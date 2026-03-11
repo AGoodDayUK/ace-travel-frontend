@@ -529,3 +529,9 @@
 - [x] Replace icon-based layout with real photography sections
 - [x] Add full-width image panels between steps
 - [x] Source real travel group photos for each step
+
+## About Page & Header Fixes
+- [ ] Change About page tagline from "Real adventures. Real friendships. Real memories." to something unique to ACE
+- [ ] Rename "What Makes Us Different" section to "What Makes Us ACE"
+- [ ] Fix Jay and Ruby team photos (wrong person showing)
+- [ ] Remove Vlogs & Blogs link from header nav (keep only in footer)
