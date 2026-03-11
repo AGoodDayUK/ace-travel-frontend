@@ -46,12 +46,16 @@ export default function TourDetail() {
         { date: "30th Mar - 19th Apr 2027", price: "£1,799", duration: "21 Days", badge: "Full Moon Party +£150" },
         { date: "8th - 28th January 2028", price: "£1,799", duration: "21 Days" }
       ],
-      hero: "/thailand-island-hopper-hero.webp",
+      hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/nbdFlsyYCgCVjCdb.jpeg",
       gallery: [
-        "https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&q=80",
-        "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=80",
-        "https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=800&q=80",
-        "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80"
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/yKqEZpaSqHKvosnK.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/zTPsjJwySXWWKxgF.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/izClReorfgzKrRJI.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/dcmEfYFiTCNFNFTD.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/kxzKnAdYDUvaxraj.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/dkdFBMDfyqhCsCOC.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/BTCHXrYOUjNvEuCV.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/wxynFITXCXvfCUUZ.jpeg"
       ],
       description: "The ultimate 21-day Thailand adventure. Island hop from Phuket to Phi Phi, explore the ancient rainforests of Khao Sok, party on Koh Samui and Koh Phangan, dive in Koh Tao, and experience quad biking through the jungle. This epic journey combines culture, adventure, and unforgettable island vibes.",
       highlights: [
@@ -162,10 +166,19 @@ export default function TourDetail() {
       accommodation: {
         description: "Experience the best of Thailand's accommodation scene. From social hostels in Bangkok perfect for meeting your travel crew, to beachfront bungalows on the islands where you'll wake up to ocean views, and unique floating lodges in Khao Sok's jungle. Every stay is carefully selected for comfort, atmosphere, and that perfect balance of adventure and relaxation.",
         images: [
-          "/thailand-hostel-pod.jpg",
-          "/thailand-hostel-dorm.jpg",
-          "/thailand-hostel-social.jpg",
-          "/thailand-hostel-rooftop.jpg"
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ZbtCbkkDAKLYujzh.jpg",
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ZTpWlhOGOfiKbijr.jpg",
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/QiZSLRghNlNPyLOt.jpg",
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/EcTXQzCSCcSwoikb.jpg",
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/XoaKcThKpRCeDwRN.jpg",
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/oydxamqpuDhlqRZN.jpg",
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/dCHVnGmZOLcIiHax.png",
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/GgCsCaYOyFDvROta.jpg",
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/XSxkJALqBbZGJdjW.jpg",
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/vgcEJYlerArtbNec.jpg",
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/KwMGupWnwXXALPnj.jpg",
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/GvwfuxCKrqaXTOwB.jpg",
+          "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/RbzqcvsqVGQCnLHR.jpg"
         ]
       },
       reviewsList: []
@@ -190,7 +203,7 @@ export default function TourDetail() {
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/NrFXIWMHpuzQNKGs.jpeg",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/uzcODUDrNDXQWQXM.jpeg",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/wgwLfzZOtBxyrglu.jpeg",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/eLCGoSirhEeRHkkN.jpeg"
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ouvOUfBxeqfZYJMu.jpeg"
       ],
       hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ZyduANpQpBJQSfsk.jpeg",
       gallery: [
@@ -626,7 +639,7 @@ export default function TourDetail() {
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/BRnhNkhKkRVJyuuN.jpeg",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ouvOUfBxeqfZYJMu.jpeg"
       ],
-      hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/muVczEuHQyiGubqU.jpeg",
+      hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FIusTznaFJxspxFF.jpeg",
       gallery: [
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/muVczEuHQyiGubqU.jpeg",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FIusTznaFJxspxFF.jpeg",

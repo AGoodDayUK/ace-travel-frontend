@@ -61,7 +61,6 @@ const highlights = [
 const trustSignals = [
   { icon: Star, value: "4.9/5", label: "Average rating", sub: "From 500+ reviews" },
   { icon: Users, value: "18-35", label: "Age range", sub: "Like-minded travellers" },
-  { icon: Shield, value: "ATOL", label: "Protected", sub: "Your money is safe" },
   { icon: Heart, value: "100%", label: "Repeat bookers", sub: "Come back every year" }
 ];
 
@@ -73,8 +72,8 @@ export default function DestinationBali() {
       <section className="relative min-h-[75vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/jcWWuKjCrUcKCosk.jpg"
-            alt="Bali temples and rice terraces"
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FIusTznaFJxspxFF.jpeg"
+            alt="Group at sunset cliff in Bali"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />

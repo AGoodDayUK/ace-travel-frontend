@@ -49,7 +49,6 @@ const highlights = [
 const trustSignals = [
   { icon: Star, value: "4.9/5", label: "Average rating", sub: "From 500+ reviews" },
   { icon: Users, value: "18-35", label: "Age range", sub: "Like-minded travellers" },
-  { icon: Shield, value: "ATOL", label: "Protected", sub: "Your money is safe" },
   { icon: Heart, value: "100%", label: "Repeat bookers", sub: "Come back every year" }
 ];
 
