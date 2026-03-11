@@ -15,6 +15,7 @@ export default function Footer() {
       { href: '/about', label: 'About Us' },
       { href: '/how-it-works', label: 'How It Works' },
       { href: '/reviews', label: 'Reviews' },
+      { href: '/blogs-vlogs', label: 'Vlogs, Blogs & Frogs' },
       { href: '/contact', label: 'Contact' },
     ],
     support: [

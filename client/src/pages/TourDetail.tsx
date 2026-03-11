@@ -1229,38 +1229,38 @@ export default function TourDetail() {
             
             <div className="max-w-2xl mx-auto space-y-3">
               {tour.departureDates.map((departure, index) => (
-                <Card key={index} className="p-5 hover:shadow-lg transition-shadow">
-                  <div className="flex items-center justify-between gap-4">
-                    <div className="flex-1">
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <Calendar className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="text-lg font-bold">{departure.date}</span>
-                        {(departure as any).spotsLeft && (departure as any).spotsLeft <= 5 && (
-                          <Badge variant="destructive" className="text-xs">
-                            Only {(departure as any).spotsLeft} left!
-                          </Badge>
-                        )}
-                        {(departure as any).badge && (
-                          <Badge className="text-xs bg-accent text-accent-foreground">
-                            {(departure as any).badge}
-                          </Badge>
-                        )}
-                      </div>
-                      <div className="flex items-center gap-4 text-sm">
-                        {(departure as any).duration && (
-                          <span className="text-muted-foreground font-medium">{(departure as any).duration}</span>
-                        )}
-                        <span className="font-bold text-primary text-base">{departure.price}</span>
-                        <PaymentCalculator
-                          tourPrice={parsePrice(departure.price)}
-                          departureDate={parseDepartureDate(departure.date)}
-                          tourName={tour.name}
-                          departureDateLabel={departure.date}
-                        />
-                      </div>
+                <Card key={index} className="p-4 sm:p-5 hover:shadow-lg transition-shadow">
+                  {/* Date + badges row */}
+                  <div className="flex flex-wrap items-center gap-2 mb-3">
+                    <Calendar className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-base sm:text-lg font-bold">{departure.date}</span>
+                    {(departure as any).spotsLeft && (departure as any).spotsLeft <= 5 && (
+                      <Badge variant="destructive" className="text-xs">
+                        Only {(departure as any).spotsLeft} left!
+                      </Badge>
+                    )}
+                    {(departure as any).badge && (
+                      <Badge className="text-xs bg-accent text-accent-foreground">
+                        {(departure as any).badge}
+                      </Badge>
+                    )}
+                  </div>
+                  {/* Price + actions row */}
+                  <div className="flex items-center justify-between gap-3 flex-wrap">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      {(departure as any).duration && (
+                        <span className="text-muted-foreground text-sm font-medium">{(departure as any).duration}</span>
+                      )}
+                      <span className="font-bold text-primary text-lg">{departure.price}</span>
+                      <PaymentCalculator
+                        tourPrice={parsePrice(departure.price)}
+                        departureDate={parseDepartureDate(departure.date)}
+                        tourName={tour.name}
+                        departureDateLabel={departure.date}
+                      />
                     </div>
                     <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer" className="flex-shrink-0">
-                      <Button className="bg-primary hover:bg-primary/90 font-semibold">
+                      <Button className="bg-primary hover:bg-primary/90 font-semibold text-sm px-4">
                         Book Now
                       </Button>
                     </a>
@@ -1582,14 +1582,12 @@ export default function TourDetail() {
           </div>
           <div className="mt-8 pt-8 border-t border-white/20">
             <p className="text-white/90 mb-4">Have questions before booking?</p>
-            <a href="tel:+447450996347" className="inline-block">
-              <Button 
-                size="lg"
-                variant="outline"
-                className="font-medium tracking-tight text-lg h-14 px-8 text-white border-white hover:bg-white/10"
-              >
-                📞 Speak to a Travel Expert: +44 7450 996 347
-              </Button>
+            <a href="tel:+447450996347" className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 border-2 border-white/50 rounded-full px-6 py-3 text-white transition-colors">
+              <span className="text-xl">📞</span>
+              <div className="text-left">
+                <div className="text-xs text-white/70 font-medium">Speak to a Travel Expert</div>
+                <div className="text-base font-bold">+44 7450 996 347</div>
+              </div>
             </a>
           </div>
         </div>

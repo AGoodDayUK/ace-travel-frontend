@@ -7,7 +7,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Calendar, PoundSterling } from "lucide-react";
+import { Calendar, PoundSterling, CheckCircle2 } from "lucide-react";
 import { format, addMonths, differenceInMonths, parseISO } from "date-fns";
 
 interface PaymentCalculatorProps {
@@ -101,83 +101,97 @@ function PaymentScheduleContent({
   const totalPaid = schedule.reduce((sum, payment) => sum + payment.amount, 0);
 
   return (
-    <div className="space-y-5">
-      {/* Header info */}
-      <div className="bg-muted/40 rounded-lg p-4 space-y-2">
-        <div className="flex justify-between items-baseline">
-          <span className="text-sm text-muted-foreground">Departure</span>
-          <span className="font-semibold text-sm">{departureDateLabel}</span>
-        </div>
-        <div className="flex justify-between items-baseline">
-          <span className="text-sm text-muted-foreground">Total tour price</span>
-          <span className="text-2xl font-bold text-primary">£{tourPrice.toLocaleString()}</span>
-        </div>
-        {monthsAvailable > 0 && (
-          <div className="flex justify-between items-baseline">
-            <span className="text-sm text-muted-foreground">Spread over</span>
-            <span className="font-semibold">
-              {monthsAvailable} {monthsAvailable === 1 ? "month" : "months"}
-            </span>
+    <>
+      {/* Scrollable body */}
+      <div className="flex-1 overflow-y-auto px-6 pb-2 space-y-5">
+        {/* Summary card */}
+        <div className="bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/15 rounded-xl p-4 space-y-3">
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-muted-foreground font-medium">Departure</span>
+            <span className="font-semibold text-sm text-right max-w-[55%]">{departureDateLabel}</span>
           </div>
-        )}
-        <div className="flex items-center gap-2 pt-1 border-t border-border">
-          <Calendar className="w-4 h-4 text-primary flex-shrink-0" />
-          <span className="text-sm font-medium">
-            Final payment due: <span className="text-primary">{finalPaymentDate}</span>
-          </span>
-        </div>
-        <p className="text-xs text-muted-foreground ml-6">(2 months before departure)</p>
-      </div>
-
-      {/* Payment schedule */}
-      <div className="space-y-2">
-        <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">
-          Payment Schedule
-        </h4>
-        <div className="space-y-2 max-h-72 overflow-y-auto pr-1">
-          {schedule.map((payment, index) => (
-            <div
-              key={index}
-              className={`flex justify-between items-start p-3 rounded-lg border ${
-                index === 0
-                  ? "bg-primary/10 border-primary/30"
-                  : index === schedule.length - 1
-                  ? "bg-accent/10 border-accent/30"
-                  : "bg-muted/30 border-border"
-              }`}
-            >
-              <div className="flex-1">
-                <p className="font-medium text-sm">{payment.description}</p>
-                <p className="text-xs text-muted-foreground mt-0.5">{payment.date}</p>
-              </div>
-              <span className="font-bold text-base ml-4">£{payment.amount.toLocaleString()}</span>
+          <div className="flex justify-between items-center">
+            <span className="text-sm text-muted-foreground font-medium">Tour price</span>
+            <span className="text-2xl font-bold text-primary">£{tourPrice.toLocaleString()}</span>
+          </div>
+          {monthsAvailable > 0 && (
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-muted-foreground font-medium">Spread over</span>
+              <span className="font-semibold text-sm">
+                {monthsAvailable} {monthsAvailable === 1 ? "month" : "months"}
+              </span>
             </div>
-          ))}
+          )}
+          <div className="flex items-start gap-2 pt-2 border-t border-primary/10">
+            <Calendar className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+            <div>
+              <span className="text-sm font-medium">
+                Final payment: <span className="text-primary font-bold">{finalPaymentDate}</span>
+              </span>
+              <p className="text-xs text-muted-foreground mt-0.5">2 months before departure</p>
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* Total */}
-      <div className="border-t border-border pt-4 space-y-3">
-        <div className="flex justify-between items-center">
-          <span className="font-semibold">Total</span>
+        {/* Payment schedule */}
+        <div className="space-y-2">
+          <h4 className="font-bold text-xs text-muted-foreground uppercase tracking-widest">
+            Your Payment Schedule
+          </h4>
+          <div className="space-y-2">
+            {schedule.map((payment, index) => (
+              <div
+                key={index}
+                className={`flex justify-between items-start p-3.5 rounded-xl border-2 ${
+                  index === 0
+                    ? "bg-primary/8 border-primary/30"
+                    : index === schedule.length - 1
+                    ? "bg-accent/8 border-accent/30"
+                    : "bg-muted/30 border-border"
+                }`}
+              >
+                <div className="flex items-start gap-2.5 flex-1">
+                  <CheckCircle2
+                    className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
+                      index === 0 ? "text-primary" : index === schedule.length - 1 ? "text-accent" : "text-muted-foreground/50"
+                    }`}
+                  />
+                  <div>
+                    <p className="font-semibold text-sm">{payment.description}</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">{payment.date}</p>
+                  </div>
+                </div>
+                <span className="font-bold text-base ml-3 flex-shrink-0">£{payment.amount.toLocaleString()}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Total */}
+        <div className="flex justify-between items-center py-3 border-t-2 border-dashed border-border">
+          <span className="font-bold text-base">Total</span>
           <span className="text-2xl font-bold text-primary">£{totalPaid.toLocaleString()}</span>
         </div>
-        <p className="text-xs text-muted-foreground">
-          * Payment schedule is illustrative. Actual dates may vary based on your booking date.
-          Full payment must be received 2 months before departure.
+
+        <p className="text-xs text-muted-foreground pb-2">
+          * Illustrative schedule. Actual dates may vary based on booking date. Full payment due 2 months before departure.
         </p>
+      </div>
+
+      {/* Sticky footer CTA */}
+      <div className="px-6 py-4 border-t border-border bg-background flex-shrink-0">
         <a
           href="https://booking.acetravelexperiences.com/book/"
           target="_blank"
           rel="noopener noreferrer"
           className="block"
         >
-          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-12 text-base">
+          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12 text-base rounded-xl shadow-lg shadow-primary/20">
             Book Now — Secure with £60 deposit
           </Button>
         </a>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -199,11 +213,16 @@ export function PaymentCalculator({
           View Payment Plan
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-md w-full">
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
-            <PoundSterling className="w-5 h-5 text-primary" />
-            Payment Plan — {tourName}
+      <DialogContent className="max-w-md w-full p-0 gap-0">
+        <DialogHeader className="px-6 pt-6 pb-4 flex-shrink-0 border-b border-border">
+          <DialogTitle className="flex items-center gap-2 text-left">
+            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <PoundSterling className="w-4 h-4 text-primary" />
+            </div>
+            <div>
+              <div className="text-base font-bold">Payment Plan</div>
+              <div className="text-xs text-muted-foreground font-normal mt-0.5">{tourName}</div>
+            </div>
           </DialogTitle>
         </DialogHeader>
         <PaymentScheduleContent

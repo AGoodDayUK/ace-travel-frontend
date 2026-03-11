@@ -210,20 +210,20 @@ export default function Home() {
             </div>
 
             {/* Stats */}
-            <div className="flex items-center gap-8 pt-6 text-white/90">
-              <div>
-                <div className="text-3xl md:text-4xl font-bold">£60</div>
-                <div className="text-sm text-white/60 mt-0.5">Deposits</div>
+            <div className="flex items-center gap-5 sm:gap-8 pt-6 text-white/90">
+              <div className="flex-shrink-0">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold">£60</div>
+                <div className="text-xs sm:text-sm text-white/60 mt-0.5">Deposits</div>
               </div>
-              <div className="h-10 w-px bg-white/20" />
-              <div>
-                <div className="text-3xl md:text-4xl font-bold">4.9★</div>
-                <div className="text-sm text-white/60 mt-0.5">Avg Rating</div>
+              <div className="h-10 w-px bg-white/20 flex-shrink-0" />
+              <div className="flex-shrink-0">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold">4.9★</div>
+                <div className="text-xs sm:text-sm text-white/60 mt-0.5">Avg Rating</div>
               </div>
-              <div className="h-10 w-px bg-white/20" />
-              <div>
-                <div className="text-3xl md:text-4xl font-bold">800+</div>
-                <div className="text-sm text-white/60 mt-0.5">Travellers</div>
+              <div className="h-10 w-px bg-white/20 flex-shrink-0" />
+              <div className="flex-shrink-0">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold">800+</div>
+                <div className="text-xs sm:text-sm text-white/60 mt-0.5">Travellers</div>
               </div>
             </div>
           </div>

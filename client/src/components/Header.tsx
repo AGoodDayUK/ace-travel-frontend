@@ -308,29 +308,6 @@ export default function Header() {
 
         {/* Drawer Content */}
         <nav className="flex-1 overflow-y-auto px-5 pt-4 pb-5 flex flex-col">
-          {/* Trust Widget */}
-          <a 
-            href="https://uk.trustpilot.com/review/www.acetravelexperiences.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-4 p-4 bg-green-50 rounded-xl border border-green-100 mb-6"
-          >
-            <div className="flex-shrink-0 text-center">
-              <div className="text-3xl font-bold text-slate-800 leading-none">4.9</div>
-              <div className="flex gap-0.5 mt-1.5 justify-center">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-3.5 h-3.5 fill-[#00b67a]" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                ))}
-              </div>
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="text-sm font-bold text-slate-800">Trusted by 500+ travellers</div>
-              <div className="text-xs text-slate-500 mt-0.5">Rated Excellent on Trustpilot</div>
-            </div>
-          </a>
-
           {/* PRIMARY NAV — Destinations, Tours, Deals */}
           <div className="space-y-2 mb-6">
 

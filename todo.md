@@ -535,3 +535,11 @@
 - [ ] Rename "What Makes Us Different" section to "What Makes Us ACE"
 - [ ] Fix Jay and Ruby team photos (wrong person showing)
 - [ ] Remove Vlogs & Blogs link from header nav (keep only in footer)
+
+## Responsive Fixes & FAQ Redesign (Mar 2026)
+- [x] Fix payment plan popup on mobile - needs proper spacing, backdrop, and scrollable content
+- [x] Fix phone number text overflow/cut-off on mobile (Tours page CTA)
+- [x] Fix stats bar "800+" clipping on homepage hero mobile
+- [x] Fix booking card "Book Now" button pushed off-screen on mobile
+- [x] Redesign FAQ page with vibrant Gen Z-focused visual design
+- [x] Add Vlogs/Blogs/Frogs link to footer (currently missing)
