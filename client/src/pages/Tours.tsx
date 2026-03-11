@@ -122,9 +122,6 @@ export default function Tours() {
           />
         </div>
         <div className="relative container py-20 md:py-28 text-center space-y-6">
-          <div className="inline-flex items-center gap-2 bg-primary/20 text-primary border border-primary/30 px-4 py-1.5 text-sm font-medium tracking-wide uppercase">
-            18-35 Only
-          </div>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">
             Find Your Adventure
           </h1>
@@ -305,21 +302,43 @@ export default function Tours() {
       </section>
 
       {/* CTA */}
-      <section className="container py-16 md:py-24">
-        <div className="bg-foreground text-background p-12 md:p-16 text-center space-y-6">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">
-            Can't Find What You're Looking For?
+      <section
+        className="relative py-24 md:py-36 overflow-hidden"
+        style={{
+          backgroundImage: `url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/nbdFlsyYCgCVjCdb.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/40" />
+        <div className="relative container text-center space-y-8">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white/90 text-sm font-medium mb-2">
+            <Star className="w-4 h-4 fill-accent text-accent" />
+            Rated 4.9/5 by 500+ travellers
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white">
+            Got Questions? We're Here.
           </h2>
-          <p className="text-xl text-background/75 max-w-2xl mx-auto">
-            Get in touch with our team and we'll help you find the perfect adventure
+          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+            Not sure which tour is right for you? Our team knows every trip inside out and would love to help you choose.
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium tracking-tight text-lg h-14 px-8"
-          >
-            <Link href="/contact">Contact Us</Link>
-          </Button>
+          <div className="flex flex-wrap gap-4 justify-center pt-2">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white font-semibold tracking-tight text-lg h-14 px-10 rounded-full shadow-lg shadow-primary/30 transition-all hover:scale-105"
+            >
+              <Link href="/contact">Get in Touch</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-2 border-white/70 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-semibold tracking-tight text-lg h-14 px-10 rounded-full transition-all hover:scale-105"
+            >
+              <Link href="/how-it-works">How It Works</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>
