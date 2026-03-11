@@ -187,30 +187,22 @@ export default function TourDetail() {
         { date: "31st Jul - 13th Aug 2026", duration: "14 Days", price: "£1199", badge: "Summer Holiday Friendly!" }
       ],
       accommodation: [
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bHljzvhImvBUkIgg.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/kyTvbTPGjActsIBg.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/mpDakhCkwHVjNNqd.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/qvVNpgeRyDtsGSbr.JPG"
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/NrFXIWMHpuzQNKGs.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/uzcODUDrNDXQWQXM.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/wgwLfzZOtBxyrglu.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/eLCGoSirhEeRHkkN.jpeg"
       ],
-      hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bHljzvhImvBUkIgg.JPG",
+      hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ZyduANpQpBJQSfsk.jpeg",
       gallery: [
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bHljzvhImvBUkIgg.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/uiTnSCvsOBtDlUMY.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/aZaCGhQegNtphLSK.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/rGxWzlFVFAOHdUwY.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/kyTvbTPGjActsIBg.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/mpDakhCkwHVjNNqd.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/qvVNpgeRyDtsGSbr.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/GsVJxEVQBngZgOoI.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/cAbbFXQZkcbhEkDU.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/xgPTVQkkzSGeYzDk.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/tOvtDmcHfUwaukLM.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/AVctsZxyffxrIbVN.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/nfzqJSNUdoFmwGhl.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/qivcwmrDcckGwvru.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ujOcrPuepmZuwPMB.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/PXlQnTbTVcJJJjpj.JPG",
-        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/UtZydstnoHgAJiUA.JPG"
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ZyduANpQpBJQSfsk.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/RjnBBgrxjDrZVsFF.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/paULgtdZIEequrVD.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/eTWhNyzGgggTOzEg.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/DEGnaULciIgXiKKR.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FTeSbGcLCtbZzxAa.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/lztIeJwqzZLmQPKO.png",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/BRnhNkhKkRVJyuuN.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ouvOUfBxeqfZYJMu.jpeg"
       ],
       description: "Explore Canggu's surf and nightlife, Ubud's rice terraces and temples, Nusa Lembongan's pristine beaches, and Uluwatu's surfer paradise. 14 days of Bali's best beaches, culture, and adventure.",
       highlights: [
@@ -628,16 +620,22 @@ export default function TourDetail() {
         { date: "17th - 30th July 2027", price: "£1,199", duration: "14 Days" },
         { date: "28th August - 10th September 2027", price: "£1,199", duration: "14 Days" }
       ],
-      hero: "/bali-island-hopper-hero.webp",
+      accommodation: [
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/NrFXIWMHpuzQNKGs.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/uzcODUDrNDXQWQXM.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/BRnhNkhKkRVJyuuN.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ouvOUfBxeqfZYJMu.jpeg"
+      ],
+      hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/muVczEuHQyiGubqU.jpeg",
       gallery: [
-        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/794b172f-bebd-45f4-9575-a700255e954f/WhatsApp+Image+2024-07-17+at+10.11.52_f402bd63.jpg?format=1000w",
-        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755266310015-JHHRSV9OIO9RZFZJHDF1/unsplash-image-OizacLd_W7I.jpg?format=1000w",
-        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755266197128-MWHRSGMUQRYPXR80S74B/unsplash-image-7RvPpfof4P4.jpg?format=1000w",
-        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722874636424-EV6KRAF5P4C4T0L8SZ8B/unsplash-image-wbhgIkk2vMM.jpg?format=1000w",
-        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/b3836b89-fea5-4d4f-8da1-eacd66288c48/WhatsApp+Image+2024-07-17+at+10.36.26_97a7e4d1.jpg?format=750w",
-        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/eb06e9c2-bdea-42bf-adeb-db17690df642/WhatsApp+Image+2024-07-17+at+10.06.39_680c7cbd.jpg?format=750w",
-        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1722786414203-CM1RQ59Y51IQ4UTE6GTX/unsplash-image-AZMmUy2qL6A.jpg?format=1000w",
-        "https://images.squarespace-cdn.com/content/v1/66ae11327f818049cb25651b/1755265503266-6BVPJ5X0ITM6HUHL2OUF/unsplash-image-p1aFK6ayTYg.jpg?format=1000w"
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/muVczEuHQyiGubqU.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FIusTznaFJxspxFF.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/EPAgFMWiaLnoDdTL.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/RjnBBgrxjDrZVsFF.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/paULgtdZIEequrVD.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FjKohCZwuCXASCtk.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/wgwLfzZOtBxyrglu.jpeg",
+        "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/eTWhNyzGgggTOzEg.jpeg"
       ],
       description: "The ultimate 14-day Bali island hopping adventure. Surf the legendary waves of Kuta, snorkel with giant manta rays in Nusa Lembongan, explore the dramatic cliffs of Nusa Penida, discover Lombok's wild beaches and waterfalls, and party on the car-free paradise of Gili Trawangan.",
       routeMap: "/bali-island-hopper-map.webp",
