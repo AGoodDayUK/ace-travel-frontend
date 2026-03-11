@@ -1,197 +1,267 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
-import { Calendar, Users, MapPin, Star, ArrowRight } from "lucide-react";
+import { Calendar, Users, MapPin, Star, ArrowRight, Clock } from "lucide-react";
+
+const tours = [
+  {
+    id: 1,
+    slug: "thailand-island-hopper",
+    name: "Thailand Island Hopper",
+    destination: "Thailand",
+    duration: "21 days",
+    price: "£1,599",
+    deposit: "£60",
+    groupSize: "15-30",
+    ageRange: "18-35",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/nbdFlsyYCgCVjCdb.jpeg",
+    highlights: ["Elephant Sanctuary", "Phi Phi Islands", "Full Moon Party", "Quad Biking", "Bangla Road", "Floating Bungalows"],
+    rating: 4.9,
+    reviews: 247,
+    availability: "Limited Spots",
+    nextDeparture: "1st April 2026",
+    badge: "Most Popular",
+    description: "The ultimate 21-day Thai adventure. Bangkok streets, Chiang Mai temples, Phi Phi's turquoise waters, and the legendary Full Moon Party on Koh Phangan."
+  },
+  {
+    id: 2,
+    slug: "bali-explorer",
+    name: "Bali Explorer",
+    destination: "Bali",
+    duration: "14 days",
+    price: "£1,199",
+    deposit: "£60",
+    groupSize: "15-30",
+    ageRange: "18-35",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ZyduANpQpBJQSfsk.jpeg",
+    highlights: ["Mount Batur Trek", "Surf Lessons", "Nusa Lembongan", "Rice Terraces", "World Famous Beach Clubs", "Giant Manta Rays"],
+    rating: 4.9,
+    reviews: 203,
+    availability: "Limited Spots",
+    nextDeparture: "13th June 2026",
+    badge: "Summer Special",
+    description: "14 days of pure Bali magic. Trek an active volcano at sunrise, surf Kuta's waves, snorkel with manta rays, and dance at Seminyak's iconic beach clubs."
+  },
+  {
+    id: 3,
+    slug: "bali-island-hopper",
+    name: "Bali Island Hopper",
+    destination: "Bali",
+    duration: "14 days",
+    price: "£1,199",
+    deposit: "£60",
+    groupSize: "15-30",
+    ageRange: "18-35",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FIusTznaFJxspxFF.jpeg",
+    highlights: ["Surf Lessons", "Snorkelling with Turtles", "Nusa Penida Cliffs", "Giant Manta Rays", "Lombok Waterfalls", "Gili Trawangan"],
+    rating: 4.9,
+    reviews: 189,
+    availability: "Available",
+    nextDeparture: "23rd May 2026",
+    badge: null,
+    description: "Hop between Bali's most stunning islands over 14 days. Surf Kuta, snorkel Nusa Lembongan, hike Nusa Penida's cliffs, explore Lombok, and party on car-free Gili T."
+  },
+  {
+    id: 4,
+    slug: "thailand-intro",
+    name: "Thailand Intro",
+    destination: "Thailand",
+    duration: "12 days",
+    price: "£999",
+    deposit: "£60",
+    groupSize: "15-30",
+    ageRange: "18-35",
+    image: "/thailand-intro-hero.webp",
+    highlights: ["Elephant Sanctuary", "Bangkok City Tour", "Pai Sunsets", "Tipsy Tubing", "Temple Visits", "Sticky Waterfalls"],
+    rating: 5.0,
+    reviews: 203,
+    availability: "Available",
+    nextDeparture: "22nd March 2026",
+    badge: "5 Star Rated",
+    description: "The perfect 12-day introduction to Thailand. Bangkok's temples, Chiang Mai's culture, and Pai's mountain paradise — with elephant sanctuaries and unforgettable sunsets."
+  },
+  {
+    id: 5,
+    slug: "philippines-paradise",
+    name: "Philippines Paradise",
+    destination: "Philippines",
+    duration: "10 days",
+    price: "£999",
+    deposit: "£60",
+    groupSize: "15-30",
+    ageRange: "18-35",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/gMgbXqqaIFwmNoLk.webp",
+    highlights: ["Sardine Run", "Canyoneering", "Whale Sharks", "El Nido Island Tour", "Siargao Surf", "Chocolate Hills"],
+    rating: 4.9,
+    reviews: 167,
+    availability: "Available",
+    nextDeparture: "19th January 2027",
+    badge: "New Tour",
+    description: "10 days across the Philippines' most breathtaking islands. Swim with whale sharks, surf Cloud 9, kayak El Nido's lagoons, and discover Bohol's Chocolate Hills."
+  }
+];
+
+const destinations = ["All", "Thailand", "Bali", "Philippines"];
 
 export default function Tours() {
-  const [selectedDestination, setSelectedDestination] = useState<string>("all");
+  const [selectedDestination, setSelectedDestination] = useState<string>("All");
 
-  const tours = [
-    {
-      id: 1,
-      slug: "thailand-island-hopper",
-      name: "Thailand Island Hopper",
-      destination: "Thailand",
-      duration: "21 days",
-      price: "£1,899",
-      deposit: "£60",
-      groupSize: "15-30",
-      ageRange: "18-35",
-      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80",
-      highlights: ["Bangkok", "Phi Phi Islands", "Full Moon Party", "Khao Sok"],
-      rating: 4.9,
-      reviews: 247,
-      availability: "Limited Spots",
-      nextDeparture: "15 Mar 2026"
-    },
-    {
-      id: 2,
-      slug: "thailand-intro",
-      name: "Thailand Intro",
-      destination: "Thailand",
-      duration: "10 days",
-      price: "£999",
-      deposit: "£60",
-      groupSize: "15-30",
-      ageRange: "18-35",
-      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/hCjqPFKzQfIcAvQa.jpg",
-      highlights: ["Chiang Mai", "Yoga Retreats", "Wellness", "Temples"],
-      rating: 4.8,
-      reviews: 189,
-      availability: "Available",
-      nextDeparture: "22 Mar 2026"
-    },
-    {
-      id: 3,
-      slug: "bali-explorer",
-      name: "Bali Explorer",
-      destination: "Bali",
-      duration: "14 days",
-      price: "£1,399",
-      deposit: "£60",
-      groupSize: "15-30",
-      ageRange: "18-35",
-      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/bHljzvhImvBUkIgg.JPG",
-      highlights: ["Mt. Batur Trek", "Ubud", "Canggu", "Nusa Islands"],
-      rating: 4.9,
-      reviews: 203,
-      availability: "Limited Spots",
-      nextDeparture: "12 Mar 2026"
-    },
-    {
-      id: 4,
-      slug: "bali-island-hopper",
-      name: "Bali Island Hopper",
-      destination: "Bali",
-      duration: "10 days",
-      price: "£1,199",
-      deposit: "£60",
-      groupSize: "15-30",
-      ageRange: "18-35",
-      image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/GsVJxEVQBngZgOoI.JPG",
-      highlights: ["Nusa Islands", "Ubud", "Seminyak", "Beach Clubs"],
-      rating: 4.8,
-      reviews: 156,
-      availability: "Available",
-      nextDeparture: "18 Mar 2026"
-    }
-  ];
-
-  const destinations = ["all", "Thailand", "Bali"];
-
-  const filteredTours = selectedDestination === "all" 
-    ? tours 
+  const filteredTours = selectedDestination === "All"
+    ? tours
     : tours.filter(tour => tour.destination === selectedDestination);
 
   return (
-    <div className="animate-fade-in">
-      <section className="bg-foreground text-background py-16 md:py-24">
-        <div className="container text-center space-y-6">
+    <div className="animate-fade-in min-h-screen bg-background">
+      {/* Hero */}
+      <section className="relative bg-foreground text-background overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/nbdFlsyYCgCVjCdb.jpeg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="relative container py-20 md:py-28 text-center space-y-6">
+          <div className="inline-flex items-center gap-2 bg-primary/20 text-primary border border-primary/30 px-4 py-1.5 text-sm font-medium tracking-wide uppercase">
+            18-35 Only
+          </div>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">
             Find Your Adventure
           </h1>
-          <p className="text-xl md:text-2xl text-background/80 max-w-3xl mx-auto">
-            All tours include accommodation, most meals, activities, and an expert trip manager. 
+          <p className="text-xl md:text-2xl text-background/75 max-w-3xl mx-auto leading-relaxed">
+            All tours include accommodation, most meals, activities, and an expert trip manager.
             Just £60 deposits with flexible payment plans.
           </p>
+          <div className="flex flex-wrap justify-center gap-8 pt-4 text-sm text-background/60">
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-accent fill-accent" />
+              <span>4.9 average rating</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4 text-accent" />
+              <span>800+ travellers</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-accent" />
+              <span>3 destinations</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="container py-8 border-b border-border">
-        <div className="flex flex-wrap gap-3">
+      {/* Filter */}
+      <section className="sticky top-0 z-10 bg-background/95 backdrop-blur border-b border-border">
+        <div className="container py-4 flex flex-wrap gap-2 items-center">
           {destinations.map((dest) => (
             <Button
               key={dest}
               variant={selectedDestination === dest ? "default" : "outline"}
+              size="sm"
               onClick={() => setSelectedDestination(dest)}
               className="font-medium tracking-tight"
             >
-              {dest === "all" ? "All Destinations" : dest}
+              {dest === "All" ? "All Destinations" : dest}
             </Button>
           ))}
+          <span className="ml-auto text-sm text-muted-foreground">
+            {filteredTours.length} tour{filteredTours.length !== 1 ? "s" : ""}
+          </span>
         </div>
       </section>
 
-      <section className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredTours.map((tour) => (
-            <Card 
+      {/* Tour Cards */}
+      <section className="container py-12 md:py-16">
+        <div className="space-y-8">
+          {filteredTours.map((tour, index) => (
+            <div
               key={tour.id}
-              className="group overflow-hidden border-2 hover:border-primary transition-kinetic cursor-pointer"
+              className="group grid grid-cols-1 lg:grid-cols-5 overflow-hidden border border-border hover:border-primary/40 transition-all duration-300 hover:shadow-xl"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img 
+              {/* Image */}
+              <div className={`relative lg:col-span-2 h-64 lg:h-auto overflow-hidden ${index % 2 === 1 ? "lg:order-last" : ""}`}>
+                <img
                   src={tour.image}
                   alt={tour.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute top-4 left-4 flex gap-2">
-                  <Badge className="bg-primary text-primary-foreground">
-                    {tour.destination}
-                  </Badge>
-                  {tour.availability === "Limited Spots" && (
-                    <Badge variant="destructive">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                {tour.badge && (
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1.5 tracking-wide uppercase">
+                      {tour.badge}
+                    </span>
+                  </div>
+                )}
+                {tour.availability === "Limited Spots" && (
+                  <div className="absolute top-4 right-4">
+                    <span className="bg-destructive/90 text-destructive-foreground text-xs font-bold px-3 py-1.5 tracking-wide uppercase">
                       Limited Spots
-                    </Badge>
-                  )}
+                    </span>
+                  </div>
+                )}
+                <div className="absolute bottom-4 left-4 flex items-center gap-1.5 text-white">
+                  <Star className="w-4 h-4 fill-accent text-accent" />
+                  <span className="font-bold text-sm">{tour.rating}</span>
+                  <span className="text-white/70 text-sm">({tour.reviews} reviews)</span>
                 </div>
               </div>
 
-              <div className="p-6 space-y-4">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold tracking-tight group-hover:text-primary transition-kinetic">
-                    {tour.name}
-                  </h3>
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="flex items-center gap-1 text-accent">
-                      <Star className="w-4 h-4 fill-current" />
-                      <span className="font-bold">{tour.rating}</span>
+              {/* Content */}
+              <div className="lg:col-span-3 p-8 md:p-10 flex flex-col justify-between gap-6 bg-card">
+                <div className="space-y-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-widest font-medium mb-2">
+                        <MapPin className="w-3 h-3" />
+                        {tour.destination}
+                      </div>
+                      <h2 className="text-2xl md:text-3xl font-bold tracking-tight group-hover:text-primary transition-colors">
+                        {tour.name}
+                      </h2>
                     </div>
-                    <span className="text-muted-foreground">({tour.reviews} reviews)</span>
+                    <div className="text-right shrink-0">
+                      <div className="text-xs text-muted-foreground mb-1">From</div>
+                      <div className="text-3xl font-bold text-primary">{tour.price}</div>
+                      <div className="text-xs text-muted-foreground">£60 deposit</div>
+                    </div>
+                  </div>
+
+                  <p className="text-muted-foreground leading-relaxed">
+                    {tour.description}
+                  </p>
+
+                  {/* Highlights */}
+                  <div className="flex flex-wrap gap-2">
+                    {tour.highlights.map((highlight) => (
+                      <span
+                        key={highlight}
+                        className="text-xs px-2.5 py-1 bg-muted text-muted-foreground border border-border font-medium"
+                      >
+                        {highlight}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {tour.highlights.slice(0, 3).map((highlight) => (
-                    <span 
-                      key={highlight}
-                      className="text-xs px-2 py-1 bg-muted text-muted-foreground"
-                    >
-                      {highlight}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 py-4 border-t border-b border-border text-sm">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-muted-foreground" />
-                    <span>{tour.duration}</span>
+                {/* Meta + CTA */}
+                <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-border">
+                  <div className="flex flex-wrap gap-5 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1.5">
+                      <Clock className="w-4 h-4" />
+                      <span>{tour.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Users className="w-4 h-4" />
+                      <span>{tour.groupSize} people</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Calendar className="w-4 h-4" />
+                      <span>Next: {tour.nextDeparture}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Users className="w-4 h-4 text-muted-foreground" />
-                    <span>{tour.groupSize}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-muted-foreground" />
-                    <span>{tour.ageRange} years</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-muted-foreground" />
-                    <span>{tour.nextDeparture}</span>
-                  </div>
-                </div>
-
-                <div className="flex items-end justify-between">
-                  <div>
-                    <div className="text-sm text-muted-foreground">From</div>
-                    <div className="text-3xl font-bold text-primary">{tour.price}</div>
-                    <div className="text-xs text-muted-foreground">£60 deposit</div>
-                  </div>
-                  <Button 
+                  <Button
                     asChild
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold tracking-tight px-6"
                   >
                     <Link href={`/tour/${tour.slug}`} className="flex items-center gap-2">
                       View Tour
@@ -200,48 +270,50 @@ export default function Tours() {
                   </Button>
                 </div>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-muted py-16 md:py-24">
+      {/* Trust Bar */}
+      <section className="bg-muted border-t border-border py-14 md:py-20">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="text-5xl font-bold text-primary">£60</div>
-              <h3 className="text-xl font-bold">Low Deposits</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg font-bold">Low Deposits</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Secure your spot with just £60 and spread the cost with flexible payment plans
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="text-5xl font-bold text-primary">24/7</div>
-              <h3 className="text-xl font-bold">Support</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg font-bold">Support</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Expert trip managers and 24/7 emergency support throughout your journey
               </p>
             </div>
-            <div className="space-y-4">
-              <div className="text-5xl font-bold text-primary">100%</div>
-              <h3 className="text-xl font-bold">Protected</h3>
-              <p className="text-muted-foreground">
-                Complete peace of mind when you book with our trusted travel protection
+            <div className="space-y-3">
+              <div className="text-5xl font-bold text-primary">4.9★</div>
+              <h3 className="text-lg font-bold">Rated by Travellers</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Hundreds of five-star reviews from real ACE travellers across every tour
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* CTA */}
       <section className="container py-16 md:py-24">
-        <div className="bg-foreground text-background p-12 md:p-16 text-center space-y-8">
+        <div className="bg-foreground text-background p-12 md:p-16 text-center space-y-6">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">
             Can't Find What You're Looking For?
           </h2>
-          <p className="text-xl text-background/80 max-w-2xl mx-auto">
+          <p className="text-xl text-background/75 max-w-2xl mx-auto">
             Get in touch with our team and we'll help you find the perfect adventure
           </p>
-          <Button 
+          <Button
             asChild
             size="lg"
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium tracking-tight text-lg h-14 px-8"
