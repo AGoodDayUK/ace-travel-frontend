@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Calendar, Users, MapPin, Star, ArrowRight, Clock } from "lucide-react";
-import { useCurrency } from "@/contexts/CurrencyContext";
 
 const tours = [
   {
@@ -106,7 +105,6 @@ const destinations = ["All", "Thailand", "Bali", "Philippines"];
 
 export default function Tours() {
   const [selectedDestination, setSelectedDestination] = useState<string>("All");
-  const { formatPrice } = useCurrency();
 
   const filteredTours = selectedDestination === "All"
     ? tours
@@ -129,7 +127,7 @@ export default function Tours() {
           </h1>
           <p className="text-xl md:text-2xl text-background/75 max-w-3xl mx-auto leading-relaxed">
             All tours include accommodation, most meals, activities, and an expert trip manager.
-            Just {formatPrice('£60')} deposits with flexible payment plans.
+            Just £60 deposits with flexible payment plans.
           </p>
           <div className="flex flex-wrap justify-center gap-8 pt-4 text-sm text-background/60">
             <div className="flex items-center gap-2">
@@ -220,8 +218,8 @@ export default function Tours() {
                     </div>
                     <div className="text-right shrink-0">
                       <div className="text-xs text-muted-foreground mb-1">From</div>
-                      <div className="text-3xl font-bold text-primary">{formatPrice(tour.price)}</div>
-                      <div className="text-xs text-muted-foreground">{formatPrice('£60')} deposit</div>
+                      <div className="text-3xl font-bold text-primary">{tour.price}</div>
+                      <div className="text-xs text-muted-foreground">£60 deposit</div>
                     </div>
                   </div>
 
@@ -279,10 +277,10 @@ export default function Tours() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="space-y-3">
-              <div className="text-5xl font-bold text-primary">{formatPrice('£60')}</div>
+              <div className="text-5xl font-bold text-primary">£60</div>
               <h3 className="text-lg font-bold">Low Deposits</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Secure your spot with just {formatPrice('£60')} and spread the cost with flexible payment plans
+                Secure your spot with just £60 and spread the cost with flexible payment plans
               </p>
             </div>
             <div className="space-y-3">

@@ -573,3 +573,9 @@
 - [ ] Bali Explorer welcome page
 - [ ] Bali Island Hopper welcome page
 - [ ] Philippines Paradise welcome page
+- [ ] Remove currency selector and revert all prices to hardcoded GBP
+
+## Currency Removal
+- [x] Remove currency selector from Header navigation
+- [x] Remove CurrencyProvider from main.tsx
+- [x] Revert all formatPrice() calls to hardcoded GBP strings across all pages and components

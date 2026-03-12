@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown, Calendar, MapPin, Compass, Tag, Info, HelpCircle, Users, Star, Plane, CreditCard, BookOpen } from 'lucide-react';
-import { useCurrency, type Currency } from '@/contexts/CurrencyContext';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,7 +13,6 @@ export default function Header() {
   const [mobileToursOpen, setMobileToursOpen] = useState(false);
   const [mobileInfoOpen, setMobileInfoOpen] = useState(false);
   const [location] = useLocation();
-  const { currency, setCurrency, formatPrice } = useCurrency();
 
   const toursByDestination = {
     Thailand: [
@@ -95,70 +93,6 @@ export default function Header() {
     };
   }, [isMobileMenuOpen]);
 
-  // SVG flag components to avoid emoji rendering issues
-  const GBFlag = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" className="w-5 h-3 rounded-sm overflow-hidden flex-shrink-0">
-      <clipPath id="gb-clip"><path d="M0 0v30h60V0z"/></clipPath>
-      <path d="M0 0v30h60V0z" fill="#012169"/>
-      <path d="M0 0l60 30m0-30L0 30" stroke="#fff" strokeWidth="6"/>
-      <path d="M0 0l60 30m0-30L0 30" stroke="#C8102E" strokeWidth="4"/>
-      <path d="M30 0v30M0 15h60" stroke="#fff" strokeWidth="10"/>
-      <path d="M30 0v30M0 15h60" stroke="#C8102E" strokeWidth="6"/>
-    </svg>
-  );
-  const EUFlag = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className="w-5 h-3 rounded-sm overflow-hidden flex-shrink-0">
-      <rect width="3" height="2" fill="#003399"/>
-      <g fill="#FFCC00">
-        {[0,1,2,3,4,5,6,7,8,9,10,11].map(i => {
-          const angle = (i * 30 - 90) * Math.PI / 180;
-          const cx = 1.5 + 0.5 * Math.cos(angle);
-          const cy = 1 + 0.5 * Math.sin(angle);
-          return <polygon key={i} points={`${cx},${cy-0.08} ${cx+0.05},${cy+0.06} ${cx-0.07},${cy-0.02} ${cx+0.07},${cy-0.02} ${cx-0.05},${cy+0.06}`} />;
-        })}
-      </g>
-    </svg>
-  );
-
-  const currencyOptions: { value: Currency; FlagComp: () => React.ReactElement; label: string }[] = [
-    { value: 'GBP', FlagComp: GBFlag, label: 'GBP' },
-    { value: 'EUR', FlagComp: EUFlag, label: 'EUR' },
-  ];
-  const [showCurrencyMenu, setShowCurrencyMenu] = useState(false);
-  const currentCurrency = currencyOptions.find(o => o.value === currency)!;
-
-  const CurrencyToggle = ({ className = '' }: { className?: string }) => (
-    <div className={`relative ${className}`}>
-      <button
-        onClick={() => setShowCurrencyMenu(v => !v)}
-        className="flex items-center gap-1 px-2 py-1.5 rounded-md text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-colors"
-      >
-        <currentCurrency.FlagComp />
-        <span className="text-xs font-bold">{currentCurrency.label}</span>
-        <ChevronDown className="w-3 h-3 text-slate-500" />
-      </button>
-      {showCurrencyMenu && (
-        <>
-          <div className="fixed inset-0 z-40" onClick={() => setShowCurrencyMenu(false)} />
-          <div className="absolute right-0 top-full mt-1 bg-white border border-border rounded-lg shadow-lg z-50 py-1 min-w-[90px]">
-            {currencyOptions.map(opt => (
-              <button
-                key={opt.value}
-                onClick={() => { setCurrency(opt.value); setShowCurrencyMenu(false); }}
-                className={`w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-violet-50 transition-colors ${
-                  currency === opt.value ? 'font-bold text-violet-700' : 'text-slate-700'
-                }`}
-              >
-                <opt.FlagComp />
-                <span>{opt.label}</span>
-              </button>
-            ))}
-          </div>
-        </>
-      )}
-    </div>
-  );
-
   return (
     <>
       {/* Scroll progress indicator */}
@@ -226,7 +160,7 @@ export default function Header() {
                               <p className="text-xs text-muted-foreground mb-1.5 line-clamp-1">{dest.highlight}</p>
                               <div className="flex items-center justify-between text-xs">
                                 <span className="text-muted-foreground">{dest.tours}</span>
-                                <span className="font-bold text-primary">From {formatPrice(dest.from)}</span>
+                                <span className="font-bold text-primary">From {dest.from}</span>
                               </div>
                             </div>
                           </div>
@@ -283,7 +217,7 @@ export default function Header() {
                                         <Calendar className="w-3 h-3" />
                                         {tour.days}
                                       </span>
-                                      <span className="font-bold text-primary">{formatPrice(tour.price)}</span>
+                                      <span className="font-bold text-primary">{tour.price}</span>
                                     </div>
                                   </div>
                                 </div>
@@ -354,9 +288,6 @@ export default function Header() {
 
             {/* Desktop CTAs — only shown on lg+ */}
             <div className="hidden lg:flex items-center gap-3">
-              {/* Currency Toggle */}
-              <CurrencyToggle />
-
               <a 
                 href="https://booking.acetravelexperiences.com/account/signin/" 
                 target="_blank" 
@@ -410,17 +341,13 @@ export default function Header() {
             alt="ACE Travel Experiences" 
             className="h-9 w-auto" 
           />
-          <div className="flex items-center gap-2">
-            {/* Currency toggle in mobile header */}
-            <CurrencyToggle />
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="p-2 text-slate-700 hover:text-primary transition-colors rounded-md"
-              aria-label="Close menu"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="p-2 text-slate-700 hover:text-primary transition-colors rounded-md"
+            aria-label="Close menu"
+          >
+            <X className="w-5 h-5" />
+          </button>
         </div>
 
         {/* Drawer Content */}
@@ -460,7 +387,7 @@ export default function Header() {
                           <p className="text-xs text-muted-foreground mb-1.5 line-clamp-2">{dest.highlight}</p>
                           <div className="flex items-center justify-between text-xs">
                             <span className="text-muted-foreground">{dest.tours}</span>
-                            <span className="font-bold text-primary">From {formatPrice(dest.from)}</span>
+                            <span className="font-bold text-primary">From {dest.from}</span>
                           </div>
                         </div>
                       </div>
@@ -511,7 +438,7 @@ export default function Header() {
                                     <Calendar className="w-3 h-3" />
                                     {tour.days}
                                   </span>
-                                  <span className="font-bold text-primary">{formatPrice(tour.price)}</span>
+                                  <span className="font-bold text-primary">{tour.price}</span>
                                 </div>
                               </div>
                             </div>

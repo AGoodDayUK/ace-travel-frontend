@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useCurrency } from "@/contexts/CurrencyContext";
 import { Link } from "wouter";
 import {
   CreditCard, CheckCircle2, ChevronDown, ArrowRight,
@@ -43,7 +42,6 @@ const faqs = [
 ];
 
 export default function Payments() {
-  const { formatPrice } = useCurrency();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
@@ -66,7 +64,7 @@ export default function Payments() {
             Pay Your Way
           </h1>
           <p className="text-lg text-white/70 max-w-xl mx-auto">
-            Spread the cost of your adventure with our flexible payment plans. Secure your spot for just {formatPrice("£60")} and pay the rest in monthly instalments.
+            Spread the cost of your adventure with our flexible payment plans. Secure your spot for just £60 and pay the rest in monthly instalments.
           </p>
         </div>
       </section>
@@ -82,7 +80,7 @@ export default function Payments() {
               {
                 icon: CreditCard,
                 colour: "bg-[#ee2f6d]",
-                title: `Secure your spot for ${formatPrice("£60")}`,
+                title: "Secure your spot for £60",
                 desc: "Pay a small deposit to lock in your place. This is non-refundable but gets you in the group immediately."
               },
               {
@@ -233,11 +231,11 @@ export default function Payments() {
       <section className="py-16 px-4 bg-gradient-to-br from-[#1a1040] to-[#2d1b69]">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-black text-white mb-4">Ready to Secure Your Spot?</h2>
-          <p className="text-white/70 mb-8">Start your adventure for just {formatPrice("£60")}. The rest can wait.</p>
+          <p className="text-white/70 mb-8">Start your adventure for just £60. The rest can wait.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
               <Button className="bg-[#ee2f6d] hover:bg-[#ee2f6d]/90 text-white font-bold px-8 py-3 rounded-xl h-auto">
-                Book Now — {formatPrice("£60")} deposit
+                Book Now — £60 deposit
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </a>

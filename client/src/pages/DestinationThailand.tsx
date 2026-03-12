@@ -7,7 +7,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ArrowRight, Calendar, Users, Star, Shield, MapPin, Clock, Heart } from "lucide-react";
-import { useCurrency } from "@/contexts/CurrencyContext";
 
 const tours = [
   {
@@ -66,7 +65,6 @@ const trustSignals = [
 ];
 
 export default function DestinationThailand() {
-  const { formatPrice } = useCurrency();
   return (
     <div className="min-h-screen">
 
@@ -184,7 +182,7 @@ export default function DestinationThailand() {
                       {tour.duration}
                     </div>
                     <div className="text-white font-black text-2xl">
-                      {formatPrice(tour.price)}
+                      {tour.price}
                     </div>
                   </div>
                 </div>

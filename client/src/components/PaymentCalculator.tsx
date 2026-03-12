@@ -8,7 +8,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Calendar, PoundSterling, CheckCircle2 } from "lucide-react";
-import { useCurrency } from "@/contexts/CurrencyContext";
 import { format, addMonths, differenceInMonths, parseISO } from "date-fns";
 
 interface PaymentCalculatorProps {
@@ -33,7 +32,6 @@ function PaymentScheduleContent({
   departureDate: string;
   departureDateLabel: string;
 }) {
-  const { formatPrice } = useCurrency();
   const [schedule, setSchedule] = useState<PaymentSchedule[]>([]);
   const [finalPaymentDate, setFinalPaymentDate] = useState<string>("");
   const [monthsAvailable, setMonthsAvailable] = useState<number>(0);
@@ -114,7 +112,7 @@ function PaymentScheduleContent({
           </div>
           <div className="flex justify-between items-center">
             <span className="text-sm text-muted-foreground font-medium">Tour price</span>
-            <span className="text-2xl font-bold text-primary">{formatPrice(`£${tourPrice}`)}</span>
+            <span className="text-2xl font-bold text-primary">{`£${tourPrice}`}</span>
           </div>
           {monthsAvailable > 0 && (
             <div className="flex justify-between items-center">
@@ -163,7 +161,7 @@ function PaymentScheduleContent({
                     <p className="text-xs text-muted-foreground mt-0.5">{payment.date}</p>
                   </div>
                 </div>
-                <span className="font-bold text-base ml-3 flex-shrink-0">{formatPrice(`£${payment.amount}`)}</span>
+                <span className="font-bold text-base ml-3 flex-shrink-0">{`£${payment.amount}`}</span>
               </div>
             ))}
           </div>
@@ -172,7 +170,7 @@ function PaymentScheduleContent({
         {/* Total */}
         <div className="flex justify-between items-center py-3 border-t-2 border-dashed border-border">
           <span className="font-bold text-base">Total</span>
-          <span className="text-2xl font-bold text-primary">{formatPrice(`£${totalPaid}`)}</span>
+          <span className="text-2xl font-bold text-primary">{`£${totalPaid}`}</span>
         </div>
 
         <p className="text-xs text-muted-foreground pb-2">

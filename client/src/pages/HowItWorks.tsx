@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import { useCurrency } from "@/contexts/CurrencyContext";
 
 // Real ACE Travel photography from CDN
 const IMAGES = {
@@ -94,7 +93,6 @@ const steps = [
 ];
 
 export default function HowItWorks() {
-  const { formatPrice } = useCurrency();
   return (
     <div className="animate-fade-in">
 
@@ -223,11 +221,11 @@ export default function HowItWorks() {
               {/* Example breakdown */}
               <div className="bg-slate-900 text-white rounded-2xl p-6 md:p-8 space-y-5">
                 <h3 className="text-xl font-bold">Example: Thailand Island Hopper</h3>
-                <div className="text-3xl font-black text-[#44c5c3]">{formatPrice('£1,599')} <span className="text-base font-normal text-white/60">total</span></div>
+                <div className="text-3xl font-black text-[#44c5c3]">£1,599 <span className="text-base font-normal text-white/60">total</span></div>
                 <div className="space-y-3 pt-2 border-t border-white/10">
                   <div className="flex justify-between items-center">
                     <span className="text-white/70">Deposit today</span>
-                    <span className="font-bold text-[#ee2f6d] text-lg">{formatPrice('£60')}</span>
+                    <span className="font-bold text-[#ee2f6d] text-lg">£60</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-white/70">Monthly payments</span>
@@ -265,7 +263,7 @@ export default function HowItWorks() {
             {[
               { stat: "800+", label: "Travellers" },
               { stat: "4.9★", label: "Trustpilot Rating" },
-              { stat: formatPrice('£60'), label: "To Secure Your Spot" },
+              { stat: '£60', label: "To Secure Your Spot" },
               { stat: "18-35", label: "Age Range" },
             ].map((item) => (
               <div key={item.label} className="space-y-1">
@@ -289,7 +287,7 @@ export default function HowItWorks() {
             Ready to start your adventure?
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-            Browse our tours and secure your spot with just {formatPrice('£60')} today.
+            Browse our tours and secure your spot with just £60 today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

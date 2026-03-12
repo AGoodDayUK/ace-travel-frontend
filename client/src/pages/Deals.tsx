@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useCurrency } from "@/contexts/CurrencyContext";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -96,7 +95,6 @@ interface FormState {
 }
 
 export default function Deals() {
-  const { formatPrice } = useCurrency();
   const [selectedDeal, setSelectedDeal] = useState<typeof deals[0] | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState<FormState>({
@@ -189,7 +187,7 @@ export default function Deals() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4">
                     <span className="text-white text-3xl font-black tracking-tighter drop-shadow-lg">
-                      {formatPrice(deal.discount)}
+                      {deal.discount}
                     </span>
                   </div>
                 </div>
@@ -228,7 +226,7 @@ export default function Deals() {
               <div>
                 <p className="text-white/80 text-sm font-medium uppercase tracking-widest mb-1">Claiming</p>
                 <h2 className="text-2xl font-bold tracking-tight">{selectedDeal.title}</h2>
-                    <p className="text-white/90 text-sm mt-1">{formatPrice(selectedDeal.discount)} off your trip</p>
+                    <p className="text-white/90 text-sm mt-1">{selectedDeal.discount} off your trip</p>
               </div>
               <button onClick={closeForm} className="text-white/80 hover:text-white transition-colors mt-1">
                 <X className="w-6 h-6" />
@@ -240,7 +238,7 @@ export default function Deals() {
                   <CheckCircle className="w-16 h-16 text-emerald-500" />
                   <h3 className="text-2xl font-bold tracking-tight">You just aced it!</h3>
                   <p className="text-muted-foreground">
-                    We've received your claim for the <strong>{selectedDeal.title}</strong> deal. We'll be in touch within 24 hours to apply your {formatPrice(selectedDeal.discount)} discount.
+                    We've received your claim for the <strong>{selectedDeal.title}</strong> deal. We'll be in touch within 24 hours to apply your {selectedDeal.discount} discount.
                   </p>
                   <Button onClick={closeForm} variant="outline" className="mt-4">
                     Back to Deals
@@ -249,7 +247,7 @@ export default function Deals() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <p className="text-muted-foreground text-sm">
-                    Fill in your details and we'll apply your <strong>{formatPrice(selectedDeal.discount)}</strong> discount to your payment plan.
+                    Fill in your details and we'll apply your <strong>{selectedDeal.discount}</strong> discount to your payment plan.
                   </p>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-1.5">

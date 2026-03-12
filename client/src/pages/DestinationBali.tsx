@@ -7,7 +7,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { ArrowRight, Calendar, Users, Star, Shield, MapPin, Clock, Heart } from "lucide-react";
-import { useCurrency } from "@/contexts/CurrencyContext";
 
 const tours = [
   {
@@ -66,7 +65,6 @@ const trustSignals = [
 ];
 
 export default function DestinationBali() {
-  const { formatPrice } = useCurrency();
   return (
     <div className="min-h-screen">
 
@@ -161,7 +159,7 @@ export default function DestinationBali() {
               Bali Tours
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Both tours are 14 days and {formatPrice('£1,199')} — the difference is where you go beyond Bali itself.
+              Both tours are 14 days and £1,199 — the difference is where you go beyond Bali itself.
             </p>
           </div>
 
@@ -184,7 +182,7 @@ export default function DestinationBali() {
                       {tour.duration}
                     </div>
                     <div className="text-white font-black text-2xl">
-                      {formatPrice(tour.price)}
+                      {tour.price}
                     </div>
                   </div>
                 </div>

@@ -4,10 +4,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { MapPin, Clock, Users, ArrowRight, Sparkles } from "lucide-react";
-import { useCurrency } from "@/contexts/CurrencyContext";
 
 export default function Destinations() {
-  const { formatPrice } = useCurrency();
   const destinations = [
     {
       name: "Thailand",
@@ -202,7 +200,7 @@ export default function Destinations() {
                   </Button>
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-bold text-foreground/60">FROM</span>
-                    <span className="text-3xl font-black text-primary">{formatPrice(dest.fromPrice)}</span>
+                    <span className="text-3xl font-black text-primary">{dest.fromPrice}</span>
                   </div>
                 </div>
               </div>
