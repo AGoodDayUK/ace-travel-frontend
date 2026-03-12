@@ -1,111 +1,31 @@
 import { useState } from "react";
-import { Play, BookOpen, Leaf } from "lucide-react";
+import { Play, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// All vlogs by Libby, grouped by tour
+// All vlogs by Libby — one unified list
 const vlogs = [
-  // Bali Explorer vlogs
-  {
-    id: "Z20HYbB5diQ",
-    title: "Come With Me to Bali — First Glimpse + Meeting My Tour Group",
-    tour: "Bali Explorer",
-    tourColour: "bg-[#00b4d8]"
-  },
-  {
-    id: "Wv-ILYoCkJ8",
-    title: "Pack With Me for Bali! Travel Tips, Essentials & How I Planned It With ACE",
-    tour: "Bali Explorer",
-    tourColour: "bg-[#00b4d8]"
-  },
-  // Thailand Island Hopper vlogs
-  {
-    id: "1EN-j0gGI00",
-    title: "Bamboo River Rafting & Night Time Jungle Walk",
-    tour: "Thailand Island Hopper",
-    tourColour: "bg-[#e63946]"
-  },
-  {
-    id: "YqCRJJhommw",
-    title: "Morning Jungle Safari & Shopping!",
-    tour: "Thailand Island Hopper",
-    tourColour: "bg-[#e63946]"
-  },
-  {
-    id: "wCHWVWygIiE",
-    title: "Pig Island, Snorkelling & Partying",
-    tour: "Thailand Island Hopper",
-    tourColour: "bg-[#e63946]"
-  },
-  {
-    id: "HOIdsTgG_tc",
-    title: "Koh Samui Ziplining",
-    tour: "Thailand Island Hopper",
-    tourColour: "bg-[#e63946]"
-  },
-  {
-    id: "1kOWBIAfLhU",
-    title: "Koh Phangan & Puk's Palace",
-    tour: "Thailand Island Hopper",
-    tourColour: "bg-[#e63946]"
-  },
-  {
-    id: "1TOb_0YkIzc",
-    title: "Quad Biking & Full Moon Party",
-    tour: "Thailand Island Hopper",
-    tourColour: "bg-[#e63946]"
-  },
-  {
-    id: "DqqBtdb0V5M",
-    title: "Snorkelling in Koh Tao",
-    tour: "Thailand Island Hopper",
-    tourColour: "bg-[#e63946]"
-  },
-  {
-    id: "_LZ7QDw7ibk",
-    title: "Koh Tao. Getting Inked.",
-    tour: "Thailand Island Hopper",
-    tourColour: "bg-[#e63946]"
-  },
-  {
-    id: "Fp6Y3A3fV-s",
-    title: "Freedom Beach in Phuket & a Very Special Moment!",
-    tour: "Thailand Island Hopper",
-    tourColour: "bg-[#e63946]"
-  },
-  {
-    id: "J3kCYte0bD8",
-    title: "Final Day in Thailand With ACE Travel Experiences",
-    tour: "Thailand Island Hopper",
-    tourColour: "bg-[#e63946]"
-  }
+  { id: "Z20HYbB5diQ", title: "Come With Me to Bali — First Glimpse + Meeting My Tour Group" },
+  { id: "Wv-ILYoCkJ8", title: "Pack With Me for Bali! Travel Tips, Essentials & How I Planned It With ACE" },
+  { id: "1EN-j0gGI00", title: "Bamboo River Rafting & Night Time Jungle Walk" },
+  { id: "YqCRJJhommw", title: "Morning Jungle Safari & Shopping!" },
+  { id: "wCHWVWygIiE", title: "Pig Island, Snorkelling & Partying" },
+  { id: "HOIdsTgG_tc", title: "Koh Samui Ziplining" },
+  { id: "1kOWBIAfLhU", title: "Koh Phangan & Puk's Palace" },
+  { id: "1TOb_0YkIzc", title: "Quad Biking & Full Moon Party" },
+  { id: "DqqBtdb0V5M", title: "Snorkelling in Koh Tao" },
+  { id: "_LZ7QDw7ibk", title: "Koh Tao. Getting Inked." },
+  { id: "Fp6Y3A3fV-s", title: "Freedom Beach in Phuket & a Very Special Moment!" },
+  { id: "J3kCYte0bD8", title: "Final Day in Thailand With ACE Travel Experiences" },
 ];
 
 // Frog images from Unsplash (free to use)
 const frogs = [
-  {
-    image: "https://images.unsplash.com/photo-1459682687441-7761439a709b?w=600&q=80",
-    caption: "Red-eyed tree frog, Costa Rica"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1497752531616-c3afd9760a11?w=600&q=80",
-    caption: "Glass frog, Ecuador"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1551085254-e96b210db58a?w=600&q=80",
-    caption: "Poison dart frog, Amazon"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1628605539226-b8e7b1e3e6b3?w=600&q=80",
-    caption: "Tree frog, Southeast Asia"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1516728778615-2d590ea1855e?w=600&q=80",
-    caption: "White's tree frog, Australia"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1471086569966-db3eebc25a59?w=600&q=80",
-    caption: "Green frog, tropical forest"
-  }
+  { image: "https://images.unsplash.com/photo-1459682687441-7761439a709b?w=600&q=80", caption: "Red-eyed tree frog, Costa Rica" },
+  { image: "https://images.unsplash.com/photo-1497752531616-c3afd9760a11?w=600&q=80", caption: "Glass frog, Ecuador" },
+  { image: "https://images.unsplash.com/photo-1551085254-e96b210db58a?w=600&q=80", caption: "Poison dart frog, Amazon" },
+  { image: "https://images.unsplash.com/photo-1628605539226-b8e7b1e3e6b3?w=600&q=80", caption: "Tree frog, Southeast Asia" },
+  { image: "https://images.unsplash.com/photo-1516728778615-2d590ea1855e?w=600&q=80", caption: "White's tree frog, Australia" },
+  { image: "https://images.unsplash.com/photo-1471086569966-db3eebc25a59?w=600&q=80", caption: "Green frog, tropical forest" },
 ];
 
 function VlogCard({ vlog }: { vlog: typeof vlogs[0] }) {
@@ -143,9 +63,6 @@ function VlogCard({ vlog }: { vlog: typeof vlogs[0] }) {
         )}
       </div>
       <div className="p-4">
-        <span className={`inline-block text-xs font-semibold text-white px-3 py-1 rounded-full mb-2 ${vlog.tourColour}`}>
-          {vlog.tour}
-        </span>
         <h3 className="font-semibold text-sm leading-snug line-clamp-2">{vlog.title}</h3>
       </div>
     </div>
@@ -181,30 +98,10 @@ export default function BlogsVlogs() {
           </div>
         </div>
 
-        {/* Bali vlogs */}
-        <div className="mb-12">
-          <h3 className="text-xl font-bold mb-5 flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-[#00b4d8] inline-block" />
-            Bali Explorer
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {vlogs.filter(v => v.tour === "Bali Explorer").map(vlog => (
-              <VlogCard key={vlog.id} vlog={vlog} />
-            ))}
-          </div>
-        </div>
-
-        {/* Thailand vlogs */}
-        <div>
-          <h3 className="text-xl font-bold mb-5 flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-[#e63946] inline-block" />
-            Thailand Island Hopper
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {vlogs.filter(v => v.tour === "Thailand Island Hopper").map(vlog => (
-              <VlogCard key={vlog.id} vlog={vlog} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {vlogs.map(vlog => (
+            <VlogCard key={vlog.id} vlog={vlog} />
+          ))}
         </div>
       </section>
 
@@ -230,21 +127,18 @@ export default function BlogsVlogs() {
                 category: "Thailand",
                 colour: "bg-[#e63946]",
                 excerpt: "From the heat to the food to the full moon party — here's what we wish we'd known before our first trip to Thailand.",
-                coming: true
               },
               {
                 title: "Bali on a Budget: How to Make the Most of Your Trip",
                 category: "Bali",
                 colour: "bg-[#00b4d8]",
                 excerpt: "Bali doesn't have to break the bank. Here's how to eat well, explore freely, and still have money left for a massage.",
-                coming: true
               },
               {
                 title: "The Philippines: Why It Should Be Top of Your Bucket List",
                 category: "Philippines",
                 colour: "bg-accent",
                 excerpt: "El Nido, Siargao, Siquijor — the Philippines has it all. Here's why it's one of the most underrated destinations in Southeast Asia.",
-                coming: true
               }
             ].map(blog => (
               <div key={blog.title} className="bg-background rounded-2xl overflow-hidden shadow-md">
