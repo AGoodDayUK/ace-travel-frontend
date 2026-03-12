@@ -176,7 +176,7 @@ export default function Deals() {
             return (
               <Card
                 key={deal.id}
-                className={`overflow-hidden border-2 ${deal.borderColour} hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col`}
+                className={`overflow-hidden border-2 ${deal.borderColour} hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col py-0 gap-0`}
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <img

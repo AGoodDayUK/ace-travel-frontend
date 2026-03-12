@@ -543,3 +543,10 @@
 - [x] Fix booking card "Book Now" button pushed off-screen on mobile
 - [x] Redesign FAQ page with vibrant Gen Z-focused visual design
 - [x] Add Vlogs/Blogs/Frogs link to footer (currently missing)
+
+## Deal Cards, Frog Images & How It Works (Mar 2026)
+- [x] Fix gap top/bottom on deal card images (Card py-6 override with py-0 gap-0)
+- [x] Replace non-frog images on Vlogs/Blogs/Frogs page with verified frog photos (CDN uploaded)
+- [x] Improve "Take the Leap" CTA on Vlogs page - frog-themed banner with Book Now button
+- [x] Update How It Works page from 4 steps to 5 steps matching live site (added DMs step, welcome pack step, trip manager, arrive in paradise)
+- [x] Unify vlogs feed - remove per-tour splitting, all vlogs in one grid

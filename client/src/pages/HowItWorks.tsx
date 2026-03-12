@@ -7,55 +7,88 @@ const IMAGES = {
   hero: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/nbdFlsyYCgCVjCdb.jpeg",
   browse: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/trjSBWQKzHaQYLlx.webp",
   deposit: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/fxvwBSshNYtNUdKQ.jpg",
+  call: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/EkbTwtPubGBZnpjI.jpg",
   group: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/BEBsUGvmQvVYgUsC.jpg",
   adventure: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/BEBsUGvmQvVYgUsC.jpg",
   payment: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/oSzURVcUCKZXqkJb.jpg",
+  arrive: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/HzkAzSiHHurpNQTN.jpg",
 };
 
 const steps = [
   {
     number: "01",
-    label: "Find Your Adventure",
-    heading: "Browse tours built for 18-35s",
-    body: "Explore our handpicked group tours across Thailand, Bali, and the Philippines. Each trip is designed for 18-35 year olds who want real experiences, not tourist traps. Filter by destination, duration, or departure date.",
+    label: "Fill In Your Details",
+    heading: "Secure your spot for just £60",
+    body: "Head to the booking site and pick your destination — Thailand, Bali, or the Philippines. Choose your arrival date, check availability, and lock in your place with a £60 deposit. That's all it takes to get the adventure started.",
     image: IMAGES.browse,
-    imageAlt: "Group of travellers exploring Thailand together",
-    cta: { label: "Browse Tours", href: "/tours" },
-    highlights: ["Thailand, Bali & Philippines", "14 to 21 day itineraries", "Groups of 15-30 people"],
+    imageAlt: "ACE Travel booking app on a phone",
+    cta: { label: "Book Now", href: "https://booking.acetravelexperiences.com/book/", external: true },
+    highlights: [
+      "Choose Thailand, Bali or the Philippines",
+      "Pick your arrival date & check availability",
+      "Secure your place for just £60",
+    ],
     flip: false,
   },
   {
     number: "02",
-    label: "Secure Your Spot",
-    heading: "Just £60 to lock in your place",
-    body: "Reserve your spot on any tour with a £60 deposit. Then spread the remaining cost with flexible monthly payments up to 60 days before departure. No interest, no hidden fees.",
-    image: IMAGES.deposit,
-    imageAlt: "Travellers celebrating on a beach",
+    label: "Check Your DMs",
+    heading: "We'll reach out — keep an eye on your inbox",
+    body: "Once you've booked, it's our turn. We'll contact you on Instagram, WhatsApp, and email to organise a quick onboarding call. We'll walk you through everything, sort your payment plan, and get you added to your private WhatsApp group chat. Make sure you follow us so we can message you!",
+    image: IMAGES.call,
+    imageAlt: "Incoming call from Group Trip on a smartphone",
     cta: null,
-    highlights: ["£60 deposit to secure your place", "Flexible monthly payment plans", "Final balance 60 days before departure"],
+    highlights: [
+      "We'll reach out via Instagram, WhatsApp & email",
+      "Quick onboarding call to walk you through everything",
+      "Added to your private WhatsApp group chat",
+    ],
     flip: true,
   },
   {
     number: "03",
-    label: "Join the Crew",
-    heading: "Meet your travel family before you fly",
-    body: "Once booked, you'll be added to your tour WhatsApp group so you can start connecting with your travel crew before you even leave home. No awkward first days — you'll already be friends.",
+    label: "Check Your Welcome Pack",
+    heading: "Your welcome pack & flight support document",
+    body: "We'll send you an email with your welcome pack and flight support document. Make sure you read through these carefully — they've got everything you need to know before you fly. Any questions? Just reach out, we're always ready to help.",
     image: IMAGES.group,
-    imageAlt: "Group of friends on tour together",
+    imageAlt: "Group of friends excited before their trip",
     cta: null,
-    highlights: ["Private WhatsApp group access", "Meet your crew before departure", "Solo travellers always welcome"],
+    highlights: [
+      "Welcome pack sent straight to your inbox",
+      "Flight support document included",
+      "Trip Managers on hand to answer any questions",
+    ],
     flip: false,
   },
   {
     number: "04",
-    label: "Pack & Go",
-    heading: "We handle the logistics, you make the memories",
-    body: "Your ACE Rep and local guide take care of accommodation, activities, and all the day-to-day logistics. All you need to do is book your flights and show up ready for the adventure of a lifetime.",
-    image: IMAGES.adventure,
-    imageAlt: "Travellers on an adventure in Southeast Asia",
-    cta: { label: "View What's Included", href: "/tours" },
-    highlights: ["Accommodation included", "Activities and excursions included", "Expert ACE Rep on every tour"],
+    label: "Get Organised",
+    heading: "Sort your flights, insurance & spending money",
+    body: "When spending time abroad it's important to get organised early — flights, travel insurance, a travel money card, and spending money. Closer to your departure, speak to your Trip Manager about what to pack. We have loads of useful info on our socials and in your welcome pack!",
+    image: IMAGES.deposit,
+    imageAlt: "Travellers packing and getting ready for their trip",
+    cta: { label: "Talk to a Trip Manager", href: "/contact", external: false },
+    highlights: [
+      "Book flights & travel insurance early",
+      "Speak to your Trip Manager about packing",
+      "Tips & advice on our socials & in your welcome pack",
+    ],
     flip: true,
+  },
+  {
+    number: "05",
+    label: "Arrive in Paradise",
+    heading: "Airport transfer waiting. Trip Manager ready.",
+    body: "You'll arrive in paradise with an airport transfer waiting for you and your Trip Manager ready to welcome you. You'll be transferred to your first accommodation and briefed that evening for the trip of a lifetime.",
+    image: IMAGES.arrive,
+    imageAlt: "Beautiful tropical destination in Southeast Asia",
+    cta: null,
+    highlights: [
+      "Airport transfer included on arrival",
+      "Trip Manager there to meet and greet you",
+      "Evening briefing before the adventure begins",
+    ],
+    flip: false,
   },
 ];
 
@@ -77,7 +110,7 @@ export default function HowItWorks() {
               How It Works
             </h1>
             <p className="text-white/80 text-lg md:text-xl max-w-xl">
-              Four simple steps from browsing tours to living your best adventure.
+              Five simple steps from booking to arriving in paradise.
             </p>
           </div>
         </div>
@@ -129,16 +162,29 @@ export default function HowItWorks() {
                   ))}
                 </ul>
                 {step.cta && (
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-[#ee2f6d] hover:bg-[#d42860] text-white font-bold rounded-xl h-12 px-6"
-                  >
-                    <Link href={step.cta.href}>
-                      {step.cta.label}
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
-                  </Button>
+                  step.cta.external ? (
+                    <Button
+                      asChild
+                      size="lg"
+                      className="bg-[#ee2f6d] hover:bg-[#d42860] text-white font-bold rounded-xl h-12 px-6"
+                    >
+                      <a href={step.cta.href} target="_blank" rel="noopener noreferrer">
+                        {step.cta.label}
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button
+                      asChild
+                      size="lg"
+                      className="bg-[#ee2f6d] hover:bg-[#d42860] text-white font-bold rounded-xl h-12 px-6"
+                    >
+                      <Link href={step.cta.href}>
+                        {step.cta.label}
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
+                    </Button>
+                  )
                 )}
               </div>
             </div>
@@ -215,7 +261,7 @@ export default function HowItWorks() {
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { stat: "500+", label: "Travellers" },
+              { stat: "800+", label: "Travellers" },
               { stat: "4.9★", label: "Trustpilot Rating" },
               { stat: "£60", label: "To Secure Your Spot" },
               { stat: "18-35", label: "Age Range" },

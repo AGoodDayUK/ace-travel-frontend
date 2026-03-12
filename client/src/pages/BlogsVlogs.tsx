@@ -18,14 +18,14 @@ const vlogs = [
   { id: "J3kCYte0bD8", title: "Final Day in Thailand With ACE Travel Experiences" },
 ];
 
-// Frog images from Unsplash (free to use)
+// Verified frog images uploaded to CDN
 const frogs = [
-  { image: "https://images.unsplash.com/photo-1459682687441-7761439a709b?w=600&q=80", caption: "Red-eyed tree frog, Costa Rica" },
-  { image: "https://images.unsplash.com/photo-1497752531616-c3afd9760a11?w=600&q=80", caption: "Glass frog, Ecuador" },
-  { image: "https://images.unsplash.com/photo-1551085254-e96b210db58a?w=600&q=80", caption: "Poison dart frog, Amazon" },
-  { image: "https://images.unsplash.com/photo-1628605539226-b8e7b1e3e6b3?w=600&q=80", caption: "Tree frog, Southeast Asia" },
-  { image: "https://images.unsplash.com/photo-1516728778615-2d590ea1855e?w=600&q=80", caption: "White's tree frog, Australia" },
-  { image: "https://images.unsplash.com/photo-1471086569966-db3eebc25a59?w=600&q=80", caption: "Green frog, tropical forest" },
+  { image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ybUcZpiBKPyqdEQA.jpg", caption: "Red-eyed tree frog" },
+  { image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/JPREcUPwmJOcXSSL.jpg", caption: "Green tree frog on a leaf" },
+  { image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/qwJTCXuRTztBpiSO.jpg", caption: "Tree frog on a stem" },
+  { image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/lcnfRQfRBezKLwdp.jpg", caption: "Poison dart frog" },
+  { image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/rQRgTFtpwqbMHiav.jpg", caption: "Poison dart frog, orange & black" },
+  { image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/YobDsArwarPlsRVP.jpg", caption: "Red-eyed tree frog, close up" },
 ];
 
 function VlogCard({ vlog }: { vlog: typeof vlogs[0] }) {
@@ -177,8 +177,20 @@ export default function BlogsVlogs() {
           </div>
         </div>
 
-        <div className="mt-8 mb-6">
-          <h3 className="text-xl font-bold text-green-600">Take the leap:</h3>
+        <div className="mt-8 mb-6 bg-green-50 border-2 border-green-200 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4">
+          <span className="text-5xl">🐸</span>
+          <div className="text-center sm:text-left">
+            <h3 className="text-2xl font-black text-green-700 tracking-tight">Take the Leap.</h3>
+            <p className="text-green-600 mt-1">Frogs do it. You should too. Book your ACE adventure for just £60.</p>
+          </div>
+          <a
+            href="https://booking.acetravelexperiences.com/book/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-auto inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-xl transition-colors whitespace-nowrap"
+          >
+            Book Now 🐸
+          </a>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
