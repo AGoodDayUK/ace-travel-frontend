@@ -9,7 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Calendar, Users, MapPin, Star, Clock, Check, X, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { Calendar, Users, MapPin, Star, Clock, Check, X, ChevronLeft, ChevronRight, ArrowRight, Waves } from "lucide-react";
 import { PaymentCalculator } from "@/components/PaymentCalculator";
 import { parseDepartureDate, parsePrice } from "@/lib/dateUtils";
 
@@ -1267,6 +1267,61 @@ export default function TourDetail() {
                   </div>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Scuba Diving Add-On - Thailand Island Hopper & Bali Island Hopper only */}
+      {(tour.id === "thailand-island-hopper" || tour.id === "bali-island-hopper") && (
+        <section className="py-16 md:py-20 bg-gradient-to-br from-[#006994]/10 via-[#0099cc]/5 to-[#44c5c3]/10 border-y border-[#44c5c3]/20">
+          <div className="container max-w-4xl">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-8">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#006994] flex items-center justify-center flex-shrink-0">
+                  <Waves className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#006994] block">Optional Add-On</span>
+                  <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-tight">Scuba Diving</h2>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-muted-foreground text-lg mb-8 max-w-2xl">
+              Take your trip to the next level with a certified scuba diving experience.
+              {tour.id === "thailand-island-hopper" ? " Based in Koh Tao, one of the world's best spots to learn to dive." : " Based in the Gili Islands, with crystal-clear waters and incredible marine life."}
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+              {/* Basic Diver */}
+              <div className="bg-white rounded-2xl border-2 border-[#44c5c3]/40 p-6 space-y-3 hover:border-[#44c5c3] transition-colors">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-black tracking-tight">Basic Diver</h3>
+                  <span className="bg-[#44c5c3]/10 text-[#006994] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Taster</span>
+                </div>
+                <div className="text-3xl font-black text-[#006994]">£100</div>
+                <p className="text-muted-foreground text-sm">A guided introduction to scuba diving for first-timers. No experience needed.</p>
+              </div>
+
+              {/* Open Water */}
+              <div className="bg-white rounded-2xl border-2 border-[#ee2f6d] p-6 space-y-3 relative overflow-hidden">
+                <div className="absolute top-4 right-4 bg-[#ee2f6d] text-white text-xs font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wide">Most Popular</div>
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xl font-black tracking-tight">Open Water</h3>
+                </div>
+                <div className="text-3xl font-black text-[#ee2f6d]">£350</div>
+                <p className="text-muted-foreground text-sm">Full PADI Open Water certification. Qualify as a diver and take that certificate home with you.</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+              <Link href="/add-ons/scuba-diving">
+                <Button size="lg" className="bg-[#006994] hover:bg-[#005a7a] text-white font-bold rounded-xl h-12 px-6">
+                  Find Out More <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+              <p className="text-sm text-muted-foreground">Add this to your trip after booking. Just let your Trip Manager know.</p>
             </div>
           </div>
         </section>

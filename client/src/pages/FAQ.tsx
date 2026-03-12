@@ -108,7 +108,7 @@ export default function FAQ() {
         { q: "Which airport do I fly into?", a: "Fly into Phuket." },
         { q: "Where does the tour start and end?", a: "The tour starts in Phuket with airport pickup included, and finishes in Phuket Old Town with airport drop-off included." },
         { q: "What islands will we visit?", a: "Phuket, Phi Phi, Khao Sok, Koh Samui, Koh Tao and Koh Phangan." },
-        { q: "Is diving included?", a: "Diving is optional. We partner with exemplary dive shops like Echo Divers in Koh Tao." },
+        { q: "Is scuba diving available?", a: "Yes! Scuba diving is available as an optional add-on on the Thailand Island Hopper trip. We work with a certified local dive school in Koh Tao. You can choose between a Basic Diver taster session (£100) or a full PADI Open Water course (£350). See our Scuba Diving add-on page for full details." },
         { q: "Is the Full Moon Party included?", a: "Not included, but an accommodation package can be added on to the end of some tours as a self-guided part of your trip." },
         { q: "How much spending money do I need?", a: "Around £600-800 depending on your food and drink spend." },
         { q: "Is there free time?", a: "Yes, plenty! Our trips are designed with free time for you to explore Thailand and learn how to travel along the way. Our local guides and trip managers give you the tools, skills, empowerment and confidence to explore in your own time." },
@@ -122,7 +122,7 @@ export default function FAQ() {
         { q: "Where does the tour start and end?", a: "The tour starts in Kuta with airport pickup included, and finishes in Kuta with airport drop-off included." },
         { q: "What islands do we visit?", a: "Bali mainland, Nusa Lembongan, Nusa Penida, Lombok and the Gili Islands." },
         { q: "Is fast boat included?", a: "Yes, fast boat transfers are included." },
-        { q: "Is scuba diving available?", a: "Diving is optional. We partner with exemplary dive shops like Meno Divers in Gili Meno." },
+        { q: "Is scuba diving available?", a: "Yes! Scuba diving is available as an optional add-on on the Bali Island Hopper trip. We work with a certified local dive school in the Gili Islands. You can choose between a Basic Diver taster session (£100) or a full PADI Open Water course (£350). See our Scuba Diving add-on page for full details." },
         { q: "Are scooters allowed?", a: "No, scooter hire is not allowed." }
       ]
     },

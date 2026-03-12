@@ -579,3 +579,10 @@
 - [x] Remove currency selector from Header navigation
 - [x] Remove CurrencyProvider from main.tsx
 - [x] Revert all formatPrice() calls to hardcoded GBP strings across all pages and components
+
+## Scuba Diving Add-On
+- [x] Update FAQ scuba diving section to use generic partner names
+- [x] Create bones Scuba Diving add-on page (to be populated later)
+- [x] Add route for /add-ons/scuba-diving in App.tsx
+- [x] Add scuba diving add-on section to Thailand Intro tour page (Basic Diver £100, Open Water £350)
+- [x] Add scuba diving add-on section to Bali Island Hopper tour page (Basic Diver £100, Open Water £350)

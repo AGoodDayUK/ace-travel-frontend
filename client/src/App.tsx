@@ -25,6 +25,7 @@ import TermsConditions from "@/pages/TermsConditions";
 import BlogsVlogs from "@/pages/BlogsVlogs";
 import Payments from "@/pages/Payments";
 import FlightSupport from "@/pages/FlightSupport";
+import ScubaDiving from "@/pages/ScubaDiving";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -79,6 +80,7 @@ function MainLayout() {
           <Route path={"/blogs-vlogs"} component={BlogsVlogs} />
           <Route path={"/payments"} component={Payments} />
           <Route path={"/flight-support"} component={FlightSupport} />
+          <Route path={"/add-ons/scuba-diving"} component={ScubaDiving} />
           <Route path={"/404"} component={NotFound} />
           <Route component={NotFound} />
         </Switch>
