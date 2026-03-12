@@ -550,3 +550,26 @@
 - [x] Improve "Take the Leap" CTA on Vlogs page - frog-themed banner with Book Now button
 - [x] Update How It Works page from 4 steps to 5 steps matching live site (added DMs step, welcome pack step, trip manager, arrive in paradise)
 - [x] Unify vlogs feed - remove per-tour splitting, all vlogs in one grid
+
+## New Info Dropdown Nav + Missing Pages (Mar 2026)
+- [ ] Scrape live Payments page content
+- [ ] Scrape live Flight Support page content
+- [x] Build Payments page
+- [x] Build Flight Support page
+- [ ] Add new Info/More dropdown to header nav (FAQ, About Us, Reviews, Vlogs/Blogs/Frogs, How It Works, Payments, Flight Support)
+- [ ] Register /payments and /flight-support routes in App.tsx
+- [ ] Ensure new dropdown is fully responsive on mobile
+
+## Multi-Currency Selector (Mar 2026)
+- [ ] Create CurrencyContext with GBP/EUR toggle and conversion hook
+- [ ] Add currency selector (GBP/EUR toggle) to header
+- [ ] Wire all tour prices through useCurrency hook (Tours, TourDetail, Home, Deals, Payments)
+- [ ] Wire deposit amount (£60/€70) through currency context
+- [ ] Persist selected currency in localStorage
+- [x] Add trust signals (Trustpilot-style rating + talk to a real person) to mobile menu Info section
+- [x] Build per-tour welcome pages from PDF content (robots blocked, off-menu, shareable link)
+- [ ] Thailand Island Hopper welcome page
+- [ ] Thailand Intro welcome page
+- [ ] Bali Explorer welcome page
+- [ ] Bali Island Hopper welcome page
+- [ ] Philippines Paradise welcome page

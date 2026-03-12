@@ -126,7 +126,7 @@ const sections = [
     title: "12. Marketing & Media",
     content: (
       <div className="text-gray-700 text-sm leading-relaxed">
-        <p>By joining a tour, you consent to photos and videos being taken by ATE staff or other participants for promotional use (unless you request otherwise in writing).</p>
+        <p>By joining a tour, you consent to photos and videos being taken by ACE staff or other participants for promotional use (unless you request otherwise in writing).</p>
       </div>
     ),
   },

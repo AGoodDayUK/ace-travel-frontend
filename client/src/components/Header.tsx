@@ -1,16 +1,20 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown, Calendar, MapPin, Compass, Tag } from 'lucide-react';
+import { Menu, X, ChevronDown, Calendar, MapPin, Compass, Tag, Info, HelpCircle, Users, Star, Plane, CreditCard, BookOpen } from 'lucide-react';
+import { useCurrency, type Currency } from '@/contexts/CurrencyContext';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showToursMegaMenu, setShowToursMegaMenu] = useState(false);
   const [showDestinationsMenu, setShowDestinationsMenu] = useState(false);
+  const [showInfoMenu, setShowInfoMenu] = useState(false);
   const [mobileDestinationsOpen, setMobileDestinationsOpen] = useState(false);
   const [mobileToursOpen, setMobileToursOpen] = useState(false);
+  const [mobileInfoOpen, setMobileInfoOpen] = useState(false);
   const [location] = useLocation();
+  const { currency, setCurrency, formatPrice } = useCurrency();
 
   const toursByDestination = {
     Thailand: [
@@ -53,6 +57,16 @@ export default function Header() {
     }
   ];
 
+  const infoLinks = [
+    { label: 'How It Works', href: '/how-it-works', icon: BookOpen, desc: '5 simple steps to paradise' },
+    { label: 'FAQs', href: '/faq', icon: HelpCircle, desc: 'Got questions? We have answers' },
+    { label: 'About Us', href: '/about', icon: Users, desc: 'Meet the ACE team' },
+    { label: 'Reviews', href: '/reviews', icon: Star, desc: 'What our travellers say' },
+    { label: 'Vlogs, Blogs & Frogs', href: '/blogs-vlogs', icon: BookOpen, desc: "Libby's travel diaries" },
+    { label: 'Payments', href: '/payments', icon: CreditCard, desc: 'Flexible payment plans' },
+    { label: 'Flight Support', href: '/flight-support', icon: Plane, desc: 'We help you find flights' },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -66,6 +80,7 @@ export default function Header() {
     setIsMobileMenuOpen(false);
     setMobileDestinationsOpen(false);
     setMobileToursOpen(false);
+    setMobileInfoOpen(false);
   }, [location]);
 
   // Prevent body scroll when mobile menu is open
@@ -79,6 +94,70 @@ export default function Header() {
       document.body.style.overflow = '';
     };
   }, [isMobileMenuOpen]);
+
+  // SVG flag components to avoid emoji rendering issues
+  const GBFlag = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" className="w-5 h-3 rounded-sm overflow-hidden flex-shrink-0">
+      <clipPath id="gb-clip"><path d="M0 0v30h60V0z"/></clipPath>
+      <path d="M0 0v30h60V0z" fill="#012169"/>
+      <path d="M0 0l60 30m0-30L0 30" stroke="#fff" strokeWidth="6"/>
+      <path d="M0 0l60 30m0-30L0 30" stroke="#C8102E" strokeWidth="4"/>
+      <path d="M30 0v30M0 15h60" stroke="#fff" strokeWidth="10"/>
+      <path d="M30 0v30M0 15h60" stroke="#C8102E" strokeWidth="6"/>
+    </svg>
+  );
+  const EUFlag = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className="w-5 h-3 rounded-sm overflow-hidden flex-shrink-0">
+      <rect width="3" height="2" fill="#003399"/>
+      <g fill="#FFCC00">
+        {[0,1,2,3,4,5,6,7,8,9,10,11].map(i => {
+          const angle = (i * 30 - 90) * Math.PI / 180;
+          const cx = 1.5 + 0.5 * Math.cos(angle);
+          const cy = 1 + 0.5 * Math.sin(angle);
+          return <polygon key={i} points={`${cx},${cy-0.08} ${cx+0.05},${cy+0.06} ${cx-0.07},${cy-0.02} ${cx+0.07},${cy-0.02} ${cx-0.05},${cy+0.06}`} />;
+        })}
+      </g>
+    </svg>
+  );
+
+  const currencyOptions: { value: Currency; FlagComp: () => React.ReactElement; label: string }[] = [
+    { value: 'GBP', FlagComp: GBFlag, label: 'GBP' },
+    { value: 'EUR', FlagComp: EUFlag, label: 'EUR' },
+  ];
+  const [showCurrencyMenu, setShowCurrencyMenu] = useState(false);
+  const currentCurrency = currencyOptions.find(o => o.value === currency)!;
+
+  const CurrencyToggle = ({ className = '' }: { className?: string }) => (
+    <div className={`relative ${className}`}>
+      <button
+        onClick={() => setShowCurrencyMenu(v => !v)}
+        className="flex items-center gap-1 px-2 py-1.5 rounded-md text-sm font-semibold text-slate-700 hover:bg-slate-100 transition-colors"
+      >
+        <currentCurrency.FlagComp />
+        <span className="text-xs font-bold">{currentCurrency.label}</span>
+        <ChevronDown className="w-3 h-3 text-slate-500" />
+      </button>
+      {showCurrencyMenu && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setShowCurrencyMenu(false)} />
+          <div className="absolute right-0 top-full mt-1 bg-white border border-border rounded-lg shadow-lg z-50 py-1 min-w-[90px]">
+            {currencyOptions.map(opt => (
+              <button
+                key={opt.value}
+                onClick={() => { setCurrency(opt.value); setShowCurrencyMenu(false); }}
+                className={`w-full flex items-center gap-2 px-3 py-2 text-sm hover:bg-violet-50 transition-colors ${
+                  currency === opt.value ? 'font-bold text-violet-700' : 'text-slate-700'
+                }`}
+              >
+                <opt.FlagComp />
+                <span>{opt.label}</span>
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
 
   return (
     <>
@@ -103,12 +182,12 @@ export default function Header() {
               <img 
                 src="/ace-logo-full.png" 
                 alt="ACE Travel Experiences" 
-                className="h-9 sm:h-10 lg:h-12 w-auto" 
+                className="h-7 sm:h-8 lg:h-9 w-auto" 
               />
             </Link>
 
             {/* Desktop Navigation — only shown on lg+ */}
-            <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+            <nav className="hidden lg:flex items-center gap-5 xl:gap-6">
 
               {/* Destinations Dropdown */}
               <div 
@@ -147,7 +226,7 @@ export default function Header() {
                               <p className="text-xs text-muted-foreground mb-1.5 line-clamp-1">{dest.highlight}</p>
                               <div className="flex items-center justify-between text-xs">
                                 <span className="text-muted-foreground">{dest.tours}</span>
-                                <span className="font-bold text-primary">From {dest.from}</span>
+                                <span className="font-bold text-primary">From {formatPrice(dest.from)}</span>
                               </div>
                             </div>
                           </div>
@@ -204,7 +283,7 @@ export default function Header() {
                                         <Calendar className="w-3 h-3" />
                                         {tour.days}
                                       </span>
-                                      <span className="font-bold text-primary">{tour.price}</span>
+                                      <span className="font-bold text-primary">{formatPrice(tour.price)}</span>
                                     </div>
                                   </div>
                                 </div>
@@ -218,16 +297,6 @@ export default function Header() {
                 )}
               </div>
 
-              {/* How It Works */}
-              <Link 
-                href="/how-it-works"
-                className={`text-sm font-medium tracking-tight transition-kinetic kinetic-underline ${
-                  location === '/how-it-works' ? 'text-primary' : 'text-foreground hover:text-primary'
-                }`}
-              >
-                How It Works
-              </Link>
-
               {/* Deals */}
               <Link 
                 href="/deals"
@@ -240,17 +309,61 @@ export default function Header() {
                 <Tag className="w-4 h-4" />
                 Deals
               </Link>
+
+              {/* Info Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setShowInfoMenu(true)}
+                onMouseLeave={() => setShowInfoMenu(false)}
+              >
+                <button
+                  className={`text-sm font-bold tracking-tight transition-kinetic flex items-center gap-1.5 px-3 py-1.5 rounded-md ${
+                    ['/how-it-works','/faq','/about','/reviews','/blogs-vlogs','/payments','/flight-support'].some(p => location === p)
+                      ? 'bg-violet-100 text-violet-700'
+                      : 'bg-violet-50 text-violet-600 hover:bg-violet-100 hover:text-violet-700'
+                  }`}
+                >
+                  <Info className="w-4 h-4" />
+                  Info
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+                {showInfoMenu && (
+                  <div className="absolute top-full right-0 pt-2 bg-background border border-border shadow-xl rounded-lg p-3 w-64 animate-fade-in z-50">
+                    <div className="space-y-0.5">
+                      {infoLinks.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className={`flex items-start gap-3 px-3 py-2.5 rounded-md transition-colors group ${
+                            location === item.href ? 'bg-violet-50 text-violet-700' : 'hover:bg-violet-50'
+                          }`}
+                        >
+                          <item.icon className="w-4 h-4 mt-0.5 text-violet-500 flex-shrink-0" />
+                          <div>
+                            <div className="text-sm font-semibold group-hover:text-violet-700 transition-colors">{item.label}</div>
+                            <div className="text-xs text-muted-foreground">{item.desc}</div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
             </nav>
 
             {/* Desktop CTAs — only shown on lg+ */}
             <div className="hidden lg:flex items-center gap-3">
+              {/* Currency Toggle */}
+              <CurrencyToggle />
+
               <a 
                 href="https://booking.acetravelexperiences.com/account/signin/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1 underline-offset-4 hover:underline whitespace-nowrap"
               >
-                Manage my booking
+                Manage booking
                 <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
               <a href="https://booking.acetravelexperiences.com/book/" target="_blank" rel="noopener noreferrer">
@@ -297,19 +410,23 @@ export default function Header() {
             alt="ACE Travel Experiences" 
             className="h-9 w-auto" 
           />
-          <button
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="p-2 text-slate-700 hover:text-primary transition-colors rounded-md"
-            aria-label="Close menu"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            {/* Currency toggle in mobile header */}
+            <CurrencyToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 text-slate-700 hover:text-primary transition-colors rounded-md"
+              aria-label="Close menu"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Drawer Content */}
         <nav className="flex-1 overflow-y-auto px-5 pt-4 pb-5 flex flex-col">
           {/* PRIMARY NAV — Destinations, Tours, Deals */}
-          <div className="space-y-2 mb-6">
+          <div className="space-y-2 mb-4">
 
             {/* Destinations Accordion */}
             <div className="rounded-xl overflow-hidden border border-slate-200">
@@ -343,7 +460,7 @@ export default function Header() {
                           <p className="text-xs text-muted-foreground mb-1.5 line-clamp-2">{dest.highlight}</p>
                           <div className="flex items-center justify-between text-xs">
                             <span className="text-muted-foreground">{dest.tours}</span>
-                            <span className="font-bold text-primary">From {dest.from}</span>
+                            <span className="font-bold text-primary">From {formatPrice(dest.from)}</span>
                           </div>
                         </div>
                       </div>
@@ -394,7 +511,7 @@ export default function Header() {
                                     <Calendar className="w-3 h-3" />
                                     {tour.days}
                                   </span>
-                                  <span className="font-bold text-primary">{tour.price}</span>
+                                  <span className="font-bold text-primary">{formatPrice(tour.price)}</span>
                                 </div>
                               </div>
                             </div>
@@ -417,43 +534,37 @@ export default function Header() {
               <span className="text-base font-bold text-[#c01850]">Deals</span>
             </Link>
 
-          </div>{/* end primary nav */}
-
-
-          {/* SECONDARY NAV — divider + smaller links */}
-          <div className="border-t border-border pt-4">
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-3 px-1">More</p>
-            <div className="space-y-0.5">
-              <Link 
-                href="/how-it-works"
-                className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-primary hover:bg-accent/40 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                How It Works
-              </Link>
-              <Link 
-                href="/faq"
-                className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-primary hover:bg-accent/40 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                FAQs
-              </Link>
-              <Link 
-                href="/about"
-                className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-primary hover:bg-accent/40 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About Us
-              </Link>
-              <Link 
-                href="/contact"
-                className="flex items-center px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:text-primary hover:bg-accent/40 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </div>
           </div>
+
+          {/* INFO NAV — collapsible */}
+          <div className="rounded-xl overflow-hidden border border-violet-200 mb-4">
+            <button
+              onClick={() => setMobileInfoOpen(!mobileInfoOpen)}
+              className="w-full flex items-center justify-between bg-violet-50 hover:bg-violet-100 transition-colors px-4 py-3.5"
+            >
+              <span className="flex items-center gap-2.5">
+                <Info className="w-5 h-5 text-violet-600" />
+                <span className="text-base font-bold text-violet-700">Info</span>
+              </span>
+              <ChevronDown className={`w-5 h-5 text-violet-500 transition-transform duration-200 ${mobileInfoOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {mobileInfoOpen && (
+              <div className="px-2 pt-1 pb-2 space-y-0.5">
+                {infoLinks.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-accent/40 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <item.icon className="w-4 h-4 text-violet-500 flex-shrink-0" />
+                    <span className="text-sm font-medium text-slate-700">{item.label}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
         </nav>
 
         {/* Drawer Footer - CTAs */}

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Users, Calendar, Heart, Shield, Star, ChevronDown, MapPin } from "lucide-react";
 import { useState } from "react";
+import { useCurrency } from "@/contexts/CurrencyContext";
 
 const MOMENTS_PHOTOS = [
   { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/AfrqckRqZWYBfsZI.jpg", alt: "ACE group on tour" },
@@ -73,6 +74,7 @@ function AceMomentsGallery() {
 
 export default function Home() {
   const { user } = useAuth();
+  const { formatPrice } = useCurrency();
 
   const destinations = [
     {
@@ -145,8 +147,8 @@ export default function Home() {
     },
     {
       icon: Calendar,
-      title: "£60 Deposits",
-      description: "Secure your spot with just £60 and spread the cost with flexible payment plans.",
+      title: "Low Deposits",
+      description: "Secure your spot with a low deposit and spread the cost with flexible payment plans.",
     },
     {
       icon: Heart,
@@ -187,7 +189,7 @@ export default function Home() {
               Epic Trips.<br />Lifelong Friends.
             </h1>
             <p className="text-lg md:text-2xl text-white/80 max-w-2xl leading-relaxed">
-              Group travel experiences in Thailand, Bali, and the Philippines. Just £60 to secure your spot.
+              Group travel experiences in Thailand, Bali, and the Philippines. Just {formatPrice('£60')} to secure your spot.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Button
@@ -212,7 +214,7 @@ export default function Home() {
             {/* Stats */}
             <div className="flex items-center gap-5 sm:gap-8 pt-6 text-white/90">
               <div className="flex-shrink-0">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold">£60</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold">{formatPrice('£60')}</div>
                 <div className="text-xs sm:text-sm text-white/60 mt-0.5">Deposits</div>
               </div>
               <div className="h-10 w-px bg-white/20 flex-shrink-0" />
@@ -263,7 +265,7 @@ export default function Home() {
                     <h3 className="text-3xl font-bold tracking-tight">{dest.name}</h3>
                     <p className="text-white/80 mt-1">{dest.tagline}</p>
                     <div className="flex items-center justify-between mt-4">
-                      <span className="text-xl font-bold">From {dest.from}</span>
+                      <span className="text-xl font-bold">From {formatPrice(dest.from)}</span>
                       <span className="flex items-center gap-1 text-primary font-semibold text-sm group-hover:gap-2 transition-all">
                         Explore <ArrowRight className="w-4 h-4" />
                       </span>
@@ -328,7 +330,7 @@ export default function Home() {
                     <div className="flex items-center justify-between pt-2 border-t border-border">
                       <div>
                         <div className="text-xs text-muted-foreground">From</div>
-                        <div className="text-2xl font-bold text-primary">{tour.price}</div>
+                        <div className="text-2xl font-bold text-primary">{formatPrice(tour.price)}</div>
                       </div>
                       <span className="flex items-center gap-1 text-primary font-semibold text-sm group-hover:gap-2 transition-all">
                         View Tour <ArrowRight className="w-4 h-4" />

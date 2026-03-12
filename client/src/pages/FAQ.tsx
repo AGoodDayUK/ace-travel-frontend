@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import {
   Search, ChevronDown, MessageCircle, Plane, CreditCard, Backpack,
-  Hotel, Users, Compass, Shield, Leaf, MapPin, Star, ArrowRight
+  Hotel, Users, Compass, Shield, MapPin, Star, ArrowRight
 } from "lucide-react";
 
 const categoryConfig: Record<string, { icon: React.ElementType; color: string; bg: string }> = {
@@ -17,7 +17,6 @@ const categoryConfig: Record<string, { icon: React.ElementType; color: string; b
   "Group & Age": { icon: Users, color: "text-yellow-500", bg: "bg-yellow-500/10" },
   "Before Departure": { icon: MessageCircle, color: "text-pink-400", bg: "bg-pink-400/10" },
   "Safety": { icon: Shield, color: "text-red-500", bg: "bg-red-500/10" },
-  "Sustainability": { icon: Leaf, color: "text-green-500", bg: "bg-green-500/10" },
   "Thailand Island Hopper": { icon: MapPin, color: "text-[#ee2f6d]", bg: "bg-[#ee2f6d]/10" },
   "Bali Island Hopper": { icon: MapPin, color: "text-[#44c5c3]", bg: "bg-[#44c5c3]/10" },
   "Bali Explorer": { icon: MapPin, color: "text-emerald-500", bg: "bg-emerald-500/10" },
@@ -32,8 +31,8 @@ export default function FAQ() {
     {
       category: "About ACE Travel Experiences",
       questions: [
-        { q: "Who are ACE Travel Experiences?", a: "ACE Travel Experiences (ATE) is a UK-based group travel company offering curated trips to Thailand, Bali and The Philippines for 18-35 year olds." },
-        { q: "What makes ATE different from other tour companies?", a: "We offer super social groups, flexible free time combined with organised activities, a UK-based support team, local guides and trip managers on every tour, and a focus on affordability for young travellers." },
+        { q: "Who are ACE Travel Experiences?", a: "ACE Travel Experiences is a UK-based group travel company offering curated trips to Thailand, Bali and The Philippines for 18-35 year olds." },
+        { q: "What makes ACE different from other tour companies?", a: "We offer super social groups, flexible free time combined with organised activities, a UK-based support team, local guides and trip managers on every tour, and a focus on affordability for young travellers." },
         { q: "Is this like a party tour or a chill tour?", a: "A mix of both! Our tours are designed to give you the best of everything. There are lively social nights and beach parties, but also peaceful cultural experiences, nature adventures, and plenty of free time to explore at your own pace." },
         { q: "Will I make friends?", a: "Yes, absolutely. Our tours create a family atmosphere for likeminded travellers to bond over bucket list experiences." },
         { q: "What if I get homesick?", a: "Our trained trip managers are always on hand to specifically support the guests on each tour." },
@@ -101,12 +100,6 @@ export default function FAQ() {
       questions: [
         { q: "Is it safe?", a: "Yes absolutely! Our trip managers live in these destinations and provide guidance, and we have curated safe journeys and activities for each tour." },
         { q: "Do I need travel insurance?", a: "Yes, travel insurance is mandatory for all guests. We also provide business insurance through ACE, as well as through our local travel partners." }
-      ]
-    },
-    {
-      category: "Sustainability",
-      questions: [
-        { q: "How is ATE sustainable?", a: "We visit responsible elephant sanctuaries, partner with local travel companies to support local businesses, and help keep beaches and oceans clean with litter picks." }
       ]
     },
     {

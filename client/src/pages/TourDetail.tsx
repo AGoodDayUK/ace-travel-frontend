@@ -12,9 +12,11 @@ import {
 import { Calendar, Users, MapPin, Star, Clock, Check, X, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { PaymentCalculator } from "@/components/PaymentCalculator";
 import { parseDepartureDate, parsePrice } from "@/lib/dateUtils";
+import { useCurrency } from "@/contexts/CurrencyContext";
 
 export default function TourDetail() {
   const [, params] = useRoute("/tour/:id");
+  const { formatPrice } = useCurrency();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const galleryRef = useRef<HTMLDivElement>(null);
   const reviewsRef = useRef<HTMLDivElement>(null);
@@ -1106,8 +1108,8 @@ export default function TourDetail() {
             <Card className="p-6 border-2 sticky top-24 space-y-6">
               <div>
                 <div className="text-sm text-muted-foreground">From</div>
-                <div className="text-4xl font-bold text-primary">{tour.price}</div>
-                <div className="text-sm text-muted-foreground">Just {tour.deposit} deposit</div>
+                <div className="text-4xl font-bold text-primary">{formatPrice(tour.price)}</div>
+                <div className="text-sm text-muted-foreground">Just {formatPrice(tour.deposit)} deposit</div>
               </div>
 
               <div className="space-y-3 py-4 border-y border-border">
@@ -1152,7 +1154,7 @@ export default function TourDetail() {
               )}
 
               <div className="space-y-2 text-center text-sm text-muted-foreground">
-                <p>Secure your spot with just {tour.deposit}</p>
+                <p>Secure your spot with just {formatPrice(tour.deposit)}</p>
                 <p>Flexible payment plans available</p>
 
               </div>
@@ -1251,7 +1253,7 @@ export default function TourDetail() {
                       {(departure as any).duration && (
                         <span className="text-muted-foreground text-sm font-medium">{(departure as any).duration}</span>
                       )}
-                      <span className="font-bold text-primary text-lg">{departure.price}</span>
+                      <span className="font-bold text-primary text-lg">{formatPrice(departure.price)}</span>
                       <PaymentCalculator
                         tourPrice={parsePrice(departure.price)}
                         departureDate={parseDepartureDate(departure.date)}
@@ -1321,7 +1323,7 @@ export default function TourDetail() {
                   </div>
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-2xl font-bold text-primary">£999</p>
+                      <p className="text-2xl font-bold text-primary">{formatPrice('£999')}</p>
                       <p className="text-sm text-muted-foreground">per person</p>
                     </div>
                     <Link href="/tour/thailand-intro">
@@ -1387,7 +1389,7 @@ export default function TourDetail() {
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-sm text-muted-foreground">From</div>
-                      <div className="text-3xl font-bold text-primary">£1,599</div>
+                      <div className="text-3xl font-bold text-primary">{formatPrice('£1,599')}</div>
                     </div>
                     <Link href="/tour/thailand-island-hopper">
                       <Button size="lg" className="bg-primary hover:bg-primary/90">
@@ -1598,8 +1600,8 @@ export default function TourDetail() {
         <div className="container py-3">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <div className="text-xl font-bold text-primary">{tour.price}</div>
-              <div className="text-xs text-muted-foreground">{tour.deposit} deposit</div>
+              <div className="text-xl font-bold text-primary">{formatPrice(tour.price)}</div>
+              <div className="text-xs text-muted-foreground">{formatPrice(tour.deposit)} deposit</div>
             </div>
             {(!tour.departureDates || tour.departureDates.length === 0) ? (
               <Button 
