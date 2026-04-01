@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Users, Calendar, Heart, Shield, Star, ChevronDown, MapPin } from "lucide-react";
 import { useState } from "react";
+import { trpc } from "@/lib/trpc";
 
 const MOMENTS_PHOTOS = [
   { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/AfrqckRqZWYBfsZI.jpg", alt: "ACE group on tour" },
@@ -71,6 +72,12 @@ function AceMomentsGallery() {
 }
 
 export default function Home() {
+  const { data: settings } = trpc.cms.settings.getPublic.useQuery();
+
+  // Helper to get a setting value with fallback
+  const getSetting = (key: string, fallback: string) =>
+    settings?.find(s => s.key === key)?.value ?? fallback;
+
   const destinations = [
     {
       name: "Thailand",
@@ -209,17 +216,17 @@ export default function Home() {
             {/* Stats */}
             <div className="flex items-center gap-5 sm:gap-8 pt-6 text-white/90">
               <div className="flex-shrink-0">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold">£60</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold">{getSetting('stats_deposit', '£60')}</div>
                 <div className="text-xs sm:text-sm text-white/60 mt-0.5">Deposits</div>
               </div>
               <div className="h-10 w-px bg-white/20 flex-shrink-0" />
               <div className="flex-shrink-0">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold">4.9★</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold">{getSetting('stats_rating', '4.9★')}</div>
                 <div className="text-xs sm:text-sm text-white/60 mt-0.5">Avg Rating</div>
               </div>
               <div className="h-10 w-px bg-white/20 flex-shrink-0" />
               <div className="flex-shrink-0">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold">800+</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold">{getSetting('stats_travellers', '800+')}</div>
                 <div className="text-xs sm:text-sm text-white/60 mt-0.5">Travellers</div>
               </div>
             </div>

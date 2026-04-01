@@ -2,113 +2,45 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Calendar, Users, MapPin, Star, ArrowRight, Clock } from "lucide-react";
+import { trpc } from "@/lib/trpc";
+import { Skeleton } from "@/components/ui/skeleton";
 
-const tours = [
-  {
-    id: 1,
-    slug: "thailand-island-hopper",
-    name: "Thailand Island Hopper",
-    destination: "Thailand",
-    duration: "21 days",
-    price: "£1,599",
-    deposit: "£60",
-    groupSize: "15-30",
-    ageRange: "18-35",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/nbdFlsyYCgCVjCdb.jpeg",
-    highlights: ["Elephant Sanctuary", "Phi Phi Islands", "Full Moon Party", "Quad Biking", "Bangla Road", "Floating Bungalows"],
-    rating: 4.9,
-    reviews: 247,
-    availability: "Limited Spots",
-    nextDeparture: "1st April 2026",
-    badge: "Most Popular",
-    description: "The ultimate 21-day Thai adventure. Bangkok streets, Chiang Mai temples, Phi Phi's turquoise waters, and the legendary Full Moon Party on Koh Phangan."
-  },
-  {
-    id: 2,
-    slug: "bali-explorer",
-    name: "Bali Explorer",
-    destination: "Bali",
-    duration: "14 days",
-    price: "£1,199",
-    deposit: "£60",
-    groupSize: "15-30",
-    ageRange: "18-35",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ZyduANpQpBJQSfsk.jpeg",
-    highlights: ["Mount Batur Trek", "Surf Lessons", "Nusa Lembongan", "Rice Terraces", "World Famous Beach Clubs", "Giant Manta Rays"],
-    rating: 4.9,
-    reviews: 203,
-    availability: "Limited Spots",
-    nextDeparture: "13th June 2026",
-    badge: "Summer Special",
-    description: "14 days of pure Bali magic. Trek an active volcano at sunrise, surf Kuta's waves, snorkel with manta rays, and dance at Seminyak's iconic beach clubs."
-  },
-  {
-    id: 3,
-    slug: "bali-island-hopper",
-    name: "Bali Island Hopper",
-    destination: "Bali",
-    duration: "14 days",
-    price: "£1,199",
-    deposit: "£60",
-    groupSize: "15-30",
-    ageRange: "18-35",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FIusTznaFJxspxFF.jpeg",
-    highlights: ["Surf Lessons", "Snorkelling with Turtles", "Nusa Penida Cliffs", "Giant Manta Rays", "Lombok Waterfalls", "Gili Trawangan"],
-    rating: 4.9,
-    reviews: 189,
-    availability: "Available",
-    nextDeparture: "23rd May 2026",
-    badge: null,
-    description: "Hop between Bali's most stunning islands over 14 days. Surf Kuta, snorkel Nusa Lembongan, hike Nusa Penida's cliffs, explore Lombok, and party on car-free Gili T."
-  },
-  {
-    id: 4,
-    slug: "thailand-intro",
-    name: "Thailand Intro",
-    destination: "Thailand",
-    duration: "12 days",
-    price: "£999",
-    deposit: "£60",
-    groupSize: "15-30",
-    ageRange: "18-35",
-    image: "/thailand-intro-hero.webp",
-    highlights: ["Elephant Sanctuary", "Bangkok City Tour", "Pai Sunsets", "Tipsy Tubing", "Temple Visits", "Sticky Waterfalls"],
-    rating: 5.0,
-    reviews: 203,
-    availability: "Available",
-    nextDeparture: "22nd March 2026",
-    badge: "5 Star Rated",
-    description: "The perfect 12-day introduction to Thailand. Bangkok's temples, Chiang Mai's culture, and Pai's mountain paradise — with elephant sanctuaries and unforgettable sunsets."
-  },
-  {
-    id: 5,
-    slug: "philippines-paradise",
-    name: "Philippines Paradise",
-    destination: "Philippines",
-    duration: "10 days",
-    price: "£999",
-    deposit: "£60",
-    groupSize: "15-30",
-    ageRange: "18-35",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/gMgbXqqaIFwmNoLk.webp",
-    highlights: ["Sardine Run", "Canyoneering", "Whale Sharks", "El Nido Island Tour", "Siargao Surf", "Chocolate Hills"],
-    rating: 4.9,
-    reviews: 167,
-    availability: "Available",
-    nextDeparture: "19th January 2027",
-    badge: "New Tour",
-    description: "10 days across the Philippines' most breathtaking islands. Swim with whale sharks, surf Cloud 9, kayak El Nido's lagoons, and discover Bohol's Chocolate Hills."
-  }
-];
+// Philippines is not yet in the CMS so we keep it as a static fallback
+const philippinesFallback = {
+  id: 99,
+  slug: "philippines-paradise",
+  name: "Philippines Paradise",
+  destination: "Philippines",
+  duration: "10 days",
+  price: "£999",
+  deposit: "£60",
+  groupSize: "15-30",
+  ageRange: "18-35",
+  heroImage: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/gMgbXqqaIFwmNoLk.webp",
+  highlights: JSON.stringify(["Sardine Run", "Canyoneering", "Whale Sharks", "El Nido Island Tour", "Siargao Surf", "Chocolate Hills"]),
+  rating: "4.9",
+  reviews: 167,
+  nextDeparture: "19th January 2027",
+  description: "10 days across the Philippines' most breathtaking islands. Swim with whale sharks, surf Cloud 9, kayak El Nido's lagoons, and discover Bohol's Chocolate Hills.",
+  published: true,
+  sortOrder: 5,
+};
 
 const destinations = ["All", "Thailand", "Bali", "Philippines"];
 
 export default function Tours() {
   const [selectedDestination, setSelectedDestination] = useState<string>("All");
 
+  const { data: cmsToursRaw, isLoading } = trpc.cms.tours.listPublic.useQuery();
+
+  // Merge CMS tours with the Philippines fallback (not yet in CMS)
+  const allTours = cmsToursRaw
+    ? [...cmsToursRaw, philippinesFallback]
+    : [philippinesFallback];
+
   const filteredTours = selectedDestination === "All"
-    ? tours
-    : tours.filter(tour => tour.destination === selectedDestination);
+    ? allTours
+    : allTours.filter(tour => tour.destination === selectedDestination);
 
   return (
     <div className="animate-fade-in min-h-screen bg-background">
@@ -169,27 +101,34 @@ export default function Tours() {
       {/* Tour Cards */}
       <section className="container py-12 md:py-16">
         <div className="space-y-8">
-          {filteredTours.map((tour, index) => (
+          {isLoading && (
+            <div className="space-y-8">
+              {[1, 2, 3].map(i => (
+                <Skeleton key={i} className="h-72 w-full rounded-none" />
+              ))}
+            </div>
+          )}
+          {!isLoading && filteredTours.map((tour, index) => (
             <div
-              key={tour.id}
+              key={tour.slug}
               className="group grid grid-cols-1 lg:grid-cols-5 overflow-hidden border border-border hover:border-primary/40 transition-all duration-300 hover:shadow-xl"
             >
               {/* Image */}
               <div className={`relative lg:col-span-2 h-64 lg:h-auto overflow-hidden ${index % 2 === 1 ? "lg:order-last" : ""}`}>
                 <img
-                  src={tour.image}
+                  src={tour.heroImage}
                   alt={tour.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                {tour.badge && (
+                {(tour as any).badge && (
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1.5 tracking-wide uppercase">
-                      {tour.badge}
+                      {(tour as any).badge}
                     </span>
                   </div>
                 )}
-                {tour.availability === "Limited Spots" && (
+                {(tour as any).availability === "Limited Spots" && (
                   <div className="absolute top-4 right-4">
                     <span className="bg-destructive/90 text-destructive-foreground text-xs font-bold px-3 py-1.5 tracking-wide uppercase">
                       Limited Spots
@@ -229,12 +168,12 @@ export default function Tours() {
 
                   {/* Highlights */}
                   <div className="flex flex-wrap gap-2">
-                    {tour.highlights.map((highlight) => (
+                    {(Array.isArray(tour.highlights) ? tour.highlights : (typeof tour.highlights === 'string' ? JSON.parse(tour.highlights) : [])).slice(0, 6).map((highlight: any) => (
                       <span
-                        key={highlight}
+                        key={typeof highlight === 'string' ? highlight : highlight.title}
                         className="text-xs px-2.5 py-1 bg-muted text-muted-foreground border border-border font-medium"
                       >
-                        {highlight}
+                        {typeof highlight === 'string' ? highlight : highlight.title}
                       </span>
                     ))}
                   </div>

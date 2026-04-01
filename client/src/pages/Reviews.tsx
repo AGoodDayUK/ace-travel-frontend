@@ -1,9 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Quote } from "lucide-react";
+import { trpc } from "@/lib/trpc";
 
 export default function Reviews() {
-  const reviews = [
+  const { data: cmsReviews } = trpc.cms.reviews.listPublic.useQuery();
+
+  const hardcodedReviews = [
     {
       name: "Sophie M.",
       age: 24,
@@ -95,6 +98,20 @@ export default function Reviews() {
       highlight: "Found my travel tribe"
     }
   ];
+
+  // Use CMS reviews if available, otherwise fall back to hardcoded
+  const reviews = cmsReviews && cmsReviews.length > 0
+    ? cmsReviews.map(r => ({
+        name: r.authorName,
+        age: r.authorAge ?? null,
+        tour: r.tourName ?? "",
+        rating: r.rating,
+        date: r.reviewDate ?? "",
+        image: r.authorPhoto ?? "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+        review: r.reviewText,
+        highlight: ""
+      }))
+    : hardcodedReviews;
 
   const stats = [
     { value: "4.9/5", label: "Average Rating" },

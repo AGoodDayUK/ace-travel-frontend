@@ -15,6 +15,20 @@
       "when": 1770484727658,
       "tag": "0001_rare_black_crow",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1775044056673,
+      "tag": "0002_handy_fabian_cortez",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1775049320586,
+      "tag": "0003_nebulous_madripoor",
+      "breakpoints": true
     }
   ]
 }

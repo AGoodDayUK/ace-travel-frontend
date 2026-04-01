@@ -95,6 +95,22 @@ interface FormState {
 }
 
 export default function Deals() {
+  const { data: cmsDeals } = trpc.cms.deals.listPublic.useQuery();
+
+  // Merge CMS text content over hardcoded colour/icon config
+  const mergedDeals = deals.map(deal => {
+    const cms = cmsDeals?.find(d => d.slug === deal.id);
+    if (!cms) return deal;
+    return {
+      ...deal,
+      title: cms.title ?? deal.title,
+      tagline: cms.tagline ?? deal.tagline,
+      discount: cms.discount ?? deal.discount,
+      description: cms.description ?? deal.description,
+      image: cms.image ?? deal.image,
+    };
+  });
+
   const [selectedDeal, setSelectedDeal] = useState<typeof deals[0] | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState<FormState>({

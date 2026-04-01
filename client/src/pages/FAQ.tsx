@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { trpc } from "@/lib/trpc";
 import {
   Search, ChevronDown, MessageCircle, Plane, CreditCard, Backpack,
   Hotel, Users, Compass, Shield, MapPin, Star, ArrowRight
@@ -27,7 +28,23 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  const faqCategories = [
+  const { data: cmsFaqs } = trpc.cms.faqs.listPublic.useQuery();
+
+  // Build categories from CMS data, falling back to hardcoded data
+  const buildCmsCategories = () => {
+    if (!cmsFaqs || cmsFaqs.length === 0) return null;
+    const grouped: Record<string, { q: string; a: string }[]> = {};
+    for (const faq of cmsFaqs) {
+      const cat = faq.category || "General";
+      if (!grouped[cat]) grouped[cat] = [];
+      grouped[cat].push({ q: faq.question, a: faq.answer });
+    }
+    return Object.entries(grouped).map(([category, questions]) => ({ category, questions }));
+  };
+
+  const cmsCategories = buildCmsCategories();
+
+  const faqCategoriesHardcoded = [
     {
       category: "About ACE Travel Experiences",
       questions: [
@@ -138,6 +155,8 @@ export default function FAQ() {
       ]
     }
   ];
+
+  const faqCategories = cmsCategories ?? faqCategoriesHardcoded;
 
   const allQuestions = faqCategories.flatMap((cat, catIndex) =>
     cat.questions.map((q, qIndex) => ({

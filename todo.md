@@ -10,14 +10,14 @@
 
 ## In Progress
 - [x] Create database schema for tours, deals, and content
-- [ ] Build admin dashboard for content management
-- [ ] Create tRPC procedures for CRUD operations
-- [ ] Build admin UI for managing tours
-- [ ] Build admin UI for managing deals
-- [ ] Build admin UI for managing images
-- [ ] Connect frontend to dynamic data from database
-- [ ] Test admin functionality
-- [ ] Save final checkpoint
+- [x] Build admin dashboard for content management
+- [x] Create tRPC procedures for CRUD operations
+- [x] Build admin UI for managing tours
+- [x] Build admin UI for managing deals
+- [x] Build admin UI for managing images
+- [x] Connect frontend to dynamic data from database
+- [x] Test admin functionality
+- [x] Save final checkpoint
 
 ## Gen Z Visual Redesign
 - [x] Update typography to bold, playful style with text outlines/shadows
@@ -586,3 +586,34 @@
 - [x] Add route for /add-ons/scuba-diving in App.tsx
 - [x] Add scuba diving add-on section to Thailand Intro tour page (Basic Diver £100, Open Water £350)
 - [x] Add scuba diving add-on section to Bali Island Hopper tour page (Basic Diver £100, Open Water £350)
+
+## Scuba Diving Page - Full Content Population
+- [ ] Extract underwater photos from PDF and upload to CDN
+- [ ] Build full Scuba Diving page with Six Reasons section, course breakdowns, FAQs, and 20% hostel perk
+
+## CMS Build (Node.js, portable for 20i hosting)
+- [x] Design database schema for all CMS content models (tours, deals, FAQs, reviews, pages, images, site settings)
+- [x] Build CMS auth system (username/password, JWT sessions, no Manus OAuth dependency)
+- [x] Build backend CRUD procedures for all content types
+- [x] Build image upload and management (S3 or local file storage, swappable for 20i)
+- [x] Build page builder with template blocks (hero, text, image, gallery, pricing, CTA, FAQ, reviews)
+- [x] Build CMS admin dashboard UI
+- [x] Build tour editor (all fields: name, description, price, dates, highlights, itinerary, images)
+- [x] Build deals editor
+- [x] Build FAQ editor
+- [x] Build reviews editor
+- [x] Build site settings editor (homepage hero text, stats, footer content)
+- [x] Build page manager (create/edit/delete custom pages with block builder)
+- [x] Wire frontend to CMS data (replace hardcoded content with DB-driven content)
+- [x] Ensure all Manus-specific dependencies are removable for 20i deployment
+
+## Frontend CMS Wiring
+- [x] Seed CMS database with all existing hardcoded tour content
+- [x] Seed CMS database with all existing hardcoded FAQ content
+- [x] Seed CMS database with all existing hardcoded reviews
+- [x] Seed CMS database with all existing hardcoded deals
+- [x] Wire Tours list page to CMS data
+- [x] Wire TourDetail page to CMS data
+- [x] Wire FAQ page to CMS data
+- [x] Wire Reviews section to CMS data
+- [x] Wire Deals page to CMS data

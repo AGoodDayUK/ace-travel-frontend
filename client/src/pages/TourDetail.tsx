@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { useRoute, Link } from "wouter";
+import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -772,7 +773,67 @@ export default function TourDetail() {
   };
 
   const tourId = params?.id || "thailand-island-hopper";
-  const tour = tours[tourId as keyof typeof tours] || tours["thailand-island-hopper"];
+  const hardcodedTour = tours[tourId as keyof typeof tours] || tours["thailand-island-hopper"];
+
+  // Fetch CMS data and overlay it on top of the hardcoded fallback
+  const { data: cmsTour } = trpc.cms.tours.getBySlug.useQuery({ slug: tourId });
+
+  const tour = cmsTour ? {
+    ...hardcodedTour,
+    name: cmsTour.name ?? hardcodedTour.name,
+    destination: cmsTour.destination ?? hardcodedTour.destination,
+    duration: cmsTour.duration ?? hardcodedTour.duration,
+    price: cmsTour.price ?? hardcodedTour.price,
+    deposit: cmsTour.deposit ?? hardcodedTour.deposit,
+    groupSize: cmsTour.groupSize ?? hardcodedTour.groupSize,
+    ageRange: cmsTour.ageRange ?? hardcodedTour.ageRange,
+    rating: cmsTour.rating ? parseFloat(cmsTour.rating) : hardcodedTour.rating,
+    reviews: cmsTour.reviews ?? hardcodedTour.reviews,
+    nextDeparture: cmsTour.nextDeparture ?? hardcodedTour.nextDeparture,
+    hero: cmsTour.heroImage ?? hardcodedTour.hero,
+    description: cmsTour.description ?? hardcodedTour.description,
+    highlights: (() => {
+      if (!cmsTour.highlights) return hardcodedTour.highlights;
+      try {
+        const parsed = typeof cmsTour.highlights === 'string' ? JSON.parse(cmsTour.highlights) : cmsTour.highlights;
+        // If CMS highlights are simple strings, use them; otherwise fall back
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      } catch { /* ignore */ }
+      return hardcodedTour.highlights;
+    })(),
+    itinerary: (() => {
+      if (!cmsTour.itinerary) return hardcodedTour.itinerary;
+      try {
+        const parsed = typeof cmsTour.itinerary === 'string' ? JSON.parse(cmsTour.itinerary) : cmsTour.itinerary;
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      } catch { /* ignore */ }
+      return hardcodedTour.itinerary;
+    })(),
+    included: (() => {
+      if (!cmsTour.included) return hardcodedTour.included;
+      try {
+        const parsed = typeof cmsTour.included === 'string' ? JSON.parse(cmsTour.included) : cmsTour.included;
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      } catch { /* ignore */ }
+      return hardcodedTour.included;
+    })(),
+    notIncluded: (() => {
+      if (!cmsTour.notIncluded) return hardcodedTour.notIncluded;
+      try {
+        const parsed = typeof cmsTour.notIncluded === 'string' ? JSON.parse(cmsTour.notIncluded) : cmsTour.notIncluded;
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      } catch { /* ignore */ }
+      return hardcodedTour.notIncluded;
+    })(),
+    gallery: (() => {
+      if (!cmsTour.gallery) return hardcodedTour.gallery;
+      try {
+        const parsed = typeof cmsTour.gallery === 'string' ? JSON.parse(cmsTour.gallery) : cmsTour.gallery;
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      } catch { /* ignore */ }
+      return hardcodedTour.gallery;
+    })(),
+  } : hardcodedTour;
 
   const scrollGallery = (direction: 'left' | 'right') => {
     if (!galleryRef.current) return;
