@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,6 +13,19 @@ import { toast } from "sonner";
 const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/EngoliYHRVMWhoJy.jpg";
 
 export default function Contact() {
+  const settingsQuery = trpc.cms.settings.getPublic.useQuery();
+  const s = useMemo(() => {
+    const map: Record<string, string> = {};
+    settingsQuery.data?.forEach(r => { map[r.key] = r.value ?? ""; });
+    return map;
+  }, [settingsQuery.data]);
+
+  const email = s.contact_email || "admin@acetravelexperiences.com";
+  const phone = s.contact_phone || "+44 7450 996 347";
+  const whatsapp = s.contact_whatsapp || "447450996347";
+  const instagram = s.contact_instagram || "https://www.instagram.com/acetravelexperiences/";
+  const tiktok = s.contact_tiktok || "https://www.tiktok.com/@acetravelexperiences";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,7 +51,7 @@ export default function Contact() {
       title: "Chat on WhatsApp",
       description: "Get a quick answer from the ACE team",
       cta: "Start Chat",
-      href: "https://wa.me/447450996347",
+      href: `https://wa.me/${whatsapp}`,
       color: "bg-green-50 border-green-200 hover:border-green-400",
       iconColor: "text-green-600",
       external: true
@@ -259,10 +273,10 @@ export default function Contact() {
                 <div>
                   <div className="font-bold text-sm text-muted-foreground uppercase tracking-wide mb-1">Email</div>
                   <a
-                    href="mailto:admin@acetravelexperiences.com"
+                    href={`mailto:${email}`}
                     className="font-semibold text-foreground hover:text-[#44c5c3] transition-colors break-all"
                   >
-                    admin@acetravelexperiences.com
+                    {email}
                   </a>
                   <p className="text-xs text-muted-foreground mt-1">We reply within 24 hours on weekdays</p>
                 </div>
@@ -278,10 +292,10 @@ export default function Contact() {
                 <div>
                   <div className="font-bold text-sm text-muted-foreground uppercase tracking-wide mb-1">Phone / WhatsApp</div>
                   <a
-                    href="tel:+447450996347"
+                    href={`tel:${phone.replace(/\s/g, '')}`}
                     className="font-semibold text-foreground hover:text-green-600 transition-colors"
                   >
-                    +44 7450 996 347
+                    {phone}
                   </a>
                   <p className="text-xs text-muted-foreground mt-1">Mon to Fri, 9am to 6pm GMT</p>
                 </div>
@@ -319,7 +333,7 @@ export default function Contact() {
               <div className="font-bold text-sm text-muted-foreground uppercase tracking-wide mb-3">Follow Our Adventures</div>
               <div className="flex gap-3">
                 <a
-                  href="https://www.instagram.com/acetravelexperiences/"
+                  href={instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
@@ -327,7 +341,7 @@ export default function Contact() {
                   Instagram
                 </a>
                 <a
-                  href="https://www.tiktok.com/@acetravelexperiences"
+                  href={tiktok}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-4 py-2 rounded-lg bg-black text-white text-sm font-semibold hover:opacity-80 transition-opacity"

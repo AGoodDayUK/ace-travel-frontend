@@ -148,6 +148,17 @@ export const cmsRouter = router({
         itinerary: z.array(z.object({ day: z.string(), title: z.string(), description: z.string() })),
         included: z.array(z.string()),
         notIncluded: z.array(z.string()),
+        departureDates: z.array(z.object({
+          date: z.string(),
+          price: z.string(),
+          duration: z.string(),
+          badge: z.string().optional(),
+        })).optional().nullable(),
+        flightInfo: z.object({
+          flyIn: z.string(),
+          flyOut: z.string(),
+          notes: z.string(),
+        }).optional().nullable(),
         published: z.boolean().default(true),
         sortOrder: z.number().default(0),
       }))

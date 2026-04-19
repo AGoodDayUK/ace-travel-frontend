@@ -15,6 +15,8 @@ import { toast } from "sonner";
 
 type ItineraryDay = { day: string; title: string; description: string; image?: string };
 type Highlight = { title: string; description: string; image?: string };
+type DepartureDate = { date: string; price: string; duration: string; badge?: string };
+type FlightInfo = { flyIn: string; flyOut: string; notes: string };
 type TourRow = {
   id: number; slug: string; name: string; destination: string; duration: string;
   price: string; deposit: string; groupSize: string; ageRange: string; rating: string;
@@ -30,6 +32,8 @@ const emptyTour = {
   highlights: [] as Highlight[],
   itinerary: [] as ItineraryDay[],
   included: [] as string[], notIncluded: [] as string[],
+  departureDates: [] as DepartureDate[],
+  flightInfo: { flyIn: "", flyOut: "", notes: "" } as FlightInfo,
   published: true, sortOrder: 0,
 };
 
@@ -283,6 +287,8 @@ export default function CmsTours() {
       itinerary: (t.itinerary as ItineraryDay[]) ?? [],
       included: (t.included as string[]) ?? [],
       notIncluded: (t.notIncluded as string[]) ?? [],
+      departureDates: ((t as any).departureDates as DepartureDate[]) ?? [],
+      flightInfo: ((t as any).flightInfo as FlightInfo) ?? { flyIn: "", flyOut: "", notes: "" },
       published: t.published, sortOrder: t.sortOrder,
     });
     setEditOpen(true);
@@ -352,6 +358,7 @@ export default function CmsTours() {
               <TabsTrigger value="basics" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-gray-950">Basics</TabsTrigger>
               <TabsTrigger value="content" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-gray-950">Content</TabsTrigger>
               <TabsTrigger value="itinerary" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-gray-950">Itinerary</TabsTrigger>
+              <TabsTrigger value="dates" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-gray-950">Dates</TabsTrigger>
               <TabsTrigger value="media" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-gray-950">Images</TabsTrigger>
             </TabsList>
 
@@ -435,6 +442,109 @@ export default function CmsTours() {
             {/* ── Tab: Itinerary ── */}
             <TabsContent value="itinerary" className="pt-4">
               <ItineraryEditor value={form.itinerary} onChange={(v) => set("itinerary", v)} />
+            </TabsContent>
+
+            {/* ── Tab: Departure Dates ── */}
+            <TabsContent value="dates" className="space-y-5 pt-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <Label className="text-gray-300">Departure Dates</Label>
+                    <p className="text-gray-500 text-xs mt-0.5">Add all available departure dates for this tour</p>
+                  </div>
+                  <Button type="button" size="sm" variant="ghost" onClick={() => set("departureDates", [...(form.departureDates ?? []), { date: "", price: form.price, duration: form.duration, badge: "" }])} className="text-teal-400 hover:text-teal-300 h-7 text-xs">
+                    <Plus className="w-3 h-3 mr-1" />Add Date
+                  </Button>
+                </div>
+                {(form.departureDates ?? []).length === 0 && (
+                  <p className="text-gray-600 text-xs italic">No departure dates yet. Click Add Date to start.</p>
+                )}
+                <div className="space-y-3">
+                  {(form.departureDates ?? []).map((d, i) => (
+                    <div key={i} className="bg-gray-800 border border-gray-700 rounded-xl p-4 space-y-3">
+                      <div className="flex items-center gap-2">
+                        <div className="flex-1 grid grid-cols-2 gap-2">
+                          <div className="space-y-1">
+                            <Label className="text-gray-400 text-xs">Date</Label>
+                            <Input
+                              value={d.date}
+                              onChange={(e) => { const a = [...(form.departureDates ?? [])]; a[i] = { ...a[i], date: e.target.value }; set("departureDates", a); }}
+                              className="bg-gray-700 border-gray-600 text-white text-sm"
+                              placeholder="e.g. 12 April 2026"
+                            />
+                          </div>
+                          <div className="space-y-1">
+                            <Label className="text-gray-400 text-xs">Price</Label>
+                            <Input
+                              value={d.price}
+                              onChange={(e) => { const a = [...(form.departureDates ?? [])]; a[i] = { ...a[i], price: e.target.value }; set("departureDates", a); }}
+                              className="bg-gray-700 border-gray-600 text-white text-sm"
+                              placeholder="£1,599"
+                            />
+                          </div>
+                        </div>
+                        <Button type="button" size="sm" variant="ghost" onClick={() => set("departureDates", (form.departureDates ?? []).filter((_, idx) => idx !== i))} className="text-red-500/60 hover:text-red-400 h-8 w-8 p-0 flex-shrink-0 mt-5">
+                          <X className="w-3.5 h-3.5" />
+                        </Button>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="space-y-1">
+                          <Label className="text-gray-400 text-xs">Duration</Label>
+                          <Input
+                            value={d.duration}
+                            onChange={(e) => { const a = [...(form.departureDates ?? [])]; a[i] = { ...a[i], duration: e.target.value }; set("departureDates", a); }}
+                            className="bg-gray-700 border-gray-600 text-white text-sm"
+                            placeholder="21 days"
+                          />
+                        </div>
+                        <div className="space-y-1">
+                          <Label className="text-gray-400 text-xs">Badge (optional)</Label>
+                          <Input
+                            value={d.badge ?? ""}
+                            onChange={(e) => { const a = [...(form.departureDates ?? [])]; a[i] = { ...a[i], badge: e.target.value }; set("departureDates", a); }}
+                            className="bg-gray-700 border-gray-600 text-white text-sm"
+                            placeholder="e.g. Selling Fast, Last Spaces"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-3 border-t border-gray-800 pt-5">
+                <Label className="text-gray-300">Flight Information</Label>
+                <p className="text-gray-500 text-xs">Displayed on the Flight Support page</p>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-1.5">
+                    <Label className="text-gray-400 text-xs">Fly In (arrival airport)</Label>
+                    <Input
+                      value={(form.flightInfo ?? { flyIn: "" }).flyIn}
+                      onChange={(e) => set("flightInfo", { ...(form.flightInfo ?? {}), flyIn: e.target.value })}
+                      className="bg-gray-800 border-gray-700 text-white text-sm"
+                      placeholder="e.g. Bangkok (BKK)"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label className="text-gray-400 text-xs">Fly Out (departure airport)</Label>
+                    <Input
+                      value={(form.flightInfo ?? { flyOut: "" }).flyOut}
+                      onChange={(e) => set("flightInfo", { ...(form.flightInfo ?? {}), flyOut: e.target.value })}
+                      className="bg-gray-800 border-gray-700 text-white text-sm"
+                      placeholder="e.g. Bali (DPS)"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-1.5">
+                  <Label className="text-gray-400 text-xs">Flight Notes</Label>
+                  <Textarea
+                    value={(form.flightInfo ?? { notes: "" }).notes}
+                    onChange={(e) => set("flightInfo", { ...(form.flightInfo ?? {}), notes: e.target.value })}
+                    className="bg-gray-800 border-gray-700 text-white text-sm min-h-[70px]"
+                    placeholder="Any additional flight information..."
+                  />
+                </div>
+              </div>
             </TabsContent>
 
             {/* ── Tab: Images ── */}

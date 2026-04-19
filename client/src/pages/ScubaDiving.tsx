@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Waves, ThumbsUp, Fish, Compass, GraduationCap, Anchor, Sun, Check } from "lucide-react";
+import { trpc } from "@/lib/trpc";
 import {
   Accordion,
   AccordionContent,
@@ -107,6 +108,13 @@ const basicDiverFAQs = [
 ];
 
 export default function ScubaDiving() {
+  const settingsQuery = trpc.cms.settings.getPublic.useQuery();
+  const s = (key: string, fallback: string) => {
+    if (!settingsQuery.data) return fallback;
+    const found = settingsQuery.data.find((x: any) => x.key === key);
+    return found?.value || fallback;
+  };
+
   return (
     <div className="animate-fade-in">
 
@@ -189,8 +197,8 @@ export default function ScubaDiving() {
             <div className="bg-white border-2 border-[#44c5c3]/40 rounded-2xl p-8 hover:border-[#44c5c3] transition-colors">
               <span className="text-xs font-bold uppercase tracking-widest text-[#006994] bg-[#44c5c3]/10 px-3 py-1 rounded-full">Taster</span>
               <h3 className="text-2xl font-black mt-4 mb-1">Basic Diver</h3>
-              <div className="text-4xl font-black text-[#006994] mb-3">£100</div>
-              <p className="text-muted-foreground text-sm mb-5">A one-day introduction to scuba diving. No experience needed — just a sense of adventure.</p>
+              <div className="text-4xl font-black text-[#006994] mb-3">{s('scuba_basic_price', '£100')}</div>
+              <p className="text-muted-foreground text-sm mb-5">{s('scuba_basic_description', 'A one-day introduction to scuba diving. No experience needed — just a sense of adventure.')}</p>
               <ul className="space-y-2 text-sm">
                 {["Theory session", "Confined water skills practice", "Guided open water dive to 12m", "Full scuba gear provided", "Professional SSI instructor"].map((item) => (
                   <li key={item} className="flex items-center gap-2">
@@ -204,8 +212,8 @@ export default function ScubaDiving() {
               <div className="absolute top-4 right-4 bg-[#ee2f6d] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Most Popular</div>
               <span className="text-xs font-bold uppercase tracking-widest text-[#ee2f6d] bg-[#ee2f6d]/10 px-3 py-1 rounded-full">Certification</span>
               <h3 className="text-2xl font-black mt-4 mb-1">Open Water</h3>
-              <div className="text-4xl font-black text-[#ee2f6d] mb-3">£350</div>
-              <p className="text-muted-foreground text-sm mb-5">Full SSI Open Water certification over 3 days. Take your qualification home and dive anywhere in the world.</p>
+              <div className="text-4xl font-black text-[#ee2f6d] mb-3">{s('scuba_open_water_price', '£350')}</div>
+              <p className="text-muted-foreground text-sm mb-5">{s('scuba_open_water_description', 'Full SSI Open Water certification over 3 days. Take your qualification home and dive anywhere in the world.')}</p>
               <ul className="space-y-2 text-sm">
                 {["3-day course", "Theory + confined water training", "4 open water dives to 18m", "SSI certification (valid for life)", "No hidden fees — all inclusive"].map((item) => (
                   <li key={item} className="flex items-center gap-2">
@@ -223,7 +231,7 @@ export default function ScubaDiving() {
       <section className="py-16 md:py-24 bg-white">
         <div className="container max-w-5xl">
           <div className="text-center mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#ee2f6d] bg-[#ee2f6d]/10 px-3 py-1 rounded-full">£350</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#ee2f6d] bg-[#ee2f6d]/10 px-3 py-1 rounded-full">{s('scuba_open_water_price', '£350')}</span>
             <h2 className="text-3xl md:text-4xl font-black tracking-tighter mt-4 mb-3">How Your Open Water Course Works</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               This three-day course includes theory lessons, one confined session, and then 4 open water dives exploring the beautiful dive sites around Koh Tao. Performance-based — no previous experience needed.

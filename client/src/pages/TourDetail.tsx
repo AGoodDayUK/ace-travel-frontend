@@ -833,6 +833,23 @@ export default function TourDetail() {
       } catch { /* ignore */ }
       return hardcodedTour.gallery;
     })(),
+    departureDates: (() => {
+      const dd = (cmsTour as any).departureDates;
+      if (!dd) return hardcodedTour.departureDates;
+      try {
+        const parsed = typeof dd === 'string' ? JSON.parse(dd) : dd;
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      } catch { /* ignore */ }
+      return hardcodedTour.departureDates;
+    })(),
+    flightInfo: (() => {
+      const fi = (cmsTour as any).flightInfo;
+      if (!fi) return (hardcodedTour as any).flightInfo ?? null;
+      try {
+        return typeof fi === 'string' ? JSON.parse(fi) : fi;
+      } catch { /* ignore */ }
+      return null;
+    })(),
   } : hardcodedTour;
 
   const scrollGallery = (direction: 'left' | 'right') => {

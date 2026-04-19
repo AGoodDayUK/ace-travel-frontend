@@ -1,9 +1,17 @@
 import { Link } from 'wouter';
 import { Instagram, Facebook, Mail } from 'lucide-react';
 import { FaTiktok } from 'react-icons/fa';
+import { trpc } from '@/lib/trpc';
+import { useMemo } from 'react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const settingsQuery = trpc.cms.settings.getPublic.useQuery();
+  const s = useMemo(() => {
+    const map: Record<string, string> = {};
+    settingsQuery.data?.forEach(r => { map[r.key] = r.value ?? ''; });
+    return map;
+  }, [settingsQuery.data]);
 
   const footerLinks = {
     destinations: [
@@ -26,10 +34,10 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { href: 'https://www.instagram.com/acetravelexperiences/', icon: Instagram, label: 'Instagram' },
-    { href: 'https://www.tiktok.com/@acetravelexperiences', icon: FaTiktok, label: 'TikTok' },
-    { href: 'https://www.facebook.com/groups/565386292003692', icon: Facebook, label: 'Facebook' },
-    { href: 'mailto:admin@acetravelexperiences.com', icon: Mail, label: 'Email' },
+    { href: s.contact_instagram || 'https://www.instagram.com/acetravelexperiences/', icon: Instagram, label: 'Instagram' },
+    { href: s.contact_tiktok || 'https://www.tiktok.com/@acetravelexperiences', icon: FaTiktok, label: 'TikTok' },
+    { href: s.contact_facebook || 'https://www.facebook.com/groups/565386292003692', icon: Facebook, label: 'Facebook' },
+    { href: `mailto:${s.contact_email || 'admin@acetravelexperiences.com'}`, icon: Mail, label: 'Email' },
   ];
 
   return (

@@ -29,6 +29,13 @@
       "when": 1775049320586,
       "tag": "0003_nebulous_madripoor",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1776587022840,
+      "tag": "0004_striped_strong_guy",
+      "breakpoints": true
     }
   ]
 }

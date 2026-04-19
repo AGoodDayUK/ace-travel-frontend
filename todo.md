@@ -638,3 +638,15 @@
 - [ ] Polish site settings editor (homepage hero, stats, contact info)
 - [ ] Add media library with drag-and-drop image upload
 - [ ] Ensure CMS uses Manus OAuth for admin login (no separate password needed)
+
+## CMS Full Audit & Completion
+- [ ] Add departure_dates column to tours schema and push migration
+- [ ] Add departure dates editor to CMS tours (add/remove/edit dates with badge support)
+- [ ] Wire TourDetail.tsx departure dates to CMS (fallback to hardcoded if not in DB)
+- [ ] Add contact details to site settings (phone, WhatsApp, email, social URLs)
+- [ ] Wire Footer and Contact page to CMS site settings for contact/social info
+- [ ] Add About page section to CMS settings (team members, tagline, values)
+- [ ] Add flight info editor to CMS (fly-in/fly-out per tour)
+- [ ] Wire FlightSupport.tsx to CMS data
+- [ ] Add scuba add-on pricing to CMS settings
+- [ ] Wire ScubaDiving.tsx and TourDetail scuba section to CMS settings

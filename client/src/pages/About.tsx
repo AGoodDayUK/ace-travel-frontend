@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle, Users, Star, Shield, MapPin, MessageCircle } from "lucide-react";
+import { trpc } from "@/lib/trpc";
 
 const JAY_CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/RhbDAdBlBLuZiRxy.webp";
 const RUBY_CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/NcwbxXKmAmIpVQgh.webp";
@@ -37,6 +38,34 @@ const whyACE = [
 ];
 
 export default function About() {
+  const settingsQuery = trpc.cms.settings.getPublic.useQuery();
+  const s = (key: string, fallback: string) => {
+    if (!settingsQuery.data) return fallback;
+    const found = settingsQuery.data.find((x: any) => x.key === key);
+    return found?.value || fallback;
+  };
+
+  const teamMembers = [
+    {
+      name: s('about_team_member1_name', 'Jay'),
+      role: s('about_team_member1_role', 'Operations Manager'),
+      bio: s('about_team_member1_bio', 'The engine behind every tour. Jay makes sure every detail is sorted so you can focus on having the time of your life.'),
+      image: s('about_team_member1_image', JAY_CDN),
+    },
+    {
+      name: s('about_team_member2_name', 'Ruby'),
+      role: s('about_team_member2_role', 'Social Media Manager'),
+      bio: s('about_team_member2_bio', 'The face behind the content. Ruby captures the real moments that make you want to pack your bags and join us.'),
+      image: s('about_team_member2_image', RUBY_CDN),
+    },
+    {
+      name: s('about_team_member3_name', 'Mollie'),
+      role: s('about_team_member3_role', 'Trip Manager'),
+      bio: s('about_team_member3_bio', 'Your on-the-ground guide. Mollie is the one making sure every day of your trip runs like clockwork and every memory sticks.'),
+      image: s('about_team_member3_image', MOLLIE_CDN),
+    },
+  ];
+
   return (
     <div className="animate-fade-in">
 
@@ -128,64 +157,31 @@ export default function About() {
       <section className="bg-muted py-16 md:py-24">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">The A-ce Team</h2>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">{s('about_team_title', 'The A-ce Team')}</h2>
             <div className="h-1 w-16 bg-accent mx-auto" />
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Behind every incredible trip is a small, passionate team who genuinely love what they do. Say hello to the people who make it all happen.
+              {s('about_team_subtitle', 'Behind every incredible trip is a small, passionate team who genuinely love what they do. Say hello to the people who make it all happen.')}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {/* Jay */}
-            <div className="bg-background rounded-2xl overflow-hidden shadow-md group">
+            {teamMembers.map((member) => (
+            <div key={member.name} className="bg-background rounded-2xl overflow-hidden shadow-md group">
               <div className="aspect-[3/4] overflow-hidden">
                 <img
-                  src={JAY_CDN}
-                  alt="Jay, Operations Manager at ACE Travel Experiences"
+                  src={member.image}
+                  alt={`${member.name}, ${member.role} at ACE Travel Experiences`}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold text-primary">Jay</h3>
-                <p className="text-muted-foreground font-medium mt-1">Operations Manager</p>
+                <h3 className="text-2xl font-bold text-primary">{member.name}</h3>
+                <p className="text-muted-foreground font-medium mt-1">{member.role}</p>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                  The engine behind every tour. Jay makes sure every detail is sorted so you can focus on having the time of your life.
+                  {member.bio}
                 </p>
               </div>
             </div>
-            {/* Ruby */}
-            <div className="bg-background rounded-2xl overflow-hidden shadow-md group">
-              <div className="aspect-[3/4] overflow-hidden">
-                <img
-                  src={RUBY_CDN}
-                  alt="Ruby, Social Media Manager at ACE Travel Experiences"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold text-primary">Ruby</h3>
-                <p className="text-muted-foreground font-medium mt-1">Social Media Manager</p>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                  The face behind the content. Ruby captures the real moments that make you want to pack your bags and join us.
-                </p>
-              </div>
-            </div>
-            {/* Mollie */}
-            <div className="bg-background rounded-2xl overflow-hidden shadow-md group">
-              <div className="aspect-[3/4] overflow-hidden">
-                <img
-                  src={MOLLIE_CDN}
-                  alt="Mollie, Trip Manager at ACE Travel Experiences"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold text-primary">Mollie</h3>
-                <p className="text-muted-foreground font-medium mt-1">Trip Manager</p>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                  Your on-the-ground guide. Mollie is the one making sure every day of your trip runs like clockwork and every memory sticks.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
