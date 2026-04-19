@@ -725,3 +725,8 @@
 
 ## CMS Pages Restructure
 - [x] Restructure CmsPages: list all site pages at top with edit buttons, custom pages below
+
+## Sitemap
+- [x] Add dynamic /sitemap.xml Express endpoint (static pages + tour slugs + blog slugs from DB)
+- [x] Add /robots.txt endpoint referencing the sitemap
+- [x] Set SITE_URL=https://www.acetravelexperiences.com for production sitemap URLs
