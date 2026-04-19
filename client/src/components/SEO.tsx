@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 const SITE_NAME = "ACE Travel Experiences";
 const BASE_URL = "https://acetravel-8hr6bdkr.manus.space";
-const DEFAULT_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ace-og-default.jpg";
+const DEFAULT_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663269568751/8hr6bDKr3QeoLbGusjYq8K/og-ace-default-TvEkHkG6MnegbC6ZdNFBaG.png";
 
 interface SEOProps {
   title?: string;

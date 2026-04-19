@@ -330,7 +330,7 @@ export default function Header() {
 
       {/* Slide-out Drawer — mobile & tablet */}
       <div
-        className={`fixed top-0 right-0 w-[85vw] max-w-sm bg-background z-50 lg:hidden transform transition-transform duration-300 ease-in-out shadow-2xl flex flex-col ${
+        className={`fixed top-0 right-0 w-[85vw] max-w-sm bg-background z-50 lg:hidden transform transition-transform duration-300 ease-in-out shadow-2xl flex flex-col overflow-hidden ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{ height: '100dvh' }}
@@ -352,7 +352,7 @@ export default function Header() {
         </div>
 
         {/* Drawer Content */}
-        <nav className="flex-1 overflow-y-auto px-5 pt-4 pb-5 flex flex-col">
+        <nav className="flex-1 min-h-0 overflow-y-auto px-5 pt-4 pb-5 flex flex-col" style={{ WebkitOverflowScrolling: 'touch' }}>
           {/* PRIMARY NAV — Destinations, Tours, Deals */}
           <div className="space-y-2 mb-4">
 

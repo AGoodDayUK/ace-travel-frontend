@@ -741,3 +741,13 @@
 
 ## Mobile Menu Fix (Apr 2026)
 - [x] Fix mobile menu panel height clipping on Mac/Safari — Info item cut off below Deals
+
+## Open Graph Images (Apr 2026)
+- [x] Fetch all tour data (slug, name, hero image, description) from DB
+- [x] Generate branded 1200x630 OG image for each tour
+- [x] Upload OG images to CDN and record URLs
+- [x] Wire OG image URLs into SEO meta tags on TourDetail page
+- [x] Add site-wide fallback OG image for homepage and other pages
+
+## Mobile Menu Scroll Fix (Apr 2026)
+- [x] Fix mobile menu nav not scrolling on Mac/Safari — overflow-y-auto not triggering due to unconstrained height

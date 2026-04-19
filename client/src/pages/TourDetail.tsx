@@ -775,6 +775,14 @@ export default function TourDetail() {
   };
 
   const tourId = params?.id || "thailand-island-hopper";
+
+  // Branded Open Graph images (1200x630) — one per tour for rich social previews
+  const tourOgImages: Record<string, string> = {
+    "thailand-island-hopper": "https://d2xsxph8kpxj0f.cloudfront.net/310519663269568751/8hr6bDKr3QeoLbGusjYq8K/og-thailand-island-hopper-KEpUdeYTsvNjHWP67DvheP.png",
+    "bali-explorer": "https://d2xsxph8kpxj0f.cloudfront.net/310519663269568751/8hr6bDKr3QeoLbGusjYq8K/og-bali-explorer-bkir4MEek53Qog85bhfDJB.png",
+    "thailand-intro": "https://d2xsxph8kpxj0f.cloudfront.net/310519663269568751/8hr6bDKr3QeoLbGusjYq8K/og-thailand-intro-WDgnELhfZUQrrubFS8dNNa.png",
+    "bali-island-hopper": "https://d2xsxph8kpxj0f.cloudfront.net/310519663269568751/8hr6bDKr3QeoLbGusjYq8K/og-bali-island-hopper-X7jn7hjVqMG9QTyQeHveHw.png",
+  };
   const hardcodedTour = tours[tourId as keyof typeof tours] || tours["thailand-island-hopper"];
 
   // Fetch CMS data and overlay it on top of the hardcoded fallback
@@ -909,7 +917,7 @@ export default function TourDetail() {
         title={(tour as any).seoTitle ?? `${tour.name} | ACE Travel Experiences`}
         description={(tour as any).seoDescription ?? `${tour.description?.slice(0, 155)}...`}
         canonical={`/tour/${params?.id ?? ''}`}
-        image={tour.hero}
+        image={tourOgImages[tourId] ?? tour.hero}
       />
       {/* Structured data for this tour */}
       <JsonLd schema={tourSchema({
