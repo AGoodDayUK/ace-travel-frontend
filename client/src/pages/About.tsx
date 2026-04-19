@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle, Users, Star, Shield, MapPin, MessageCircle } from "lucide-react";
 import { JsonLd, webPageSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { SEO } from "@/components/SEO";
 import { trpc } from "@/lib/trpc";
 
 const JAY_CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/RhbDAdBlBLuZiRxy.webp";
@@ -69,6 +70,11 @@ export default function About() {
 
   return (
     <div className="animate-fade-in">
+      <SEO
+        title="About ACE Travel Experiences | Group Tours for 18-35s"
+        description="ACE Travel Experiences creates small-group adventures for 18–35 year olds. Meet our team, learn our story, and discover why 800+ travellers have chosen us for their Thailand and Bali adventures."
+        canonical="/about"
+      />
       <JsonLd schema={webPageSchema({ name: "About Us — ACE Travel Experiences", description: "Learn about ACE Travel Experiences — who we are, what we stand for, and why thousands of 18–35 year olds choose us for their group adventures.", path: "/about" })} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])} />
 

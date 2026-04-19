@@ -76,6 +76,8 @@ export const tours = mysqlTable("tours", {
   notIncluded: json("notIncluded").notNull(), // Array of strings
   departureDates: json("departureDates"), // Array of {date, price, duration, badge?}
   flightInfo: json("flightInfo"), // {flyIn, flyOut, notes}
+  seoTitle: varchar("seoTitle", { length: 255 }),
+  seoDescription: text("seoDescription"),
   published: boolean("published").default(true).notNull(),
   sortOrder: int("sortOrder").default(0).notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),

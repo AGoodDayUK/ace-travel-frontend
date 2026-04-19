@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Play, BookOpen, Video, Calendar, Tag, ArrowRight } from "lucide-react";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { trpc } from "@/lib/trpc";
@@ -142,6 +143,11 @@ export default function BlogsVlogs() {
 
   return (
     <div className="animate-fade-in">
+      <SEO
+        title="Travel Vlogs & Blogs | ACE Travel Experiences"
+        description="Watch real travel vlogs and read blogs from ACE Travel group tour adventures in Thailand and Bali. Real stories from 18–35 year old travellers."
+        canonical="/blogs-vlogs"
+      />
 
       {/* Hero */}
       <section className="container py-16 md:py-20 text-center space-y-4">

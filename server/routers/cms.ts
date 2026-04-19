@@ -160,6 +160,8 @@ export const cmsRouter = router({
           flyOut: z.string(),
           notes: z.string(),
         }).optional().nullable(),
+        seoTitle: z.string().optional().nullable(),
+        seoDescription: z.string().optional().nullable(),
         published: z.boolean().default(true),
         sortOrder: z.number().default(0),
       }))

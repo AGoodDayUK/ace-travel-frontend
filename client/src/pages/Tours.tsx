@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { JsonLd, webPageSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { SEO } from "@/components/SEO";
 import { Calendar, Users, MapPin, Star, ArrowRight, Clock } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -45,6 +46,11 @@ export default function Tours() {
 
   return (
     <div className="animate-fade-in min-h-screen bg-background">
+      <SEO
+        title="Group Tours to Thailand & Bali | 18-35s"
+        description="Browse all ACE Travel group tours to Thailand and Bali for 18–35 year olds. Small groups of 15–30, expert trip managers, and just a £60 deposit to secure your place."
+        canonical="/tours"
+      />
       <JsonLd schema={webPageSchema({ name: "All Tours — ACE Travel Experiences", description: "Browse all ACE Travel group tours to Thailand, Bali and the Philippines. Small groups, big adventures, £60 deposit.", path: "/tours" })} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Tours", path: "/tours" }])} />
       {/* Hero */}

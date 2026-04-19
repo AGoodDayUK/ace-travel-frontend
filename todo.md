@@ -708,3 +708,17 @@
 - [x] Add CmsBlogs to CMS sidebar navigation
 - [x] Update BlogsVlogs frontend to pull from CMS, remove dummy data, hide section when empty
 - [ ] Add JSON-LD BlogPosting schema to blog post pages
+
+## CMS Content Sync & SEO (Apr 2026)
+- [ ] Seed all 12 existing vlogs (Libby's series) into CMS blogs_vlogs table
+- [ ] Add seoTitle + seoDescription columns to tours schema, push migration
+- [ ] Add SEO tab to CmsTours editor
+- [ ] Seed optimal SEO meta for all 4 tours in DB
+- [ ] Add react-helmet-async for per-page meta tags
+- [ ] Add SEO meta (title, description, canonical, og:) to all public pages
+- [ ] Fix "2 months before departure" to "4 weeks before departure" in PaymentCalculator.tsx
+- [ ] Fix "2 months before departure" to "4 weeks before departure" in Payments.tsx
+- [ ] Fix "60 days before" to "4 weeks before" in HowItWorks.tsx
+- [ ] Fix "30 days before departure" to "4 weeks before departure" in TourDetail.tsx
+- [ ] Fix "30 days before departure" to "4 weeks before departure" in TermsConditions.tsx
+- [ ] Fix "6 weeks before departure" to "4 weeks before departure" in FAQ.tsx

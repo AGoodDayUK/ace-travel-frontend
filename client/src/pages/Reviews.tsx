@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Star, Quote } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { JsonLd, reviewSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { SEO } from "@/components/SEO";
 
 export default function Reviews() {
   const { data: cmsReviews } = trpc.cms.reviews.listPublic.useQuery();
@@ -145,6 +146,11 @@ export default function Reviews() {
 
   return (
     <div className="animate-fade-in">
+      <SEO
+        title="Real Traveller Reviews | ACE Travel Experiences"
+        description="Read genuine reviews from ACE Travel group tour travellers. 4.9 stars from 500+ reviews. See what 18–35 year olds say about our Thailand and Bali tours."
+        canonical="/reviews"
+      />
       {/* Review structured data */}
       <JsonLd schema={aggregateRatingSchema} />
       <JsonLd schema={breadcrumbSchema([

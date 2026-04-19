@@ -25,7 +25,8 @@ type TourRow = {
   price: string; deposit: string; groupSize: string; ageRange: string; rating: string;
   reviews: number; nextDeparture: string; heroImage: string; gallery: unknown;
   description: string; highlights: unknown; itinerary: unknown; included: unknown;
-  notIncluded: unknown; published: boolean; sortOrder: number; createdAt: Date; updatedAt: Date;
+  notIncluded: unknown; seoTitle?: string | null; seoDescription?: string | null;
+  published: boolean; sortOrder: number; createdAt: Date; updatedAt: Date;
 };
 
 const emptyTour = {
@@ -37,6 +38,7 @@ const emptyTour = {
   included: [] as string[], notIncluded: [] as string[],
   departureDates: [] as DepartureDate[],
   flightInfo: { flyIn: "", flyOut: "", notes: "" } as FlightInfo,
+  seoTitle: "", seoDescription: "",
   published: true, sortOrder: 0,
 };
 
@@ -276,6 +278,8 @@ export default function CmsTours() {
       notIncluded: (t.notIncluded as string[]) ?? [],
       departureDates: ((t as any).departureDates as DepartureDate[]) ?? [],
       flightInfo: ((t as any).flightInfo as FlightInfo) ?? { flyIn: "", flyOut: "", notes: "" },
+      seoTitle: (t as any).seoTitle ?? "",
+      seoDescription: (t as any).seoDescription ?? "",
       published: t.published, sortOrder: t.sortOrder,
     });
     setEditOpen(true);
@@ -352,6 +356,7 @@ export default function CmsTours() {
               <TabsTrigger value="itinerary" className="text-xs data-[state=active]:bg-white data-[state=active]:text-teal-600 data-[state=active]:shadow-sm data-[state=active]:border data-[state=active]:border-gray-200 rounded-md px-3 h-8">Itinerary</TabsTrigger>
               <TabsTrigger value="dates" className="text-xs data-[state=active]:bg-white data-[state=active]:text-teal-600 data-[state=active]:shadow-sm data-[state=active]:border data-[state=active]:border-gray-200 rounded-md px-3 h-8">Dates</TabsTrigger>
               <TabsTrigger value="media" className="text-xs data-[state=active]:bg-white data-[state=active]:text-teal-600 data-[state=active]:shadow-sm data-[state=active]:border data-[state=active]:border-gray-200 rounded-md px-3 h-8">Images</TabsTrigger>
+              <TabsTrigger value="seo" className="text-xs data-[state=active]:bg-white data-[state=active]:text-teal-600 data-[state=active]:shadow-sm data-[state=active]:border data-[state=active]:border-gray-200 rounded-md px-3 h-8">SEO</TabsTrigger>
             </TabsList>
 
             {/* ── Tab: Basics ── */}
@@ -549,6 +554,42 @@ export default function CmsTours() {
                 hint="This is the main image shown at the top of the tour page"
               />
               <GalleryEditor value={form.gallery} onChange={(v) => set("gallery", v)} />
+            </TabsContent>
+
+            {/* ── Tab: SEO ── */}
+            <TabsContent value="seo" className="space-y-5 px-6 py-5">
+              <div className="bg-blue-50 border border-blue-100 rounded-xl p-4">
+                <p className="text-blue-700 text-xs font-medium">SEO Meta Tags</p>
+                <p className="text-blue-600 text-xs mt-1">These control how this tour appears in Google search results. If left blank, the site default SEO settings will be used.</p>
+              </div>
+              <div className="space-y-1.5">
+                <Label className="text-sm font-medium text-gray-700">Meta Title</Label>
+                <Input
+                  value={(form as any).seoTitle ?? ""}
+                  onChange={(e) => set("seoTitle", e.target.value)}
+                  className="border-gray-200 text-gray-900 focus:border-teal-400"
+                  placeholder="Thailand Island Hopper | 21-Day Group Tour | ACE Travel"
+                  maxLength={60}
+                />
+                <p className="text-gray-400 text-xs">{((form as any).seoTitle ?? "").length}/60 characters recommended</p>
+              </div>
+              <div className="space-y-1.5">
+                <Label className="text-sm font-medium text-gray-700">Meta Description</Label>
+                <Textarea
+                  value={(form as any).seoDescription ?? ""}
+                  onChange={(e) => set("seoDescription", e.target.value)}
+                  className="border-gray-200 text-gray-900 min-h-[100px] focus:border-teal-400"
+                  placeholder="Explore Thailand's most iconic islands on our 21-day group tour for 18-35s..."
+                  maxLength={160}
+                />
+                <p className="text-gray-400 text-xs">{((form as any).seoDescription ?? "").length}/160 characters recommended</p>
+              </div>
+              <div className="bg-gray-50 border border-gray-100 rounded-xl p-4 space-y-1">
+                <p className="text-gray-500 text-xs font-medium">Google Preview</p>
+                <p className="text-blue-600 text-sm font-medium truncate">{(form as any).seoTitle || form.name || "Tour Title"}</p>
+                <p className="text-green-700 text-xs">acetravel-8hr6bdkr.manus.space/tour/{form.slug || "your-slug"}</p>
+                <p className="text-gray-600 text-xs line-clamp-2">{(form as any).seoDescription || "No meta description set."}</p>
+              </div>
             </TabsContent>
           </Tabs>
 

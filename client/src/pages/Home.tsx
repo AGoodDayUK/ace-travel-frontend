@@ -4,6 +4,7 @@ import { ArrowRight, Users, Calendar, Heart, Shield, Star, ChevronDown, MapPin }
 import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { JsonLd, webPageSchema } from "@/components/JsonLd";
+import { SEO } from "@/components/SEO";
 
 const MOMENTS_PHOTOS = [
   { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/AfrqckRqZWYBfsZI.jpg", alt: "ACE group on tour" },
@@ -167,6 +168,11 @@ export default function Home() {
 
   return (
     <div className="animate-fade-in">
+      <SEO
+        title="Epic Group Tours for 18–35s | Thailand & Bali"
+        description="Small-group adventure tours to Thailand and Bali for 18–35 year olds. From £899 with just a £60 deposit. Expert trip managers, epic experiences, lifelong friendships."
+        canonical="/"
+      />
       {/* Homepage structured data */}
       <JsonLd schema={webPageSchema({
         name: "ACE Travel Experiences — Epic Group Tours for 18–35s",

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { JsonLd, webPageSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { SEO } from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -158,6 +159,11 @@ export default function Deals() {
 
   return (
     <div className="animate-fade-in min-h-screen bg-background">
+      <SEO
+        title="Tour Deals & Special Offers | ACE Travel Experiences"
+        description="Exclusive deals on ACE Travel group tours to Thailand and Bali. Limited-time discounts for 18–35 year olds. Secure your spot with a £60 deposit."
+        canonical="/deals"
+      />
       <JsonLd schema={webPageSchema({ name: "Deals & Offers — ACE Travel Experiences", description: "Exclusive deals and special offers on ACE Travel group tours. Limited-time discounts on Thailand, Bali and Philippines adventures.", path: "/deals" })} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Deals", path: "/deals" }])} />
       {/* Hero */}

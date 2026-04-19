@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { JsonLd, tourSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { SEO } from "@/components/SEO";
 import { useRoute, Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
@@ -857,6 +858,8 @@ export default function TourDetail() {
       } catch { /* ignore */ }
       return null;
     })(),
+    seoTitle: (cmsTour as any).seoTitle ?? null,
+    seoDescription: (cmsTour as any).seoDescription ?? null,
   } : hardcodedTour;
 
   const scrollGallery = (direction: 'left' | 'right') => {
@@ -902,6 +905,12 @@ export default function TourDetail() {
 
   return (
     <div className="animate-fade-in">
+      <SEO
+        title={(tour as any).seoTitle ?? `${tour.name} | ACE Travel Experiences`}
+        description={(tour as any).seoDescription ?? `${tour.description?.slice(0, 155)}...`}
+        canonical={`/tour/${params?.id ?? ''}`}
+        image={tour.hero}
+      />
       {/* Structured data for this tour */}
       <JsonLd schema={tourSchema({
         name: tour.name,

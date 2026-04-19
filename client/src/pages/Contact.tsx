@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { trpc } from "@/lib/trpc";
 import { JsonLd, webPageSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -81,6 +82,11 @@ export default function Contact() {
 
   return (
     <div className="animate-fade-in">
+      <SEO
+        title="Contact ACE Travel Experiences | Get in Touch"
+        description="Have a question about our group tours to Thailand or Bali? Contact the ACE Travel team by email, WhatsApp, or social media. We're here to help you plan your adventure."
+        canonical="/contact"
+      />
       <JsonLd schema={webPageSchema({ name: "Contact Us — ACE Travel Experiences", description: "Get in touch with the ACE Travel team. We’re here to help with bookings, questions, and anything else you need.", path: "/contact" })} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }])} />
       {/* Hero */}

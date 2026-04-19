@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { JsonLd, webPageSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { MapPin, Clock, Users, ArrowRight, Sparkles } from "lucide-react";
@@ -72,6 +73,11 @@ export default function Destinations() {
 
   return (
     <div className="animate-fade-in">
+      <SEO
+        title="Travel Destinations | Thailand & Bali Group Tours"
+        description="Explore ACE Travel destinations: Thailand and Bali. Group tours for 18–35 year olds with expert trip managers, small groups, and just a £60 deposit."
+        canonical="/destinations"
+      />
       <JsonLd schema={webPageSchema({ name: "Destinations — ACE Travel Experiences", description: "Explore ACE Travel destinations: Thailand, Bali, and the Philippines. Group tours for 18–35 year olds with expert trip managers.", path: "/destinations" })} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Destinations", path: "/destinations" }])} />
       <Header />

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { JsonLd, faqPageSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { SEO } from "@/components/SEO";
 import {
   Search, ChevronDown, MessageCircle, Plane, CreditCard, Backpack,
   Hotel, Users, Compass, Shield, MapPin, Star, ArrowRight
@@ -182,6 +183,11 @@ export default function FAQ() {
 
   return (
     <div className="animate-fade-in">
+      <SEO
+        title="Frequently Asked Questions | ACE Travel Experiences"
+        description="Got questions about ACE Travel group tours? Find answers about deposits, payments, what's included, age requirements, group sizes, and everything else you need to know."
+        canonical="/faq"
+      />
       {/* FAQPage structured data */}
       <JsonLd schema={faqPageSchema(allQuestions.map(q => ({ question: q.q, answer: q.a })))} />
       <JsonLd schema={breadcrumbSchema([
