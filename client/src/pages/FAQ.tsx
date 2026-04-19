@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
+import { JsonLd, faqPageSchema, breadcrumbSchema } from "@/components/JsonLd";
 import {
   Search, ChevronDown, MessageCircle, Plane, CreditCard, Backpack,
   Hotel, Users, Compass, Shield, MapPin, Star, ArrowRight
@@ -181,6 +182,12 @@ export default function FAQ() {
 
   return (
     <div className="animate-fade-in">
+      {/* FAQPage structured data */}
+      <JsonLd schema={faqPageSchema(allQuestions.map(q => ({ question: q.q, answer: q.a })))} />
+      <JsonLd schema={breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "FAQs", path: "/faq" },
+      ])} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#ee2f6d] via-[#c0255a] to-[#44c5c3] py-20 md:py-28">
         {/* Decorative blobs */}

@@ -1,24 +1,11 @@
 import { useState } from "react";
-import { Play, BookOpen } from "lucide-react";
+import { Play, BookOpen, Video, Calendar, Tag, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { trpc } from "@/lib/trpc";
+import { Link } from "wouter";
 
-// All vlogs by Libby — one unified list
-const vlogs = [
-  { id: "Z20HYbB5diQ", title: "Come With Me to Bali — First Glimpse + Meeting My Tour Group" },
-  { id: "Wv-ILYoCkJ8", title: "Pack With Me for Bali! Travel Tips, Essentials & How I Planned It With ACE" },
-  { id: "1EN-j0gGI00", title: "Bamboo River Rafting & Night Time Jungle Walk" },
-  { id: "YqCRJJhommw", title: "Morning Jungle Safari & Shopping!" },
-  { id: "wCHWVWygIiE", title: "Pig Island, Snorkelling & Partying" },
-  { id: "HOIdsTgG_tc", title: "Koh Samui Ziplining" },
-  { id: "1kOWBIAfLhU", title: "Koh Phangan & Puk's Palace" },
-  { id: "1TOb_0YkIzc", title: "Quad Biking & Full Moon Party" },
-  { id: "DqqBtdb0V5M", title: "Snorkelling in Koh Tao" },
-  { id: "_LZ7QDw7ibk", title: "Koh Tao. Getting Inked." },
-  { id: "Fp6Y3A3fV-s", title: "Freedom Beach in Phuket & a Very Special Moment!" },
-  { id: "J3kCYte0bD8", title: "Final Day in Thailand With ACE Travel Experiences" },
-];
-
-// Verified frog images uploaded to CDN
+// Frog gallery — permanent CDN URLs
 const frogs = [
   { image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ybUcZpiBKPyqdEQA.jpg", caption: "Red-eyed tree frog" },
   { image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/JPREcUPwmJOcXSSL.jpg", caption: "Green tree frog on a leaf" },
@@ -28,48 +15,131 @@ const frogs = [
   { image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/YobDsArwarPlsRVP.jpg", caption: "Red-eyed tree frog, close up" },
 ];
 
-function VlogCard({ vlog }: { vlog: typeof vlogs[0] }) {
+/** Extract a YouTube video ID from various YouTube URL formats */
+function extractYouTubeId(url: string): string | null {
+  if (!url) return null;
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
+    /^([a-zA-Z0-9_-]{11})$/, // bare ID
+  ];
+  for (const p of patterns) {
+    const m = url.match(p);
+    if (m) return m[1];
+  }
+  return null;
+}
+
+function VlogCard({ item }: { item: { id: number; title: string; youtubeUrl: string | null; coverImage: string | null; excerpt: string | null; destination: string | null; author: string | null } }) {
   const [playing, setPlaying] = useState(false);
-  const thumbnail = `https://img.youtube.com/vi/${vlog.id}/hqdefault.jpg`;
+  const ytId = item.youtubeUrl ? extractYouTubeId(item.youtubeUrl) : null;
+  const thumbnail = ytId
+    ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`
+    : item.coverImage ?? "";
 
   return (
     <div className="rounded-2xl overflow-hidden shadow-md bg-background group">
       <div className="relative aspect-video bg-black">
-        {playing ? (
+        {playing && ytId ? (
           <iframe
-            src={`https://www.youtube.com/embed/${vlog.id}?autoplay=1`}
-            title={vlog.title}
+            src={`https://www.youtube.com/embed/${ytId}?autoplay=1`}
+            title={item.title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="w-full h-full"
           />
         ) : (
           <button
-            onClick={() => setPlaying(true)}
+            onClick={() => ytId && setPlaying(true)}
             className="w-full h-full relative block"
-            aria-label={`Play ${vlog.title}`}
+            aria-label={`Play ${item.title}`}
           >
-            <img
-              src={thumbnail}
-              alt={vlog.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
-              <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
-                <Play className="w-7 h-7 text-[#e63946] fill-[#e63946] ml-1" />
+            {thumbnail ? (
+              <img src={thumbnail} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            ) : (
+              <div className="w-full h-full bg-gray-900 flex items-center justify-center">
+                <Video className="w-12 h-12 text-gray-600" />
               </div>
-            </div>
+            )}
+            {ytId && (
+              <div className="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition-colors">
+                <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                  <Play className="w-7 h-7 text-[#e63946] fill-[#e63946] ml-1" />
+                </div>
+              </div>
+            )}
           </button>
         )}
       </div>
-      <div className="p-4">
-        <h3 className="font-semibold text-sm leading-snug line-clamp-2">{vlog.title}</h3>
+      <div className="p-4 space-y-1">
+        <h3 className="font-semibold text-sm leading-snug line-clamp-2">{item.title}</h3>
+        {(item.destination || item.author) && (
+          <p className="text-xs text-muted-foreground">
+            {[item.destination, item.author ? `by ${item.author}` : null].filter(Boolean).join(" · ")}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function BlogCard({ item }: { item: { id: number; title: string; slug: string; excerpt: string | null; coverImage: string | null; destination: string | null; author: string | null; tags: string[] | null } }) {
+  const destColour: Record<string, string> = {
+    Thailand: "bg-[#e63946]",
+    Bali: "bg-[#00b4d8]",
+    Philippines: "bg-accent",
+  };
+  const colour = item.destination ? (destColour[item.destination] ?? "bg-primary") : "bg-primary";
+
+  return (
+    <div className="bg-background rounded-2xl overflow-hidden shadow-md flex flex-col">
+      {item.coverImage ? (
+        <div className="h-48 overflow-hidden">
+          <img src={item.coverImage} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+      ) : (
+        <div className="h-48 bg-gradient-to-br from-muted to-border flex items-center justify-center">
+          <div className="text-center space-y-2 p-6">
+            {item.destination && (
+              <span className={`inline-block text-xs font-semibold text-white px-3 py-1 rounded-full ${colour}`}>
+                {item.destination}
+              </span>
+            )}
+            <BookOpen className="w-8 h-8 text-muted-foreground mx-auto mt-2" />
+          </div>
+        </div>
+      )}
+      <div className="p-6 space-y-3 flex-1 flex flex-col">
+        <div className="flex items-center gap-2 flex-wrap">
+          {item.destination && (
+            <span className={`inline-block text-xs font-semibold text-white px-2.5 py-0.5 rounded-full ${colour}`}>
+              {item.destination}
+            </span>
+          )}
+          {(item.tags ?? []).slice(0, 2).map(tag => (
+            <Badge key={tag} variant="outline" className="text-xs py-0">{tag}</Badge>
+          ))}
+        </div>
+        <h3 className="font-bold text-lg leading-snug">{item.title}</h3>
+        {item.excerpt && <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">{item.excerpt}</p>}
+        <div className="mt-auto pt-2">
+          <Button variant="outline" size="sm" asChild>
+            <Link href={`/blogs-vlogs/${item.slug}`}>
+              Read More <ArrowRight className="w-3.5 h-3.5 ml-1" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </div>
   );
 }
 
 export default function BlogsVlogs() {
+  const { data: allItems = [], isLoading } = trpc.cms.blogsVlogs.listPublic.useQuery();
+
+  const vlogs = allItems.filter(i => i.type === "vlog");
+  const blogs = allItems.filter(i => i.type === "blog");
+  const hasContent = vlogs.length > 0 || blogs.length > 0;
+
   return (
     <div className="animate-fade-in">
 
@@ -80,90 +150,89 @@ export default function BlogsVlogs() {
           <span className="text-accent">&amp; Frogs.</span>
         </h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Real stories from real travellers. Watch Libby's vlogs from her ACE adventures, read our travel blogs, and enjoy some very special frogs.
+          Real stories from real travellers. Watch our vlogs, read our travel blogs, and enjoy some very special frogs.
         </p>
       </section>
 
-      {/* VLOGS SECTION */}
-      <section className="container pb-20">
-        <div className="flex items-center gap-4 mb-10">
-          <div className="w-12 h-12 rounded-xl bg-[#e63946] flex items-center justify-center flex-shrink-0">
-            <Play className="w-6 h-6 text-white fill-white" />
-          </div>
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Vlogs</h2>
-            <p className="text-muted-foreground mt-1">
-              Meet Libby, a serial vlogger who captured her Thailand Island Hopper, Bali Explorer, and Bali Island Hopper trips. Watch her awesome videos here.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {vlogs.map(vlog => (
-            <VlogCard key={vlog.id} vlog={vlog} />
-          ))}
-        </div>
-      </section>
-
-      {/* BLOGS SECTION */}
-      <section className="bg-muted py-16 md:py-20">
-        <div className="container">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
-              <BookOpen className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Blogs</h2>
-              <p className="text-muted-foreground mt-1">
-                Prefer words over videos? We've got you. Our travel blogs are coming soon!
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "10 Things Nobody Tells You Before Travelling to Thailand",
-                category: "Thailand",
-                colour: "bg-[#e63946]",
-                excerpt: "From the heat to the food to the full moon party — here's what we wish we'd known before our first trip to Thailand.",
-              },
-              {
-                title: "Bali on a Budget: How to Make the Most of Your Trip",
-                category: "Bali",
-                colour: "bg-[#00b4d8]",
-                excerpt: "Bali doesn't have to break the bank. Here's how to eat well, explore freely, and still have money left for a massage.",
-              },
-              {
-                title: "The Philippines: Why It Should Be Top of Your Bucket List",
-                category: "Philippines",
-                colour: "bg-accent",
-                excerpt: "El Nido, Siargao, Siquijor — the Philippines has it all. Here's why it's one of the most underrated destinations in Southeast Asia.",
-              }
-            ].map(blog => (
-              <div key={blog.title} className="bg-background rounded-2xl overflow-hidden shadow-md">
-                <div className="h-48 bg-gradient-to-br from-muted to-border flex items-center justify-center">
-                  <div className="text-center space-y-2 p-6">
-                    <span className={`inline-block text-xs font-semibold text-white px-3 py-1 rounded-full ${blog.colour}`}>
-                      {blog.category}
-                    </span>
-                    <p className="text-sm text-muted-foreground font-medium">Coming Soon</p>
-                  </div>
-                </div>
-                <div className="p-6 space-y-3">
-                  <h3 className="font-bold text-lg leading-snug">{blog.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{blog.excerpt}</p>
-                  <Button variant="outline" size="sm" disabled className="opacity-50 cursor-not-allowed">
-                    Coming Soon
-                  </Button>
+      {/* Loading state */}
+      {isLoading && (
+        <section className="container pb-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1,2,3,4,5,6].map(i => (
+              <div key={i} className="rounded-2xl overflow-hidden shadow-md bg-background">
+                <div className="aspect-video bg-gray-100 animate-pulse" />
+                <div className="p-4 space-y-2">
+                  <div className="h-4 bg-gray-100 rounded animate-pulse" />
+                  <div className="h-3 bg-gray-100 rounded w-2/3 animate-pulse" />
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* FROGS SECTION */}
+      {/* VLOGS SECTION — only shown when there are vlogs */}
+      {!isLoading && vlogs.length > 0 && (
+        <section className="container pb-20">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-12 rounded-xl bg-[#e63946] flex items-center justify-center flex-shrink-0">
+              <Play className="w-6 h-6 text-white fill-white" />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Vlogs</h2>
+              <p className="text-muted-foreground mt-1">
+                Watch real travel videos from our group adventures.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {vlogs.map(item => (
+              <VlogCard key={item.id} item={item as any} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* BLOGS SECTION — only shown when there are blogs */}
+      {!isLoading && blogs.length > 0 && (
+        <section className="bg-muted py-16 md:py-20">
+          <div className="container">
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+                <BookOpen className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Blogs</h2>
+                <p className="text-muted-foreground mt-1">
+                  Travel stories, tips, and destination guides from the ACE team.
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {blogs.map(item => (
+                <BlogCard key={item.id} item={item as any} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Empty state — shown when no content at all (and not loading) */}
+      {!isLoading && !hasContent && (
+        <section className="container pb-20 text-center">
+          <div className="max-w-md mx-auto py-16 space-y-4">
+            <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center mx-auto">
+              <BookOpen className="w-8 h-8 text-muted-foreground" />
+            </div>
+            <h2 className="text-2xl font-bold">Content Coming Soon</h2>
+            <p className="text-muted-foreground">
+              We're working on some great blogs and vlogs. Check back soon!
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* FROGS SECTION — always shown */}
       <section className="container py-16 md:py-20">
         <div className="flex items-center gap-4 mb-4">
           <div className="w-12 h-12 rounded-xl bg-green-500 flex items-center justify-center flex-shrink-0">

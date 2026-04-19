@@ -1,12 +1,20 @@
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { Instagram, Facebook, Mail } from 'lucide-react';
 import { FaTiktok } from 'react-icons/fa';
 import { trpc } from '@/lib/trpc';
-import { useMemo } from 'react';
+import { useMemo, useCallback } from 'react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [, navigate] = useLocation();
   const settingsQuery = trpc.cms.settings.getPublic.useQuery();
+
+  // Navigate and scroll to top
+  const handleNavClick = useCallback((href: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate(href);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [navigate]);
   const s = useMemo(() => {
     const map: Record<string, string> = {};
     settingsQuery.data?.forEach(r => { map[r.key] = r.value ?? ''; });
@@ -75,9 +83,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.destinations.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-background/80 hover:text-accent text-sm transition-kinetic kinetic-underline">
+                  <a href={link.href} onClick={handleNavClick(link.href)} className="text-background/80 hover:text-accent text-sm transition-kinetic kinetic-underline cursor-pointer">
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -89,9 +97,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-background/80 hover:text-accent text-sm transition-kinetic kinetic-underline">
+                  <a href={link.href} onClick={handleNavClick(link.href)} className="text-background/80 hover:text-accent text-sm transition-kinetic kinetic-underline cursor-pointer">
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -103,9 +111,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-background/80 hover:text-accent text-sm transition-kinetic kinetic-underline">
+                  <a href={link.href} onClick={handleNavClick(link.href)} className="text-background/80 hover:text-accent text-sm transition-kinetic kinetic-underline cursor-pointer">
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { JsonLd, tourSchema, breadcrumbSchema } from "@/components/JsonLd";
 import { useRoute, Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
@@ -901,6 +902,26 @@ export default function TourDetail() {
 
   return (
     <div className="animate-fade-in">
+      {/* Structured data for this tour */}
+      <JsonLd schema={tourSchema({
+        name: tour.name,
+        slug: params?.id ?? "",
+        description: tour.description,
+        destination: tour.destination,
+        duration: tour.duration,
+        price: tour.price,
+        deposit: tour.deposit,
+        heroImage: tour.hero,
+        rating: tour.rating,
+        reviews: tour.reviews,
+        highlights: tour.highlights,
+        departureDates: tour.departureDates,
+      })} />
+      <JsonLd schema={breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Tours", path: "/tours" },
+        { name: tour.name, path: `/tour/${params?.id ?? ""}` },
+      ])} />
       <div className="relative overflow-hidden">
         <img 
           src={tour.hero}

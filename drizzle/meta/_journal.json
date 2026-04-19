@@ -36,6 +36,13 @@
       "when": 1776587022840,
       "tag": "0004_striped_strong_guy",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1776595214743,
+      "tag": "0005_gigantic_pretty_boy",
+      "breakpoints": true
     }
   ]
 }

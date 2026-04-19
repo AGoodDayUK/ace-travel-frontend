@@ -2,10 +2,10 @@ import { eq, desc, asc, and } from "drizzle-orm";
 import { getDb } from "./db";
 import {
   cmsUsers, cmsSessions, tours, deals, faqs, reviews,
-  siteSettings, media, pages, pageBlocks,
+  siteSettings, media, pages, pageBlocks, blogsVlogs,
   type InsertCmsUser, type InsertTour, type InsertDeal,
   type InsertFaq, type InsertReview, type InsertMedia,
-  type InsertPage, type InsertPageBlock,
+  type InsertPage, type InsertPageBlock, type InsertBlogVlog,
 } from "../drizzle/schema";
 import bcrypt from "bcryptjs";
 import crypto from "crypto";
@@ -380,4 +380,46 @@ export async function reorderPageBlocks(blocks: { id: number; sortOrder: number 
   for (const b of blocks) {
     await db.update(pageBlocks).set({ sortOrder: b.sortOrder }).where(eq(pageBlocks.id, b.id));
   }
+}
+
+// ─── Blogs & Vlogs ────────────────────────────────────────────────────────────
+
+
+export async function listBlogsVlogs() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(blogsVlogs).orderBy(blogsVlogs.sortOrder, blogsVlogs.createdAt);
+}
+
+export async function listBlogsVlogsPublic() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(blogsVlogs)
+    .where(eq(blogsVlogs.published, true))
+    .orderBy(blogsVlogs.sortOrder, blogsVlogs.createdAt);
+}
+
+export async function getBlogVlogById(id: number) {
+  const db = await getDb();
+  if (!db) return null;
+  const rows = await db.select().from(blogsVlogs).where(eq(blogsVlogs.id, id)).limit(1);
+  return rows[0] ?? null;
+}
+
+export async function upsertBlogVlog(data: InsertBlogVlog & { id?: number }) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const { id, ...rest } = data;
+  if (id) {
+    await db.update(blogsVlogs).set({ ...rest, updatedAt: new Date() }).where(eq(blogsVlogs.id, id));
+    return id;
+  }
+  const result = await db.insert(blogsVlogs).values(rest);
+  return (result as any)[0]?.insertId ?? null;
+}
+
+export async function deleteBlogVlog(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.delete(blogsVlogs).where(eq(blogsVlogs.id, id));
 }

@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Quote } from "lucide-react";
 import { trpc } from "@/lib/trpc";
+import { JsonLd, reviewSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export default function Reviews() {
   const { data: cmsReviews } = trpc.cms.reviews.listPublic.useQuery();
@@ -120,8 +121,36 @@ export default function Reviews() {
     { value: "247", label: "5-Star Reviews" }
   ];
 
+  // Build aggregate rating schema
+  const aggregateRatingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://acetravelexperiences.com/#organisation",
+    name: "ACE Travel Experiences",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: 4.9,
+      reviewCount: reviews.length,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    review: reviews.slice(0, 10).map(r => reviewSchema({
+      authorName: r.name,
+      rating: r.rating,
+      reviewText: r.review,
+      reviewDate: r.date || null,
+      tourName: r.tour || null,
+    })),
+  };
+
   return (
     <div className="animate-fade-in">
+      {/* Review structured data */}
+      <JsonLd schema={aggregateRatingSchema} />
+      <JsonLd schema={breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Reviews", path: "/reviews" },
+      ])} />
       <section className="bg-primary text-primary-foreground py-16 md:py-24">
         <div className="container text-center space-y-6">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">

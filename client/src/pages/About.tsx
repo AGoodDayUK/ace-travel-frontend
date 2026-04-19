@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle, Users, Star, Shield, MapPin, MessageCircle } from "lucide-react";
+import { JsonLd, webPageSchema, breadcrumbSchema } from "@/components/JsonLd";
 import { trpc } from "@/lib/trpc";
 
 const JAY_CDN = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/RhbDAdBlBLuZiRxy.webp";
@@ -68,6 +69,8 @@ export default function About() {
 
   return (
     <div className="animate-fade-in">
+      <JsonLd schema={webPageSchema({ name: "About Us — ACE Travel Experiences", description: "Learn about ACE Travel Experiences — who we are, what we stand for, and why thousands of 18–35 year olds choose us for their group adventures.", path: "/about" })} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])} />
 
       {/* Hero */}
       <section className="container py-16 md:py-24">

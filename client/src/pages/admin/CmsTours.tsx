@@ -13,6 +13,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Loader2, Plus, Pencil, Trash2, ExternalLink, GripVertical, X, MoveUp, MoveDown } from "lucide-react";
 import { toast } from "sonner";
 import { ImageUploadField } from "@/components/admin/ImageUploadField";
+import { useUnsavedChanges } from "@/hooks/useUnsavedChanges";
+import { UnsavedChangesDialog } from "@/components/admin/UnsavedChangesDialog";
 
 type ItineraryDay = { day: string; title: string; description: string; image?: string };
 type Highlight = { title: string; description: string; image?: string };
@@ -243,6 +245,7 @@ export default function CmsTours() {
   const upsertMutation = trpc.cms.tours.upsert.useMutation({
     onSuccess: () => {
       utils.cms.tours.list.invalidate();
+      markClean();
       setEditOpen(false);
       toast.success("Tour saved successfully");
     },
@@ -256,9 +259,10 @@ export default function CmsTours() {
   const [editOpen, setEditOpen] = useState(false);
   const [deleteId, setDeleteId] = useState<number | null>(null);
   const [form, setForm] = useState<typeof emptyTour & { id?: number }>(emptyTour);
+  const { isDirty, markDirty, markClean, confirmLeave, handleNavigate, onConfirmLeave, onCancelLeave } = useUnsavedChanges();
 
-  const openCreate = () => { setForm(emptyTour); setEditOpen(true); };
-  const openEdit = (t: TourRow) => {
+  const openCreate = () => { markClean(); setForm(emptyTour); setEditOpen(true); };
+  const openEdit = (t: TourRow) => { markClean();
     setForm({
       id: t.id, slug: t.slug, name: t.name, destination: t.destination,
       duration: t.duration, price: t.price, deposit: t.deposit,
@@ -277,7 +281,7 @@ export default function CmsTours() {
     setEditOpen(true);
   };
 
-  const set = (k: string, v: any) => setForm((f) => ({ ...f, [k]: v }));
+  const set = (k: string, v: any) => { setForm((f) => ({ ...f, [k]: v })); markDirty(); };
   const handleSave = () => upsertMutation.mutate(form as any);
 
   return (
@@ -330,23 +334,28 @@ export default function CmsTours() {
       </div>
 
       {/* Edit dialog */}
-      <Dialog open={editOpen} onOpenChange={setEditOpen}>
-        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-3xl max-h-[90vh] overflow-y-auto shadow-xl">
-          <DialogHeader>
-            <DialogTitle className="text-lg text-gray-900">{form.id ? `Edit: ${form.name}` : "New Tour"}</DialogTitle>
+      <UnsavedChangesDialog open={confirmLeave} onConfirm={onConfirmLeave} onCancel={onCancelLeave} />
+
+      <Dialog open={editOpen} onOpenChange={(open) => { if (!open) handleNavigate(() => setEditOpen(false)); else setEditOpen(true); }}>
+        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-3xl max-h-[90vh] overflow-y-auto shadow-xl p-0">
+          <DialogHeader className="px-6 pt-6 pb-4 border-b border-gray-100">
+            <div className="flex items-center justify-between">
+              <DialogTitle className="text-lg font-semibold text-gray-900">{form.id ? `Edit: ${form.name}` : "New Tour"}</DialogTitle>
+              {isDirty && <span className="text-xs text-amber-600 bg-amber-50 border border-amber-200 rounded-full px-2.5 py-0.5 font-medium">Unsaved changes</span>}
+            </div>
           </DialogHeader>
 
           <Tabs defaultValue="basics" className="w-full">
-            <TabsList className="bg-gray-100 border border-gray-200 w-full">
-              <TabsTrigger value="basics" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-white data-[state=active]:shadow-sm">Basics</TabsTrigger>
-              <TabsTrigger value="content" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-white data-[state=active]:shadow-sm">Content</TabsTrigger>
-              <TabsTrigger value="itinerary" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-white data-[state=active]:shadow-sm">Itinerary</TabsTrigger>
-              <TabsTrigger value="dates" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-white data-[state=active]:shadow-sm">Dates</TabsTrigger>
-              <TabsTrigger value="media" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-white data-[state=active]:shadow-sm">Images</TabsTrigger>
+            <TabsList className="bg-gray-50 border-b border-gray-100 w-full rounded-none px-6 h-11 gap-1 justify-start">
+              <TabsTrigger value="basics" className="text-xs data-[state=active]:bg-white data-[state=active]:text-teal-600 data-[state=active]:shadow-sm data-[state=active]:border data-[state=active]:border-gray-200 rounded-md px-3 h-8">Basics</TabsTrigger>
+              <TabsTrigger value="content" className="text-xs data-[state=active]:bg-white data-[state=active]:text-teal-600 data-[state=active]:shadow-sm data-[state=active]:border data-[state=active]:border-gray-200 rounded-md px-3 h-8">Content</TabsTrigger>
+              <TabsTrigger value="itinerary" className="text-xs data-[state=active]:bg-white data-[state=active]:text-teal-600 data-[state=active]:shadow-sm data-[state=active]:border data-[state=active]:border-gray-200 rounded-md px-3 h-8">Itinerary</TabsTrigger>
+              <TabsTrigger value="dates" className="text-xs data-[state=active]:bg-white data-[state=active]:text-teal-600 data-[state=active]:shadow-sm data-[state=active]:border data-[state=active]:border-gray-200 rounded-md px-3 h-8">Dates</TabsTrigger>
+              <TabsTrigger value="media" className="text-xs data-[state=active]:bg-white data-[state=active]:text-teal-600 data-[state=active]:shadow-sm data-[state=active]:border data-[state=active]:border-gray-200 rounded-md px-3 h-8">Images</TabsTrigger>
             </TabsList>
 
             {/* ── Tab: Basics ── */}
-            <TabsContent value="basics" className="space-y-4 pt-4">
+            <TabsContent value="basics" className="space-y-5 px-6 py-5">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
                   <Label className="text-sm font-medium text-gray-700">Tour Name *</Label>
@@ -402,7 +411,7 @@ export default function CmsTours() {
             </TabsContent>
 
             {/* ── Tab: Content ── */}
-            <TabsContent value="content" className="space-y-5 pt-4">
+            <TabsContent value="content" className="space-y-5 px-6 py-5">
               <div className="space-y-1.5">
                 <Label className="text-sm font-medium text-gray-700">Tour Description</Label>
                 <Textarea value={form.description} onChange={(e) => set("description", e.target.value)} className="border-gray-200 text-gray-900 min-h-[100px] focus:border-teal-400" placeholder="Describe the tour in 2-3 sentences..." />
@@ -423,12 +432,12 @@ export default function CmsTours() {
             </TabsContent>
 
             {/* ── Tab: Itinerary ── */}
-            <TabsContent value="itinerary" className="pt-4">
+            <TabsContent value="itinerary" className="px-6 py-5">
               <ItineraryEditor value={form.itinerary} onChange={(v) => set("itinerary", v)} />
             </TabsContent>
 
             {/* ── Tab: Departure Dates ── */}
-            <TabsContent value="dates" className="space-y-5 pt-4">
+            <TabsContent value="dates" className="space-y-5 px-6 py-5">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div>
@@ -531,7 +540,7 @@ export default function CmsTours() {
             </TabsContent>
 
             {/* ── Tab: Images ── */}
-            <TabsContent value="media" className="space-y-5 pt-4">
+            <TabsContent value="media" className="space-y-5 px-6 py-5">
               <ImageUploadField
                 label="Hero Image"
                 value={form.heroImage}
@@ -543,8 +552,8 @@ export default function CmsTours() {
             </TabsContent>
           </Tabs>
 
-          <DialogFooter className="pt-2 border-t border-gray-100">
-            <Button variant="outline" onClick={() => setEditOpen(false)} className="border-gray-200 text-gray-600">Cancel</Button>
+          <DialogFooter className="px-6 py-4 border-t border-gray-100 bg-gray-50/50">
+            <Button variant="outline" onClick={() => handleNavigate(() => setEditOpen(false))} className="border-gray-200 text-gray-600 bg-white">Cancel</Button>
             <Button onClick={handleSave} disabled={upsertMutation.isPending} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm min-w-[100px]">
               {upsertMutation.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : "Save Tour"}
             </Button>

@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import {
   LayoutDashboard, Globe, Map, Tag, HelpCircle, Star, Settings,
-  Image, FileText, LogOut, ChevronRight, Users, Menu, X
+  Image, FileText, LogOut, ChevronRight, Users, Menu, X, BookOpen
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,7 @@ const navItems = [
   { href: "/admin/faqs", label: "FAQs", icon: HelpCircle },
   { href: "/admin/reviews", label: "Reviews", icon: Star },
   { href: "/admin/pages", label: "Pages", icon: FileText },
+  { href: "/admin/blogs", label: "Blogs & Vlogs", icon: BookOpen },
   { href: "/admin/media", label: "Media Library", icon: Image },
   { href: "/admin/settings", label: "Site Settings", icon: Settings },
   { href: "/admin/users", label: "CMS Users", icon: Users },

@@ -26,6 +26,18 @@ import BlogsVlogs from "@/pages/BlogsVlogs";
 import Payments from "@/pages/Payments";
 import FlightSupport from "@/pages/FlightSupport";
 import ScubaDiving from "@/pages/ScubaDiving";
+import { JsonLd, organisationSchema, webSiteSchema } from "@/components/JsonLd";
+import { useEffect } from "react";
+import { useLocation } from "wouter";
+
+// Scroll to top whenever the route changes
+function ScrollToTop() {
+  const [location] = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [location]);
+  return null;
+}
 
 // CMS Admin pages
 import CmsLogin from "@/pages/admin/CmsLogin";
@@ -39,10 +51,15 @@ import CmsBlockEditor from "@/pages/admin/CmsBlockEditor";
 import CmsMedia from "@/pages/admin/CmsMedia";
 import CmsSettings from "@/pages/admin/CmsSettings";
 import CmsUsers from "@/pages/admin/CmsUsers";
+import CmsBlogs from "@/pages/admin/CmsBlogs";
 
 function MainLayout() {
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
+      {/* Global structured data — present on every public page */}
+      <JsonLd schema={organisationSchema()} />
+      <JsonLd schema={webSiteSchema()} />
       <Header />
       <main className="flex-1">
         <Switch>
@@ -96,6 +113,7 @@ function App() {
             <Route path={"/admin/media"} component={CmsMedia} />
             <Route path={"/admin/settings"} component={CmsSettings} />
             <Route path={"/admin/users"} component={CmsUsers} />
+            <Route path={"/admin/blogs"} component={CmsBlogs} />
 
             {/* All other pages use the main layout with header and footer */}
             <Route component={MainLayout} />

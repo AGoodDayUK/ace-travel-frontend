@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { JsonLd, webPageSchema, breadcrumbSchema } from "@/components/JsonLd";
 import { Calendar, Users, MapPin, Star, ArrowRight, Clock } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -44,6 +45,8 @@ export default function Tours() {
 
   return (
     <div className="animate-fade-in min-h-screen bg-background">
+      <JsonLd schema={webPageSchema({ name: "All Tours — ACE Travel Experiences", description: "Browse all ACE Travel group tours to Thailand, Bali and the Philippines. Small groups, big adventures, £60 deposit.", path: "/tours" })} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Tours", path: "/tours" }])} />
       {/* Hero */}
       <section className="relative bg-foreground text-background overflow-hidden">
         <div className="absolute inset-0 opacity-40">

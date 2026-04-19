@@ -13,6 +13,8 @@ import { Loader2, Plus, Pencil, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { TourSelectField } from "@/components/admin/TourSelectField";
 import { ImageUploadField } from "@/components/admin/ImageUploadField";
+import { useUnsavedChanges } from "@/hooks/useUnsavedChanges";
+import { UnsavedChangesDialog } from "@/components/admin/UnsavedChangesDialog";
 
 const emptyDeal = {
   title: "", description: "", discount: "", validUntil: "", image: "",
@@ -24,7 +26,7 @@ export default function CmsDeals() {
   const dealsQuery = trpc.cms.deals.list.useQuery();
   const toursQuery = trpc.cms.tours.list.useQuery();
   const upsert = trpc.cms.deals.upsert.useMutation({
-    onSuccess: () => { utils.cms.deals.list.invalidate(); setEditOpen(false); toast.success("Deal saved"); },
+    onSuccess: () => { utils.cms.deals.list.invalidate(); markClean(); setEditOpen(false); toast.success("Deal saved"); },
     onError: (e) => toast.error(e.message),
   });
   const del = trpc.cms.deals.delete.useMutation({
@@ -35,7 +37,8 @@ export default function CmsDeals() {
   const [editOpen, setEditOpen] = useState(false);
   const [deleteId, setDeleteId] = useState<number | null>(null);
   const [form, setForm] = useState<typeof emptyDeal & { id?: number }>(emptyDeal);
-  const set = (k: string, v: any) => setForm((f) => ({ ...f, [k]: v }));
+  const { isDirty, markDirty, markClean, confirmLeave, handleNavigate, onConfirmLeave, onCancelLeave } = useUnsavedChanges();
+  const set = (k: string, v: any) => { setForm((f) => ({ ...f, [k]: v })); markDirty(); };
 
   const tours = toursQuery.data ?? [];
   const getTourName = (id: number | null) => tours.find((t) => t.id === id)?.name ?? null;
@@ -45,7 +48,7 @@ export default function CmsDeals() {
       <div className="max-w-3xl mx-auto space-y-6">
         <div className="flex items-center justify-between">
           <p className="text-gray-500 text-sm">{dealsQuery.data?.length ?? 0} deals</p>
-          <Button onClick={() => { setForm(emptyDeal); setEditOpen(true); }} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm">
+          <Button onClick={() => { markClean(); setForm(emptyDeal); setEditOpen(true); }} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm">
             <Plus className="w-4 h-4 mr-2" />New Deal
           </Button>
         </div>
@@ -88,10 +91,17 @@ export default function CmsDeals() {
         )}
       </div>
 
-      <Dialog open={editOpen} onOpenChange={setEditOpen}>
-        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-lg max-h-[90vh] overflow-y-auto shadow-xl">
-          <DialogHeader><DialogTitle className="text-gray-900">{form.id ? "Edit Deal" : "New Deal"}</DialogTitle></DialogHeader>
-          <div className="space-y-4 py-2">
+      <UnsavedChangesDialog open={confirmLeave} onConfirm={onConfirmLeave} onCancel={onCancelLeave} />
+
+      <Dialog open={editOpen} onOpenChange={(open) => { if (!open) handleNavigate(() => setEditOpen(false)); else setEditOpen(true); }}>
+        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-lg max-h-[90vh] overflow-y-auto shadow-xl p-0">
+          <DialogHeader className="px-6 pt-6 pb-4 border-b border-gray-100">
+            <div className="flex items-center justify-between">
+              <DialogTitle className="text-lg font-semibold text-gray-900">{form.id ? "Edit Deal" : "New Deal"}</DialogTitle>
+              {isDirty && <span className="text-xs text-amber-600 bg-amber-50 border border-amber-200 rounded-full px-2.5 py-0.5 font-medium">Unsaved changes</span>}
+            </div>
+          </DialogHeader>
+          <div className="space-y-5 px-6 py-5">
             <div className="space-y-1.5">
               <Label className="text-sm font-medium text-gray-700">Title *</Label>
               <Input value={form.title} onChange={(e) => set("title", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="Early Bird Discount" />
@@ -134,8 +144,8 @@ export default function CmsDeals() {
               </div>
             </div>
           </div>
-          <DialogFooter>
-            <Button variant="outline" onClick={() => setEditOpen(false)} className="border-gray-200 text-gray-600">Cancel</Button>
+          <DialogFooter className="px-6 py-4 border-t border-gray-100 bg-gray-50/50">
+            <Button variant="outline" onClick={() => handleNavigate(() => setEditOpen(false))} className="border-gray-200 text-gray-600 bg-white">Cancel</Button>
             <Button onClick={() => upsert.mutate(form as any)} disabled={upsert.isPending} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm">
               {upsert.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : "Save Deal"}
             </Button>

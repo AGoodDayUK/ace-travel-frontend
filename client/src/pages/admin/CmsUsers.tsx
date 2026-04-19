@@ -10,6 +10,8 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Loader2, Plus, Pencil, Trash2, KeyRound, ShieldAlert } from "lucide-react";
 import { toast } from "sonner";
+import { useUnsavedChanges } from "@/hooks/useUnsavedChanges";
+import { UnsavedChangesDialog } from "@/components/admin/UnsavedChangesDialog";
 
 const emptyUser = { username: "", name: "", email: "", password: "", role: "editor" as "admin" | "editor" };
 
@@ -17,11 +19,11 @@ export default function CmsUsers() {
   const utils = trpc.useUtils();
   const usersQuery = trpc.cms.users.list.useQuery();
   const create = trpc.cms.users.create.useMutation({
-    onSuccess: () => { utils.cms.users.list.invalidate(); setCreateOpen(false); toast.success("User created"); },
+    onSuccess: () => { utils.cms.users.list.invalidate(); createChanges.markClean(); setCreateOpen(false); toast.success("User created"); },
     onError: (e) => toast.error(e.message),
   });
   const update = trpc.cms.users.update.useMutation({
-    onSuccess: () => { utils.cms.users.list.invalidate(); setEditOpen(false); toast.success("User updated"); },
+    onSuccess: () => { utils.cms.users.list.invalidate(); editChanges.markClean(); setEditOpen(false); toast.success("User updated"); },
     onError: (e) => toast.error(e.message),
   });
   const resetPw = trpc.cms.users.changePassword.useMutation({
@@ -36,14 +38,16 @@ export default function CmsUsers() {
   const [newPassword, setNewPassword] = useState("");
   const [form, setForm] = useState<typeof emptyUser>(emptyUser);
   const [editForm, setEditForm] = useState<{ id: number; name: string; email: string; role: "admin" | "editor" }>({ id: 0, name: "", email: "", role: "editor" });
-  const set = (k: string, v: any) => setForm((f) => ({ ...f, [k]: v }));
+  const createChanges = useUnsavedChanges();
+  const editChanges = useUnsavedChanges();
+  const set = (k: string, v: any) => { setForm((f) => ({ ...f, [k]: v })); createChanges.markDirty(); };
 
   return (
     <CmsLayout title="CMS Users">
       <div className="max-w-2xl mx-auto space-y-6">
         <div className="flex items-center justify-between">
           <p className="text-gray-500 text-sm">{usersQuery.data?.length ?? 0} users</p>
-          <Button onClick={() => { setForm(emptyUser); setCreateOpen(true); }} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm">
+          <Button onClick={() => { createChanges.markClean(); setForm(emptyUser); setCreateOpen(true); }} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm">
             <Plus className="w-4 h-4 mr-2" />New User
           </Button>
         </div>
@@ -98,11 +102,19 @@ export default function CmsUsers() {
         )}
       </div>
 
+      <UnsavedChangesDialog open={createChanges.confirmLeave} onConfirm={createChanges.onConfirmLeave} onCancel={createChanges.onCancelLeave} />
+      <UnsavedChangesDialog open={editChanges.confirmLeave} onConfirm={editChanges.onConfirmLeave} onCancel={editChanges.onCancelLeave} />
+
       {/* Create user */}
-      <Dialog open={createOpen} onOpenChange={setCreateOpen}>
-        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-sm shadow-xl">
-          <DialogHeader><DialogTitle className="text-gray-900">New CMS User</DialogTitle></DialogHeader>
-          <div className="space-y-4 py-2">
+      <Dialog open={createOpen} onOpenChange={(open) => { if (!open) createChanges.handleNavigate(() => setCreateOpen(false)); else setCreateOpen(true); }}>
+        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-sm shadow-xl p-0">
+          <DialogHeader className="px-6 pt-6 pb-4 border-b border-gray-100">
+            <div className="flex items-center justify-between">
+              <DialogTitle className="text-lg font-semibold text-gray-900">New CMS User</DialogTitle>
+              {createChanges.isDirty && <span className="text-xs text-amber-600 bg-amber-50 border border-amber-200 rounded-full px-2.5 py-0.5 font-medium">Unsaved changes</span>}
+            </div>
+          </DialogHeader>
+          <div className="space-y-5 px-6 py-5">
             <div className="space-y-1.5">
               <Label className="text-sm font-medium text-gray-700">Username *</Label>
               <Input value={form.username} onChange={(e) => set("username", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="jane-smith" />
@@ -133,8 +145,8 @@ export default function CmsUsers() {
               </Select>
             </div>
           </div>
-          <DialogFooter>
-            <Button variant="outline" onClick={() => setCreateOpen(false)} className="border-gray-200 text-gray-600">Cancel</Button>
+          <DialogFooter className="px-6 py-4 border-t border-gray-100 bg-gray-50/50">
+            <Button variant="outline" onClick={() => createChanges.handleNavigate(() => setCreateOpen(false))} className="border-gray-200 text-gray-600 bg-white">Cancel</Button>
             <Button onClick={() => create.mutate(form)} disabled={create.isPending} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm">
               {create.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : "Create User"}
             </Button>
@@ -143,10 +155,15 @@ export default function CmsUsers() {
       </Dialog>
 
       {/* Edit user */}
-      <Dialog open={editOpen} onOpenChange={setEditOpen}>
-        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-sm shadow-xl">
-          <DialogHeader><DialogTitle className="text-gray-900">Edit User</DialogTitle></DialogHeader>
-          <div className="space-y-4 py-2">
+      <Dialog open={editOpen} onOpenChange={(open) => { if (!open) editChanges.handleNavigate(() => setEditOpen(false)); else setEditOpen(true); }}>
+        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-sm shadow-xl p-0">
+          <DialogHeader className="px-6 pt-6 pb-4 border-b border-gray-100">
+            <div className="flex items-center justify-between">
+              <DialogTitle className="text-lg font-semibold text-gray-900">Edit User</DialogTitle>
+              {editChanges.isDirty && <span className="text-xs text-amber-600 bg-amber-50 border border-amber-200 rounded-full px-2.5 py-0.5 font-medium">Unsaved changes</span>}
+            </div>
+          </DialogHeader>
+          <div className="space-y-5 px-6 py-5">
             <div className="space-y-1.5">
               <Label className="text-sm font-medium text-gray-700">Full Name</Label>
               <Input value={editForm.name} onChange={(e) => setEditForm((f) => ({ ...f, name: e.target.value }))} className="border-gray-200 text-gray-900 focus:border-teal-400" />
@@ -168,8 +185,8 @@ export default function CmsUsers() {
               </Select>
             </div>
           </div>
-          <DialogFooter>
-            <Button variant="outline" onClick={() => setEditOpen(false)} className="border-gray-200 text-gray-600">Cancel</Button>
+          <DialogFooter className="px-6 py-4 border-t border-gray-100 bg-gray-50/50">
+            <Button variant="outline" onClick={() => editChanges.handleNavigate(() => setEditOpen(false))} className="border-gray-200 text-gray-600 bg-white">Cancel</Button>
             <Button onClick={() => update.mutate(editForm)} disabled={update.isPending} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm">
               {update.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : "Save"}
             </Button>

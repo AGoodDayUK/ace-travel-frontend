@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { ArrowRight, Users, Calendar, Heart, Shield, Star, ChevronDown, MapPin } from "lucide-react";
 import { useState } from "react";
 import { trpc } from "@/lib/trpc";
+import { JsonLd, webPageSchema } from "@/components/JsonLd";
 
 const MOMENTS_PHOTOS = [
   { src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/AfrqckRqZWYBfsZI.jpg", alt: "ACE group on tour" },
@@ -166,6 +167,12 @@ export default function Home() {
 
   return (
     <div className="animate-fade-in">
+      {/* Homepage structured data */}
+      <JsonLd schema={webPageSchema({
+        name: "ACE Travel Experiences — Epic Group Tours for 18–35s",
+        description: "Small-group adventure tours to Thailand, Bali and the Philippines. £60 deposit, expert trip managers, unforgettable experiences for 18–35 year olds.",
+        path: "/",
+      })} />
 
       {/* Full-Screen Video Hero */}
       <section className="relative h-screen flex items-end justify-center overflow-hidden">

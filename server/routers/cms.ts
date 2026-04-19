@@ -12,6 +12,7 @@ import {
   listMedia, insertMedia, updateMediaAlt, deleteMedia,
   listPages, getPageBySlug, getPageById, upsertPage, deletePage,
   getBlocksByPageId, upsertPageBlock, deletePageBlock, reorderPageBlocks,
+  listBlogsVlogs, getBlogVlogById, upsertBlogVlog, deleteBlogVlog, listBlogsVlogsPublic,
 } from "../cms-db";
 import { storagePut } from "../storage";
 import crypto from "crypto";
@@ -346,5 +347,42 @@ export const cmsRouter = router({
     reorder: cmsProtectedProcedure
       .input(z.array(z.object({ id: z.number(), sortOrder: z.number() })))
       .mutation(({ input }) => reorderPageBlocks(input)),
+  }),
+
+  // Blogs & Vlogs
+  blogsVlogs: router({
+    list: cmsProtectedProcedure
+      .query(() => listBlogsVlogs()),
+    listPublic: publicProcedure
+      .query(() => listBlogsVlogsPublic()),
+    getById: cmsProtectedProcedure
+      .input(z.object({ id: z.number() }))
+      .query(({ input }) => getBlogVlogById(input.id)),
+    upsert: cmsProtectedProcedure
+      .input(z.object({
+        id: z.number().optional(),
+        type: z.enum(["blog", "vlog"]).default("blog"),
+        title: z.string().min(1),
+        slug: z.string().min(1),
+        excerpt: z.string().optional().nullable(),
+        content: z.string().optional().nullable(),
+        coverImage: z.string().optional().nullable(),
+        youtubeUrl: z.string().optional().nullable(),
+        author: z.string().optional().nullable(),
+        tourSlug: z.string().optional().nullable(),
+        tourName: z.string().optional().nullable(),
+        destination: z.string().optional().nullable(),
+        tags: z.array(z.string()).optional().nullable(),
+        published: z.boolean().default(false),
+        featured: z.boolean().default(false),
+        publishedAt: z.string().optional().nullable(),
+        sortOrder: z.number().default(0),
+        metaTitle: z.string().optional().nullable(),
+        metaDescription: z.string().optional().nullable(),
+      }))
+      .mutation(({ input }) => upsertBlogVlog(input as any)),
+    delete: cmsAdminProcedure
+      .input(z.object({ id: z.number() }))
+      .mutation(({ input }) => deleteBlogVlog(input.id)),
   }),
 });

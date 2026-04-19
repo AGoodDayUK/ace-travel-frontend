@@ -670,3 +670,41 @@
 - [x] Replace manual tour text input in Reviews editor with dropdown of tours from DB
 - [x] Replace manual tour text input in Deals editor with dropdown of tours from DB
 - [x] Apply dropdown-from-DB logic to any other place a tour/deal is referenced in CMS forms
+
+## Unsaved Changes Warning (Apr 2026)
+- [ ] Build useUnsavedChanges hook (tracks dirty state, blocks browser navigation, exposes confirm dialog)
+- [ ] Build UnsavedChangesDialog component (shown when user tries to navigate away with unsaved edits)
+- [ ] Wire unsaved changes warning into CmsTours editor dialog
+- [ ] Wire unsaved changes warning into CmsDeals editor dialog
+- [ ] Wire unsaved changes warning into CmsFaqs editor dialog
+- [ ] Wire unsaved changes warning into CmsReviews editor dialog
+- [ ] Wire unsaved changes warning into CmsSettings (per-section save)
+- [ ] Wire unsaved changes warning into CmsUsers editor dialog
+- [ ] Wire browser beforeunload event to warn on tab close/refresh
+
+## CMS Dialog Spacing Polish (Apr 2026)
+- [ ] Add top padding between dialog title and tab bar in CmsTours editor
+- [ ] Increase vertical gap between form field rows (currently too tight)
+- [ ] Ensure consistent label-to-input spacing across all CMS dialogs
+- [ ] Add horizontal padding inside dialog content area
+- [ ] Apply same spacing fixes to CmsDeals, CmsFaqs, CmsReviews, CmsUsers dialogs
+
+## CMS Improvements Round 2 (Apr 2026)
+- [ ] Fix Media Library: populate from all images already in DB (tour galleries, deal images, review photos, settings images)
+- [ ] Rebuild Pages CMS: list all site pages with template type, keep custom page builder
+- [ ] Add SEO meta title + description fields to Tours editor
+- [ ] Add SEO meta title + description fields to Deals editor
+- [ ] Add SEO meta title + description fields to Settings (global defaults)
+- [ ] Add unsaved changes warning to CmsTours (was missed in previous round)
+- [ ] Fix dialog spacing in CmsTours to match new polished style
+
+## Footer Navigation Fix
+- [x] Fix footer links to scroll to top of page on navigation (ScrollToTop component added to App.tsx)
+
+## Blogs/Vlogs CMS Management
+- [x] Add blogs_vlogs DB table to drizzle schema
+- [x] Add CMS backend procedures (list, create, update, delete, listPublic)
+- [x] Build CmsBlogs admin page with CRUD, inline image upload, tour dropdown, YouTube embed support
+- [x] Add CmsBlogs to CMS sidebar navigation
+- [x] Update BlogsVlogs frontend to pull from CMS, remove dummy data, hide section when empty
+- [ ] Add JSON-LD BlogPosting schema to blog post pages

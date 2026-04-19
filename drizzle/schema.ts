@@ -237,3 +237,34 @@ export const pageBlocks = mysqlTable("page_blocks", {
 
 export type PageBlock = typeof pageBlocks.$inferSelect;
 export type InsertPageBlock = typeof pageBlocks.$inferInsert;
+
+/**
+ * Blogs and Vlogs — articles and video content
+ * type: 'blog' | 'vlog'
+ */
+export const blogsVlogs = mysqlTable("blogs_vlogs", {
+  id: int("id").autoincrement().primaryKey(),
+  type: mysqlEnum("type", ["blog", "vlog"]).default("blog").notNull(),
+  title: varchar("title", { length: 500 }).notNull(),
+  slug: varchar("slug", { length: 500 }).notNull().unique(),
+  excerpt: text("excerpt"),
+  content: text("content"), // Full blog body (markdown or HTML)
+  coverImage: text("coverImage"), // Hero/thumbnail image URL
+  youtubeUrl: text("youtubeUrl"), // For vlogs — YouTube embed URL
+  author: varchar("author", { length: 255 }),
+  tourSlug: varchar("tourSlug", { length: 255 }), // Optional linked tour
+  tourName: varchar("tourName", { length: 255 }),
+  destination: varchar("destination", { length: 100 }),
+  tags: json("tags"), // Array of tag strings
+  published: boolean("published").default(false).notNull(),
+  featured: boolean("featured").default(false).notNull(),
+  publishedAt: timestamp("publishedAt"),
+  sortOrder: int("sortOrder").default(0).notNull(),
+  metaTitle: varchar("metaTitle", { length: 500 }),
+  metaDescription: text("metaDescription"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type BlogVlog = typeof blogsVlogs.$inferSelect;
+export type InsertBlogVlog = typeof blogsVlogs.$inferInsert;
