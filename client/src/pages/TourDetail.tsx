@@ -777,6 +777,12 @@ export default function TourDetail() {
 
   // Fetch CMS data and overlay it on top of the hardcoded fallback
   const { data: cmsTour } = trpc.cms.tours.getBySlug.useQuery({ slug: tourId });
+  const { data: cmsSettings } = trpc.cms.settings.getPublic.useQuery();
+  const getSetting = (key: string, fallback: string) => {
+    if (!cmsSettings) return fallback;
+    const found = cmsSettings.find((x: any) => x.key === key);
+    return found?.value || fallback;
+  };
 
   const tour = cmsTour ? {
     ...hardcodedTour,
@@ -1378,8 +1384,8 @@ export default function TourDetail() {
                   <h3 className="text-xl font-black tracking-tight">Basic Diver</h3>
                   <span className="bg-[#44c5c3]/10 text-[#006994] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Taster</span>
                 </div>
-                <div className="text-3xl font-black text-[#006994]">£100</div>
-                <p className="text-muted-foreground text-sm">A guided introduction to scuba diving for first-timers. No experience needed.</p>
+                <div className="text-3xl font-black text-[#006994]">{getSetting('scuba_basic_price', '£100')}</div>
+                <p className="text-muted-foreground text-sm">{getSetting('scuba_basic_description', 'A guided introduction to scuba diving for first-timers. No experience needed.')}</p>
               </div>
 
               {/* Open Water */}
@@ -1388,8 +1394,8 @@ export default function TourDetail() {
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl font-black tracking-tight">Open Water</h3>
                 </div>
-                <div className="text-3xl font-black text-[#ee2f6d]">£350</div>
-                <p className="text-muted-foreground text-sm">Full PADI Open Water certification. Qualify as a diver and take that certificate home with you.</p>
+                <div className="text-3xl font-black text-[#ee2f6d]">{getSetting('scuba_open_water_price', '£350')}</div>
+                <p className="text-muted-foreground text-sm">{getSetting('scuba_open_water_description', 'Full PADI Open Water certification. Qualify as a diver and take that certificate home with you.')}</p>
               </div>
             </div>
 

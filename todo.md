@@ -648,5 +648,17 @@
 - [ ] Add About page section to CMS settings (team members, tagline, values)
 - [ ] Add flight info editor to CMS (fly-in/fly-out per tour)
 - [ ] Wire FlightSupport.tsx to CMS data
-- [ ] Add scuba add-on pricing to CMS settings
-- [ ] Wire ScubaDiving.tsx and TourDetail scuba section to CMS settings
+- [x] Add scuba add-on pricing to CMS settings
+- [x] Wire ScubaDiving.tsx and TourDetail scuba section to CMS settings
+- [x] Wire About.tsx team members to CMS settings (about_team_member1/2/3 name/role/bio/image)
+- [x] Confirmed session_file CDN URLs are permanent (not expiring) — no re-upload needed
+- [ ] Add About page whyACE values (6 items) to CMS settings and wire About.tsx
+- [ ] Wire FlightSupport.tsx to CMS data (fly-in/fly-out airports per tour)
+- [ ] Wire HowItWorks.tsx page text to CMS settings
+
+## CMS Audit & Bug Fixes (Apr 2026)
+- [x] Fix tour save error: highlights schema was z.array(z.string()) but editor sends Highlight objects — updated to z.union([z.string(), z.object({...})])
+- [x] Fix itinerary schema to accept optional image field in z.object
+- [x] Verify all CMS sections load correctly: Tours, Deals, FAQs, Reviews, Media, Site Settings, Pages, CMS Users
+- [x] Wire TourDetail scuba prices to CMS settings (scuba_basic_price, scuba_open_water_price, scuba_basic_description, scuba_open_water_description)
+- [x] Confirm session_file CDN URLs are permanent — no re-upload needed

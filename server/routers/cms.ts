@@ -144,8 +144,8 @@ export const cmsRouter = router({
         heroImage: z.string(),
         gallery: z.array(z.string()),
         description: z.string(),
-        highlights: z.array(z.string()),
-        itinerary: z.array(z.object({ day: z.string(), title: z.string(), description: z.string() })),
+        highlights: z.array(z.union([z.string(), z.object({ title: z.string(), description: z.string().optional(), image: z.string().optional() })])),
+        itinerary: z.array(z.object({ day: z.string(), title: z.string(), description: z.string(), image: z.string().optional() })),
         included: z.array(z.string()),
         notIncluded: z.array(z.string()),
         departureDates: z.array(z.object({
