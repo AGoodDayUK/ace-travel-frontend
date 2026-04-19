@@ -730,3 +730,7 @@
 - [x] Add dynamic /sitemap.xml Express endpoint (static pages + tour slugs + blog slugs from DB)
 - [x] Add /robots.txt endpoint referencing the sitemap
 - [x] Set SITE_URL=https://www.acetravelexperiences.com for production sitemap URLs
+
+## Media Library Fix
+- [ ] Update CMS upload procedure to register every upload in the media table
+- [ ] Backfill all existing images from tours/deals/reviews/blogs/settings into media table
