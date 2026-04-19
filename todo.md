@@ -662,3 +662,4 @@
 - [x] Verify all CMS sections load correctly: Tours, Deals, FAQs, Reviews, Media, Site Settings, Pages, CMS Users
 - [x] Wire TourDetail scuba prices to CMS settings (scuba_basic_price, scuba_open_water_price, scuba_basic_description, scuba_open_water_description)
 - [x] Confirm session_file CDN URLs are permanent — no re-upload needed
+- [x] Update CMS login screen: show ACE Travel Experiences logo and replace "ACE Travel CMS" with "ACE Travel Experiences"

@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Loader2, Lock } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 export default function CmsLogin() {
   const [, navigate] = useLocation();
@@ -29,10 +29,10 @@ export default function CmsLogin() {
     <div className="min-h-screen bg-gray-950 flex items-center justify-center p-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/20 mb-4">
-            <Lock className="w-6 h-6 text-teal-400" />
+          <div className="flex justify-center mb-5">
+            <img src="/ace-logo-full.png" alt="ACE Travel Experiences" className="h-14 w-auto" />
           </div>
-          <h1 className="text-2xl font-bold text-white">ACE Travel CMS</h1>
+          <h1 className="text-2xl font-bold text-white">ACE Travel Experiences</h1>
           <p className="text-gray-400 text-sm mt-1">Sign in to manage your site</p>
         </div>
 
