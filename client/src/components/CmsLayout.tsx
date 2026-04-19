@@ -15,7 +15,7 @@ const navItems = [
   { href: "/admin/deals", label: "Deals", icon: Tag },
   { href: "/admin/faqs", label: "FAQs", icon: HelpCircle },
   { href: "/admin/reviews", label: "Reviews", icon: Star },
-  { href: "/admin/pages", label: "Pages", icon: FileText },
+  { href: "/admin/pages", label: "Pages & Builder", icon: FileText },
   { href: "/admin/blogs", label: "Blogs & Vlogs", icon: BookOpen },
   { href: "/admin/media", label: "Media Library", icon: Image },
   { href: "/admin/settings", label: "Site Settings", icon: Settings },

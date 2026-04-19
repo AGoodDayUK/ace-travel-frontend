@@ -722,3 +722,6 @@
 - [ ] Fix "30 days before departure" to "4 weeks before departure" in TourDetail.tsx
 - [ ] Fix "30 days before departure" to "4 weeks before departure" in TermsConditions.tsx
 - [ ] Fix "6 weeks before departure" to "4 weeks before departure" in FAQ.tsx
+
+## CMS Pages Restructure
+- [x] Restructure CmsPages: list all site pages at top with edit buttons, custom pages below
