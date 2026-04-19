@@ -10,8 +10,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Loader2, Plus, Pencil, Trash2, ExternalLink, GripVertical, Image, X, MoveUp, MoveDown } from "lucide-react";
+import { Loader2, Plus, Pencil, Trash2, ExternalLink, GripVertical, X, MoveUp, MoveDown } from "lucide-react";
 import { toast } from "sonner";
+import { ImageUploadField } from "@/components/admin/ImageUploadField";
 
 type ItineraryDay = { day: string; title: string; description: string; image?: string };
 type Highlight = { title: string; description: string; image?: string };
@@ -48,8 +49,8 @@ function StringListEditor({ label, value, onChange, placeholder }: {
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between">
-        <Label className="text-gray-300">{label}</Label>
-        <Button type="button" size="sm" variant="ghost" onClick={add} className="text-teal-400 hover:text-teal-300 h-7 text-xs">
+        <Label className="text-sm font-medium text-gray-700">{label}</Label>
+        <Button type="button" size="sm" variant="ghost" onClick={add} className="text-teal-600 hover:text-teal-700 hover:bg-teal-50 h-7 text-xs">
           <Plus className="w-3 h-3 mr-1" />Add
         </Button>
       </div>
@@ -59,16 +60,16 @@ function StringListEditor({ label, value, onChange, placeholder }: {
             <Input
               value={item}
               onChange={(e) => update(i, e.target.value)}
-              className="bg-gray-800 border-gray-700 text-white text-sm"
+              className="border-gray-200 text-gray-900 text-sm focus:border-teal-400"
               placeholder={placeholder}
             />
-            <Button type="button" size="sm" variant="ghost" onClick={() => remove(i)} className="text-red-500/60 hover:text-red-400 h-9 w-9 p-0 flex-shrink-0">
+            <Button type="button" size="sm" variant="ghost" onClick={() => remove(i)} className="text-red-400 hover:text-red-600 hover:bg-red-50 h-9 w-9 p-0 flex-shrink-0">
               <X className="w-3.5 h-3.5" />
             </Button>
           </div>
         ))}
         {value.length === 0 && (
-          <p className="text-gray-600 text-xs italic">No items yet. Click Add to start.</p>
+          <p className="text-gray-400 text-xs italic">No items yet. Click Add to start.</p>
         )}
       </div>
     </div>
@@ -92,21 +93,21 @@ function ItineraryEditor({ value, onChange }: { value: ItineraryDay[]; onChange:
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <Label className="text-gray-300">Itinerary</Label>
-        <Button type="button" size="sm" variant="ghost" onClick={add} className="text-teal-400 hover:text-teal-300 h-7 text-xs">
+        <Label className="text-sm font-medium text-gray-700">Itinerary</Label>
+        <Button type="button" size="sm" variant="ghost" onClick={add} className="text-teal-600 hover:text-teal-700 hover:bg-teal-50 h-7 text-xs">
           <Plus className="w-3 h-3 mr-1" />Add Day
         </Button>
       </div>
-      {value.length === 0 && <p className="text-gray-600 text-xs italic">No itinerary days yet.</p>}
+      {value.length === 0 && <p className="text-gray-400 text-xs italic">No itinerary days yet.</p>}
       <div className="space-y-3">
         {value.map((day, i) => (
-          <div key={i} className="bg-gray-800 border border-gray-700 rounded-xl p-4 space-y-3">
+          <div key={i} className="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-3">
             <div className="flex items-center gap-2">
               <div className="flex flex-col gap-0.5">
-                <Button type="button" size="sm" variant="ghost" onClick={() => move(i, -1)} disabled={i === 0} className="h-5 w-5 p-0 text-gray-500 hover:text-white">
+                <Button type="button" size="sm" variant="ghost" onClick={() => move(i, -1)} disabled={i === 0} className="h-5 w-5 p-0 text-gray-400 hover:text-gray-700">
                   <MoveUp className="w-3 h-3" />
                 </Button>
-                <Button type="button" size="sm" variant="ghost" onClick={() => move(i, 1)} disabled={i === value.length - 1} className="h-5 w-5 p-0 text-gray-500 hover:text-white">
+                <Button type="button" size="sm" variant="ghost" onClick={() => move(i, 1)} disabled={i === value.length - 1} className="h-5 w-5 p-0 text-gray-400 hover:text-gray-700">
                   <MoveDown className="w-3 h-3" />
                 </Button>
               </div>
@@ -114,38 +115,32 @@ function ItineraryEditor({ value, onChange }: { value: ItineraryDay[]; onChange:
                 <Input
                   value={day.day}
                   onChange={(e) => update(i, "day", e.target.value)}
-                  className="bg-gray-700 border-gray-600 text-white text-sm"
+                  className="border-gray-200 text-gray-900 text-sm"
                   placeholder="Days 1-2"
                 />
                 <Input
                   value={day.title}
                   onChange={(e) => update(i, "title", e.target.value)}
-                  className="bg-gray-700 border-gray-600 text-white text-sm"
+                  className="border-gray-200 text-gray-900 text-sm"
                   placeholder="Location / title"
                 />
               </div>
-              <Button type="button" size="sm" variant="ghost" onClick={() => remove(i)} className="text-red-500/60 hover:text-red-400 h-8 w-8 p-0 flex-shrink-0">
+              <Button type="button" size="sm" variant="ghost" onClick={() => remove(i)} className="text-red-400 hover:text-red-600 hover:bg-red-50 h-8 w-8 p-0 flex-shrink-0">
                 <X className="w-3.5 h-3.5" />
               </Button>
             </div>
             <Textarea
               value={day.description}
               onChange={(e) => update(i, "description", e.target.value)}
-              className="bg-gray-700 border-gray-600 text-white text-sm min-h-[70px]"
+              className="border-gray-200 text-gray-900 text-sm min-h-[70px]"
               placeholder="What happens on this day..."
             />
-            <div className="flex gap-2 items-center">
-              <Image className="w-3.5 h-3.5 text-gray-500 flex-shrink-0" />
-              <Input
-                value={day.image ?? ""}
-                onChange={(e) => update(i, "image", e.target.value)}
-                className="bg-gray-700 border-gray-600 text-white text-xs"
-                placeholder="Image URL (optional)"
-              />
-              {day.image && (
-                <img src={day.image} alt="" className="h-8 w-12 object-cover rounded flex-shrink-0" />
-              )}
-            </div>
+            <ImageUploadField
+              label="Day Image (optional)"
+              value={day.image ?? ""}
+              onChange={(url) => update(i, "image", url)}
+              previewHeight="h-24"
+            />
           </div>
         ))}
       </div>
@@ -163,44 +158,38 @@ function HighlightsEditor({ value, onChange }: { value: Highlight[]; onChange: (
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <Label className="text-gray-300">Highlights</Label>
-        <Button type="button" size="sm" variant="ghost" onClick={add} className="text-teal-400 hover:text-teal-300 h-7 text-xs">
+        <Label className="text-sm font-medium text-gray-700">Highlights</Label>
+        <Button type="button" size="sm" variant="ghost" onClick={add} className="text-teal-600 hover:text-teal-700 hover:bg-teal-50 h-7 text-xs">
           <Plus className="w-3 h-3 mr-1" />Add Highlight
         </Button>
       </div>
-      {value.length === 0 && <p className="text-gray-600 text-xs italic">No highlights yet.</p>}
+      {value.length === 0 && <p className="text-gray-400 text-xs italic">No highlights yet.</p>}
       <div className="space-y-3">
         {value.map((h, i) => (
-          <div key={i} className="bg-gray-800 border border-gray-700 rounded-xl p-4 space-y-2">
+          <div key={i} className="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-2">
             <div className="flex gap-2">
               <Input
                 value={h.title}
                 onChange={(e) => update(i, "title", e.target.value)}
-                className="bg-gray-700 border-gray-600 text-white text-sm flex-1"
+                className="border-gray-200 text-gray-900 text-sm flex-1"
                 placeholder="Highlight title"
               />
-              <Button type="button" size="sm" variant="ghost" onClick={() => remove(i)} className="text-red-500/60 hover:text-red-400 h-9 w-9 p-0 flex-shrink-0">
+              <Button type="button" size="sm" variant="ghost" onClick={() => remove(i)} className="text-red-400 hover:text-red-600 hover:bg-red-50 h-9 w-9 p-0 flex-shrink-0">
                 <X className="w-3.5 h-3.5" />
               </Button>
             </div>
             <Textarea
               value={h.description}
               onChange={(e) => update(i, "description", e.target.value)}
-              className="bg-gray-700 border-gray-600 text-white text-sm min-h-[60px]"
+              className="border-gray-200 text-gray-900 text-sm min-h-[60px]"
               placeholder="Description of this highlight..."
             />
-            <div className="flex gap-2 items-center">
-              <Image className="w-3.5 h-3.5 text-gray-500 flex-shrink-0" />
-              <Input
-                value={h.image ?? ""}
-                onChange={(e) => update(i, "image", e.target.value)}
-                className="bg-gray-700 border-gray-600 text-white text-xs"
-                placeholder="Image URL (optional)"
-              />
-              {h.image && (
-                <img src={h.image} alt="" className="h-8 w-12 object-cover rounded flex-shrink-0" />
-              )}
-            </div>
+            <ImageUploadField
+              label="Highlight Image (optional)"
+              value={h.image ?? ""}
+              onChange={(url) => update(i, "image", url)}
+              previewHeight="h-24"
+            />
           </div>
         ))}
       </div>
@@ -209,45 +198,39 @@ function HighlightsEditor({ value, onChange }: { value: Highlight[]; onChange: (
 }
 
 function GalleryEditor({ value, onChange }: { value: string[]; onChange: (v: string[]) => void }) {
-  const [newUrl, setNewUrl] = useState("");
-  const add = () => { if (newUrl.trim()) { onChange([...value, newUrl.trim()]); setNewUrl(""); } };
   const remove = (i: number) => onChange(value.filter((_, idx) => idx !== i));
+  const addUrl = (url: string) => { if (url.trim()) onChange([...value, url.trim()]); };
 
   return (
     <div className="space-y-3">
-      <Label className="text-gray-300">Gallery Images</Label>
-      <div className="flex gap-2">
-        <Input
-          value={newUrl}
-          onChange={(e) => setNewUrl(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), add())}
-          className="bg-gray-800 border-gray-700 text-white text-sm"
-          placeholder="Paste image URL and press Add"
-        />
-        <Button type="button" size="sm" onClick={add} className="bg-teal-500 hover:bg-teal-400 text-gray-950 flex-shrink-0">
-          <Plus className="w-3.5 h-3.5 mr-1" />Add
-        </Button>
-      </div>
+      <Label className="text-sm font-medium text-gray-700">Gallery Images</Label>
+      <ImageUploadField
+        value=""
+        onChange={(url) => { if (url) addUrl(url); }}
+        placeholder="Paste image URL to add to gallery"
+        previewHeight="h-20"
+        hint="Upload or paste a URL to add each image to the gallery"
+      />
       {value.length > 0 && (
-        <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 mt-2">
           {value.map((url, i) => (
-            <div key={i} className="relative group aspect-square rounded-lg overflow-hidden bg-gray-800">
+            <div key={i} className="relative group aspect-square rounded-lg overflow-hidden bg-gray-100 border border-gray-200">
               <img src={url} alt="" className="w-full h-full object-cover" />
               <button
                 type="button"
                 onClick={() => remove(i)}
-                className="absolute top-1 right-1 w-6 h-6 bg-red-600/80 hover:bg-red-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute top-1 right-1 w-6 h-6 bg-red-500/90 hover:bg-red-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow"
               >
                 <X className="w-3 h-3 text-white" />
               </button>
-              <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-xs px-1 py-0.5 text-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute bottom-0 left-0 right-0 bg-black/40 text-white text-xs px-1 py-0.5 text-center opacity-0 group-hover:opacity-100 transition-opacity">
                 {i + 1}
               </div>
             </div>
           ))}
         </div>
       )}
-      {value.length === 0 && <p className="text-gray-600 text-xs italic">No gallery images yet.</p>}
+      {value.length === 0 && <p className="text-gray-400 text-xs italic">No gallery images yet.</p>}
     </div>
   );
 }
@@ -301,42 +284,42 @@ export default function CmsTours() {
     <CmsLayout title="Tours">
       <div className="max-w-4xl mx-auto space-y-6">
         <div className="flex items-center justify-between">
-          <p className="text-gray-400 text-sm">{toursQuery.data?.length ?? 0} tours</p>
-          <Button onClick={openCreate} className="bg-teal-500 hover:bg-teal-400 text-gray-950">
+          <p className="text-gray-500 text-sm">{toursQuery.data?.length ?? 0} tours</p>
+          <Button onClick={openCreate} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm">
             <Plus className="w-4 h-4 mr-2" />New Tour
           </Button>
         </div>
 
         {toursQuery.isLoading ? (
-          <div className="flex justify-center py-12"><Loader2 className="w-6 h-6 animate-spin text-teal-400" /></div>
+          <div className="flex justify-center py-12"><Loader2 className="w-6 h-6 animate-spin text-teal-500" /></div>
         ) : (
-          <div className="space-y-3">
+          <div className="space-y-2">
             {toursQuery.data?.map((t) => (
-              <div key={t.id} className="bg-gray-900 border border-gray-800 rounded-xl p-4 flex items-center gap-4">
-                <GripVertical className="w-4 h-4 text-gray-600 flex-shrink-0" />
+              <div key={t.id} className="bg-white border border-gray-100 hover:border-teal-200 rounded-xl p-4 flex items-center gap-4 shadow-sm transition-all">
+                <GripVertical className="w-4 h-4 text-gray-300 flex-shrink-0" />
                 {t.heroImage && (
-                  <img src={t.heroImage} alt={t.name} className="w-16 h-12 object-cover rounded-lg flex-shrink-0" />
+                  <img src={t.heroImage} alt={t.name} className="w-16 h-12 object-cover rounded-lg flex-shrink-0 border border-gray-100" />
                 )}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <p className="text-white font-medium text-sm">{t.name}</p>
-                    <Badge variant={t.published ? "default" : "secondary"} className={t.published ? "bg-teal-500/20 text-teal-400 border-teal-500/30 text-xs" : "text-xs"}>
+                    <p className="text-gray-900 font-medium text-sm">{t.name}</p>
+                    <Badge variant={t.published ? "default" : "secondary"} className={t.published ? "bg-teal-50 text-teal-700 border-teal-200 text-xs" : "text-xs bg-gray-100 text-gray-500"}>
                       {t.published ? "Published" : "Draft"}
                     </Badge>
                   </div>
-                  <p className="text-gray-400 text-xs mt-0.5">{t.destination} · {t.duration} · {t.price}</p>
-                  <p className="text-gray-500 text-xs">/tour/{t.slug}</p>
+                  <p className="text-gray-500 text-xs mt-0.5">{t.destination} · {t.duration} · {t.price}</p>
+                  <p className="text-gray-400 text-xs">/tour/{t.slug}</p>
                 </div>
                 <div className="flex items-center gap-1 flex-shrink-0">
                   <a href={`/tour/${t.slug}`} target="_blank" rel="noopener noreferrer">
-                    <Button size="sm" variant="ghost" className="text-gray-400 hover:text-white h-8 w-8 p-0" title="View live">
+                    <Button size="sm" variant="ghost" className="text-gray-400 hover:text-teal-600 h-8 w-8 p-0" title="View live">
                       <ExternalLink className="w-3.5 h-3.5" />
                     </Button>
                   </a>
-                  <Button size="sm" variant="ghost" className="text-gray-400 hover:text-white h-8 w-8 p-0" onClick={() => openEdit(t)} title="Edit">
+                  <Button size="sm" variant="ghost" className="text-gray-400 hover:text-gray-700 h-8 w-8 p-0" onClick={() => openEdit(t)} title="Edit">
                     <Pencil className="w-3.5 h-3.5" />
                   </Button>
-                  <Button size="sm" variant="ghost" className="text-red-500/60 hover:text-red-400 h-8 w-8 p-0" onClick={() => setDeleteId(t.id)} title="Delete">
+                  <Button size="sm" variant="ghost" className="text-red-400/60 hover:text-red-500 hover:bg-red-50 h-8 w-8 p-0" onClick={() => setDeleteId(t.id)} title="Delete">
                     <Trash2 className="w-3.5 h-3.5" />
                   </Button>
                 </div>
@@ -348,71 +331,71 @@ export default function CmsTours() {
 
       {/* Edit dialog */}
       <Dialog open={editOpen} onOpenChange={setEditOpen}>
-        <DialogContent className="bg-gray-900 border-gray-800 text-white max-w-3xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-3xl max-h-[90vh] overflow-y-auto shadow-xl">
           <DialogHeader>
-            <DialogTitle className="text-lg">{form.id ? `Edit: ${form.name}` : "New Tour"}</DialogTitle>
+            <DialogTitle className="text-lg text-gray-900">{form.id ? `Edit: ${form.name}` : "New Tour"}</DialogTitle>
           </DialogHeader>
 
           <Tabs defaultValue="basics" className="w-full">
-            <TabsList className="bg-gray-800 border border-gray-700 w-full">
-              <TabsTrigger value="basics" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-gray-950">Basics</TabsTrigger>
-              <TabsTrigger value="content" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-gray-950">Content</TabsTrigger>
-              <TabsTrigger value="itinerary" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-gray-950">Itinerary</TabsTrigger>
-              <TabsTrigger value="dates" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-gray-950">Dates</TabsTrigger>
-              <TabsTrigger value="media" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-gray-950">Images</TabsTrigger>
+            <TabsList className="bg-gray-100 border border-gray-200 w-full">
+              <TabsTrigger value="basics" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-white data-[state=active]:shadow-sm">Basics</TabsTrigger>
+              <TabsTrigger value="content" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-white data-[state=active]:shadow-sm">Content</TabsTrigger>
+              <TabsTrigger value="itinerary" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-white data-[state=active]:shadow-sm">Itinerary</TabsTrigger>
+              <TabsTrigger value="dates" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-white data-[state=active]:shadow-sm">Dates</TabsTrigger>
+              <TabsTrigger value="media" className="flex-1 text-xs data-[state=active]:bg-teal-500 data-[state=active]:text-white data-[state=active]:shadow-sm">Images</TabsTrigger>
             </TabsList>
 
             {/* ── Tab: Basics ── */}
             <TabsContent value="basics" className="space-y-4 pt-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <Label className="text-gray-300 text-sm">Tour Name *</Label>
-                  <Input value={form.name} onChange={(e) => set("name", e.target.value)} className="bg-gray-800 border-gray-700 text-white" placeholder="Thailand Island Hopper" />
+                  <Label className="text-sm font-medium text-gray-700">Tour Name *</Label>
+                  <Input value={form.name} onChange={(e) => set("name", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="Thailand Island Hopper" />
                 </div>
                 <div className="space-y-1.5">
-                  <Label className="text-gray-300 text-sm">URL Slug *</Label>
-                  <Input value={form.slug} onChange={(e) => set("slug", e.target.value.toLowerCase().replace(/\s+/g, "-"))} className="bg-gray-800 border-gray-700 text-white" placeholder="thailand-island-hopper" />
-                  <p className="text-gray-600 text-xs">Used in the URL: /tour/your-slug</p>
+                  <Label className="text-sm font-medium text-gray-700">URL Slug *</Label>
+                  <Input value={form.slug} onChange={(e) => set("slug", e.target.value.toLowerCase().replace(/\s+/g, "-"))} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="thailand-island-hopper" />
+                  <p className="text-gray-400 text-xs">Used in the URL: /tour/your-slug</p>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <Label className="text-gray-300 text-sm">Destination</Label>
-                  <Input value={form.destination} onChange={(e) => set("destination", e.target.value)} className="bg-gray-800 border-gray-700 text-white" placeholder="Thailand" />
+                  <Label className="text-sm font-medium text-gray-700">Destination</Label>
+                  <Input value={form.destination} onChange={(e) => set("destination", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="Thailand" />
                 </div>
                 <div className="space-y-1.5">
-                  <Label className="text-gray-300 text-sm">Duration</Label>
-                  <Input value={form.duration} onChange={(e) => set("duration", e.target.value)} className="bg-gray-800 border-gray-700 text-white" placeholder="21 days" />
+                  <Label className="text-sm font-medium text-gray-700">Duration</Label>
+                  <Input value={form.duration} onChange={(e) => set("duration", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="21 days" />
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-4">
                 <div className="space-y-1.5">
-                  <Label className="text-gray-300 text-sm">Price (e.g. £1,599)</Label>
-                  <Input value={form.price} onChange={(e) => set("price", e.target.value)} className="bg-gray-800 border-gray-700 text-white" placeholder="£1,599" />
+                  <Label className="text-sm font-medium text-gray-700">Price (e.g. £1,599)</Label>
+                  <Input value={form.price} onChange={(e) => set("price", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="£1,599" />
                 </div>
                 <div className="space-y-1.5">
-                  <Label className="text-gray-300 text-sm">Deposit</Label>
-                  <Input value={form.deposit} onChange={(e) => set("deposit", e.target.value)} className="bg-gray-800 border-gray-700 text-white" placeholder="£60" />
+                  <Label className="text-sm font-medium text-gray-700">Deposit</Label>
+                  <Input value={form.deposit} onChange={(e) => set("deposit", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="£60" />
                 </div>
                 <div className="space-y-1.5">
-                  <Label className="text-gray-300 text-sm">Next Departure</Label>
-                  <Input value={form.nextDeparture} onChange={(e) => set("nextDeparture", e.target.value)} className="bg-gray-800 border-gray-700 text-white" placeholder="April 2026" />
+                  <Label className="text-sm font-medium text-gray-700">Next Departure</Label>
+                  <Input value={form.nextDeparture} onChange={(e) => set("nextDeparture", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="April 2026" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <Label className="text-gray-300 text-sm">Group Size</Label>
-                  <Input value={form.groupSize} onChange={(e) => set("groupSize", e.target.value)} className="bg-gray-800 border-gray-700 text-white" placeholder="15-30" />
+                  <Label className="text-sm font-medium text-gray-700">Group Size</Label>
+                  <Input value={form.groupSize} onChange={(e) => set("groupSize", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="15-30" />
                 </div>
                 <div className="space-y-1.5">
-                  <Label className="text-gray-300 text-sm">Age Range</Label>
-                  <Input value={form.ageRange} onChange={(e) => set("ageRange", e.target.value)} className="bg-gray-800 border-gray-700 text-white" placeholder="18-35" />
+                  <Label className="text-sm font-medium text-gray-700">Age Range</Label>
+                  <Input value={form.ageRange} onChange={(e) => set("ageRange", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="18-35" />
                 </div>
               </div>
-              <div className="flex items-center gap-3 pt-2">
+              <div className="flex items-center gap-3 pt-2 bg-gray-50 rounded-xl p-4">
                 <Switch checked={form.published} onCheckedChange={(v) => set("published", v)} />
                 <div>
-                  <Label className="text-gray-300 text-sm">Published</Label>
+                  <Label className="text-gray-700 text-sm font-medium">Published</Label>
                   <p className="text-gray-500 text-xs">{form.published ? "Visible on the website" : "Hidden from the website"}</p>
                 </div>
               </div>
@@ -421,8 +404,8 @@ export default function CmsTours() {
             {/* ── Tab: Content ── */}
             <TabsContent value="content" className="space-y-5 pt-4">
               <div className="space-y-1.5">
-                <Label className="text-gray-300 text-sm">Tour Description</Label>
-                <Textarea value={form.description} onChange={(e) => set("description", e.target.value)} className="bg-gray-800 border-gray-700 text-white min-h-[100px]" placeholder="Describe the tour in 2-3 sentences..." />
+                <Label className="text-sm font-medium text-gray-700">Tour Description</Label>
+                <Textarea value={form.description} onChange={(e) => set("description", e.target.value)} className="border-gray-200 text-gray-900 min-h-[100px] focus:border-teal-400" placeholder="Describe the tour in 2-3 sentences..." />
               </div>
               <HighlightsEditor value={form.highlights} onChange={(v) => set("highlights", v)} />
               <StringListEditor
@@ -449,61 +432,61 @@ export default function CmsTours() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div>
-                    <Label className="text-gray-300">Departure Dates</Label>
-                    <p className="text-gray-500 text-xs mt-0.5">Add all available departure dates for this tour</p>
+                    <Label className="text-sm font-medium text-gray-700">Departure Dates</Label>
+                    <p className="text-gray-400 text-xs mt-0.5">Add all available departure dates for this tour</p>
                   </div>
-                  <Button type="button" size="sm" variant="ghost" onClick={() => set("departureDates", [...(form.departureDates ?? []), { date: "", price: form.price, duration: form.duration, badge: "" }])} className="text-teal-400 hover:text-teal-300 h-7 text-xs">
+                  <Button type="button" size="sm" variant="ghost" onClick={() => set("departureDates", [...(form.departureDates ?? []), { date: "", price: form.price, duration: form.duration, badge: "" }])} className="text-teal-600 hover:text-teal-700 hover:bg-teal-50 h-7 text-xs">
                     <Plus className="w-3 h-3 mr-1" />Add Date
                   </Button>
                 </div>
                 {(form.departureDates ?? []).length === 0 && (
-                  <p className="text-gray-600 text-xs italic">No departure dates yet. Click Add Date to start.</p>
+                  <p className="text-gray-400 text-xs italic">No departure dates yet. Click Add Date to start.</p>
                 )}
                 <div className="space-y-3">
                   {(form.departureDates ?? []).map((d, i) => (
-                    <div key={i} className="bg-gray-800 border border-gray-700 rounded-xl p-4 space-y-3">
+                    <div key={i} className="bg-gray-50 border border-gray-200 rounded-xl p-4 space-y-3">
                       <div className="flex items-center gap-2">
                         <div className="flex-1 grid grid-cols-2 gap-2">
                           <div className="space-y-1">
-                            <Label className="text-gray-400 text-xs">Date</Label>
+                            <Label className="text-gray-500 text-xs">Date</Label>
                             <Input
                               value={d.date}
                               onChange={(e) => { const a = [...(form.departureDates ?? [])]; a[i] = { ...a[i], date: e.target.value }; set("departureDates", a); }}
-                              className="bg-gray-700 border-gray-600 text-white text-sm"
+                              className="border-gray-200 text-gray-900 text-sm"
                               placeholder="e.g. 12 April 2026"
                             />
                           </div>
                           <div className="space-y-1">
-                            <Label className="text-gray-400 text-xs">Price</Label>
+                            <Label className="text-gray-500 text-xs">Price</Label>
                             <Input
                               value={d.price}
                               onChange={(e) => { const a = [...(form.departureDates ?? [])]; a[i] = { ...a[i], price: e.target.value }; set("departureDates", a); }}
-                              className="bg-gray-700 border-gray-600 text-white text-sm"
+                              className="border-gray-200 text-gray-900 text-sm"
                               placeholder="£1,599"
                             />
                           </div>
                         </div>
-                        <Button type="button" size="sm" variant="ghost" onClick={() => set("departureDates", (form.departureDates ?? []).filter((_, idx) => idx !== i))} className="text-red-500/60 hover:text-red-400 h-8 w-8 p-0 flex-shrink-0 mt-5">
+                        <Button type="button" size="sm" variant="ghost" onClick={() => set("departureDates", (form.departureDates ?? []).filter((_, idx) => idx !== i))} className="text-red-400 hover:text-red-600 hover:bg-red-50 h-8 w-8 p-0 flex-shrink-0 mt-5">
                           <X className="w-3.5 h-3.5" />
                         </Button>
                       </div>
                       <div className="grid grid-cols-2 gap-2">
                         <div className="space-y-1">
-                          <Label className="text-gray-400 text-xs">Duration</Label>
+                          <Label className="text-gray-500 text-xs">Duration</Label>
                           <Input
                             value={d.duration}
                             onChange={(e) => { const a = [...(form.departureDates ?? [])]; a[i] = { ...a[i], duration: e.target.value }; set("departureDates", a); }}
-                            className="bg-gray-700 border-gray-600 text-white text-sm"
+                            className="border-gray-200 text-gray-900 text-sm"
                             placeholder="21 days"
                           />
                         </div>
                         <div className="space-y-1">
-                          <Label className="text-gray-400 text-xs">Badge (optional)</Label>
+                          <Label className="text-gray-500 text-xs">Badge (optional)</Label>
                           <Input
                             value={d.badge ?? ""}
                             onChange={(e) => { const a = [...(form.departureDates ?? [])]; a[i] = { ...a[i], badge: e.target.value }; set("departureDates", a); }}
-                            className="bg-gray-700 border-gray-600 text-white text-sm"
-                            placeholder="e.g. Selling Fast, Last Spaces"
+                            className="border-gray-200 text-gray-900 text-sm"
+                            placeholder="e.g. Selling Fast"
                           />
                         </div>
                       </div>
@@ -512,35 +495,35 @@ export default function CmsTours() {
                 </div>
               </div>
 
-              <div className="space-y-3 border-t border-gray-800 pt-5">
-                <Label className="text-gray-300">Flight Information</Label>
-                <p className="text-gray-500 text-xs">Displayed on the Flight Support page</p>
+              <div className="space-y-3 border-t border-gray-100 pt-5">
+                <Label className="text-sm font-medium text-gray-700">Flight Information</Label>
+                <p className="text-gray-400 text-xs">Displayed on the Flight Support page</p>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1.5">
-                    <Label className="text-gray-400 text-xs">Fly In (arrival airport)</Label>
+                    <Label className="text-gray-500 text-xs">Fly In (arrival airport)</Label>
                     <Input
                       value={(form.flightInfo ?? { flyIn: "" }).flyIn}
                       onChange={(e) => set("flightInfo", { ...(form.flightInfo ?? {}), flyIn: e.target.value })}
-                      className="bg-gray-800 border-gray-700 text-white text-sm"
+                      className="border-gray-200 text-gray-900 text-sm"
                       placeholder="e.g. Bangkok (BKK)"
                     />
                   </div>
                   <div className="space-y-1.5">
-                    <Label className="text-gray-400 text-xs">Fly Out (departure airport)</Label>
+                    <Label className="text-gray-500 text-xs">Fly Out (departure airport)</Label>
                     <Input
                       value={(form.flightInfo ?? { flyOut: "" }).flyOut}
                       onChange={(e) => set("flightInfo", { ...(form.flightInfo ?? {}), flyOut: e.target.value })}
-                      className="bg-gray-800 border-gray-700 text-white text-sm"
+                      className="border-gray-200 text-gray-900 text-sm"
                       placeholder="e.g. Bali (DPS)"
                     />
                   </div>
                 </div>
                 <div className="space-y-1.5">
-                  <Label className="text-gray-400 text-xs">Flight Notes</Label>
+                  <Label className="text-gray-500 text-xs">Flight Notes</Label>
                   <Textarea
                     value={(form.flightInfo ?? { notes: "" }).notes}
                     onChange={(e) => set("flightInfo", { ...(form.flightInfo ?? {}), notes: e.target.value })}
-                    className="bg-gray-800 border-gray-700 text-white text-sm min-h-[70px]"
+                    className="border-gray-200 text-gray-900 text-sm min-h-[70px]"
                     placeholder="Any additional flight information..."
                   />
                 </div>
@@ -549,21 +532,20 @@ export default function CmsTours() {
 
             {/* ── Tab: Images ── */}
             <TabsContent value="media" className="space-y-5 pt-4">
-              <div className="space-y-1.5">
-                <Label className="text-gray-300 text-sm">Hero Image URL</Label>
-                <Input value={form.heroImage} onChange={(e) => set("heroImage", e.target.value)} className="bg-gray-800 border-gray-700 text-white" placeholder="https://..." />
-                {form.heroImage && (
-                  <img src={form.heroImage} alt="Hero preview" className="mt-2 h-32 w-full object-cover rounded-lg border border-gray-700" />
-                )}
-                <p className="text-gray-500 text-xs">Tip: upload the image in the Media Library first, then copy the URL here.</p>
-              </div>
+              <ImageUploadField
+                label="Hero Image"
+                value={form.heroImage}
+                onChange={(url) => set("heroImage", url)}
+                previewHeight="h-40"
+                hint="This is the main image shown at the top of the tour page"
+              />
               <GalleryEditor value={form.gallery} onChange={(v) => set("gallery", v)} />
             </TabsContent>
           </Tabs>
 
-          <DialogFooter className="pt-2 border-t border-gray-800">
-            <Button variant="ghost" onClick={() => setEditOpen(false)} className="text-gray-400">Cancel</Button>
-            <Button onClick={handleSave} disabled={upsertMutation.isPending} className="bg-teal-500 hover:bg-teal-400 text-gray-950 min-w-[100px]">
+          <DialogFooter className="pt-2 border-t border-gray-100">
+            <Button variant="outline" onClick={() => setEditOpen(false)} className="border-gray-200 text-gray-600">Cancel</Button>
+            <Button onClick={handleSave} disabled={upsertMutation.isPending} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm min-w-[100px]">
               {upsertMutation.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : "Save Tour"}
             </Button>
           </DialogFooter>
@@ -572,15 +554,15 @@ export default function CmsTours() {
 
       {/* Delete confirm */}
       <AlertDialog open={deleteId !== null} onOpenChange={() => setDeleteId(null)}>
-        <AlertDialogContent className="bg-gray-900 border-gray-800 text-white">
+        <AlertDialogContent className="bg-white border-gray-200 text-gray-900 shadow-xl">
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete this tour?</AlertDialogTitle>
-            <AlertDialogDescription className="text-gray-400">This cannot be undone. The tour will be removed from the website immediately.</AlertDialogDescription>
+            <AlertDialogTitle className="text-gray-900">Delete this tour?</AlertDialogTitle>
+            <AlertDialogDescription className="text-gray-500">This cannot be undone. The tour will be removed from the website immediately.</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel className="bg-gray-800 border-gray-700 text-white hover:bg-gray-700">Cancel</AlertDialogCancel>
+            <AlertDialogCancel className="border-gray-200 text-gray-600 hover:bg-gray-50">Cancel</AlertDialogCancel>
             <AlertDialogAction
-              className="bg-red-600 hover:bg-red-500 text-white"
+              className="bg-red-500 hover:bg-red-600 text-white"
               onClick={() => { if (deleteId) deleteMutation.mutate({ id: deleteId }); setDeleteId(null); }}
             >Delete Tour</AlertDialogAction>
           </AlertDialogFooter>

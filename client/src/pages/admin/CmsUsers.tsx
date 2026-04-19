@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Loader2, Plus, Pencil, Trash2, KeyRound } from "lucide-react";
+import { Loader2, Plus, Pencil, Trash2, KeyRound, ShieldAlert } from "lucide-react";
 import { toast } from "sonner";
 
 const emptyUser = { username: "", name: "", email: "", password: "", role: "editor" as "admin" | "editor" };
@@ -42,46 +42,53 @@ export default function CmsUsers() {
     <CmsLayout title="CMS Users">
       <div className="max-w-2xl mx-auto space-y-6">
         <div className="flex items-center justify-between">
-          <p className="text-gray-400 text-sm">{usersQuery.data?.length ?? 0} users</p>
-          <Button onClick={() => { setForm(emptyUser); setCreateOpen(true); }} className="bg-teal-500 hover:bg-teal-400 text-gray-950">
+          <p className="text-gray-500 text-sm">{usersQuery.data?.length ?? 0} users</p>
+          <Button onClick={() => { setForm(emptyUser); setCreateOpen(true); }} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm">
             <Plus className="w-4 h-4 mr-2" />New User
           </Button>
         </div>
 
-        <div className="bg-gray-900 border border-amber-500/20 rounded-xl p-4 text-sm text-amber-300/80">
-          <p className="font-medium text-amber-300 mb-1">CMS Users vs Site Users</p>
-          <p>These are separate CMS admin accounts used only to log in to this management panel. They are not the same as customer accounts on the main site.</p>
+        {/* Info banner */}
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 flex gap-3">
+          <ShieldAlert className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="font-medium text-amber-800 text-sm">CMS Users vs Site Users</p>
+            <p className="text-amber-700 text-xs mt-0.5">These are separate CMS admin accounts used only to log in to this management panel. They are not the same as customer accounts on the main site.</p>
+          </div>
         </div>
 
         {usersQuery.isLoading ? (
-          <div className="flex justify-center py-12"><Loader2 className="w-6 h-6 animate-spin text-teal-400" /></div>
+          <div className="flex justify-center py-12"><Loader2 className="w-6 h-6 animate-spin text-teal-500" /></div>
         ) : (
-          <div className="space-y-3">
+          <div className="space-y-2">
             {usersQuery.data?.map((u) => (
-              <div key={u.id} className="bg-gray-900 border border-gray-800 rounded-xl p-4 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-teal-400 text-sm font-bold">{(u.name ?? u.username).charAt(0).toUpperCase()}</span>
+              <div key={u.id} className="bg-white border border-gray-100 hover:border-teal-200 rounded-xl p-4 flex items-center gap-4 shadow-sm transition-all">
+                <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0">
+                  <span className="text-teal-700 text-sm font-bold">{(u.name ?? u.username).charAt(0).toUpperCase()}</span>
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <p className="text-white text-sm font-medium">{u.name ?? u.username}</p>
-                    <Badge className={u.role === "admin" ? "bg-purple-500/20 text-purple-400 border-purple-500/30" : "bg-gray-700 text-gray-300 border-gray-600"}>
+                    <p className="text-gray-900 text-sm font-medium">{u.name ?? u.username}</p>
+                    <Badge className={u.role === "admin"
+                      ? "bg-purple-50 text-purple-700 border-purple-200 text-xs"
+                      : "bg-gray-100 text-gray-600 border-gray-200 text-xs"
+                    }>
                       {u.role}
                     </Badge>
                   </div>
                   <p className="text-gray-400 text-xs mt-0.5">@{u.username}{u.email ? ` · ${u.email}` : ""}</p>
                 </div>
                 <div className="flex items-center gap-1 flex-shrink-0">
-                  <Button size="sm" variant="ghost" className="text-gray-400 hover:text-amber-400 h-8 w-8 p-0" title="Reset password" onClick={() => { setResetId(u.id); setNewPassword(""); }}>
+                  <Button size="sm" variant="ghost" className="text-amber-500/70 hover:text-amber-600 hover:bg-amber-50 h-8 w-8 p-0" title="Reset password" onClick={() => { setResetId(u.id); setNewPassword(""); }}>
                     <KeyRound className="w-3.5 h-3.5" />
                   </Button>
-                  <Button size="sm" variant="ghost" className="text-gray-400 hover:text-white h-8 w-8 p-0" onClick={() => {
+                  <Button size="sm" variant="ghost" className="text-gray-400 hover:text-gray-700 h-8 w-8 p-0" onClick={() => {
                     setEditForm({ id: u.id, name: u.name ?? "", email: u.email ?? "", role: u.role as "admin" | "editor" });
                     setEditOpen(true);
                   }}>
                     <Pencil className="w-3.5 h-3.5" />
                   </Button>
-                  <Button size="sm" variant="ghost" className="text-red-500/60 hover:text-red-400 h-8 w-8 p-0" onClick={() => setDeleteId(u.id)}>
+                  <Button size="sm" variant="ghost" className="text-red-400/60 hover:text-red-500 hover:bg-red-50 h-8 w-8 p-0" onClick={() => setDeleteId(u.id)}>
                     <Trash2 className="w-3.5 h-3.5" />
                   </Button>
                 </div>
@@ -93,41 +100,42 @@ export default function CmsUsers() {
 
       {/* Create user */}
       <Dialog open={createOpen} onOpenChange={setCreateOpen}>
-        <DialogContent className="bg-gray-900 border-gray-800 text-white max-w-sm">
-          <DialogHeader><DialogTitle>New CMS User</DialogTitle></DialogHeader>
+        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-sm shadow-xl">
+          <DialogHeader><DialogTitle className="text-gray-900">New CMS User</DialogTitle></DialogHeader>
           <div className="space-y-4 py-2">
             <div className="space-y-1.5">
-              <Label className="text-gray-300">Username</Label>
-              <Input value={form.username} onChange={(e) => set("username", e.target.value)} className="bg-gray-800 border-gray-700 text-white" placeholder="jane-smith" />
+              <Label className="text-sm font-medium text-gray-700">Username *</Label>
+              <Input value={form.username} onChange={(e) => set("username", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="jane-smith" />
+              <p className="text-gray-400 text-xs">Used to log in. Lowercase, no spaces.</p>
             </div>
             <div className="space-y-1.5">
-              <Label className="text-gray-300">Full Name</Label>
-              <Input value={form.name} onChange={(e) => set("name", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+              <Label className="text-sm font-medium text-gray-700">Full Name</Label>
+              <Input value={form.name} onChange={(e) => set("name", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="Jane Smith" />
             </div>
             <div className="space-y-1.5">
-              <Label className="text-gray-300">Email (optional)</Label>
-              <Input type="email" value={form.email} onChange={(e) => set("email", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+              <Label className="text-sm font-medium text-gray-700">Email (optional)</Label>
+              <Input type="email" value={form.email} onChange={(e) => set("email", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="jane@example.com" />
             </div>
             <div className="space-y-1.5">
-              <Label className="text-gray-300">Password</Label>
-              <Input type="password" value={form.password} onChange={(e) => set("password", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+              <Label className="text-sm font-medium text-gray-700">Password *</Label>
+              <Input type="password" value={form.password} onChange={(e) => set("password", e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" />
             </div>
             <div className="space-y-1.5">
-              <Label className="text-gray-300">Role</Label>
+              <Label className="text-sm font-medium text-gray-700">Role</Label>
               <Select value={form.role} onValueChange={(v) => set("role", v)}>
-                <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                <SelectTrigger className="border-gray-200 text-gray-900 focus:border-teal-400">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="bg-gray-800 border-gray-700">
-                  <SelectItem value="admin" className="text-white focus:bg-gray-700">Admin — full access</SelectItem>
-                  <SelectItem value="editor" className="text-white focus:bg-gray-700">Editor — content only</SelectItem>
+                <SelectContent className="bg-white border-gray-200">
+                  <SelectItem value="admin">Admin — full access</SelectItem>
+                  <SelectItem value="editor">Editor — content only</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </div>
           <DialogFooter>
-            <Button variant="ghost" onClick={() => setCreateOpen(false)} className="text-gray-400">Cancel</Button>
-            <Button onClick={() => create.mutate(form)} disabled={create.isPending} className="bg-teal-500 hover:bg-teal-400 text-gray-950">
+            <Button variant="outline" onClick={() => setCreateOpen(false)} className="border-gray-200 text-gray-600">Cancel</Button>
+            <Button onClick={() => create.mutate(form)} disabled={create.isPending} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm">
               {create.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : "Create User"}
             </Button>
           </DialogFooter>
@@ -136,33 +144,33 @@ export default function CmsUsers() {
 
       {/* Edit user */}
       <Dialog open={editOpen} onOpenChange={setEditOpen}>
-        <DialogContent className="bg-gray-900 border-gray-800 text-white max-w-sm">
-          <DialogHeader><DialogTitle>Edit User</DialogTitle></DialogHeader>
+        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-sm shadow-xl">
+          <DialogHeader><DialogTitle className="text-gray-900">Edit User</DialogTitle></DialogHeader>
           <div className="space-y-4 py-2">
             <div className="space-y-1.5">
-              <Label className="text-gray-300">Full Name</Label>
-              <Input value={editForm.name} onChange={(e) => setEditForm((f) => ({ ...f, name: e.target.value }))} className="bg-gray-800 border-gray-700 text-white" />
+              <Label className="text-sm font-medium text-gray-700">Full Name</Label>
+              <Input value={editForm.name} onChange={(e) => setEditForm((f) => ({ ...f, name: e.target.value }))} className="border-gray-200 text-gray-900 focus:border-teal-400" />
             </div>
             <div className="space-y-1.5">
-              <Label className="text-gray-300">Email</Label>
-              <Input type="email" value={editForm.email} onChange={(e) => setEditForm((f) => ({ ...f, email: e.target.value }))} className="bg-gray-800 border-gray-700 text-white" />
+              <Label className="text-sm font-medium text-gray-700">Email</Label>
+              <Input type="email" value={editForm.email} onChange={(e) => setEditForm((f) => ({ ...f, email: e.target.value }))} className="border-gray-200 text-gray-900 focus:border-teal-400" />
             </div>
             <div className="space-y-1.5">
-              <Label className="text-gray-300">Role</Label>
+              <Label className="text-sm font-medium text-gray-700">Role</Label>
               <Select value={editForm.role} onValueChange={(v) => setEditForm((f) => ({ ...f, role: v as "admin" | "editor" }))}>
-                <SelectTrigger className="bg-gray-800 border-gray-700 text-white">
+                <SelectTrigger className="border-gray-200 text-gray-900 focus:border-teal-400">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="bg-gray-800 border-gray-700">
-                  <SelectItem value="admin" className="text-white focus:bg-gray-700">Admin</SelectItem>
-                  <SelectItem value="editor" className="text-white focus:bg-gray-700">Editor</SelectItem>
+                <SelectContent className="bg-white border-gray-200">
+                  <SelectItem value="admin">Admin</SelectItem>
+                  <SelectItem value="editor">Editor</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </div>
           <DialogFooter>
-            <Button variant="ghost" onClick={() => setEditOpen(false)} className="text-gray-400">Cancel</Button>
-            <Button onClick={() => update.mutate(editForm)} disabled={update.isPending} className="bg-teal-500 hover:bg-teal-400 text-gray-950">
+            <Button variant="outline" onClick={() => setEditOpen(false)} className="border-gray-200 text-gray-600">Cancel</Button>
+            <Button onClick={() => update.mutate(editForm)} disabled={update.isPending} className="bg-teal-500 hover:bg-teal-600 text-white shadow-sm">
               {update.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : "Save"}
             </Button>
           </DialogFooter>
@@ -171,15 +179,15 @@ export default function CmsUsers() {
 
       {/* Reset password */}
       <Dialog open={resetId !== null} onOpenChange={() => setResetId(null)}>
-        <DialogContent className="bg-gray-900 border-gray-800 text-white max-w-sm">
-          <DialogHeader><DialogTitle>Reset Password</DialogTitle></DialogHeader>
+        <DialogContent className="bg-white border-gray-200 text-gray-900 max-w-sm shadow-xl">
+          <DialogHeader><DialogTitle className="text-gray-900">Reset Password</DialogTitle></DialogHeader>
           <div className="py-2 space-y-1.5">
-            <Label className="text-gray-300">New Password</Label>
-            <Input type="password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+            <Label className="text-sm font-medium text-gray-700">New Password</Label>
+            <Input type="password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} className="border-gray-200 text-gray-900 focus:border-teal-400" placeholder="Enter new password..." />
           </div>
           <DialogFooter>
-            <Button variant="ghost" onClick={() => setResetId(null)} className="text-gray-400">Cancel</Button>
-            <Button onClick={() => resetId && resetPw.mutate({ id: resetId, newPassword: newPassword })} disabled={resetPw.isPending || !newPassword} className="bg-amber-500 hover:bg-amber-400 text-gray-950">
+            <Button variant="outline" onClick={() => setResetId(null)} className="border-gray-200 text-gray-600">Cancel</Button>
+            <Button onClick={() => resetId && resetPw.mutate({ id: resetId, newPassword })} disabled={resetPw.isPending || !newPassword} className="bg-amber-500 hover:bg-amber-600 text-white shadow-sm">
               {resetPw.isPending ? <Loader2 className="w-4 h-4 animate-spin" /> : "Reset Password"}
             </Button>
           </DialogFooter>
@@ -187,14 +195,14 @@ export default function CmsUsers() {
       </Dialog>
 
       <AlertDialog open={deleteId !== null} onOpenChange={() => setDeleteId(null)}>
-        <AlertDialogContent className="bg-gray-900 border-gray-800 text-white">
+        <AlertDialogContent className="bg-white border-gray-200 text-gray-900 shadow-xl">
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete this user?</AlertDialogTitle>
-            <AlertDialogDescription className="text-gray-400">They will no longer be able to log in to the CMS.</AlertDialogDescription>
+            <AlertDialogTitle className="text-gray-900">Delete this user?</AlertDialogTitle>
+            <AlertDialogDescription className="text-gray-500">They will no longer be able to log in to the CMS.</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel className="bg-gray-800 border-gray-700 text-white hover:bg-gray-700">Cancel</AlertDialogCancel>
-            <AlertDialogAction className="bg-red-600 hover:bg-red-500 text-white" onClick={() => { setDeleteId(null); toast.error("User deletion not available — deactivate via role change instead."); }}>OK</AlertDialogAction>
+            <AlertDialogCancel className="border-gray-200 text-gray-600 hover:bg-gray-50">Cancel</AlertDialogCancel>
+            <AlertDialogAction className="bg-red-500 hover:bg-red-600 text-white" onClick={() => { setDeleteId(null); toast.error("User deletion not available — change their role to editor to restrict access instead."); }}>OK</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

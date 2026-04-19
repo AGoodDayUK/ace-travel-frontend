@@ -663,3 +663,10 @@
 - [x] Wire TourDetail scuba prices to CMS settings (scuba_basic_price, scuba_open_water_price, scuba_basic_description, scuba_open_water_description)
 - [x] Confirm session_file CDN URLs are permanent — no re-upload needed
 - [x] Update CMS login screen: show ACE Travel Experiences logo and replace "ACE Travel CMS" with "ACE Travel Experiences"
+
+## CMS Redesign (Apr 2026)
+- [x] Restyle CMS admin to clean light theme with ACE brand colours (teal accent, white bg, proper spacing)
+- [x] Fix all image URL fields to include inline upload (no separate Media Library step needed)
+- [x] Replace manual tour text input in Reviews editor with dropdown of tours from DB
+- [x] Replace manual tour text input in Deals editor with dropdown of tours from DB
+- [x] Apply dropdown-from-DB logic to any other place a tour/deal is referenced in CMS forms

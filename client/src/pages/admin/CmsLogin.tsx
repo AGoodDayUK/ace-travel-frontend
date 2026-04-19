@@ -26,48 +26,48 @@ export default function CmsLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="flex justify-center mb-5">
             <img src="/ace-logo-full.png" alt="ACE Travel Experiences" className="h-14 w-auto" />
           </div>
-          <h1 className="text-2xl font-bold text-white">ACE Travel Experiences</h1>
-          <p className="text-gray-400 text-sm mt-1">Sign in to manage your site</p>
+          <h1 className="text-2xl font-bold text-gray-900">ACE Travel Experiences</h1>
+          <p className="text-gray-500 text-sm mt-1">Sign in to manage your site</p>
         </div>
 
-        <Card className="bg-gray-900 border-gray-800">
+        <Card className="bg-white border-gray-200 shadow-sm">
           <CardHeader className="pb-4">
-            <CardTitle className="text-white text-lg">Sign In</CardTitle>
-            <CardDescription className="text-gray-400">Enter your CMS credentials</CardDescription>
+            <CardTitle className="text-gray-900 text-lg">Sign In</CardTitle>
+            <CardDescription className="text-gray-500">Enter your CMS credentials</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               {error && (
-                <Alert className="bg-red-900/30 border-red-800 text-red-300">
+                <Alert className="bg-red-50 border-red-200 text-red-700">
                   <AlertDescription>{error}</AlertDescription>
                 </Alert>
               )}
               <div className="space-y-1.5">
-                <Label htmlFor="username" className="text-gray-300">Username</Label>
+                <Label htmlFor="username" className="text-gray-700">Username</Label>
                 <Input
                   id="username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 focus:border-teal-500"
+                  className="border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-teal-400"
                   placeholder="your-username"
                   autoComplete="username"
                   required
                 />
               </div>
               <div className="space-y-1.5">
-                <Label htmlFor="password" className="text-gray-300">Password</Label>
+                <Label htmlFor="password" className="text-gray-700">Password</Label>
                 <Input
                   id="password"
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 focus:border-teal-500"
+                  className="border-gray-200 text-gray-900 placeholder:text-gray-400 focus:border-teal-400"
                   placeholder="••••••••"
                   autoComplete="current-password"
                   required
@@ -75,7 +75,7 @@ export default function CmsLogin() {
               </div>
               <Button
                 type="submit"
-                className="w-full bg-teal-500 hover:bg-teal-400 text-gray-950 font-semibold"
+                className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold shadow-sm"
                 disabled={login.isPending}
               >
                 {login.isPending ? (
