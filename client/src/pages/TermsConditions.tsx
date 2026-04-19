@@ -7,7 +7,7 @@ const sections = [
     content: (
       <div className="space-y-2 text-gray-700 text-sm leading-relaxed">
         <p><strong>1.1 Deposit & Sign-Up</strong> – To secure a place, a non-refundable deposit (e.g. <strong>£60 / €70</strong>) is required.</p>
-        <p><strong>1.2 Payment Plans</strong> – Balance is due no later than <strong>30 days before departure</strong>, unless you are on a pre-agreed instalment plan.</p>
+        <p><strong>1.2 Payment Plans</strong> – Balance is due no later than <strong>4 weeks before departure</strong>, unless you are on a pre-agreed instalment plan.</p>
         <p><strong>1.3 Failure to Pay</strong> – If you miss a payment, we may suspend your booking. If unresolved, your booking may be cancelled without refund.</p>
         <p><strong>1.4 Currency</strong> – All payments are processed in GBP (£) unless otherwise agreed.</p>
       </div>
@@ -38,7 +38,7 @@ const sections = [
       <div className="space-y-2 text-gray-700 text-sm leading-relaxed">
         <p>If for any reason you are no longer able to attend or you decide you no longer want to, it is important to let one of the reps know as soon as conveniently possible.</p>
         <p>If you have paid £60 or more of the total package price you may have the option to carry your place over to another trip date along with any funds paid after the initial £60.</p>
-        <p>The decision to allow your place to be carried over will be at our discretion and any such requests MUST be made at least 2 months before your arrival date.</p>
+        <p>The decision to allow your place to be carried over will be at our discretion and any such requests MUST be made at least 4 weeks before your arrival date.</p>
         <p>Please note that due to commitments to our accommodation partners we cannot offer any refunds on payments made towards your package once the terms and conditions have been accepted, except in cases where a mistake has been made on our part or for duplicate payments.</p>
         <p>A booking cancellation can be made at any time via the website Dashboard under the My Package section by clicking "Cancel My Place" and following the instructions.</p>
         <p>If you have secured your place and decide to cancel for any reason you will be liable for a cancellation fee of up to £60, this cancellation fee can be charged to your account at any time after the cancellation request without prior notice.</p>

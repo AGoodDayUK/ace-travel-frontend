@@ -233,7 +233,7 @@ export default function HowItWorks() {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-white/70">Final balance due</span>
-                    <span className="font-bold text-lg">60 days before</span>
+                    <span className="font-bold text-lg">4 weeks before</span>
                   </div>
                 </div>
                 <div className="bg-white/5 rounded-xl p-4 text-sm text-white/70">

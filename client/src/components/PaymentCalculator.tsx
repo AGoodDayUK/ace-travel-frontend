@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Calendar, PoundSterling, CheckCircle2 } from "lucide-react";
-import { format, addMonths, differenceInMonths, parseISO } from "date-fns";
+import { format, addMonths, addWeeks, subWeeks, differenceInMonths, parseISO } from "date-fns";
 
 interface PaymentCalculatorProps {
   tourPrice: number;
@@ -44,8 +44,8 @@ function PaymentScheduleContent({
     const today = new Date();
     const departure = parseISO(departureDate);
 
-    // Final payment must be 2 months before departure
-    const finalPayment = addMonths(departure, -2);
+    // Final payment must be 4 weeks before departure
+    const finalPayment = subWeeks(departure, 4);
     setFinalPaymentDate(format(finalPayment, "do MMMM yyyy"));
 
     // Calculate months available for payment (from today to final payment date)
@@ -53,12 +53,12 @@ function PaymentScheduleContent({
     setMonthsAvailable(monthsToFinalPayment);
 
     if (monthsToFinalPayment <= 0) {
-      // If less than 2 months to departure, full payment required immediately
+      // If less than 4 weeks to departure, full payment required immediately
       setSchedule([
         {
           date: format(today, "do MMMM yyyy"),
           amount: tourPrice,
-          description: "Full payment (less than 2 months to departure)",
+          description: "Full payment (less than 4 weeks to departure)",
         },
       ]);
       return;
@@ -128,7 +128,7 @@ function PaymentScheduleContent({
               <span className="text-sm font-medium">
                 Final payment: <span className="text-primary font-bold">{finalPaymentDate}</span>
               </span>
-              <p className="text-xs text-muted-foreground mt-0.5">2 months before departure</p>
+              <p className="text-xs text-muted-foreground mt-0.5">4 weeks before departure</p>
             </div>
           </div>
         </div>
@@ -174,7 +174,7 @@ function PaymentScheduleContent({
         </div>
 
         <p className="text-xs text-muted-foreground pb-2">
-          * Illustrative schedule. Actual dates may vary based on booking date. Full payment due 2 months before departure.
+          * Illustrative schedule. Actual dates may vary based on booking date. Full payment due 4 weeks before departure.
         </p>
       </div>
 

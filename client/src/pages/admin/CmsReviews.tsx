@@ -112,8 +112,22 @@ export default function CmsReviews() {
                 <Input value={form.authorLocation ?? ""} onChange={(e) => set("authorLocation", e.target.value || null)} className="bg-gray-800 border-gray-700 text-white" placeholder="Manchester, UK" />
               </div>
               <div className="space-y-1.5">
-                <Label className="text-gray-300">Rating (1-5)</Label>
-                <Input type="number" min={1} max={5} value={form.rating} onChange={(e) => set("rating", parseInt(e.target.value) || 5)} className="bg-gray-800 border-gray-700 text-white" />
+                <Label className="text-gray-300">Rating</Label>
+                <div className="flex items-center gap-1 mt-1">
+                  {[1,2,3,4,5].map((star) => (
+                    <button
+                      key={star}
+                      type="button"
+                      onClick={() => set("rating", star)}
+                      className="focus:outline-none"
+                    >
+                      <Star className={`w-6 h-6 transition-colors ${
+                        star <= form.rating ? "text-amber-400 fill-amber-400" : "text-gray-600 hover:text-amber-300"
+                      }`} />
+                    </button>
+                  ))}
+                  <span className="text-gray-400 text-sm ml-2">{form.rating}/5</span>
+                </div>
               </div>
             </div>
             <div className="space-y-1.5">

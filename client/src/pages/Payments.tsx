@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "When is the final payment due?",
-    a: "Your final payment must be made no later than 2 months (8 weeks) before your departure date. If you book within 2 months of departure, the full balance is due at the time of booking."
+    a: "Your final payment must be made no later than 4 weeks before your departure date. If you book within 4 weeks of departure, the full balance is due at the time of booking."
   },
   {
     q: "What currencies do you accept?",
@@ -92,8 +92,8 @@ export default function Payments() {
               {
                 icon: CheckCircle2,
                 colour: "bg-purple-500",
-                title: "Full balance 2 months before",
-                desc: "Your final payment must be complete 2 months before departure. Then you're all set — just pack your bags!"
+                title: "Full balance 4 weeks before",
+                desc: "Your final payment must be complete 4 weeks before departure. Then you're all set — just pack your bags!"
               }
             ].map((step, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">

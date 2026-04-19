@@ -617,3 +617,24 @@
 - [x] Wire FAQ page to CMS data
 - [x] Wire Reviews section to CMS data
 - [x] Wire Deals page to CMS data
+
+## Payment Due Date Fix
+- [ ] Update PaymentCalculator.tsx: "2 months before departure" → "4 weeks before departure"
+- [ ] Update PaymentCalculator.tsx footer note: "Full payment due 2 months before departure" → "4 weeks before departure"
+- [ ] Update Payments.tsx FAQ answer: "2 months (8 weeks)" → "4 weeks"
+- [ ] Update Payments.tsx step card: "Full balance 2 months before" → "Full balance 4 weeks before"
+- [ ] Update HowItWorks.tsx: "60 days before" → "4 weeks before"
+- [ ] Update TourDetail.tsx: "30 days before departure" → "4 weeks before departure"
+- [ ] Update TermsConditions.tsx: "30 days before departure" → "4 weeks before departure"
+- [ ] Update FAQ.tsx: "6 weeks before departure" → "4 weeks before departure"
+
+## Admin CMS Improvements
+- [ ] Audit existing CMS admin pages for usability issues
+- [ ] Improve CMS dashboard with quick stats and recent activity
+- [ ] Polish tour editor with inline image upload, itinerary builder, highlights editor
+- [ ] Polish deals editor with all fields
+- [ ] Polish FAQs editor with drag-to-reorder
+- [ ] Polish reviews editor with star rating picker
+- [ ] Polish site settings editor (homepage hero, stats, contact info)
+- [ ] Add media library with drag-and-drop image upload
+- [ ] Ensure CMS uses Manus OAuth for admin login (no separate password needed)

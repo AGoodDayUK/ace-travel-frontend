@@ -98,7 +98,11 @@ export default function CmsDeals() {
             </div>
             <div className="space-y-1.5">
               <Label className="text-gray-300">Image URL</Label>
-              <Input value={form.image} onChange={(e) => set("image", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+              <Input value={form.image} onChange={(e) => set("image", e.target.value)} className="bg-gray-800 border-gray-700 text-white" placeholder="https://..." />
+              {form.image && (
+                <img src={form.image} alt="Preview" className="mt-2 h-24 w-full object-cover rounded-lg border border-gray-700" />
+              )}
+              <p className="text-gray-500 text-xs">Tip: upload in Media Library first, then paste the URL here.</p>
             </div>
             <div className="flex items-center gap-3">
               <Switch checked={form.active} onCheckedChange={(v) => set("active", v)} />

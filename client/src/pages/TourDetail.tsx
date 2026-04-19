@@ -1607,7 +1607,7 @@ export default function TourDetail() {
                 How do I book and pay?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                To secure your place, a non-refundable deposit of £60 is required. The balance is due no later than 30 days before departure, unless you are on a pre-agreed installment plan. All payments are processed in GBP (£) and we accept all major credit and debit cards.
+                To secure your place, a non-refundable deposit of £60 is required. The balance is due no later than 4 weeks before departure, unless you are on a pre-agreed installment plan. All payments are processed in GBP (£) and we accept all major credit and debit cards.
               </AccordionContent>
             </AccordionItem>
 
@@ -1616,7 +1616,7 @@ export default function TourDetail() {
                 What if I need to cancel?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground leading-relaxed">
-                If you need to cancel, please let us know as soon as possible. If you have paid £60 or more of the total package price, you may have the option to carry your place over to another trip date (must be requested at least 2 months before departure, subject to our discretion). Due to commitments with our accommodation partners, we cannot offer refunds on payments made once terms are accepted, except for mistakes on our part or duplicate payments. We strongly recommend comprehensive travel insurance that covers cancellations.
+                If you need to cancel, please let us know as soon as possible. If you have paid £60 or more of the total package price, you may have the option to carry your place over to another trip date (must be requested at least 4 weeks before departure, subject to our discretion). Due to commitments with our accommodation partners, we cannot offer refunds on payments made once terms are accepted, except for mistakes on our part or duplicate payments. We strongly recommend comprehensive travel insurance that covers cancellations.
               </AccordionContent>
             </AccordionItem>
 

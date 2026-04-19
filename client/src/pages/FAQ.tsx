@@ -62,7 +62,7 @@ export default function FAQ() {
       category: "Payments & Booking",
       questions: [
         { q: "How much do I need to pay to secure my place?", a: "Just a £60 deposit to secure your spot." },
-        { q: "When do I need to pay the rest?", a: "Flexible payment plans are available up to 6 weeks before departure." },
+        { q: "When do I need to pay the rest?", a: "Flexible payment plans are available up to 4 weeks before departure." },
         { q: "Is the £60 deposit refundable?", a: "No, but it is transferable to another date." },
         { q: "What payment methods do you accept?", a: "We accept card, bank transfer, Wise and Revolut." }
       ]
