@@ -40,7 +40,7 @@ const highlights = [
     description: "Bohol's famous Chocolate Hills are one of the Philippines' most unique natural wonders — over 1,200 perfectly cone-shaped hills that turn chocolate-brown in the dry season."
   },
   {
-    image: "/philippines-lagoon.jpg",
+    image: "/philippines-lagoon.webp",
     title: "Island Life",
     description: "The Philippines has over 7,000 islands. Our tour takes you to the very best of them — from the cosmopolitan energy of Cebu to the laid-back paradise of Port Barton."
   }
@@ -57,7 +57,7 @@ export default function DestinationPhilippines() {
     <div className="min-h-screen">
 
       {/* Hero */}
-      <section className="relative min-h-[75vh] flex items-end overflow-hidden">
+      <section className="relative flex items-end overflow-hidden" style={{ minHeight: "calc(75dvh - 80px)" }}>
         <div className="absolute inset-0">
           <img
             src="/philippines-hero.webp"

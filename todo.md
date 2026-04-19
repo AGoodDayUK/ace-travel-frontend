@@ -732,5 +732,9 @@
 - [x] Set SITE_URL=https://www.acetravelexperiences.com for production sitemap URLs
 
 ## Media Library Fix
-- [ ] Update CMS upload procedure to register every upload in the media table
-- [ ] Backfill all existing images from tours/deals/reviews/blogs/settings into media table
+- [x] Update CMS upload procedure to register every upload in the media table
+- [x] Backfill all existing images from tours/deals/reviews/blogs/settings into media table
+
+## Mac/Safari Viewport Fix (Apr 2026)
+- [x] Fix hero section h-screen clipping on Mac/Safari (use 100dvh with h-screen fallback)
+- [x] Check all other full-height sections for the same issue

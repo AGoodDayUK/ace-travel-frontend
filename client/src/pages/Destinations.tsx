@@ -83,7 +83,7 @@ export default function Destinations() {
       <Header />
       
       {/* Video Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative flex items-center justify-center overflow-hidden" style={{ height: 'calc(70dvh - 80px)', minHeight: '400px' }}>
         <div className="absolute inset-0">
           <video 
             autoPlay

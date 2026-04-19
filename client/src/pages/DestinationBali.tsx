@@ -69,7 +69,7 @@ export default function DestinationBali() {
     <div className="min-h-screen">
 
       {/* Hero */}
-      <section className="relative min-h-[75vh] flex items-end overflow-hidden">
+      <section className="relative flex items-end overflow-hidden" style={{ minHeight: "calc(75dvh - 80px)" }}>
         <div className="absolute inset-0">
           <img
             src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FIusTznaFJxspxFF.jpeg"

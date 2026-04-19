@@ -37,7 +37,7 @@ const tours = [
 
 const highlights = [
   {
-    image: "/thailand-temple.jpg",
+    image: "/thailand-temple.webp",
     title: "Ancient Temples",
     description: "Explore ornate Buddhist temples, from Bangkok's Grand Palace to Chiang Mai's mountain sanctuaries. Wat Phra That Doi Suthep at sunrise is unforgettable."
   },
@@ -47,12 +47,12 @@ const highlights = [
     description: "Crystal-clear waters, white sand beaches, and legendary Full Moon Parties. Koh Tao, Koh Phangan, and Koh Samui are three of the world's most beautiful islands."
   },
   {
-    image: "/thailand-elephant.jpg",
+    image: "/thailand-elephant.webp",
     title: "Elephant Sanctuary",
     description: "Spend a day with rescued elephants at an ethical sanctuary in Chiang Mai. Feed, bathe, and walk with these incredible animals in their natural habitat."
   },
   {
-    image: "/thailand-farewell-dinner.jpg",
+    image: "/thailand-farewell-dinner.webp",
     title: "Group Experiences",
     description: "From night markets to cooking classes, every experience is shared with a brilliant group of like-minded 18-35s. Friendships made on ACE tours last a lifetime."
   }
@@ -69,7 +69,7 @@ export default function DestinationThailand() {
     <div className="min-h-screen">
 
       {/* Hero */}
-      <section className="relative min-h-[75vh] flex items-end overflow-hidden">
+      <section className="relative flex items-end overflow-hidden" style={{ minHeight: "calc(75dvh - 80px)" }}>
         <div className="absolute inset-0">
           <img
             src="/thailand-island-hopper-hero.webp"
@@ -251,7 +251,7 @@ export default function DestinationThailand() {
             </div>
             <div className="relative">
               <img
-                src="/thailand-temple-group.jpg"
+                src="/thailand-temple-group.webp"
                 alt="ACE Travel group in Thailand"
                 className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
               />

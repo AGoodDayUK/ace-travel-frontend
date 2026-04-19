@@ -167,6 +167,34 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    // Split vendor libraries into separate cacheable chunks
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Core React runtime — changes rarely, long cache life
+          "vendor-react": ["react", "react-dom"],
+          // tRPC + React Query — data layer
+          "vendor-trpc": ["@trpc/client", "@trpc/react-query", "@tanstack/react-query"],
+          // UI component library
+          "vendor-ui": [
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-select",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-tooltip",
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-label",
+            "@radix-ui/react-slot",
+          ],
+          // Lucide icons
+          "vendor-icons": ["lucide-react"],
+          // Routing
+          "vendor-router": ["wouter"],
+          // Date utilities
+          "vendor-date": ["date-fns"],
+        },
+      },
+    },
   },
   server: {
     host: true,

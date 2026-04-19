@@ -1,8 +1,14 @@
 import { Link, useLocation } from 'wouter';
 import { Instagram, Facebook, Mail } from 'lucide-react';
-import { FaTiktok } from 'react-icons/fa';
 import { trpc } from '@/lib/trpc';
 import { useMemo, useCallback } from 'react';
+
+// Inline TikTok SVG — replaces react-icons/fa (saves ~1.3 MB from JS bundle)
+const TikTokIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
+  </svg>
+);
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,6 +21,7 @@ export default function Footer() {
     navigate(href);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [navigate]);
+
   const s = useMemo(() => {
     const map: Record<string, string> = {};
     settingsQuery.data?.forEach(r => { map[r.key] = r.value ?? ''; });
@@ -42,10 +49,10 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { href: s.contact_instagram || 'https://www.instagram.com/acetravelexperiences/', icon: Instagram, label: 'Instagram' },
-    { href: s.contact_tiktok || 'https://www.tiktok.com/@acetravelexperiences', icon: FaTiktok, label: 'TikTok' },
-    { href: s.contact_facebook || 'https://www.facebook.com/groups/565386292003692', icon: Facebook, label: 'Facebook' },
-    { href: `mailto:${s.contact_email || 'admin@acetravelexperiences.com'}`, icon: Mail, label: 'Email' },
+    { href: s.contact_instagram || 'https://www.instagram.com/acetravelexperiences/', Icon: Instagram, label: 'Instagram' },
+    { href: s.contact_tiktok || 'https://www.tiktok.com/@acetravelexperiences', Icon: TikTokIcon, label: 'TikTok' },
+    { href: s.contact_facebook || 'https://www.facebook.com/groups/565386292003692', Icon: Facebook, label: 'Facebook' },
+    { href: `mailto:${s.contact_email || 'admin@acetravelexperiences.com'}`, Icon: Mail, label: 'Email' },
   ];
 
   return (
@@ -56,7 +63,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="md:col-span-4">
             <Link href="/" className="mb-4 inline-block">
-              <img src="/ace-logo-circle-white.png" alt="ACE Travel Experiences" className="h-16" />
+              <img src="/ace-logo-circle-white.png" alt="ACE Travel Experiences" className="h-16" width="64" height="64" />
             </Link>
             <p className="text-background/80 text-sm leading-relaxed max-w-xs">
               Epic group travel experiences in Thailand, Bali, and the Philippines for 18-35 year olds. Your first adventure with your future best friends.
@@ -71,7 +78,7 @@ export default function Footer() {
                   className="w-11 h-11 rounded-full flex items-center justify-center bg-[#ee2f6d]/30 border-2 border-[#ee2f6d]/70 text-[#ff4d8d] hover:bg-[#ee2f6d] hover:border-[#ee2f6d] hover:text-white transition-all duration-200"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.Icon className="w-5 h-5" />
                 </a>
               ))}
             </div>

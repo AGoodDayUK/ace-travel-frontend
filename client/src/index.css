@@ -93,6 +93,15 @@
   }
 }
 
+/* Dynamic viewport height — fixes Mac/Safari hero clipping */
+/* dvh accounts for browser chrome (address bar) that vh ignores */
+/* Fallback for browsers that don't support dvh (Safari < 15.4, older Chrome) */
+@supports not (height: 1dvh) {
+  [style*="100dvh"] { height: calc(100vh - 80px) !important; }
+  [style*="75dvh"] { min-height: calc(75vh - 80px) !important; }
+  [style*="70dvh"] { height: calc(70vh - 80px) !important; }
+}
+
 /* Animations */
 @layer utilities {
   @keyframes fade-in {

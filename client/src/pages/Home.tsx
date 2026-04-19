@@ -181,7 +181,7 @@ export default function Home() {
       })} />
 
       {/* Full-Screen Video Hero */}
-      <section className="relative h-screen flex items-end justify-center overflow-hidden">
+      <section className="relative flex items-end justify-center overflow-hidden" style={{ height: 'calc(100dvh - 80px)', minHeight: '560px' }}>
         <div className="absolute inset-0">
           <video
             autoPlay
@@ -270,6 +270,9 @@ export default function Home() {
                     src={dest.image}
                     alt={dest.name}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    width="600"
+                    height="800"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -319,6 +322,9 @@ export default function Home() {
                       src={tour.image}
                       alt={tour.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                      width="800"
+                      height="600"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     {tour.badge && (

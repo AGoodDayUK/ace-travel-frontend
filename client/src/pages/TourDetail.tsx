@@ -486,26 +486,26 @@ export default function TourDetail() {
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/mirOuoHWMgcSDWGB.jpg",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/QrYFhzyXjBuRJxLn.JPG",
         "https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/BJGrLpWkZZByQqyU.JPG",
-        "/thailand-elephant.jpg",
-        "/thailand-temple.jpg",
-        "/pai-canyon.jpg"
+        "/thailand-elephant.webp",
+        "/thailand-temple.webp",
+        "/pai-canyon.webp"
       ],
       description: "The perfect introduction to Thailand. Journey from Bangkok's bustling streets to Chiang Mai's cultural heart, then escape to Pai's mountain paradise. Experience elephant sanctuaries, temple visits, tipsy tubing, and unforgettable sunsets. 12 days of culture, adventure, and new friendships.",
       highlights: [
         {
           title: "Elephant sanctuary",
           description: "Discover the heartwarming Elephant Sanctuary, where majestic creatures roam freely. Interact, feed, and connect with these gentle giants in a natural haven, fostering a deep bond with nature and promoting responsible tourism.",
-          image: "/thailand-elephant.jpg"
+          image: "/thailand-elephant.webp"
         },
         {
           title: "Bangkok city tour",
           description: "Glide along the Chao Phraya by long-tail boat, hop between the Grand Palace, Wat Pho's Reclining Buddha and Wat Arun's spires, weave through Chinatown's alleys, ride the Skytrain, and finish on a rooftop as the skyline lights up.",
-          image: "/bangkok-longtail-boat.jpg"
+          image: "/bangkok-longtail-boat.webp"
         },
         {
           title: "Pai sunsets",
           description: "Chase golden hour to Two Huts and Pai Canyon: hammocks, mellow tunes, and horizons painted pink. Wander the sandstone ridges, watch swallows dip, and stay for blue hour as the valley glows and stars blink on.",
-          image: "/pai-canyon.jpg"
+          image: "/pai-canyon.webp"
         },
         {
           title: "Tipsy tubing",
@@ -515,7 +515,7 @@ export default function TourDetail() {
         {
           title: "Temple visits",
           description: "Step into incense-swirled courtyards and gilded halls; admire serene Buddhas, lotus ponds, and chanting monks. Dress modestly, slip off your shoes, and move slow—temple time is a reset button that swaps noise for quiet awe.",
-          image: "/thailand-temple-group.jpg"
+          image: "/thailand-temple-group.webp"
         },
         {
           title: "Sticky waterfalls",
@@ -528,31 +528,31 @@ export default function TourDetail() {
           day: "Days 1-3",
           title: "Bangkok",
           description: "Day 1: Arrive in Thailand! Meet our airport rep for your pre-booked transfer to the hostel where you'll meet your trip manager and fellow travellers.\n\nDay 2: Breakfast included. Group briefing, then city tour of Bangkok covering Temples, China Town, and MBK shopping mall.\n\nDay 3: Free day to explore! Experience the thrills of Khao San road in the evening - cocktails in buckets and scorpion on a stick? Begin the night train journey north to Chiang Mai.",
-          image: "/thailand-temple.jpg"
+          image: "/thailand-temple.webp"
         },
         {
           day: "Days 4-6",
           title: "Chiang Mai",
           description: "Day 4: Arrive in the morning, check in and explore Chiang Mai's busy streets. Afternoon visit to Doi Suthep Temple with panoramic views.\n\nDay 5: *ACE MOMENT* Breakfast included. Elephant Sanctuary day! Visit majestic Asian Elephants in our ethically sourced sanctuary in the hills. Optional: Traditional Khatok Dinner.\n\nDay 6: Breakfast included. Journey to Pai, stopping at the sticky waterfalls. Finish at Two Huts for sunset with live music and ice cold drinks.",
-          image: "/thailand-elephant.jpg"
+          image: "/thailand-elephant.webp"
         },
         {
           day: "Days 7-9",
           title: "Pai",
           description: "Day 7: Breakfast included. Tipsy Tubing - a massive floating party! Grab your inflatable ring and drift down Pai's River. Stop halfway for a foam party boogie on the riverbank. Hangovers guaranteed!\n\nDay 8: Breakfast included. Relaxing morning to recover, or explore Pai's beautiful streets and cute coffee spots. Evening trip to Pai Canyon for glowing orange sunset.\n\nDay 9: Breakfast included. Free day to explore Pai's hidden gems or chill at the hostel. Optional: Pai Hot Springs & Nam Lod Cave.",
-          image: "/pai-canyon.jpg"
+          image: "/pai-canyon.webp"
         },
         {
           day: "Days 10-11",
           title: "Chiang Mai",
           description: "Day 10: Breakfast included. Bye bye Pai! Head south back to Chiang Mai, stopping at an authentic Thai umbrella factory and silk factory.\n\nDay 11: Breakfast included. Indulge in an authentic Thai cooking class - cook up a storm and enjoy your creations! Learn how Thai cuisine hits the spot every time. Head back to Bangkok in the evening via train.",
-          image: "/cooking-class.jpg"
+          image: "/cooking-class.webp"
         },
         {
           day: "Day 12",
           title: "Bangkok",
           description: "Breakfast included. The dreaded farewells! Give your new besties a big squeeze - you'll see them again, either in your own time or on another Ace Travel Experience! Chill at the hostel until your airport transfer arrives. Depart with unforgettable memories and lifelong friendships.",
-          image: "/thailand-farewell-dinner.jpg"
+          image: "/thailand-farewell-dinner.webp"
         }
       ],
       included: [
@@ -938,7 +938,7 @@ export default function TourDetail() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black/70" />
-        <div className="relative z-10 flex items-end md:items-center min-h-[520px] md:min-h-[75vh] pb-8 md:pb-0">
+        <div className="relative z-10 flex items-end md:items-center min-h-[520px] md:min-h-[75dvh] pb-8 md:pb-0">
           <div className="container py-10 md:py-16">
             <div className="flex items-start justify-between gap-8">
             <div className="max-w-3xl text-background">
