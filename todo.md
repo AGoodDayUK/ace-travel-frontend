@@ -738,3 +738,6 @@
 ## Mac/Safari Viewport Fix (Apr 2026)
 - [x] Fix hero section h-screen clipping on Mac/Safari (use 100dvh with h-screen fallback)
 - [x] Check all other full-height sections for the same issue
+
+## Mobile Menu Fix (Apr 2026)
+- [x] Fix mobile menu panel height clipping on Mac/Safari — Info item cut off below Deals

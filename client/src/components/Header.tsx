@@ -330,9 +330,10 @@ export default function Header() {
 
       {/* Slide-out Drawer — mobile & tablet */}
       <div
-        className={`fixed top-0 right-0 h-full w-[85vw] max-w-sm bg-background z-50 lg:hidden transform transition-transform duration-300 ease-in-out shadow-2xl flex flex-col ${
+        className={`fixed top-0 right-0 w-[85vw] max-w-sm bg-background z-50 lg:hidden transform transition-transform duration-300 ease-in-out shadow-2xl flex flex-col ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
+        style={{ height: '100dvh' }}
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-border bg-white">
