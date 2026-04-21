@@ -102,7 +102,7 @@ export default function About() {
           <div className="md:col-span-6">
             <div className="relative">
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/VNDmlCNoSkrrWiQj.jpg"
+                src={s('about_hero_image', 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/VNDmlCNoSkrrWiQj.jpg')}
                 alt="ACE Travel group on a beautiful beach in Thailand"
                 className="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl"
               />
@@ -218,7 +218,7 @@ export default function About() {
       <section
         className="relative py-24 text-white overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.4)), url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/IMutWpLXypOxxteu.jpg)`,
+          backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.4)), url(${s('about_cta_image', 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/IMutWpLXypOxxteu.jpg')})`,  
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}

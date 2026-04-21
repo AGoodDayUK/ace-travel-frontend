@@ -1,3 +1,4 @@
+import { trpc } from "@/lib/trpc";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
@@ -65,6 +66,8 @@ const trustSignals = [
 ];
 
 export default function DestinationThailand() {
+  const { data: settings } = trpc.cms.settings.getPublic.useQuery();
+  const gs = (key: string, fallback: string) => settings?.find((s: any) => s.key === key)?.value || fallback;
   return (
     <div className="min-h-screen">
 
@@ -72,7 +75,7 @@ export default function DestinationThailand() {
       <section className="relative flex items-end overflow-hidden" style={{ minHeight: "calc(75dvh - 80px)" }}>
         <div className="absolute inset-0">
           <img
-            src="/thailand-island-hopper-hero.webp"
+            src={gs('destination_thailand_hero', '/thailand-island-hopper-hero.webp')}
             alt="Thailand temples and beaches"
             className="w-full h-full object-cover"
           />

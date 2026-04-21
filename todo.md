@@ -751,3 +751,9 @@
 
 ## Mobile Menu Scroll Fix (Apr 2026)
 - [x] Fix mobile menu nav not scrolling on Mac/Safari — overflow-y-auto not triggering due to unconstrained height
+
+## Hero Images CMS Audit (Apr 2026)
+- [x] Audit all hero images across every page (homepage video, destination heroes, tour heroes, about, deals)
+- [x] Add missing hero image settings to CMS settings table with seed defaults
+- [x] Wire all hero images from CMS into page components with hardcoded fallbacks
+- [x] Expose all hero image fields in CMS admin settings editor UI

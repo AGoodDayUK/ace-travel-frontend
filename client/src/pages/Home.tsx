@@ -190,7 +190,7 @@ export default function Home() {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ctlEDQfMvxuoqEsV.mp4" type="video/mp4" />
+            <source src={getSetting('hero_video_url', 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ctlEDQfMvxuoqEsV.mp4')} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
         </div>

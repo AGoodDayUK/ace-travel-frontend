@@ -21,7 +21,18 @@ const SETTING_GROUPS: {
       { key: "hero_title", label: "Hero Title", type: "text", placeholder: "Group Adventures for 18-35s" },
       { key: "hero_subtitle", label: "Hero Subtitle", type: "textarea", placeholder: "Thailand, Bali & Philippines..." },
       { key: "hero_cta_text", label: "CTA Button Text", type: "text", placeholder: "Explore Tours" },
-      { key: "hero_image", label: "Hero Background Image", type: "image" },
+      { key: "hero_video_url", label: "Hero Background Video URL", type: "text", placeholder: "https://files.manuscdn.com/.../video.mp4", hint: "Paste a direct MP4 video URL. This plays as the full-screen background on the homepage. Leave blank to show a static image instead." },
+      { key: "hero_image", label: "Hero Background Image (fallback)", type: "image", hint: "Used if no video URL is set, or as a poster frame while the video loads." },
+    ],
+  },
+  {
+    group: "destinations",
+    label: "Destination Page Heroes",
+    description: "The hero images shown at the top of each destination page. Upload a new image or paste a URL to update without a code deployment.",
+    fields: [
+      { key: "destination_thailand_hero", label: "Thailand Hero Image", type: "image" },
+      { key: "destination_bali_hero", label: "Bali Hero Image", type: "image" },
+      { key: "destination_philippines_hero", label: "Philippines Hero Image", type: "image" },
     ],
   },
   {
@@ -72,7 +83,8 @@ const SETTING_GROUPS: {
     fields: [
       { key: "about_hero_title", label: "Hero Title", type: "text", placeholder: "Born from a love of travel, built for adventurers." },
       { key: "about_hero_text", label: "Hero Text", type: "textarea", placeholder: "We're not just a travel company..." },
-      { key: "about_hero_image", label: "Hero Image", type: "image" },
+      { key: "about_hero_image", label: "Hero Image", type: "image", hint: "The photo shown beside the hero text on the About page." },
+      { key: "about_cta_image", label: "CTA Banner Background", type: "image", hint: "The background image for the \"Start Your Adventure\" call-to-action banner at the bottom of the About page." },
       { key: "about_team_title", label: "Team Section Title", type: "text", placeholder: "The A-ce Team" },
       { key: "about_team_subtitle", label: "Team Section Subtitle", type: "textarea", placeholder: "Behind every incredible trip..." },
       { key: "about_team_member1_name", label: "Team Member 1 — Name", type: "text", placeholder: "Jay" },

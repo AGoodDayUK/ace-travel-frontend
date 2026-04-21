@@ -1,3 +1,4 @@
+import { trpc } from "@/lib/trpc";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
@@ -65,6 +66,8 @@ const trustSignals = [
 ];
 
 export default function DestinationBali() {
+  const { data: settings } = trpc.cms.settings.getPublic.useQuery();
+  const gs = (key: string, fallback: string) => settings?.find((s: any) => s.key === key)?.value || fallback;
   return (
     <div className="min-h-screen">
 
@@ -72,7 +75,7 @@ export default function DestinationBali() {
       <section className="relative flex items-end overflow-hidden" style={{ minHeight: "calc(75dvh - 80px)" }}>
         <div className="absolute inset-0">
           <img
-            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FIusTznaFJxspxFF.jpeg"
+            src={gs('destination_bali_hero', 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/FIusTznaFJxspxFF.jpeg')}
             alt="Group at sunset cliff in Bali"
             className="w-full h-full object-cover"
           />
