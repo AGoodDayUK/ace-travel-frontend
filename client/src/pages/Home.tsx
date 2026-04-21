@@ -188,6 +188,7 @@ export default function Home() {
             loop
             muted
             playsInline
+            poster={getSetting('hero_image', 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ApxPXwwRsOfpxGmA.webp')}
             className="w-full h-full object-cover"
           >
             <source src={getSetting('hero_video_url', 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663269568751/ctlEDQfMvxuoqEsV.mp4')} type="video/mp4" />

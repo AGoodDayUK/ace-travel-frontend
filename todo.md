@@ -757,3 +757,8 @@
 - [x] Add missing hero image settings to CMS settings table with seed defaults
 - [x] Wire all hero images from CMS into page components with hardcoded fallbacks
 - [x] Expose all hero image fields in CMS admin settings editor UI
+
+## Hero Video Poster Frame (Apr 2026)
+- [x] Extract still frame from hero video and upload to CDN
+- [x] Set poster attribute on homepage hero video element
+- [x] Wire poster to CMS hero_image setting so it can be updated from CMS
