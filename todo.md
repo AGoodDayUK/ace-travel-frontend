@@ -19,6 +19,12 @@
 - [x] Test admin functionality
 - [x] Save final checkpoint
 
+## New Manus Account Transfer Package (Sep 2026)
+- [x] Generate a fresh database data export for the transfer
+- [x] Package the latest project source without secrets, dependencies, logs, or build caches
+- [x] Include all welcome-pack PDFs, the database export, and restoration instructions
+- [x] Validate the transfer ZIP contents and checksums before delivery
+
 ## Gen Z Visual Redesign
 - [x] Update typography to bold, playful style with text outlines/shadows
 - [x] Add sticker-style graphics and badges throughout site
